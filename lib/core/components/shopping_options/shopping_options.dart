@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/products_page/products/basic_food.dart';
-import 'package:lego_market_app/core/components/products_page/products/celaning_products.dart';
-import 'package:lego_market_app/core/components/products_page/products/cigarettes.dart';
-import 'package:lego_market_app/core/components/products_page/products/dairy_and_breakfast.dart';
-import 'package:lego_market_app/core/components/products_page/products/drinks.dart';
-import 'package:lego_market_app/core/components/products_page/products/food.dart';
-import 'package:lego_market_app/core/components/products_page/products/ice_cream.dart';
-import 'package:lego_market_app/core/components/products_page/products/personal_care.dart';
-import 'package:lego_market_app/core/components/products_page/products/sexual_health.dart';
-import 'package:lego_market_app/core/components/products_page/products/technology.dart';
-import 'package:lego_market_app/core/components/products_page/products/water.dart';
 import 'package:lego_market_app/core/constant/container/shopping_options_container.dart';
+import 'package:lego_market_app/view/home/products/basic_food.dart';
+import 'package:lego_market_app/view/home/products/celaning_products.dart';
+import 'package:lego_market_app/view/home/products/cigarettes.dart';
+import 'package:lego_market_app/view/home/products/dairy_and_breakfast.dart';
+import 'package:lego_market_app/view/home/products/drinks.dart';
+import 'package:lego_market_app/view/home/products/food.dart';
+import 'package:lego_market_app/view/home/products/ice_cream.dart';
+import 'package:lego_market_app/view/home/products/personal_care.dart';
+import 'package:lego_market_app/view/home/products/sexual_health.dart';
+import 'package:lego_market_app/view/home/products/technology.dart';
+import 'package:lego_market_app/view/home/products/water.dart';
 
 class ShoppingOptions extends StatefulWidget {
   ShoppingOptions({Key? key}) : super(key: key);
