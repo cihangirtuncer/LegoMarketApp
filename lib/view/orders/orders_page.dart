@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/appBar/main_appbar.dart';
 
-class MyOrders extends StatefulWidget {
-  MyOrders({Key? key}) : super(key: key);
+class Orders extends StatefulWidget {
+  Orders({Key? key}) : super(key: key);
 
   @override
-  _MyOrdersState createState() => _MyOrdersState();
+  _OrdersState createState() => _OrdersState();
 }
 
-class _MyOrdersState extends State<MyOrders> {
+class _OrdersState extends State<Orders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

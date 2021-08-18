@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/appBar/main_appbar.dart';
 
-class ProductSearch extends StatefulWidget {
-  ProductSearch({Key? key}) : super(key: key);
+class Search extends StatefulWidget {
+  Search({Key? key}) : super(key: key);
 
   @override
-  _ProductSearchState createState() => _ProductSearchState();
+  _SearchState createState() => _SearchState();
 }
 
 final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-class _ProductSearchState extends State<ProductSearch> {
+class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
