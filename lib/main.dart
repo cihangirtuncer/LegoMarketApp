@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/appBar/main_app_bar.dart';
-import 'package:lego_market_app/view/account/account_page.dart';
 import 'package:lego_market_app/view/home/home_page.dart';
 import 'package:lego_market_app/view/orders/orders_page.dart';
-import 'package:lego_market_app/view/product_search/product_search_page.dart';
+import 'package:lego_market_app/view/product_search/search_page.dart';
+import 'package:lego_market_app/view/profile/profile_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,7 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mainAppBar(context),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -49,28 +47,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icons.home,
                 color: Colors.grey.shade600,
               ),
-              label: "HOME",
+              label: "Home",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.search,
                 color: Colors.grey.shade600,
               ),
-              label: "SEARCH",
+              label: "Search",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.hot_tub,
+                Icons.shopping_cart,
                 color: Colors.grey.shade600,
               ),
-              label: "MY ORDER",
+              label: "Orders",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.account_balance,
+                Icons.account_circle_rounded,
                 color: Colors.grey.shade600,
               ),
-              label: "MY ACCOUNT",
+              label: "Profile",
               backgroundColor: Colors.black),
         ],
         currentIndex: _selectedIndex,
