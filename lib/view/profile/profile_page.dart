@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:lego_market_app/core/constant/appBar/main_appbar.dart';
 
 class MyAccount extends StatefulWidget {
   MyAccount({Key? key}) : super(key: key);
@@ -11,8 +11,9 @@ class MyAccount extends StatefulWidget {
 class _MyAccountState extends State<MyAccount> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: null,
+    return Scaffold(
+      appBar: BuildAppBar("Profile"),
+      body: Container(),
     );
   }
 }
