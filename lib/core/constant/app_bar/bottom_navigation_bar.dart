@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/constant/icon/bottom_icon.dart';
 import 'package:lego_market_app/view/home/home_page.dart';
 import 'package:lego_market_app/view/orders/orders_page.dart';
 import 'package:lego_market_app/view/profile/profile_page.dart';
@@ -27,31 +28,19 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.blue.shade900,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.grey.shade600,
-              ),
+              icon: BuildBottomBarIcon(Icons.home),
               label: "Home",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                color: Colors.grey.shade600,
-              ),
+              icon: BuildBottomBarIcon(Icons.search),
               label: "Search",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shopping_cart,
-                color: Colors.grey.shade600,
-              ),
+              icon: BuildBottomBarIcon(Icons.shopping_cart),
               label: "Orders",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle_rounded,
-                color: Colors.grey.shade600,
-              ),
+              icon: BuildBottomBarIcon(Icons.account_circle_rounded),
               label: "Profile",
               backgroundColor: Colors.black),
         ],

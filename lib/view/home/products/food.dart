@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/products_page/products_card.dart';
+import 'package:lego_market_app/core/constant/card/products_card.dart';
 
 class FoodList extends StatefulWidget {
   FoodList({Key? key}) : super(key: key);
@@ -22,11 +22,13 @@ class _FoodListState extends State<FoodList> {
               "Fettucini Alfredo",
               "chicken,parmesan,cream",
               "25 TL",
+              context,
             ),
             BuildProductCard(
               "Cheeseburger",
               "meat,onion,lettuce,cheese",
               "35 TL",
+              context,
             )
           ],
         ));

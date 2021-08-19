@@ -27,6 +27,7 @@ BuildShoppingContainer(
           )
         ],
       ),
+      color: Colors.grey.shade300,
     ),
   );
 }
