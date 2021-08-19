@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/appBar/main_appbar.dart';
+import 'package:lego_market_app/core/constant/app_bar/main_appbar.dart';
 
 class Search extends StatefulWidget {
   Search({Key? key}) : super(key: key);
