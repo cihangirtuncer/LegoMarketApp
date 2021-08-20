@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/botton/payment_icon_button.dart';
 
 // ignore: non_constant_identifier_names
 BuildProductCard(
@@ -30,7 +29,6 @@ BuildProductCard(
             ),
           ),
         ),
-        ButtonPayment(),
       ],
     ),
   );
