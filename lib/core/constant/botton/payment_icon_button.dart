@@ -8,7 +8,7 @@ class ButtonPayment extends StatefulWidget {
 }
 
 class _ButtonPaymentState extends State<ButtonPayment> {
-  int _volume = 0;
+  int _volume = 1;
   @override
   Widget build(BuildContext context) {
     return Row(

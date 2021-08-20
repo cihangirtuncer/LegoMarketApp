@@ -7,10 +7,10 @@ BuildPaymentColumn(String price, String name, String explanation) {
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
       title: Text("Payment"),
-      backgroundColor: Colors.blue.shade900,
+      backgroundColor: Colors.green.shade700,
     ),
     body: Padding(
-      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+      padding: const EdgeInsets.fromLTRB(8, 12, 8, 8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -56,6 +56,25 @@ BuildPaymentColumn(String price, String name, String explanation) {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12), color: Colors.white),
               child: ButtonPayment(),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.green.shade700),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.all(16.0),
+                  textStyle: const TextStyle(fontSize: 20),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  'Add to box',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
           ),
         ],
