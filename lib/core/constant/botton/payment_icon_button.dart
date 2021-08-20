@@ -15,21 +15,24 @@ class _ButtonPaymentState extends State<ButtonPayment> {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         IconButton(
-          icon: const Icon(Icons.add_outlined),
-          tooltip: 'Increase volume by 1',
-          onPressed: () {
-            setState(() {
-              _volume += 1;
-            });
-          },
-        ),
-        Text('$_volume piece'),
-        IconButton(
           icon: const Icon(Icons.remove_outlined),
           tooltip: 'Increase volume by 1',
           onPressed: () {
             setState(() {
               _volume -= 1;
+            });
+          },
+        ),
+        Text(
+          'total: $_volume',
+          style: TextStyle(fontSize: 18),
+        ),
+        IconButton(
+          icon: const Icon(Icons.add_outlined),
+          tooltip: 'Increase volume by 1',
+          onPressed: () {
+            setState(() {
+              _volume += 1;
             });
           },
         ),

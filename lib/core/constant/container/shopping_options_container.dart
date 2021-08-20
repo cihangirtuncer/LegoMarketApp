@@ -14,7 +14,7 @@ BuildShoppingContainer(
     },
     child: Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade200,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(25),
       ),
       padding: const EdgeInsets.all(13),
