@@ -16,7 +16,6 @@ class _ButtonPaymentState extends State<ButtonPayment> {
       children: <Widget>[
         IconButton(
           icon: const Icon(Icons.remove_outlined),
-          tooltip: 'Increase volume by 1',
           onPressed: () {
             setState(() {
               _volume -= 1;
@@ -29,7 +28,6 @@ class _ButtonPaymentState extends State<ButtonPayment> {
         ),
         IconButton(
           icon: const Icon(Icons.add_outlined),
-          tooltip: 'Increase volume by 1',
           onPressed: () {
             setState(() {
               _volume += 1;
