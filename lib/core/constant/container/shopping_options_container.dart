@@ -13,7 +13,11 @@ BuildShoppingContainer(
           context, MaterialPageRoute(builder: (context) => destination));
     },
     child: Container(
-      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade200,
+        borderRadius: BorderRadius.circular(25),
+      ),
+      padding: const EdgeInsets.all(13),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,7 +31,6 @@ BuildShoppingContainer(
           )
         ],
       ),
-      color: Colors.grey.shade300,
     ),
   );
 }
