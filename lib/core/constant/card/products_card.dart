@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/column/payment_column.dart';
+import 'package:lego_market_app/core/components/payment_page/payment_column.dart';
 
 // ignore: non_constant_identifier_names
 BuildProductCard(
@@ -9,8 +9,7 @@ BuildProductCard(
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) =>
-                  BuildPaymentColumn(price, name, explanation)));
+              builder: (context) => BuildPayment(price, name, explanation)));
     },
     child: Column(
       children: [
