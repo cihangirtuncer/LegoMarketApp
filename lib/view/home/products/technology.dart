@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 
 class TechnologyList extends StatefulWidget {
   TechnologyList({Key? key}) : super(key: key);
@@ -10,13 +11,10 @@ class TechnologyList extends StatefulWidget {
 class _TechnologyListState extends State<TechnologyList> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
-        title: Text("Technology"),
-      ),
-      body: Container(
-        child: Text(""),
+    return BuildProductsScaffold(
+      "TECHNOLOGY",
+      ListView(
+        children: [],
       ),
     );
   }

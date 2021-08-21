@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 
 class DairyAndBreakfastList extends StatefulWidget {
   DairyAndBreakfastList({Key? key}) : super(key: key);
@@ -10,13 +11,10 @@ class DairyAndBreakfastList extends StatefulWidget {
 class _DairyAndBreakfastListState extends State<DairyAndBreakfastList> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
-        title: Text("Dairy and Breakfast"),
-      ),
-      body: Container(
-        child: Text(""),
+    return BuildProductsScaffold(
+      "DAIRY & BREKFAST",
+      ListView(
+        children: [],
       ),
     );
   }

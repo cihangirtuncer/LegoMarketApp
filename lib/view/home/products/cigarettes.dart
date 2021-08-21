@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 
 class CigarettesList extends StatefulWidget {
   CigarettesList({Key? key}) : super(key: key);
@@ -10,13 +11,10 @@ class CigarettesList extends StatefulWidget {
 class _CigarettesListState extends State<CigarettesList> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
-        title: Text("Cigarettes"),
-      ),
-      body: Container(
-        child: Text(""),
+    return BuildProductsScaffold(
+      "CIGARETTES",
+      ListView(
+        children: [],
       ),
     );
   }
