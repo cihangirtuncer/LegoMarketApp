@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 // ignore: non_constant_identifier_names
 BuildProfileData(
   Color color,
-  double value,
   double width,
   double height,
   AlignmentGeometry widgetAlignment,
   Widget widget,
 ) {
   return Padding(
-    padding: EdgeInsets.all(value),
+    padding: EdgeInsets.all(7.0),
     child: Container(
       alignment: widgetAlignment,
       width: width,

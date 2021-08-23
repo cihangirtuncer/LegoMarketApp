@@ -5,7 +5,10 @@ BuildProfileRow(String string, IconData icon) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
-      Icon(icon),
+      Icon(
+        icon,
+        color: Colors.blue.shade900,
+      ),
       Text(" "),
       Text(
         string,

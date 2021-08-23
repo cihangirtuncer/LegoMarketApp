@@ -11,16 +11,24 @@ BuildProfile() {
     children: [
       BuildProfileData(
         Colors.white,
-        7.0,
         80,
         120,
         Alignment.center,
         Row(
           children: [
-            Icon(
-              Icons.account_circle,
-              size: 100,
-              color: Colors.blue.shade900,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(3, 1, 20, 1),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blue.shade900,
+                ),
+                child: Icon(
+                  Icons.account_circle_rounded,
+                  size: 110,
+                  color: Colors.white,
+                ),
+              ),
             ),
             Text(
               "Cihangir Tuncer",
@@ -34,7 +42,6 @@ BuildProfile() {
       BuildProfileDivider(1.0),
       BuildProfileData(
         Colors.white,
-        7.0,
         80,
         50,
         Alignment.centerLeft,
@@ -43,7 +50,6 @@ BuildProfile() {
       BuildProfileDivider(1.0),
       BuildProfileData(
         Colors.white,
-        7.0,
         80,
         50,
         Alignment.centerLeft,
@@ -52,7 +58,6 @@ BuildProfile() {
       BuildProfileDivider(1.0),
       BuildProfileData(
         Colors.white,
-        7.0,
         80,
         50,
         Alignment.centerLeft,
