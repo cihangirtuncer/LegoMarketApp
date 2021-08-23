@@ -15,49 +15,75 @@ class _OrdersAppBarState extends State<OrdersAppBar>
     Tab(text: 'PREVIOUS ORDERS'),
   ];
 
-  late TabController _tabController;
+  late TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: myTabs.length);
+    tabController = TabController(vsync: this, length: 2);
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
+    tabController.dispose();
     super.dispose();
   }
 
+  // ignore: unused_field
+  final _formKey = GlobalKey<FormState>();
+  // ignore: unused_field
+  final _formKeyLogin = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
-        title: Center(
-          child: Text(
-            "Orders",
-            style: TextStyle(fontSize: 23),
+        appBar: AppBar(
+          backgroundColor: Colors.blue.shade900,
+          bottom: TabBar(
+            controller: tabController,
+            tabs: [
+              Tab(
+                text: "ORDERS",
+              ),
+              Tab(
+                text: "PREVIOUS ORDERS",
+              )
+            ],
+          ),
+          title: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 140),
+            child: Text(
+              "ORDERS",
+            ),
           ),
         ),
-        bottom: TabBar(
-          labelColor: Colors.white,
-          controller: _tabController,
-          tabs: myTabs,
-        ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: myTabs.map((Tab tab) {
-          final String label = tab.text!.toLowerCase();
-          return Center(
-            child: Text(
-              'This is the $label tab',
-              style: const TextStyle(fontSize: 36),
+        body: TabBarView(
+          controller: tabController,
+          children: [
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: userLogin(context),
+              ),
             ),
-          );
-        }).toList(),
-      ),
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: addMenu(context),
+              ),
+            ),
+          ],
+        ));
+  }
+
+  userLogin(BuildContext context) {
+    return Center(
+      child: Text("This is orders tab"),
+    );
+  }
+
+  addMenu(BuildContext context) {
+    return Center(
+      child: Text("This is previous orders"),
     );
   }
 }
