@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/app_bar/main_app_bar.dart';
+import 'package:lego_market_app/core/constant/scaffold/orders_scaffold.dart';
 
 class Orders extends StatefulWidget {
   Orders({Key? key}) : super(key: key);
@@ -11,9 +11,6 @@ class Orders extends StatefulWidget {
 class _OrdersState extends State<Orders> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: BuildAppBar("Orders"),
-      body: Container(),
-    );
+    return OrdersAppBar();
   }
 }

@@ -20,17 +20,20 @@ class _SearchState extends State<Search> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            TextFormField(
-              textAlign: TextAlign.start,
-              decoration: const InputDecoration(
-                hintText: 'search for product',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                textAlign: TextAlign.start,
+                decoration: const InputDecoration(
+                  hintText: 'search for product',
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
               ),
-              validator: (String? value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
             ),
             Padding(
               padding: const EdgeInsets.all(8),
