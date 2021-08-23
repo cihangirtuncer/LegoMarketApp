@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/constant/padding/standart_padding.dart';
 
 // ignore: non_constant_identifier_names
 BuildProfile() {
@@ -6,37 +7,40 @@ BuildProfile() {
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-      Padding(
-        padding: const EdgeInsets.all(2.0),
-        child: Container(
+      BuildPadding(
+        Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12), color: Colors.white),
-          width: 120,
-          height: 200,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
+          height: 140,
+          child: BuildPadding(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  child: Icon(
-                    Icons.account_circle_sharp,
-                    size: 140,
-                  ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white),
+                  child: Image.asset("assets/icons/account.jpg"),
                 ),
               ],
             ),
           ),
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.all(2.0),
-        child: Container(
+      BuildPadding(
+        Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12), color: Colors.white),
-          child: Text("address :Lego 1 site / A blok / no: 46"),
+            borderRadius: BorderRadius.circular(12),
+            color: Colors.red.shade200,
+          ),
+          alignment: Alignment.center,
+          height: 40,
+          child: Text(
+            "address :Lego 1 site / A blok / no: 46",
+            style: TextStyle(fontSize: 20),
+          ),
         ),
-      ),
+      )
     ],
   );
 }
