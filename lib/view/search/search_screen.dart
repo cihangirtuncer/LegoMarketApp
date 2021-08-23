@@ -23,7 +23,7 @@ class _SearchState extends State<Search> {
             TextFormField(
               textAlign: TextAlign.start,
               decoration: const InputDecoration(
-                hintText: 'what are you looking for',
+                hintText: 'search for product',
               ),
               validator: (String? value) {
                 if (value == null || value.isEmpty) {
