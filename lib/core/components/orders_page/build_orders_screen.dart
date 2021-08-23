@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/orders_page/build_orders.dart';
+import 'package:lego_market_app/core/components/orders_page/build_previous_orders.dart';
 import 'package:lego_market_app/core/constant/row/home_app_bar_row.dart';
 
 class OrdersAppBar extends StatefulWidget {
@@ -50,28 +52,16 @@ class _OrdersAppBarState extends State<OrdersAppBar>
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(10),
-                child: userLogin(context),
+                child: BuildOrders(context),
               ),
             ),
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(10),
-                child: addMenu(context),
+                child: BuildPreviousOrders(context),
               ),
             ),
           ],
         ));
-  }
-
-  userLogin(BuildContext context) {
-    return Center(
-      child: Text("This is orders tab"),
-    );
-  }
-
-  addMenu(BuildContext context) {
-    return Center(
-      child: Text("This is previous orders"),
-    );
   }
 }
