@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/Profile_page/profile_build_data.dart';
+import 'package:lego_market_app/core/constant/divider/profile_divder.dart';
 
 // ignore: non_constant_identifier_names
 BuildProfile() {
@@ -27,6 +28,7 @@ BuildProfile() {
           ],
         ),
       ),
+      BuildProfileDvider(1.0),
       BuildProfileData(
         Colors.white,
         7.0,
@@ -40,6 +42,7 @@ BuildProfile() {
           ),
         ),
       ),
+      BuildProfileDvider(1.0),
       BuildProfileData(
         Colors.white,
         7.0,
@@ -53,6 +56,7 @@ BuildProfile() {
           ),
         ),
       ),
+      BuildProfileDvider(1.0),
       BuildProfileData(
         Colors.white,
         7.0,
@@ -65,7 +69,8 @@ BuildProfile() {
             fontSize: 20,
           ),
         ),
-      )
+      ),
+      BuildProfileDvider(1.0),
 
       /*
       BuildPadding(
