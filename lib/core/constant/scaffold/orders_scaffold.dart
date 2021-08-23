@@ -8,13 +8,6 @@ class OrdersAppBar extends StatefulWidget {
 
 class _OrdersAppBarState extends State<OrdersAppBar>
     with SingleTickerProviderStateMixin {
-  static const List<Tab> myTabs = <Tab>[
-    Tab(
-      text: 'ORDERS',
-    ),
-    Tab(text: 'PREVIOUS ORDERS'),
-  ];
-
   late TabController tabController;
 
   @override
