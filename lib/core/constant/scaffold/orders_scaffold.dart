@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/constant/row/home_app_bar_row.dart';
 
 class OrdersAppBar extends StatefulWidget {
   const OrdersAppBar({Key? key}) : super(key: key);
@@ -30,25 +31,19 @@ class _OrdersAppBarState extends State<OrdersAppBar>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade900,
-          bottom: TabBar(
-            controller: tabController,
-            tabs: [
-              Tab(
-                text: "ORDERS",
-              ),
-              Tab(
-                text: "PREVIOUS ORDERS",
-              )
-            ],
-          ),
-          title: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 140),
-            child: Text(
-              "ORDERS",
+            backgroundColor: Colors.blue.shade900,
+            bottom: TabBar(
+              controller: tabController,
+              tabs: [
+                Tab(
+                  text: "ORDERS",
+                ),
+                Tab(
+                  text: "PREVIOUS ORDERS",
+                )
+              ],
             ),
-          ),
-        ),
+            title: BuildHomeAppBarText()),
         body: TabBarView(
           controller: tabController,
           children: [
