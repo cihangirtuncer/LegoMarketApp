@@ -26,25 +26,31 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.blue.shade900,
+        selectedIconTheme: IconThemeData(color: Colors.blue.shade900),
+        unselectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
-              icon: BuildStandartIcon(Icons.home, Colors.grey.shade600),
-              label: "Home",
-              backgroundColor: Colors.black),
+              icon: BuildBottomIcon(Icons.home),
+              label: "HOME",
+              backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: BuildStandartIcon(Icons.search, Colors.grey.shade600),
-              label: "Search",
-              backgroundColor: Colors.black),
+              icon: BuildBottomIcon(
+                Icons.search,
+              ),
+              label: "SEARCH",
+              backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon:
-                  BuildStandartIcon(Icons.shopping_cart, Colors.grey.shade600),
-              label: "Orders",
-              backgroundColor: Colors.black),
+              icon: BuildBottomIcon(
+                Icons.shopping_cart,
+              ),
+              label: "ORDERS",
+              backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: BuildStandartIcon(
-                  Icons.account_circle_rounded, Colors.grey.shade600),
-              label: "Profile",
-              backgroundColor: Colors.black),
+              icon: BuildBottomIcon(
+                Icons.account_circle_rounded,
+              ),
+              label: "PROFILE",
+              backgroundColor: Colors.white),
         ],
         currentIndex: _selectedIndex,
         onTap: onItemTapped,
