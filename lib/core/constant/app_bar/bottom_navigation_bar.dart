@@ -28,19 +28,19 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.blue.shade900,
         items: [
           BottomNavigationBarItem(
-              icon: BuildBottomBarIcon(Icons.home),
+              icon: BuildStandartIcon(Icons.home),
               label: "Home",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: BuildBottomBarIcon(Icons.search),
+              icon: BuildStandartIcon(Icons.search),
               label: "Search",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: BuildBottomBarIcon(Icons.shopping_cart),
+              icon: BuildStandartIcon(Icons.shopping_cart),
               label: "Orders",
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: BuildBottomBarIcon(Icons.account_circle_rounded),
+              icon: BuildStandartIcon(Icons.account_circle_rounded),
               label: "Profile",
               backgroundColor: Colors.black),
         ],
