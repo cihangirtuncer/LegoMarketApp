@@ -93,7 +93,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "CIGARETTES",
           context,
           CigarettesList(),
-          "assets/images/cigarettes.jpg",
+          "assets/images/cigarettes.png",
         ),
       ],
     );
