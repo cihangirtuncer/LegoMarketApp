@@ -17,14 +17,8 @@ BuildProfileData(
       height: height,
       child: widget,
       decoration: BoxDecoration(
-        //borderRadius: BorderRadius.circular(12),
         color: color,
       ),
     ),
   );
-
-  /* Padding(
-    padding: EdgeInsets.all(8.0),
-    child: widget,
-  );*/
 }
