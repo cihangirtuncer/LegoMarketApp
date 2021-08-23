@@ -44,6 +44,10 @@ class _SearchState extends State<Search> {
                 child: const Text(
                   'Search',
                 ),
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue.shade900),
+                ),
               ),
             ),
           ],
