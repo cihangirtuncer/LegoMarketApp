@@ -20,7 +20,7 @@ BuildProfile() {
             Icon(
               Icons.account_circle,
               size: 100,
-              color: Colors.blue.shade800,
+              color: Colors.blue.shade900,
             ),
             Text(
               "Cihangir Tuncer",
@@ -38,7 +38,7 @@ BuildProfile() {
         80,
         50,
         Alignment.centerLeft,
-        BuildProfileRow("phone: 0539*******", Icons.phone),
+        BuildProfileRow("Email: cihangir******@gmail.com", Icons.mail),
       ),
       BuildProfileDivider(1.0),
       BuildProfileData(
@@ -47,7 +47,7 @@ BuildProfile() {
         80,
         50,
         Alignment.centerLeft,
-        BuildProfileRow("Email: cihangir******@gmail.com", Icons.mail),
+        BuildProfileRow("phone: 0539*******", Icons.phone),
       ),
       BuildProfileDivider(1.0),
       BuildProfileData(
