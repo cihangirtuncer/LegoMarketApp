@@ -46,7 +46,7 @@ class _SearchState extends State<Search> {
                 ),
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue.shade900),
+                      MaterialStateProperty.all<Color>(Colors.blue.shade800),
                 ),
               ),
             ),
