@@ -3,13 +3,13 @@ import 'package:lego_market_app/core/components/orders_page/build_orders.dart';
 import 'package:lego_market_app/core/components/orders_page/build_previous_orders.dart';
 import 'package:lego_market_app/core/constant/row/home_app_bar_row.dart';
 
-class OrdersAppBar extends StatefulWidget {
-  const OrdersAppBar({Key? key}) : super(key: key);
+class BuildOrdersScreen extends StatefulWidget {
+  const BuildOrdersScreen({Key? key}) : super(key: key);
   @override
-  _OrdersAppBarState createState() => _OrdersAppBarState();
+  _BuildOrdersScreenState createState() => _BuildOrdersScreenState();
 }
 
-class _OrdersAppBarState extends State<OrdersAppBar>
+class _BuildOrdersScreenState extends State<BuildOrdersScreen>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
