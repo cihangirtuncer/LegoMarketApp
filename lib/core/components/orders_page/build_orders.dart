@@ -1,26 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/constant/card/orders_card.dart';
 
 // ignore: non_constant_identifier_names
 BuildOrders(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: [
-      Card(
-        child: ListTile(
-          title: Text(
-            "Fetucini Alfredo",
-            style: TextStyle(fontSize: 20),
-          ),
-          subtitle: Text(
-            "chicken,parmesan,cream",
-            style: TextStyle(fontSize: 18),
-          ),
-          trailing: Text(
-            "30",
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-      ),
-    ],
+    children: [BuildOrdersCard("Fetucini Alfredo")],
   );
 }
