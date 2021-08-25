@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
 BuildOrders(BuildContext context) {
-  return ListView(
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-      Text("This is orders tab"),
+      Card(
+        child: ListTile(
+          title: Text("Fetucini Alfredo"),
+          subtitle: Text("chicken,parmesan,cream"),
+          leading: Text("30"),
+        ),
+      ),
     ],
   );
 }

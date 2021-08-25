@@ -51,13 +51,13 @@ class _BuildOrdersScreenState extends State<BuildOrdersScreen>
           children: [
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(5),
                 child: BuildOrders(context),
               ),
             ),
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(5),
                 child: BuildPreviousOrders(context),
               ),
             ),
