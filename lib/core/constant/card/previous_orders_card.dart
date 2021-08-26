@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-BuildOrdersCard(String ordersName) {
+BuildPreviousOrdersCard(String ordersName) {
   return Card(
     child: ListTile(
       title: Text(
@@ -15,8 +15,7 @@ BuildOrdersCard(String ordersName) {
         "30",
         style: TextStyle(fontSize: 20),
       ),
-      le
+      leading: Text("arrived"),
     ),
-    
   );
 }
