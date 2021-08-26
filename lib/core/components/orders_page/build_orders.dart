@@ -7,7 +7,7 @@ BuildOrders(BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
       BuildOrdersCard("Fetucini Alfredo"),
-      BuildOrdersCard("Endulus chicken"),
+      BuildOrdersCard("Endulus Chicken"),
     ],
   );
 }
