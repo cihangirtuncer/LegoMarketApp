@@ -13,7 +13,7 @@ BuildPreviousOrdersCard(String ordersName) {
       ),
       trailing: Text(
         "30 TL",
-        style: TextStyle(fontSize: 20),
+        style: TextStyle(fontSize: 18),
       ),
     ),
   );

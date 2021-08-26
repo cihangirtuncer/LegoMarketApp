@@ -12,8 +12,8 @@ BuildOrdersCard(String ordersName) {
         style: TextStyle(fontSize: 18, color: Colors.green.shade700),
       ),
       trailing: Text(
-        "30",
-        style: TextStyle(fontSize: 20),
+        "30 TL",
+        style: TextStyle(fontSize: 18),
       ),
     ),
   );
