@@ -8,14 +8,13 @@ BuildPreviousOrdersCard(String ordersName) {
         style: TextStyle(fontSize: 20),
       ),
       subtitle: Text(
-        "chicken,parmesan,cream",
-        style: TextStyle(fontSize: 18),
+        "arrived",
+        style: TextStyle(fontSize: 18, color: Colors.red),
       ),
       trailing: Text(
-        "30",
+        "30 TL",
         style: TextStyle(fontSize: 20),
       ),
-      leading: Text("arrived"),
     ),
   );
 }
