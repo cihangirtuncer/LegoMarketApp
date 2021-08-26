@@ -15,8 +15,7 @@ BuildOrdersCard(String ordersName) {
         "30",
         style: TextStyle(fontSize: 20),
       ),
-      le
+      leading: Text("continoue"),
     ),
-    
   );
 }
