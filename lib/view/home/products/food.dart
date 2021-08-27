@@ -44,35 +44,3 @@ class _FoodListState extends State<FoodList> {
         ));
   }
 }
-/*
-Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue.shade900,
-        title: Text(
-          "Foods"
-        ),
-      ),
-      body: ListView(
-        children: [
-          BuildProductCard(
-            "Fettucini Alfredo",
-            "chicken,parmesan,cream",
-            "30 TL",
-            context,
-          ),
-          BuildProductCard(
-            "Cheeseburger",
-            "meat,onion,lettuce,cheese",
-            "35 TL",
-            context,
-          ),
-          BuildProductCard(
-            "Pizza Italiona",
-            "ricotta cheese,basil,olive",
-            "45 TL",
-            context,
-          )
-        ],
-      ),
-    );
-*/
