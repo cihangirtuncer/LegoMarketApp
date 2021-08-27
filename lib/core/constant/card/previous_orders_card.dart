@@ -12,7 +12,7 @@ BuildPreviousOrdersCard(String ordersName) {
         ),
       ),
       subtitle: Text(
-        "arrived",
+        "delivered",
         style: TextStyle(
           fontSize: 18,
           color: Colors.green,
