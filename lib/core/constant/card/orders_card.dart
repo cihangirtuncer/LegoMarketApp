@@ -6,7 +6,10 @@ BuildOrdersCard(String ordersName) {
     child: ListTile(
         title: Text(
           ordersName,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         subtitle: Text(
           "continues",
