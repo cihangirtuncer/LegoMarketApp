@@ -18,14 +18,14 @@ BuildProductCard(
             title: Text(
               name,
               style: TextStyle(
-                fontSize: 19,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
             subtitle: Text(
               explanation,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 18,
               ),
             ),
             trailing: Text(
