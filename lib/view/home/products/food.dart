@@ -33,6 +33,12 @@ class _FoodListState extends State<FoodList> {
               "ricotta cheese,basil,olive",
               "45 TL",
               context,
+            ),
+            BuildProductCard(
+              "Endulus Chicken",
+              "chicken,spicy",
+              "40 TL",
+              context,
             )
           ],
         ));
