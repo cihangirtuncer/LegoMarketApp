@@ -8,6 +8,7 @@ BuildOrders(BuildContext context) {
     children: [
       BuildOrdersCard("Fetucini Alfredo"),
       BuildOrdersCard("Endulus Chicken"),
+      BuildOrdersCard("Lego Burger"),
     ],
   );
 }
