@@ -21,6 +21,7 @@ BuildPreviousOrdersCard(String ordersName) {
       trailing: Icon(
         Icons.room_service_outlined,
         color: Colors.green,
+        size: 35,
       ),
     ),
   );
