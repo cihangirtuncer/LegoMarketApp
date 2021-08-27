@@ -6,15 +6,21 @@ BuildPreviousOrdersCard(String ordersName) {
     child: ListTile(
       title: Text(
         ordersName,
-        style: TextStyle(fontSize: 20),
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       subtitle: Text(
         "arrived",
-        style: TextStyle(fontSize: 18, color: Colors.red),
+        style: TextStyle(
+          fontSize: 18,
+          color: Colors.green,
+        ),
       ),
-      trailing: Text(
-        "30 TL",
-        style: TextStyle(fontSize: 18),
+      trailing: Icon(
+        Icons.room_service_outlined,
+        color: Colors.green,
       ),
     ),
   );
