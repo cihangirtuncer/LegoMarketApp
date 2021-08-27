@@ -17,15 +17,22 @@ BuildProductCard(
           child: ListTile(
             title: Text(
               name,
-              style: TextStyle(fontSize: 19),
+              style: TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             subtitle: Text(
               explanation,
-              style: TextStyle(fontSize: 15),
+              style: TextStyle(
+                fontSize: 15,
+              ),
             ),
             trailing: Text(
               price,
-              style: TextStyle(fontSize: 19),
+              style: TextStyle(
+                fontSize: 19,
+              ),
             ),
           ),
         ),
