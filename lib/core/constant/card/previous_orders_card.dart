@@ -15,12 +15,12 @@ BuildPreviousOrdersCard(String ordersName) {
         "delivered",
         style: TextStyle(
           fontSize: 18,
-          color: Colors.green,
+          color: Colors.green.shade500,
         ),
       ),
       trailing: Icon(
         Icons.room_service_outlined,
-        color: Colors.green,
+        color: Colors.green.shade500,
         size: 35,
       ),
     ),
