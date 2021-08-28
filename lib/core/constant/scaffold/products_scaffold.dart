@@ -7,7 +7,6 @@ BuildProductsScaffold(String productName, ListView listView) {
       backgroundColor: Colors.blue.shade900,
       title: Text(
         productName,
-        style: TextStyle(),
       ),
     ),
     body: listView,
