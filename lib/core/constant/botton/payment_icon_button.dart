@@ -27,7 +27,7 @@ class _ButtonPaymentState extends State<ButtonPayment> {
           },
         ),
         Text(
-          'total: $_volume',
+          "total: $_volume",
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
