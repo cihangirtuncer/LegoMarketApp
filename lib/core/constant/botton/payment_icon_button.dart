@@ -17,11 +17,13 @@ class _ButtonPaymentState extends State<ButtonPayment> {
         IconButton(
           icon: const Icon(Icons.remove_outlined),
           onPressed: () {
-            setState(
-              () {
-                _volume -= 1;
-              },
-            );
+            if (_volume > 1) {
+              setState(
+                () {
+                  _volume -= 1;
+                },
+              );
+            }
           },
         ),
         Text(
