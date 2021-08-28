@@ -17,14 +17,19 @@ class _ButtonPaymentState extends State<ButtonPayment> {
         IconButton(
           icon: const Icon(Icons.remove_outlined),
           onPressed: () {
-            setState(() {
-              _volume -= 1;
-            });
+            setState(
+              () {
+                _volume -= 1;
+              },
+            );
           },
         ),
         Text(
           'total: $_volume',
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         IconButton(
           icon: const Icon(Icons.add_outlined),
