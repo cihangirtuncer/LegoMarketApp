@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/app_bar/main_app_bar.dart';
+import 'package:lego_market_app/utils/dbhelper.dart';
 
 class BuildSearchScreen extends StatefulWidget {
   BuildSearchScreen({Key? key}) : super(key: key);
@@ -8,14 +9,29 @@ class BuildSearchScreen extends StatefulWidget {
   _BuildSearchScreenState createState() => _BuildSearchScreenState();
 }
 
-final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
 class _BuildSearchScreenState extends State<BuildSearchScreen> {
+  final dbHelper = DatabaseHelper.order;
+  final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
+  TextEditingController queryController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar("Search"),
-      body: Form(
+        appBar: BuildAppBar("Search"),
+        body: Column(
+          children: [
+            Container(
+              child: TextField(
+                controller: queryController,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: "product name"),
+              ),
+            )
+          ],
+        ));
+  }
+}
+/*
+Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,6 +69,4 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
           ],
         ),
       ),
-    );
-  }
-}
+      */
