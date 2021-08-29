@@ -22,7 +22,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
         body: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(8),
               child: TextField(
                 controller: queryController,
                 decoration: InputDecoration(
@@ -45,7 +45,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     height: 50,
-                    margin: EdgeInsets.all(2),
+                    margin: EdgeInsets.all(8),
                     child: Center(
                       child: Text(
                           '[${ordersByName[index].id}] ${ordersByName[index].name} ${ordersByName[index].explanation} ${ordersByName[index].price}'),
@@ -53,7 +53,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
                   );
                 },
                 itemCount: ordersByName.length,
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(2),
               ),
             )
           ],
