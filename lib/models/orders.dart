@@ -1,3 +1,4 @@
+import 'package:lego_market_app/view/orders/orders_screen.dart';
 import 'package:sqflite/sqflite.dart';
 
 class Orders {
@@ -53,5 +54,9 @@ class Orders {
     // ignore: unnecessary_statements
     map["explanation"] = _explanation;
     return map;
+  }
+
+  Orders.fromMap(Map<String, dynamic> map) {
+    this._id = map['id'];
   }
 }
