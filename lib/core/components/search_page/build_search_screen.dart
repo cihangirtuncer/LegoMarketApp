@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/app_bar/main_app_bar.dart';
+import 'package:lego_market_app/models/orders.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
 class BuildSearchScreen extends StatefulWidget {
@@ -13,6 +14,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
   final dbHelper = DatabaseHelper.order;
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController queryController = TextEditingController();
+  List<Orders> ordersByName = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,11 +25,44 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
               child: TextField(
                 controller: queryController,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "product name"),
+                  border: OutlineInputBorder(),
+                  labelText: "product name",
+                ),
+                onChanged: (text) {
+                  if (text.length >= 2) {
+                    setState(() {
+                      query(text);
+                    });
+                  } else {
+                    ordersByName.clear();
+                  }
+                },
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: 50,
+                    margin: EdgeInsets.all(2),
+                    child: Center(
+                      child: Text(
+                          '[${ordersByName[index].id}] ${ordersByName[index].name} ${ordersByName[index].explanation} ${ordersByName[index].price}'),
+                    ),
+                  );
+                },
+                itemCount: ordersByName.length,
+                padding: const EdgeInsets.all(8),
               ),
             )
           ],
         ));
+  }
+
+  void query(String name) async {
+    final allRows = await dbHelper.querRows(name);
+    ordersByName.clear();
+    allRows.forEach((row) => ordersByName.add(Orders.fromMap(row)));
   }
 }
 /*
