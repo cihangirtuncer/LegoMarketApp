@@ -22,6 +22,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
         body: Column(
           children: [
             Container(
+              padding: EdgeInsets.all(12),
               child: TextField(
                 controller: queryController,
                 decoration: InputDecoration(
