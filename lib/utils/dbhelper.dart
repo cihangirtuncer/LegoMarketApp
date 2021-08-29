@@ -60,41 +60,30 @@ class DatabaseHelper {
   Future<int> update(Orders orders) async {
     Database db = await order.database;
     int id = orders.toMap()['id'];
-    return await db
-        .update(table, orders.toMap(), where: '$columnId = ?', whereArgs: [id],);
+    return await db.update(
+      table,
+      orders.toMap(),
+      where: '$columnId = ?',
+      whereArgs: [id],
+    );
   }
 
   Future<int> delete(int id) async {
     Database db = await order.database;
-    return await db.delete(table, where: '$columnId = ?', whereArgs: [id],);
-  }
-  /*Future<List<Map<String, dynamic>>> queryAllRows() async{
-    Database db = await
-  }*/
-}
-/*
-class OrdersDatabase {
-  static final OrdersDatabase orders = OrdersDatabase._init();
-  // ignore: unused_field
-  static Database? _database;
-  OrdersDatabase._init();
-
-  Future<Database> get database async {
-    if (_database != null) return _database!;
-    _database = await _initDB("orders.db");
-    return _database!;
+    return await db.delete(
+      table,
+      where: '$columnId = ?',
+      whereArgs: [id],
+    );
   }
 
-  Future<Database> _initDB(String filePath) async {
-    final dbPath = await getDatabasesPath();
-    final path = join(dbPath, filePath);
-    return await openDatabase(path, version: 1, onCreate: _createDB);
+  Future<List<Map<String, dynamic>>> queryAllRows() async {
+    Database db = await order.database;
+    return await db.query(table);
   }
 
-  FutureOr<void> _createDB(Database db, int version) {}
-  Future close() async {
-    final db = await orders.database;
-    db.close();
+  Future<List<Map<String, dynamic>>> querRows(name) async {
+    Database db = await order.database;
+    return await db.query(table, where: "$columnName LIKE '%$name%'");
   }
 }
-*/
