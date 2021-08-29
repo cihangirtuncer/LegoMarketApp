@@ -59,8 +59,8 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
         ));
   }
 
-  void query(String name) async {
-    final allRows = await dbHelper.querRows(name);
+  void query(String text) async {
+    final allRows = await dbHelper.querRows(text);
     ordersByName.clear();
     allRows.forEach((row) => ordersByName.add(Orders.fromMap(row)));
   }
