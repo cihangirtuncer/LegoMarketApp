@@ -3,8 +3,6 @@ import 'package:lego_market_app/core/constant/card/products_card.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 
 class FoodList extends StatefulWidget {
-  FoodList({Key? key}) : super(key: key);
-
   @override
   _FoodListState createState() => _FoodListState();
 }

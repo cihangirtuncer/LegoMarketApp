@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/search_page/build_search_screen.dart';
 
 class Search extends StatefulWidget {
-  Search({Key? key}) : super(key: key);
-
   @override
   _SearchState createState() => _SearchState();
 }

@@ -3,8 +3,6 @@ import 'package:lego_market_app/core/components/home_page/shopping_options.dart'
 import 'package:lego_market_app/core/constant/app_bar/home_app_bar.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
-
   @override
   _HomePageState createState() => _HomePageState();
 }

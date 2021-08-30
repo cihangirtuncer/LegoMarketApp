@@ -13,8 +13,6 @@ import 'package:lego_market_app/view/home/products/technology.dart';
 import 'package:lego_market_app/view/home/products/water.dart';
 
 class ShoppingOptions extends StatefulWidget {
-  ShoppingOptions({Key? key}) : super(key: key);
-
   @override
   _ShoppingOptionsState createState() => _ShoppingOptionsState();
 }

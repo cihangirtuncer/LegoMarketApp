@@ -1,88 +1,62 @@
 import 'dart:async';
-import 'package:path/path.dart';
+import 'dart:io';
 import 'package:sqflite/sqflite.dart';
-import 'package:lego_market_app/models/orders.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 
 class DatabaseHelper {
-  // ignore: unused_field
-  static final _databasename = "ordersdb.db";
-  // ignore: unused_field
-  static final _databaseversion = 1;
-  static final table = 'orders_table';
-  static final columnId = 'id';
-  static final columnName = 'name';
-  static final columnExplanation = 'explanaton';
-  static final columnPrice = 'price';
+  static DatabaseHelper _databaseHelper;
+  static Database _database;
 
-  DatabaseHelper._privateConstructor();
+  String _ordersTablo = "orders";
+  String _columnID = "id";
+  String _columnName = "name";
+  String _columnExplanation = "explanation";
+  String _columnPrice = "price";
 
-  static final DatabaseHelper order = DatabaseHelper._privateConstructor();
-  // ignore: unused_field
-  static Database? _database;
-
-  Future<Database> get database async {
-    if (_database != null) return _database!;
-    _database = await _initDB();
-    return _database!;
+  factory DatabaseHelper() {
+    if (_databaseHelper == null) {
+      _databaseHelper = DatabaseHelper._internal();
+      print("DBHelper nulldi oluşturuldu");
+      return _databaseHelper;
+    } else {
+      print("DBHelper null değildi var olan kullanılacak");
+      return _databaseHelper;
+    }
   }
 
-  Future<Database> _initDB() async {
-    final dbPath = await getDatabasesPath();
-    String path = join(dbPath, _databasename);
-    return await openDatabase(
-      path,
-      version: 1,
-      onCreate: _createDB,
-    );
+  DatabaseHelper._internal();
+
+  Future<Database> _getDatabase() async {
+    if (_database == null) {
+      print("DB nulldi oluşturulacak");
+      _database = await _initializeDatabase();
+
+      return _database;
+    } else {
+      print("DB null değildi var olan kullanılacak");
+      return _database;
+    }
   }
 
-  Future _createDB(Database db, int version) async {
-    await db.execute('''
-    CREATE TABLE $table (
-      $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
-      $columnName TEXT NOT NULL,
-      $columnExplanation TEXT NOT NULL,
-      $columnPrice INTEGER NOT NULL, 
-    )
-   ''');
+  _initializeDatabase() async {
+    Directory klasor =
+        await getApplicationDocumentsDirectory(); //"c://users/emre/ogrenci.db"
+    String dbPath = join(klasor.path, "ogrenci.db");
+    print("DB Pathi:" + dbPath);
+    var ogrenciDB = openDatabase(dbPath, version: 1, onCreate: _createDB);
+    return ogrenciDB;
   }
 
-  Future<int> insert(Orders orders) async {
-    Database db = await order.database;
-    return await db.insert(table, {
-      'name': orders.name,
-      'explanation': orders.explanation,
-      'price': orders.price,
-    });
+  Future<void> _createDB(Database db, int version) async {
+    print("create db metotu calıstı tablo olusturulacak");
+    await db.execute(
+        "CREATE TABLE $_ordersTablo ($_columnID INTEGER PRIMARY KEY AUTOINCREMENT, $_columnName TEXT, $_columnExplanation TEXT, $_columnPrice INTEGER )");
   }
 
-  Future<int> update(Orders orders) async {
-    Database db = await order.database;
-    int id = orders.toMap()['id'];
-    return await db.update(
-      table,
-      orders.toMap(),
-      where: '$columnId = ?',
-      whereArgs: [id],
-    );
-  }
-
-  Future<int> delete(int id) async {
-    Database db = await order.database;
-    return await db.delete(
-      table,
-      where: '$columnId = ?',
-      whereArgs: [id],
-    );
-  }
-
-  Future<List<Map<String, dynamic>>> queryAllRows() async {
-    Database db = await order.database;
-    return await db.query(table);
-  }
-
-  Future<List<Map<String, dynamic>>> querRows(name) async {
-    Database db = await order.database;
-    return await db.query(table, where: "$columnName LIKE '%$name%'");
+  Future<List<Map<String, dynamic>>> tumOgrenciler() async {
+    var db = await _getDatabase();
+    var sonuc = await db.query(_ordersTablo, orderBy: '$_columnID DESC');
+    return sonuc;
   }
 }

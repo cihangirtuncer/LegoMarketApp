@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ButtonPayment extends StatefulWidget {
-  const ButtonPayment({Key? key}) : super(key: key);
-
   @override
   _ButtonPaymentState createState() => _ButtonPaymentState();
 }

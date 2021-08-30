@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 
 class CleaningProductList extends StatefulWidget {
-  CleaningProductList({Key? key}) : super(key: key);
-
   @override
   _CleaningProductListState createState() => _CleaningProductListState();
 }

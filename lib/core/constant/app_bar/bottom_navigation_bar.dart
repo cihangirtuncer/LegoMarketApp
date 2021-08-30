@@ -6,8 +6,6 @@ import 'package:lego_market_app/view/profile/profile_screen.dart';
 import 'package:lego_market_app/view/search/search_screen.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }

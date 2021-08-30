@@ -1,26 +1,52 @@
-import 'package:lego_market_app/utils/dbhelper.dart';
-
 class Orders {
-  late int id;
-  late String name;
-  late int price;
-  late String explanation;
+  int _id;
+  String _name;
+  int _price;
+  String _explanation;
 
-  Orders(this.id, this.name, this.explanation, this.price);
+  int get id => _id;
+
+  set id(int value) {
+    _id = value;
+  }
+
+  String get name => _name;
+
+  set name(String value) {
+    _name = value;
+  }
+
+  int get price => _price;
+
+  set price(int value) {
+    _price = value;
+  }
+
+  String get explanation => _explanation;
+
+  set explanation(String value) {
+    _explanation = value;
+  }
+
+  Orders(this._id, this._name, this._explanation, this._price);
 
   Orders.fromMap(Map<String, dynamic> map) {
-    id = map['id'];
-    name = map['name'];
-    explanation = map['explanation'];
-    price = map['price'];
+    this._id = map['id'];
+    this._name = map['name'];
+    this._explanation = map['explanation'];
+    this._price = map['price'];
   }
 
   Map<String, dynamic> toMap() {
-    return {
-      DatabaseHelper.columnId: id,
-      DatabaseHelper.columnName: name,
-      DatabaseHelper.columnPrice: price,
-      DatabaseHelper.columnExplanation: explanation,
-    };
+    var map = Map<String, dynamic>();
+    map['id'] = _id;
+    map['name'] = _name;
+    map['explanation'] = _explanation;
+    map['price'] = _price;
+    return map;
+  }
+
+  String toString() {
+    return 'Orders{_id: $id, _name: $name, _explanation: $explanation, _price: $price}';
   }
 }
