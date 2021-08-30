@@ -4,14 +4,12 @@ import 'package:lego_market_app/models/orders.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
 class BuildSearchScreen extends StatefulWidget {
-  BuildSearchScreen({Key? key}) : super(key: key);
-
   @override
   _BuildSearchScreenState createState() => _BuildSearchScreenState();
 }
 
 class _BuildSearchScreenState extends State<BuildSearchScreen> {
-  final dbHelper = DatabaseHelper.order;
+  final dbHelper = DatabaseHelper;
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController queryController = TextEditingController();
   List<Orders> ordersByName = [];
@@ -31,9 +29,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
                 ),
                 onChanged: (text) {
                   if (text.length >= 2) {
-                    setState(() {
-                      query(text);
-                    });
+                    setState(() {});
                   } else {
                     ordersByName.clear();
                   }
@@ -58,11 +54,5 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
             )
           ],
         ));
-  }
-
-  void query(String text) async {
-    final allRows = await dbHelper.querRows(text);
-    ordersByName.clear();
-    allRows.forEach((row) => ordersByName.add(Orders.fromMap(row)));
   }
 }
