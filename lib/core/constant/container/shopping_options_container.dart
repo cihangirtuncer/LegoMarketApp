@@ -10,7 +10,9 @@ BuildShoppingContainer(
   return GestureDetector(
     onTap: () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => destination));
+        context,
+        MaterialPageRoute(builder: (context) => destination),
+      );
     },
     child: Container(
       decoration: BoxDecoration(
