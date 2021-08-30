@@ -43,7 +43,6 @@ class DatabaseHelper {
       $columnName TEXT NOT NULL,
       $columnExplanation TEXT NOT NULL,
       $columnPrice INTEGER NOT NULL, 
-       
     )
    ''');
   }
