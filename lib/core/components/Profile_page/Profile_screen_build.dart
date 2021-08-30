@@ -61,7 +61,10 @@ BuildProfile() {
         80,
         50,
         Alignment.centerLeft,
-        BuildProfileRow("address: Lego 1 site / A blok / no: 49", Icons.home),
+        BuildProfileRow(
+          "address: Lego 1 site / A blok / no: 49",
+          Icons.home,
+        ),
       ),
       BuildProfileDivider(1.0),
     ],
