@@ -54,7 +54,7 @@ class DatabaseHelper {
         "CREATE TABLE $_ordersTablo ($_columnID INTEGER PRIMARY KEY AUTOINCREMENT, $_columnName TEXT, $_columnExplanation TEXT, $_columnPrice INTEGER )");
   }
 
-  Future<List<Map<String, dynamic>>> tumOgrenciler() async {
+  Future<List<Map<String, dynamic>>> allProduct() async {
     var db = await _getDatabase();
     var sonuc = await db.query(_ordersTablo, orderBy: '$_columnID DESC');
     return sonuc;

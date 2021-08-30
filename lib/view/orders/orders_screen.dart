@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/orders_page/build_orders_screen.dart';
 
-class Orders extends StatefulWidget {
+class OrdersScreen extends StatefulWidget {
   @override
-  _OrdersState createState() => _OrdersState();
+  _OrdersScreenState createState() => _OrdersScreenState();
 }
 
-class _OrdersState extends State<Orders> {
+class _OrdersScreenState extends State<OrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return BuildOrdersScreen();

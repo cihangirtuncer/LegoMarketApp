@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final tabs = [
     HomePage(),
     Search(),
-    Orders(),
+    OrdersScreen(),
     Profile(),
   ];
 

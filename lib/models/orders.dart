@@ -38,20 +38,22 @@ class Orders {
 
   Orders(this._id, this._name, this._explanation, this._price);
 
-  Orders.fromMap(Map<String, dynamic> map) {
-    this._id = map['id'];
-    this._name = map['name'];
-    this._explanation = map['explanation'];
-    this._price = map['price'];
-  }
-
   Map<String, dynamic> toMap() {
+    // DBye yazmak için map a dönüştür
     var map = Map<String, dynamic>();
     map['id'] = _id;
     map['name'] = _name;
     map['explanation'] = _explanation;
     map['price'] = _price;
     return map;
+  }
+
+  Orders.fromMap(Map<String, dynamic> map) {
+    // DB den okuduğun mapi objeye dönüştür
+    this._id = map['id'];
+    this._name = map['name'];
+    this._explanation = map['explanation'];
+    this._price = map['price'];
   }
 
   String toString() {
