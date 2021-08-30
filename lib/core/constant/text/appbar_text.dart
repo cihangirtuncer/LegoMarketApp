@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 BuildAppBarText(String letter, Color colors) {
   return Text(
     letter,
-    style: TextStyle(color: colors, fontSize: 26),
+    style: TextStyle(
+      color: colors,
+      fontSize: 26,
+    ),
   );
 }
