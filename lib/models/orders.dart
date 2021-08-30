@@ -4,26 +4,34 @@ class Orders {
   int _price;
   String _explanation;
 
+  // ignore: unnecessary_getters_setters
   int get id => _id;
 
+  // ignore: unnecessary_getters_setters
   set id(int value) {
     _id = value;
   }
 
+  // ignore: unnecessary_getters_setters
   String get name => _name;
 
+  // ignore: unnecessary_getters_setters
   set name(String value) {
     _name = value;
   }
 
+  // ignore: unnecessary_getters_setters
   int get price => _price;
 
+  // ignore: unnecessary_getters_setters
   set price(int value) {
     _price = value;
   }
 
+  // ignore: unnecessary_getters_setters
   String get explanation => _explanation;
 
+  // ignore: unnecessary_getters_setters
   set explanation(String value) {
     _explanation = value;
   }
