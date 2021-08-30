@@ -42,7 +42,7 @@ class DatabaseHelper {
   _initializeDatabase() async {
     Directory klasor =
         await getApplicationDocumentsDirectory(); //"c://users/emre/ogrenci.db"
-    String dbPath = join(klasor.path, "ogrenci.db");
+    String dbPath = join(klasor.path, "orders.db");
     print("DB Pathi:" + dbPath);
     var ogrenciDB = openDatabase(dbPath, version: 1, onCreate: _createDB);
     return ogrenciDB;
