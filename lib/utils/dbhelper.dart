@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:lego_market_app/models/foods.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 
 class DatabaseHelper {
   static DatabaseHelper _databaseHelper;
