@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/card/products_card.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
-import 'package:lego_market_app/models/orders.dart';
+import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
 class FoodList extends StatefulWidget {
@@ -12,20 +12,18 @@ class FoodList extends StatefulWidget {
 class _FoodListState extends State<FoodList> {
   // ignore: unused_field
   DatabaseHelper _databaseHelper;
-  List<Orders> allFoodList;
+  List<Foods> allFoodList;
   @override
   @override
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
-    allFoodList = List<Orders>();
+    allFoodList = List<Foods>();
     _databaseHelper = DatabaseHelper();
-    _databaseHelper.allProduct().then((allFoodMapList) {
-      for (Map okunanOrdersMapi in allFoodMapList) {
-        // bu for döngüsü bittiğinde veri yabanında bulunan bütün orderslar olucak allFoodList listemde
-        allFoodList.add(Orders.fromMap(okunanOrdersMapi));
-      }
-    }).catchError((error) => print("error" + error));
+    _databaseHelper
+        .fetchFoodsList()
+        .then((allFoodMapList) {})
+        .catchError((error) => print("error" + error));
   }
 
   Widget build(BuildContext context) {

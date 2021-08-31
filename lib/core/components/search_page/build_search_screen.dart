@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/app_bar/main_app_bar.dart';
-import 'package:lego_market_app/models/orders.dart';
+import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
 class BuildSearchScreen extends StatefulWidget {
@@ -12,7 +12,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
   final dbHelper = DatabaseHelper;
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController queryController = TextEditingController();
-  List<Orders> ordersByName = [];
+  List<Foods> ordersByName = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
