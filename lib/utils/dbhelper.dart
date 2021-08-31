@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -7,12 +9,6 @@ import 'package:path_provider/path_provider.dart';
 class DatabaseHelper {
   static DatabaseHelper _databaseHelper;
   static Database _database;
-
-  String _ordersTablo = "orders";
-  String _columnID = "id";
-  String _columnName = "name";
-  String _columnExplanation = "explanation";
-  String _columnPrice = "price";
 
   factory DatabaseHelper() {
     if (_databaseHelper == null) {
@@ -31,7 +27,6 @@ class DatabaseHelper {
     if (_database == null) {
       print("DB nulldi oluşturulacak");
       _database = await _initializeDatabase();
-
       return _database;
     } else {
       print("DB null değildi var olan kullanılacak");
@@ -39,24 +34,33 @@ class DatabaseHelper {
     }
   }
 
-  _initializeDatabase() async {
-    Directory klasor =
-        await getApplicationDocumentsDirectory(); //"c://users/emre/ogrenci.db"
-    String dbPath = join(klasor.path, "orders.db");
-    print("DB Pathi:" + dbPath);
-    var ogrenciDB = openDatabase(dbPath, version: 1, onCreate: _createDB);
-    return ogrenciDB;
-  }
+  Future<Database> _initializeDatabase() async {
+    var databasesPath = await getDatabasesPath();
+    var path = join(databasesPath, "appLegoMarket.db");
 
-  Future<void> _createDB(Database db, int version) async {
-    print("create db metotu calıstı tablo olusturulacak");
-    await db.execute(
-        "CREATE TABLE $_ordersTablo ($_columnID INTEGER PRIMARY KEY AUTOINCREMENT, $_columnName TEXT, $_columnExplanation TEXT, $_columnPrice INTEGER )");
-  }
+// Check if the database exists
+    var exists = await databaseExists(path);
 
-  Future<List<Map<String, dynamic>>> allProduct() async {
-    var db = await _getDatabase();
-    var sonuc = await db.query(_ordersTablo, orderBy: '$_columnID DESC');
-    return sonuc;
+    if (!exists) {
+      // Should happen only the first time you launch your application
+      print("Creating new copy from asset");
+
+      // Make sure the parent directory exists
+      try {
+        await Directory(dirname(path)).create(recursive: true);
+      } catch (_) {}
+
+      // Copy from asset
+      ByteData data = await rootBundle.load(join("assets", "lego_market.db"));
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+
+      // Write and flush the bytes written
+      await File(path).writeAsBytes(bytes, flush: true);
+    } else {
+      print("Opening existing database");
+    }
+// open the database
+    return await openDatabase(path, readOnly: false);
   }
 }
