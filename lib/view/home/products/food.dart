@@ -12,6 +12,7 @@ class FoodList extends StatefulWidget {
 class _FoodListState extends State<FoodList> {
   DatabaseHelper databaseHelper;
   List<Foods> allFoodList;
+  int id = 1;
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
@@ -30,7 +31,17 @@ class _FoodListState extends State<FoodList> {
     return BuildProductsScaffold(
       "FOODS",
       ListView(
-        children: [DropdownButton(items: foodItemCreat())],
+        children: [
+          DropdownButton(
+            items: foodItemCreat(),
+            onChanged: (secilenFood) {
+              setState(() {
+                id = secilenFood;
+              });
+            },
+            value: id,
+          )
+        ],
       ),
     );
   }
