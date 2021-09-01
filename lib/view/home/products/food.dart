@@ -10,39 +10,45 @@ class FoodList extends StatefulWidget {
 }
 
 class _FoodListState extends State<FoodList> {
-  // ignore: unused_field
-  DatabaseHelper _databaseHelper;
+  DatabaseHelper databaseHelper;
   List<Foods> allFoodList;
-  @override
-  @override
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
     allFoodList = List<Foods>();
-    _databaseHelper = DatabaseHelper();
-    _databaseHelper
-        .fetchFoodsList()
-        .then((allFoodMapList) {})
-        .catchError((error) => print("error" + error));
+    databaseHelper = DatabaseHelper();
+    databaseHelper.foodsFetch().then((allFoodMapList) {
+      for (Map readMap in allFoodMapList) {
+        allFoodList.add(Foods.fromMap(readMap));
+      }
+      setState(() {});
+    });
   }
 
+  @override
   Widget build(BuildContext context) {
     return BuildProductsScaffold(
-        "FOODS",
-        ListView.builder(
-            itemCount: allFoodList.length,
-            itemBuilder: (context, index) {
-              return BuildProductCard(
-                allFoodList[index].name,
-                allFoodList[index].explanation,
-                allFoodList[index].price.toString(),
-                context,
-              );
-            }));
+      "FOODS",
+      ListView(
+        children: [DropdownButton(items: foodItemCreat())],
+      ),
+    );
+  }
+
+// ignore: missing_return
+  List<DropdownMenuItem<int>> foodItemCreat() {
+    return allFoodList
+        .map((foods) =>
+            DropdownMenuItem<int>(value: foods.id, child: Text(foods.name)))
+        .toList();
   }
 }
 
 /*
+
+
+
+
 BuildProductCard(
               "Fettucini Alfredo",
               "chicken,parmesan,cream",

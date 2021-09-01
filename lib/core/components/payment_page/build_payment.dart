@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/botton/payment_icon_button.dart';
 
 // ignore: non_constant_identifier_names
-BuildPayment(String price, String name, String explanation) {
+BuildPayment(int price, String name, String explanation) {
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
@@ -45,7 +45,7 @@ BuildPayment(String price, String name, String explanation) {
                     ],
                   ),
                   Text(
-                    price,
+                    price.toString(),
                     style: TextStyle(
                       fontSize: 18,
                     ),

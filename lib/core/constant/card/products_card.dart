@@ -3,7 +3,7 @@ import 'package:lego_market_app/core/components/payment_page/build_payment.dart'
 
 // ignore: non_constant_identifier_names
 BuildProductCard(
-    String name, String explanation, String price, BuildContext context) {
+    String name, String explanation, int price, BuildContext context) {
   return GestureDetector(
     onTap: () {
       Navigator.push(
@@ -29,7 +29,7 @@ BuildProductCard(
               ),
             ),
             trailing: Text(
-              price,
+              price.toString(),
               style: TextStyle(
                 fontSize: 19,
               ),
