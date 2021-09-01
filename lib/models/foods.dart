@@ -10,7 +10,11 @@ class Foods {
     this.price,
   ); //verileri yazarken
   Foods.withID(
-      this.id, this.name, this.explanation, this.price); // verileri okurken
+    this.id,
+    this.name,
+    this.explanation,
+    this.price,
+  ); // verileri okurken
 
   Map<String, dynamic> toMap() {
     // DBye yazmak için map a dönüştür
