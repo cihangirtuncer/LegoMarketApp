@@ -66,7 +66,7 @@ class DatabaseHelper {
 
   Future<List<Map<String, dynamic>>> foodsFetch() async {
     var db = await _getDatabase();
-    var sonuc = await db.rawQuery('select * from "Foods" order by name;');
+    var sonuc = await db.rawQuery('select * from Foods order by name;');
     return sonuc;
   }
 
