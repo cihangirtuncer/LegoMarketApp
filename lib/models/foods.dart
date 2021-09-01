@@ -4,7 +4,11 @@ class Foods {
   int price;
   String explanation;
 
-  Foods(this.name, this.explanation, this.price); //verileri yazarken
+  Foods(
+    this.name,
+    this.explanation,
+    this.price,
+  ); //verileri yazarken
   Foods.withID(
       this.id, this.name, this.explanation, this.price); // verileri okurken
 
