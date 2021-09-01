@@ -45,10 +45,15 @@ class _FoodListState extends State<FoodList> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => BuildPayment(
-                              foods.price, foods.name, foods.explanation)));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BuildPayment(
+                        foods.price,
+                        foods.name,
+                        foods.explanation,
+                      ),
+                    ),
+                  );
                 },
                 child: Column(
                   children: [
