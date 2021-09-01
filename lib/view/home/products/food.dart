@@ -73,7 +73,7 @@ class _FoodListState extends State<FoodList> {
                           ),
                         ),
                         trailing: Text(
-                          foods.price.toString(),
+                          foods.price.toString() + " TL",
                           style: TextStyle(
                             fontSize: 19,
                           ),
