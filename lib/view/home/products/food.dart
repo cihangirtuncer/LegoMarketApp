@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/card/products_card.dart';
+import 'package:lego_market_app/core/components/payment_page/build_payment.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
@@ -31,31 +31,82 @@ class _FoodListState extends State<FoodList> {
     return BuildProductsScaffold(
       "FOODS",
       ListView(
-        children: [
-          DropdownButton(
-            items: foodItemCreat(),
-            onChanged: (secilenFood) {
-              setState(() {
-                id = secilenFood;
-              });
-            },
-            value: id,
-          )
-        ],
+        children: foodItemCreat(),
       ),
     );
   }
 
 // ignore: missing_return
-  List<DropdownMenuItem<int>> foodItemCreat() {
+  List<Column> foodItemCreat() {
     return allFoodList
-        .map((foods) =>
-            DropdownMenuItem<int>(value: foods.id, child: Text(foods.name)))
+        .map(
+          (foods) => Column(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BuildPayment(
+                              foods.price, foods.name, foods.explanation)));
+                },
+                child: Column(
+                  children: [
+                    Card(
+                      child: ListTile(
+                        title: Text(
+                          foods.name,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text(
+                          foods.explanation,
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                        trailing: Text(
+                          foods.price.toString(),
+                          style: TextStyle(
+                            fontSize: 19,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        )
         .toList();
   }
 }
 
 /*
+ List<ListTile> foodItemCreat() {
+    return allFoodList
+        .map((foods) => ListTile(
+              subtitle: Text(foods.explanation),
+              title: Text(foods.name),
+            ))
+        .toList();
+  }
+
+
+
+
+
+
+
+List<DropdownMenuItem<int>> foodItemCreat() {
+    return allFoodList
+        .map((foods) =>
+            DropdownMenuItem<int>(value: foods.id, child: Text(foods.name)))
+        .toList();
+  }
 
 
 
