@@ -7,9 +7,11 @@ BuildProductCard(
   return GestureDetector(
     onTap: () {
       Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => BuildPayment(price, name, explanation)));
+        context,
+        MaterialPageRoute(
+          builder: (context) => BuildPayment(price, name, explanation),
+        ),
+      );
     },
     child: Column(
       children: [
