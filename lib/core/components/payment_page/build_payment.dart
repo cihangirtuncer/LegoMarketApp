@@ -17,7 +17,9 @@ BuildPayment(int price, String name, String explanation) {
           padding: const EdgeInsets.all(2.0),
           child: Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12), color: Colors.white),
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.white,
+            ),
             width: 120,
             height: 80,
             child: Padding(
