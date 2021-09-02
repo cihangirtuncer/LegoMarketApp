@@ -52,16 +52,24 @@ class DatabaseHelper {
 
       // Copy from asset
       ByteData data = await rootBundle.load(join("assets", "lego_market.db"));
-      List<int> bytes =
-          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+      List<int> bytes = data.buffer.asUint8List(
+        data.offsetInBytes,
+        data.lengthInBytes,
+      );
 
       // Write and flush the bytes written
-      await File(path).writeAsBytes(bytes, flush: true);
+      await File(path).writeAsBytes(
+        bytes,
+        flush: true,
+      );
     } else {
       print("Opening existing database");
     }
 // open the database
-    return await openDatabase(path, readOnly: false);
+    return await openDatabase(
+      path,
+      readOnly: false,
+    );
   }
 
   Future<List<Map<String, dynamic>>> foodsFetch() async {
