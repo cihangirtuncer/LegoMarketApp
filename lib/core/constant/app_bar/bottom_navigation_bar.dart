@@ -28,27 +28,31 @@ class _MyHomePageState extends State<MyHomePage> {
         unselectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
-              icon: BuildBottomIcon(Icons.home),
-              label: "HOME",
-              backgroundColor: Colors.white),
+            icon: BuildBottomIcon(Icons.home),
+            label: "HOME",
+            backgroundColor: Colors.white,
+          ),
           BottomNavigationBarItem(
-              icon: BuildBottomIcon(
-                Icons.search,
-              ),
-              label: "SEARCH",
-              backgroundColor: Colors.white),
+            icon: BuildBottomIcon(
+              Icons.search,
+            ),
+            label: "SEARCH",
+            backgroundColor: Colors.white,
+          ),
           BottomNavigationBarItem(
-              icon: BuildBottomIcon(
-                Icons.shopping_cart,
-              ),
-              label: "ORDERS",
-              backgroundColor: Colors.white),
+            icon: BuildBottomIcon(
+              Icons.shopping_cart,
+            ),
+            label: "ORDERS",
+            backgroundColor: Colors.white,
+          ),
           BottomNavigationBarItem(
-              icon: BuildBottomIcon(
-                Icons.account_circle_rounded,
-              ),
-              label: "PROFILE",
-              backgroundColor: Colors.white),
+            icon: BuildBottomIcon(
+              Icons.account_circle_rounded,
+            ),
+            label: "PROFILE",
+            backgroundColor: Colors.white,
+          ),
         ],
         currentIndex: _selectedIndex,
         onTap: onItemTapped,
