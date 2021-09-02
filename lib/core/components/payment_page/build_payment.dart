@@ -78,8 +78,9 @@ BuildPayment(int price, String name, String explanation) {
               ),
             ),
             style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(Colors.green.shade700),
+              backgroundColor: MaterialStateProperty.all<Color>(
+                Colors.green.shade700,
+              ),
             ),
           ),
         )
