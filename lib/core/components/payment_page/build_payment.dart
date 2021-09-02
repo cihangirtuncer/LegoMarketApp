@@ -70,7 +70,10 @@ BuildPayment(int price, String name, String explanation) {
             onPressed: () {},
             child: Text(
               'Add to box',
-              style: TextStyle(color: Colors.white, fontSize: 19),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 19,
+              ),
             ),
             style: ButtonStyle(
               backgroundColor:
