@@ -13,7 +13,10 @@ BuildOrdersCard(String ordersName) {
         ),
         subtitle: Text(
           "continues",
-          style: TextStyle(fontSize: 18, color: Colors.amber.shade700),
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.amber.shade700,
+          ),
         ),
         trailing: Icon(
           Icons.run_circle_outlined,
