@@ -88,7 +88,7 @@ class DatabaseHelper {
     return foodsList;
   }
 
-  readData(table) async {
+  readData(String table) async {
     // ignore: await_only_futures
     var connection = await _database;
     return await connection.query(table);
