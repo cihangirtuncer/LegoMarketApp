@@ -18,7 +18,7 @@ class _FoodListState extends State<FoodList> {
     // ignore: deprecated_member_use
     allFoodList = List<Foods>();
     databaseHelper = DatabaseHelper();
-    databaseHelper.foodsFetch().then((allFoodMapList) {
+    databaseHelper.foodsFetch("Foods").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {
         allFoodList.add(Foods.fromMap(readMap));
       }
