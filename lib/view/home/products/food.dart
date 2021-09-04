@@ -40,11 +40,11 @@ class _FoodListState extends State<FoodList> {
   List<Column> foodItemCreat() {
     return allFoodList
         .map(
-          (foods) => BuildProductList(
+          (product) => BuildProductList(
             context,
-            foods.name,
-            foods.explanation,
-            foods.price,
+            product.name,
+            product.explanation,
+            product.price,
           ),
         )
         .toList();

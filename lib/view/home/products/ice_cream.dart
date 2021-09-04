@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/home_page/product_list.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
@@ -30,8 +31,21 @@ class _IcreCreamListState extends State<IcreCreamList> {
     return BuildProductsScaffold(
       "ICE CREAM",
       ListView(
-        children: [],
+        children: foodItemCreat(),
       ),
     );
+  }
+
+  List<Column> foodItemCreat() {
+    return allFoodList
+        .map(
+          (product) => BuildProductList(
+            context,
+            product.name,
+            product.explanation,
+            product.price,
+          ),
+        )
+        .toList();
   }
 }
