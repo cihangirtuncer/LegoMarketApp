@@ -23,7 +23,7 @@ class DatabaseHelper {
 
   DatabaseHelper._internal();
 
-  Future<Database> _getDatabase() async {
+  Future<Database> getDatabase() async {
     if (_database == null) {
       print("DB nulldi oluşturulacak");
       _database = await _initializeDatabase();
@@ -72,14 +72,18 @@ class DatabaseHelper {
     );
   }
 
-  Future<List<Map<String, dynamic>>> foodsFetch() async {
-    var db = await _getDatabase();
-    var sonuc = await db.rawQuery('select * from Foods order by name;');
+  String categoryName;
+
+  Future<List<Map<String, dynamic>>> foodsFetch(String categoryName) async {
+    this.categoryName = categoryName;
+    var db = await getDatabase();
+    var sonuc = await db.rawQuery('select * from $categoryName order by name;');
     return sonuc;
   }
 
-  Future<List<Foods>> fetchFoodsList() async {
-    var notlarMapListesi = await foodsFetch();
+  Future<List<Foods>> fetchFoodsList(String categoryName) async {
+    categoryName = this.categoryName;
+    var notlarMapListesi = await foodsFetch(categoryName);
     // ignore: deprecated_member_use
     var foodsList = List<Foods>();
     for (Map map in notlarMapListesi) {
