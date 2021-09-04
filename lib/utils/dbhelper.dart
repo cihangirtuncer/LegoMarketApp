@@ -81,13 +81,13 @@ class DatabaseHelper {
     return sonuc;
   }
 
-  Future<List<Foods>> fetchFoodsList(String categoryName) async {
+  Future<List<Products>> fetchFoodsList(String categoryName) async {
     categoryName = this.categoryName;
     var notlarMapListesi = await foodsFetch(categoryName);
     // ignore: deprecated_member_use
-    var foodsList = List<Foods>();
+    var foodsList = List<Products>();
     for (Map map in notlarMapListesi) {
-      foodsList.add(Foods.fromMap(map));
+      foodsList.add(Products.fromMap(map));
     }
     return foodsList;
   }

@@ -12,7 +12,7 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
   final dbHelper = DatabaseHelper;
   final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController queryController = TextEditingController();
-  List<Foods> ordersByName = [];
+  List<Products> ordersByName = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

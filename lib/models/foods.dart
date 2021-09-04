@@ -1,11 +1,11 @@
-class Foods {
+class Products {
   int id;
   String name;
   int price;
   String explanation;
 
-  Foods(); //verileri yazarken
-  Foods.withID(
+  Products(); //verileri yazarken
+  Products.withID(
     this.id,
     this.name,
     this.explanation,
@@ -22,7 +22,7 @@ class Foods {
     return map;
   }
 
-  Foods.fromMap(Map<String, dynamic> map) {
+  Products.fromMap(Map<String, dynamic> map) {
     // DB den okuduğun mapi objeye dönüştür
     this.id = map['id'];
     this.name = map['name'];
