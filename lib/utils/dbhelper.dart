@@ -72,18 +72,14 @@ class DatabaseHelper {
     );
   }
 
-  String table;
-  Future<List<Map<String, dynamic>>> foodsFetch(table) async {
-    table = this.table;
+  Future<List<Map<String, dynamic>>> foodsFetch() async {
     var db = await _getDatabase();
-    var sonuc = await db.rawQuery('select * from $table order by name;');
+    var sonuc = await db.rawQuery('select * from Foods order by name;');
     return sonuc;
   }
 
-  Future<List<Foods>> fetchFoodsList(table) async {
-    table = this.table;
-    var notlarMapListesi = await foodsFetch(table);
-
+  Future<List<Foods>> fetchFoodsList() async {
+    var notlarMapListesi = await foodsFetch();
     // ignore: deprecated_member_use
     var foodsList = List<Foods>();
     for (Map map in notlarMapListesi) {
