@@ -13,10 +13,10 @@ class DatabaseHelper {
   factory DatabaseHelper() {
     if (_databaseHelper == null) {
       _databaseHelper = DatabaseHelper._internal();
-      print("DBHelper nulldi oluşturuldu");
+      //  print("DBHelper nulldi oluşturuldu");
       return _databaseHelper;
     } else {
-      print("DBHelper null değildi var olan kullanılacak");
+      // print("DBHelper null değildi var olan kullanılacak");
       return _databaseHelper;
     }
   }
@@ -25,11 +25,11 @@ class DatabaseHelper {
 
   Future<Database> getDatabase() async {
     if (_database == null) {
-      print("DB nulldi oluşturulacak");
+      //  print("DB nulldi oluşturulacak");
       _database = await _initializeDatabase();
       return _database;
     } else {
-      print("DB null değildi var olan kullanılacak");
+      // print("DB null değildi var olan kullanılacak");
       return _database;
     }
   }
@@ -43,7 +43,7 @@ class DatabaseHelper {
 
     if (!exists) {
       // Should happen only the first time you launch your application
-      print("Creating new copy from asset");
+      // print("Creating new copy from asset");
 
       // Make sure the parent directory exists
       try {
@@ -63,7 +63,7 @@ class DatabaseHelper {
         flush: true,
       );
     } else {
-      print("Opening existing database");
+      //   print("Opening existing database");
     }
 // open the database
     return await openDatabase(
@@ -77,7 +77,7 @@ class DatabaseHelper {
   Future<List<Map<String, dynamic>>> foodsFetch(String categoryName) async {
     this.categoryName = categoryName;
     var db = await getDatabase();
-    var sonuc = await db.query("$categoryName");
+    var sonuc = await db.rawQuery('SELECT * FROM $categoryName');
     return sonuc;
   }
 
