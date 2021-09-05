@@ -21,7 +21,7 @@ BuildPayment(int price, String name, String explanation) {
               color: Colors.white,
             ),
             width: 120,
-            height: 80,
+            height: 110,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -60,6 +60,7 @@ BuildPayment(int price, String name, String explanation) {
         Padding(
           padding: const EdgeInsets.all(2.0),
           child: Container(
+            height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.white,
@@ -71,7 +72,7 @@ BuildPayment(int price, String name, String explanation) {
           child: ElevatedButton(
             onPressed: () {},
             child: Text(
-              'Add to box',
+              'Add to Basket',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 19,
