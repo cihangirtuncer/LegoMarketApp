@@ -47,7 +47,7 @@ BuildPayment(int price, String name, String explanation) {
                     ],
                   ),
                   Text(
-                    price.toString() + " TL",
+                    price.toString() + " €",
                     style: TextStyle(
                       fontSize: 18,
                     ),
