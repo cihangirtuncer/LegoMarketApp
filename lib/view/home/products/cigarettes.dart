@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/home_page/product_list.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
+import 'package:lego_market_app/models/foods.dart';
+import 'package:lego_market_app/utils/dbhelper.dart';
 
 class CigarettesList extends StatefulWidget {
   @override
@@ -7,13 +10,42 @@ class CigarettesList extends StatefulWidget {
 }
 
 class _CigarettesListState extends State<CigarettesList> {
+  DatabaseHelper databaseHelper;
+  List<Products> allFoodList;
+  int id = 1;
+  void initState() {
+    super.initState();
+    // ignore: deprecated_member_use
+    allFoodList = List<Products>();
+    databaseHelper = DatabaseHelper();
+    databaseHelper.foodsFetch("Cigarettes").then((allFoodMapList) {
+      for (Map readMap in allFoodMapList) {
+        allFoodList.add(Products.fromMap(readMap));
+      }
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return BuildProductsScaffold(
       "CIGARETTES",
       ListView(
-        children: [],
+        children: foodItemCreat(),
       ),
     );
+  }
+
+  List<Column> foodItemCreat() {
+    return allFoodList
+        .map(
+          (product) => BuildProductList(
+            context,
+            product.name,
+            product.explanation,
+            product.price,
+          ),
+        )
+        .toList();
   }
 }
