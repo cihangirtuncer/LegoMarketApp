@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/container/shopping_options_container.dart';
 import 'package:lego_market_app/view/home/products/basic_food.dart';
-import 'package:lego_market_app/view/home/products/celaning_products.dart';
+import 'package:lego_market_app/view/home/products/home_care.dart';
 import 'package:lego_market_app/view/home/products/cigarettes.dart';
 import 'package:lego_market_app/view/home/products/dairy_and_breakfast.dart';
 import 'package:lego_market_app/view/home/products/drinks.dart';
