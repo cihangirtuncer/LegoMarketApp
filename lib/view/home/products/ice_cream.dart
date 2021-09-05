@@ -18,7 +18,7 @@ class _IcreCreamListState extends State<IcreCreamList> {
     // ignore: deprecated_member_use
     allFoodList = List<Products>();
     databaseHelper = DatabaseHelper();
-    databaseHelper.foodsFetch("Foods").then((allFoodMapList) {
+    databaseHelper.foodsFetch("Icecream").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {
         allFoodList.add(Products.fromMap(readMap));
       }

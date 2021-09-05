@@ -77,7 +77,7 @@ class DatabaseHelper {
   Future<List<Map<String, dynamic>>> foodsFetch(String categoryName) async {
     this.categoryName = categoryName;
     var db = await getDatabase();
-    var sonuc = await db.rawQuery('select * from $categoryName order by name;');
+    var sonuc = await db.query("$categoryName");
     return sonuc;
   }
 
@@ -85,10 +85,10 @@ class DatabaseHelper {
     categoryName = this.categoryName;
     var notlarMapListesi = await foodsFetch(categoryName);
     // ignore: deprecated_member_use
-    var foodsList = List<Products>();
+    var productList = List<Products>();
     for (Map map in notlarMapListesi) {
-      foodsList.add(Products.fromMap(map));
+      productList.add(Products.fromMap(map));
     }
-    return foodsList;
+    return productList;
   }
 }

@@ -31,6 +31,6 @@ class Products {
   }
 
   String toString() {
-    return 'Foods{id: $id, name: $name, explanation: $explanation, price: $price}';
+    return 'Products{id: $id, name: $name, explanation: $explanation, price: $price}';
   }
 }
