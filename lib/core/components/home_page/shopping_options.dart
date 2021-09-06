@@ -31,8 +31,8 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
     return GridView.count(
       primary: false,
       padding: const EdgeInsets.all(10),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
+      crossAxisSpacing: 11,
+      mainAxisSpacing: 11,
       crossAxisCount: 3,
       children: <Widget>[
         BuildShoppingContainer(
