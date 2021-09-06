@@ -4,14 +4,14 @@ import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
-class FitForm extends StatefulWidget {
-  FitForm({Key key}) : super(key: key);
+class FitFormList extends StatefulWidget {
+  FitFormList({Key key}) : super(key: key);
 
   @override
-  _FitFormState createState() => _FitFormState();
+  _FitFormListState createState() => _FitFormListState();
 }
 
-class _FitFormState extends State<FitForm> {
+class _FitFormListState extends State<FitFormList> {
   DatabaseHelper databaseHelper;
   List<Products> allFoodList;
   int id = 1;

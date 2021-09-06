@@ -4,14 +4,14 @@ import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
-class FruitsVeg extends StatefulWidget {
-  FruitsVeg({Key key}) : super(key: key);
+class FruitsVegList extends StatefulWidget {
+  FruitsVegList({Key key}) : super(key: key);
 
   @override
-  _FruitsVegState createState() => _FruitsVegState();
+  _FruitsVegListState createState() => _FruitsVegListState();
 }
 
-class _FruitsVegState extends State<FruitsVeg> {
+class _FruitsVegListState extends State<FruitsVegList> {
   DatabaseHelper databaseHelper;
   List<Products> allFoodList;
   int id = 1;

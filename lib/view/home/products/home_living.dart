@@ -4,14 +4,14 @@ import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
-class HomeLiving extends StatefulWidget {
-  HomeLiving({Key key}) : super(key: key);
+class HomeLivingList extends StatefulWidget {
+  HomeLivingList({Key key}) : super(key: key);
 
   @override
-  _HomeLivingState createState() => _HomeLivingState();
+  _HomeLivingListState createState() => _HomeLivingListState();
 }
 
-class _HomeLivingState extends State<HomeLiving> {
+class _HomeLivingListState extends State<HomeLivingList> {
   DatabaseHelper databaseHelper;
   List<Products> allFoodList;
   int id = 1;

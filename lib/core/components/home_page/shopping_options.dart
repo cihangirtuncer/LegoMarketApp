@@ -62,7 +62,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
         BuildShoppingContainer(
           "PASTRIES",
           context,
-          BakedGoods(),
+          PastriesList(),
           "assets/images/baked.jpg",
         ),
         BuildShoppingContainer(
@@ -80,20 +80,20 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
         BuildShoppingContainer(
           "READY to EAT",
           context,
-          ReadyToEat(),
+          ReadyToEatList(),
           "assets/images/readyfood.jpg",
         ),
         BuildShoppingContainer(
           "PET FOOD",
           context,
-          PetFood(),
+          PetFoodList(),
           "assets/images/pet.jpg",
           //database yapılacak
         ),
         BuildShoppingContainer(
           "BABY CARE",
           context,
-          BabyCare(),
+          BabyCareList(),
           "assets/images/baby.jpg",
         ),
         BuildShoppingContainer(
@@ -123,13 +123,13 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
         BuildShoppingContainer(
           "FIT FORM",
           context,
-          FitForm(),
+          FitFormList(),
           "assets/images/fitform.jpg",
         ),
         BuildShoppingContainer(
           "HOME LIVING",
           context,
-          HomeLiving(),
+          HomeLivingList(),
           "assets/images/lamp.jpg",
         ),
         BuildShoppingContainer(
@@ -141,13 +141,13 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
         BuildShoppingContainer(
           "FRUİTS & VEG",
           context,
-          FruitsVeg(),
+          FruitsVegList(),
           "assets/images/fruitsveg.jpg",
         ),
         BuildShoppingContainer(
           "SNACKS",
           context,
-          Snacks(),
+          SnacksList(),
           "assets/images/snacks.jpg",
         ),
       ],
