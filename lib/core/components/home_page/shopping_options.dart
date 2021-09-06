@@ -48,6 +48,12 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "assets/images/icecream.png",
         ),
         BuildShoppingContainer(
+          "SNACKS",
+          context,
+          SnacksList(),
+          "assets/images/snacks.jpg",
+        ),
+        BuildShoppingContainer(
           "WATER",
           context,
           WaterList(),
@@ -60,16 +66,16 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "assets/images/basicfood.jpg",
         ),
         BuildShoppingContainer(
-          "PASTRIES",
-          context,
-          PastriesList(),
-          "assets/images/baked.jpg",
-        ),
-        BuildShoppingContainer(
           "DRINKS",
           context,
           DrinksList(),
           "assets/images/drinks.jpg",
+        ),
+        BuildShoppingContainer(
+          "PASTRIES",
+          context,
+          PastriesList(),
+          "assets/images/baked.jpg",
         ),
         BuildShoppingContainer(
           "BREAKFAST",
@@ -142,12 +148,6 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           context,
           FruitsVegList(),
           "assets/images/fruitsveg.jpg",
-        ),
-        BuildShoppingContainer(
-          "SNACKS",
-          context,
-          SnacksList(),
-          "assets/images/snacks.jpg",
         ),
       ],
     );
