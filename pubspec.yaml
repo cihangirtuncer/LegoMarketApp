@@ -50,17 +50,25 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/food.jpg
-    - assets/images/basicfood.jpeg
+    - assets/images/basicfood.jpg
     - assets/images/breakfast.jpg
-    - assets/images/icecream.jpg
+    - assets/images/icecream.png
     - assets/images/water.jpg
     - assets/images/technology.jpg
     - assets/images/personalcare.jpg
     - assets/images/drinks.jpg
-    - assets/images/cigarettes.png
+    - assets/images/cigarettes.jpg
     - assets/images/cleaningproducts.jpg
     - assets/images/sexualhealth.jpg
     - assets/lego_market.db
+    - assets/images/baby.jpg
+    - assets/images/fitform.jpg
+    - assets/images/lamp.jpg
+    - assets/images/baked.jpg
+    - assets/images/pet.jpg
+    - assets/images/fruitsveg.jpg
+    - assets/images/readyfood.jpg
+    - assets/images/snacks.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

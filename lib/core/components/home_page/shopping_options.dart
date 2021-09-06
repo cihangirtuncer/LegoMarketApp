@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/container/shopping_options_container.dart';
+import 'package:lego_market_app/view/home/products/baby_care.dart';
+import 'package:lego_market_app/view/home/products/baked_goods.dart';
 import 'package:lego_market_app/view/home/products/basic_food.dart';
+import 'package:lego_market_app/view/home/products/fit_form.dart';
+import 'package:lego_market_app/view/home/products/fruits_veg.dart';
 import 'package:lego_market_app/view/home/products/home_care.dart';
 import 'package:lego_market_app/view/home/products/cigarettes.dart';
 import 'package:lego_market_app/view/home/products/dairy_and_breakfast.dart';
 import 'package:lego_market_app/view/home/products/drinks.dart';
 import 'package:lego_market_app/view/home/products/food.dart';
+import 'package:lego_market_app/view/home/products/home_living.dart';
 import 'package:lego_market_app/view/home/products/ice_cream.dart';
 import 'package:lego_market_app/view/home/products/personal_care.dart';
+import 'package:lego_market_app/view/home/products/pet_food.dart';
+import 'package:lego_market_app/view/home/products/ready_to_eat.dart';
 import 'package:lego_market_app/view/home/products/sexual_health.dart';
+import 'package:lego_market_app/view/home/products/snacks.dart';
 import 'package:lego_market_app/view/home/products/technology.dart';
 import 'package:lego_market_app/view/home/products/water.dart';
 
@@ -25,7 +33,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
       padding: const EdgeInsets.all(10),
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
-      crossAxisCount: 2,
+      crossAxisCount: 3,
       children: <Widget>[
         BuildShoppingContainer(
           "FOODS",
@@ -37,7 +45,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "ICE CREAM",
           context,
           IcreCreamList(),
-          "assets/images/icecream.jpg",
+          "assets/images/icecream.png",
         ),
         BuildShoppingContainer(
           "WATER",
@@ -49,7 +57,13 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "BASIC FOOD",
           context,
           BasicFood(),
-          "assets/images/basicfood.jpeg",
+          "assets/images/basicfood.jpg",
+        ),
+        BuildShoppingContainer(
+          "PASTRIES",
+          context,
+          BakedGoods(),
+          "assets/images/baked.jpg",
         ),
         BuildShoppingContainer(
           "DRINKS",
@@ -64,10 +78,23 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "assets/images/breakfast.jpg",
         ),
         BuildShoppingContainer(
-          "PERSONAL CARE",
+          "READY to EAT",
           context,
-          PersonalCareList(),
-          "assets/images/personalcare.jpg",
+          ReadyToEat(),
+          "assets/images/readyfood.jpg",
+        ),
+        BuildShoppingContainer(
+          "PET FOOD",
+          context,
+          PetFood(),
+          "assets/images/pet.jpg",
+          //database yapılacak
+        ),
+        BuildShoppingContainer(
+          "BABY CARE",
+          context,
+          BabyCare(),
+          "assets/images/baby.jpg",
         ),
         BuildShoppingContainer(
           "HOME CARE",
@@ -76,7 +103,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "assets/images/cleaningproducts.jpg",
         ),
         BuildShoppingContainer(
-          "SEXUAL HEALTH",
+          "SEX HEALTH",
           context,
           SexualHealthList(),
           "assets/images/sexualhealth.jpg",
@@ -91,7 +118,37 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "CIGARETTES",
           context,
           CigarettesList(),
-          "assets/images/cigarettes.png",
+          "assets/images/cigarettes.jpg",
+        ),
+        BuildShoppingContainer(
+          "FIT FORM",
+          context,
+          FitForm(),
+          "assets/images/fitform.jpg",
+        ),
+        BuildShoppingContainer(
+          "HOME LIVING",
+          context,
+          HomeLiving(),
+          "assets/images/lamp.jpg",
+        ),
+        BuildShoppingContainer(
+          "PERSONAL CARE",
+          context,
+          PersonalCareList(),
+          "assets/images/personalcare.jpg",
+        ),
+        BuildShoppingContainer(
+          "FRUİTS & VEG",
+          context,
+          FruitsVeg(),
+          "assets/images/fruitsveg.jpg",
+        ),
+        BuildShoppingContainer(
+          "SNACKS",
+          context,
+          Snacks(),
+          "assets/images/snacks.jpg",
         ),
       ],
     );

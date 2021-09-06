@@ -28,7 +28,7 @@ BuildShoppingContainer(
           Text(
             productName,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
             ),
           )
