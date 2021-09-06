@@ -114,7 +114,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "assets/images/sexualhealth.jpg",
         ),
         BuildShoppingContainer(
-          "TECHNOLOGY",
+          "TECH",
           context,
           TechnologyList(),
           "assets/images/technology.jpg",
