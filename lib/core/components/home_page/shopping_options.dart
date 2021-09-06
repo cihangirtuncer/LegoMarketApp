@@ -39,7 +39,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           "FOODS",
           context,
           FoodList(),
-          "assets/images/food.jpg",
+          "assets/images/food.png",
         ),
         BuildShoppingContainer(
           "ICE CREAM",
