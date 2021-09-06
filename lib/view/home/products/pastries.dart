@@ -4,14 +4,14 @@ import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 import 'package:lego_market_app/models/foods.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
-class BabyCare extends StatefulWidget {
-  BabyCare({Key key}) : super(key: key);
+class BakedGoods extends StatefulWidget {
+  BakedGoods({Key key}) : super(key: key);
 
   @override
-  _BabyCareState createState() => _BabyCareState();
+  _BakedGoodsState createState() => _BakedGoodsState();
 }
 
-class _BabyCareState extends State<BabyCare> {
+class _BakedGoodsState extends State<BakedGoods> {
   DatabaseHelper databaseHelper;
   List<Products> allFoodList;
   int id = 1;
@@ -20,7 +20,7 @@ class _BabyCareState extends State<BabyCare> {
     // ignore: deprecated_member_use
     allFoodList = List<Products>();
     databaseHelper = DatabaseHelper();
-    databaseHelper.foodsFetch("Babycare").then((allFoodMapList) {
+    databaseHelper.foodsFetch("Pastries").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {
         allFoodList.add(Products.fromMap(readMap));
       }
@@ -31,7 +31,7 @@ class _BabyCareState extends State<BabyCare> {
   @override
   Widget build(BuildContext context) {
     return BuildProductsScaffold(
-      "BABY CARE",
+      "PASTRIES",
       ListView(
         children: foodItemCreat(),
       ),
