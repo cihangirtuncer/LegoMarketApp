@@ -88,7 +88,6 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
           context,
           PetFoodList(),
           "assets/images/pet.jpg",
-          //database yapılacak
         ),
         BuildShoppingContainer(
           "BABY CARE",
