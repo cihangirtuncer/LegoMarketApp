@@ -6,7 +6,7 @@ BuildPayment(int price, String name, String explanation) {
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
-      title: Text("Payment"),
+      title: Text("PAYMENT"),
       backgroundColor: Colors.green.shade700,
     ),
     body: Column(
