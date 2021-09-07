@@ -36,7 +36,7 @@ class DatabaseHelper {
 
   Future<Database> _initializeDatabase() async {
     var databasesPath = await getDatabasesPath();
-    var path = join(databasesPath, "appLegoMarket2.db");
+    var path = join(databasesPath, "appLegoMarket.db");
 
 // Check if the database exists
     var exists = await databaseExists(path);
