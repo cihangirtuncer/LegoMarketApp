@@ -28,7 +28,6 @@ class DatabaseHelper {
       _database = await _initializeDatabase();
       return _database;
     } else {
-      // print("DB null değildi var olan kullanılacak");
       return _database;
     }
   }
