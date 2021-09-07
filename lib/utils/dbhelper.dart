@@ -60,9 +60,7 @@ class DatabaseHelper {
         bytes,
         flush: true,
       );
-    } else {
-      //   print("Opening existing database");
-    }
+    } else {}
     return await openDatabase(
       path,
       readOnly: false,
