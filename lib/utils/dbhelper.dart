@@ -13,7 +13,6 @@ class DatabaseHelper {
   factory DatabaseHelper() {
     if (_databaseHelper == null) {
       _databaseHelper = DatabaseHelper._internal();
-      //  print("DBHelper nulldi oluşturuldu");
       return _databaseHelper;
     } else {
       return _databaseHelper;
