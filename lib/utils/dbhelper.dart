@@ -16,7 +16,6 @@ class DatabaseHelper {
       //  print("DBHelper nulldi oluşturuldu");
       return _databaseHelper;
     } else {
-      // print("DBHelper null değildi var olan kullanılacak");
       return _databaseHelper;
     }
   }
