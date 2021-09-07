@@ -65,7 +65,6 @@ class DatabaseHelper {
     } else {
       //   print("Opening existing database");
     }
-// open the database
     return await openDatabase(
       path,
       readOnly: false,
