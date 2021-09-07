@@ -25,7 +25,6 @@ class DatabaseHelper {
 
   Future<Database> getDatabase() async {
     if (_database == null) {
-      //  print("DB nulldi oluşturulacak");
       _database = await _initializeDatabase();
       return _database;
     } else {
