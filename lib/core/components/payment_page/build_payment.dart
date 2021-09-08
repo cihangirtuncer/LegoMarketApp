@@ -9,10 +9,8 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
   DatabaseHelper databaseHelper;
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
-    appBar: AppBar(
-      title: Text("PAYMENT"),
-      backgroundColor: Colors.green.shade700,
-    ),
+    appBar:
+        AppBar(title: Text("PAYMENT"), backgroundColor: Colors.green.shade700),
     body: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
