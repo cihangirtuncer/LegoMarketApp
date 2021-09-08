@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/home_page/product_list.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
-import 'package:lego_market_app/models/foods.dart';
+import 'package:lego_market_app/models/products.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 
 class WaterList extends StatefulWidget {
@@ -19,7 +19,7 @@ class _WaterListState extends State<WaterList> {
     // ignore: deprecated_member_use
     allWaterList = List<Products>();
     databaseHelper = DatabaseHelper();
-    databaseHelper.foodsFetch("Water").then((allWaterMapList) {
+    databaseHelper.productTable("Water").then((allWaterMapList) {
       for (Map readMap in allWaterMapList) {
         allWaterList.add(Products.fromMap(readMap));
       }
