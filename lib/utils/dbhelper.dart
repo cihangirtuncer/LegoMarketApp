@@ -81,7 +81,7 @@ class DatabaseHelper {
     return sonuc;
   }
 
-  Future<List<Products>> fetchFoodsList(String categoryName) async {
+  Future<List<Products>> productTableList(String categoryName) async {
     categoryName = this.categoryName;
     var notlarMapListesi = await productTable(categoryName);
     // ignore: deprecated_member_use
