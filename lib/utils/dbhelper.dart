@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
-import 'package:lego_market_app/models/foods.dart';
+import 'package:lego_market_app/models/products.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -67,16 +67,23 @@ class DatabaseHelper {
 
   String categoryName;
 
-  Future<List<Map<String, dynamic>>> foodsFetch(String categoryName) async {
+  Future<List<Map<String, dynamic>>> productTable(String categoryName) async {
     this.categoryName = categoryName;
     var db = await getDatabase();
     var sonuc = await db.rawQuery('SELECT * FROM $categoryName');
     return sonuc;
   }
 
+  Future<int> addOrders(String categoryName) async {
+    this.categoryName = categoryName;
+    var db = await getDatabase();
+    var sonuc = await db.insert("$categoryName", Products().toMap());
+    return sonuc;
+  }
+
   Future<List<Products>> fetchFoodsList(String categoryName) async {
     categoryName = this.categoryName;
-    var notlarMapListesi = await foodsFetch(categoryName);
+    var notlarMapListesi = await productTable(categoryName);
     // ignore: deprecated_member_use
     var productList = List<Products>();
     for (Map map in notlarMapListesi) {
