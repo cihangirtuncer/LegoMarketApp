@@ -9,7 +9,7 @@ BuildProductCard(
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => BuildPayment(price, name, explanation),
+          builder: (context) => BuildPayment(context, price, name, explanation),
         ),
       );
     },

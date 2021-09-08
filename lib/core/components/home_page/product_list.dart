@@ -16,6 +16,7 @@ Column BuildProductList(
             context,
             MaterialPageRoute(
               builder: (context) => BuildPayment(
+                context,
                 price,
                 name,
                 explanation,

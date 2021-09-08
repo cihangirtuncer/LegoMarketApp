@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/constant/botton/payment_icon_button.dart';
+import 'package:lego_market_app/models/products.dart';
+import 'package:lego_market_app/utils/dbhelper.dart';
 
 // ignore: non_constant_identifier_names
-BuildPayment(int price, String name, String explanation) {
+BuildPayment(BuildContext context, int price, String name, String explanation) {
+  // ignore: unused_local_variable
+  DatabaseHelper databaseHelper;
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
@@ -70,7 +74,10 @@ BuildPayment(int price, String name, String explanation) {
         ),
         Align(
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              //fail !!!
+              databaseHelper.addOrders(Products(name, price, explanation));
+            },
             child: Text(
               'Add to Basket',
               style: TextStyle(

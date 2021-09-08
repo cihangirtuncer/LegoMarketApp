@@ -74,10 +74,9 @@ class DatabaseHelper {
     return sonuc;
   }
 
-  Future<int> addOrders(String categoryName) async {
-    this.categoryName = categoryName;
+  Future<int> addOrders(Products products) async {
     var db = await getDatabase();
-    var sonuc = await db.insert("$categoryName", Products().toMap());
+    var sonuc = await db.insert("Orders", products.toMap());
     return sonuc;
   }
 
