@@ -77,7 +77,11 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
             onPressed: () {
               //fail !!!
               databaseHelper
-                  .addOrders(Products(name, price, explanation))
+                  .addOrders(Products(
+                    name,
+                    price,
+                    explanation,
+                  ))
                   .then((value) => Navigator.pop(context));
             },
             child: Text(
