@@ -79,8 +79,8 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
               databaseHelper
                   .addOrders(Products(
                     name,
-                    price,
                     explanation,
+                    price,
                   ))
                   .then((value) => Navigator.pop(context));
             },

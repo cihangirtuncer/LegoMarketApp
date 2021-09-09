@@ -6,8 +6,8 @@ class Products {
 
   Products(
     this.name,
-    this.price,
     this.explanation,
+    this.price,
   );
   Products.withID(
     this.id,
