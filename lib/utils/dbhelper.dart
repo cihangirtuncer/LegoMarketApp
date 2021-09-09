@@ -48,7 +48,6 @@ class DatabaseHelper {
         data.lengthInBytes,
       );
 
-      // Write and flush the bytes written
       await File(path).writeAsBytes(
         bytes,
         flush: true,
