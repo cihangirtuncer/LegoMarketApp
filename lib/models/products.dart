@@ -14,10 +14,9 @@ class Products {
     this.name,
     this.explanation,
     this.price,
-  ); // verileri okurken
+  );
 
   Map<String, dynamic> toMap() {
-    // DBye yazmak için map a dönüştür
     var map = Map<String, dynamic>();
     map['id'] = id;
     map['name'] = name;
