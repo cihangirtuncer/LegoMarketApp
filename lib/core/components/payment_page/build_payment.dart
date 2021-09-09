@@ -97,7 +97,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
               ),
             ),
           ),
-        )
+        ),
       ],
     ),
   );
