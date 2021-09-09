@@ -26,7 +26,6 @@ class Products {
   }
 
   Products.fromMap(Map<String, dynamic> map) {
-    // DB den okuduğun mapi objeye dönüştür
     this.id = map['id'];
     this.name = map['name'];
     this.explanation = map['explanation'];
