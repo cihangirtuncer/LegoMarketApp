@@ -8,7 +8,7 @@ class Products {
     this.name,
     this.price,
     this.explanation,
-  ); //verileri yazarken
+  );
   Products.withID(
     this.id,
     this.name,
