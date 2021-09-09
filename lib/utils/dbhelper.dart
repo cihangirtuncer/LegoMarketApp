@@ -34,7 +34,6 @@ class DatabaseHelper {
     var databasesPath = await getDatabasesPath();
     var path = join(databasesPath, "appLegoMarket.db");
 
-    // Check if the database exists
     var exists = await databaseExists(path);
 
     if (!exists) {
