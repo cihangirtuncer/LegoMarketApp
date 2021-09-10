@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/components/payment_page/build_payment.dart';
+import 'package:lego_market_app/view/payment/build_payment.dart';
 
 // ignore: non_constant_identifier_names
 Column BuildProductList(

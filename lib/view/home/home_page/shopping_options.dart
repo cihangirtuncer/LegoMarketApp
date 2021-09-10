@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/container/shopping_options_container.dart';
+import 'package:lego_market_app/core/widget/categories/home_Screen_categories.dart';
 import '../products/baby_care.dart';
 import '../products/pastries.dart';
 import '../products/basic_food.dart';
