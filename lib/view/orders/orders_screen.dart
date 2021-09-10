@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../core/components/card/orders_card.dart';
 import '../../models/products.dart';
 import '../../utils/dbhelper.dart';
-import '../home/home_page/product_list.dart';
 
 class OrdersScreen extends StatefulWidget {
   @override
@@ -44,11 +44,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
   List<Column> foodItemCreat() {
     return allFoodList
         .map(
-          (product) => BuildProductList(
+          (product) => BuildOrdersCard(
             context,
             product.name,
-            product.explanation,
-            product.price,
           ),
         )
         .toList();
