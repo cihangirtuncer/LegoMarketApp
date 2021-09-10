@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/widget/counter/payment_product_counter.dart';
+
+import '../../core/widget/counter/payment_product_counter.dart';
 import '../../models/products.dart';
 import '../../utils/dbhelper.dart';
 
@@ -10,8 +11,11 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
-      title: Text("PAYMENT"),
-      backgroundColor: Colors.green.shade700,
+      title: Padding(
+        padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
+        child: Text("PAYMENT"),
+      ),
+      backgroundColor: Colors.green.shade900,
     ),
     body: Column(
       mainAxisAlignment: MainAxisAlignment.start,
