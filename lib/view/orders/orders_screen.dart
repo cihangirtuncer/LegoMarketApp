@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/components/scaffold/products_scaffold.dart';
 import '../../models/products.dart';
 import '../../utils/dbhelper.dart';
 import '../home/home_page/product_list.dart';
@@ -29,9 +28,14 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
-      "ORDERS",
-      ListView(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue.shade900,
+        title: Center(
+          child: Text("ORDERS"),
+        ),
+      ),
+      body: ListView(
         children: foodItemCreat(),
       ),
     );
