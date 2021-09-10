@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/botton/payment_icon_button.dart';
-import 'package:lego_market_app/models/products.dart';
-import 'package:lego_market_app/utils/dbhelper.dart';
+import 'package:lego_market_app/core/components/botton/payment_icon_button.dart';
+import '../../../models/products.dart';
+import '../../../utils/dbhelper.dart';
 
 // ignore: non_constant_identifier_names
 BuildPayment(BuildContext context, int price, String name, String explanation) {

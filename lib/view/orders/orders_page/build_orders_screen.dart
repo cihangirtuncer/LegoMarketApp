@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/orders_page/build_orders.dart';
-import 'package:lego_market_app/core/components/orders_page/build_previous_orders.dart';
-import 'package:lego_market_app/core/constant/row/home_app_bar_row.dart';
+import 'package:lego_market_app/core/components/row/home_app_bar_row.dart';
+import 'build_orders.dart';
+import 'build_previous_orders.dart';
 
 class BuildOrdersScreen extends StatefulWidget {
   @override

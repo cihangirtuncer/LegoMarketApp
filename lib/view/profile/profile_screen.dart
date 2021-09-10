@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/Profile_page/Profile_screen_build.dart';
-import 'package:lego_market_app/core/constant/app_bar/main_app_bar.dart';
+import 'package:lego_market_app/core/components/app_bar/main_app_bar.dart';
+import 'Profile_page/Profile_screen_build.dart';
 
 class Profile extends StatefulWidget {
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/text/appbar_text.dart';
+
+import '../text/appbar_text.dart';
 
 // ignore: non_constant_identifier_names
 Widget BuildHomeAppBarText() {

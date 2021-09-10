@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/icon/standart_icon.dart';
+import '../icon/standart_icon.dart';
 
 // ignore: non_constant_identifier_names
 BuildProfileRow(String string, IconData icon) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/app_bar/main_app_bar.dart';
-import 'package:lego_market_app/models/products.dart';
-import 'package:lego_market_app/utils/dbhelper.dart';
+import 'package:lego_market_app/core/components/app_bar/main_app_bar.dart';
+import '../../../models/products.dart';
+import '../../../utils/dbhelper.dart';
 
 class BuildSearchScreen extends StatefulWidget {
   @override

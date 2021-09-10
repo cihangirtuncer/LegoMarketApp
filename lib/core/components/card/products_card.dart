@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/payment_page/build_payment.dart';
+
+import '../../components/payment_page/build_payment.dart';
 
 // ignore: non_constant_identifier_names
 BuildProductCard(

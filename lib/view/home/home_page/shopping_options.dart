@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/constant/container/shopping_options_container.dart';
-import 'package:lego_market_app/view/home/products/baby_care.dart';
-import 'package:lego_market_app/view/home/products/pastries.dart';
-import 'package:lego_market_app/view/home/products/basic_food.dart';
-import 'package:lego_market_app/view/home/products/fit_form.dart';
-import 'package:lego_market_app/view/home/products/fruits_veg.dart';
-import 'package:lego_market_app/view/home/products/home_care.dart';
-import 'package:lego_market_app/view/home/products/cigarettes.dart';
-import 'package:lego_market_app/view/home/products/dairy_and_breakfast.dart';
-import 'package:lego_market_app/view/home/products/drinks.dart';
-import 'package:lego_market_app/view/home/products/food.dart';
-import 'package:lego_market_app/view/home/products/home_living.dart';
-import 'package:lego_market_app/view/home/products/ice_cream.dart';
-import 'package:lego_market_app/view/home/products/personal_care.dart';
-import 'package:lego_market_app/view/home/products/pet_food.dart';
-import 'package:lego_market_app/view/home/products/ready_to_eat.dart';
-import 'package:lego_market_app/view/home/products/sexual_health.dart';
-import 'package:lego_market_app/view/home/products/snacks.dart';
-import 'package:lego_market_app/view/home/products/technology.dart';
-import 'package:lego_market_app/view/home/products/water.dart';
+import 'package:lego_market_app/core/components/container/shopping_options_container.dart';
+import '../products/baby_care.dart';
+import '../products/pastries.dart';
+import '../products/basic_food.dart';
+import '../products/fit_form.dart';
+import '../products/fruits_veg.dart';
+import '../products/home_care.dart';
+import '../products/cigarettes.dart';
+import '../products/dairy_and_breakfast.dart';
+import '../products/drinks.dart';
+import '../products/food.dart';
+import '../products/home_living.dart';
+import '../products/ice_cream.dart';
+import '../products/personal_care.dart';
+import '../products/pet_food.dart';
+import '../products/ready_to_eat.dart';
+import '../products/sexual_health.dart';
+import '../products/snacks.dart';
+import '../products/technology.dart';
+import '../products/water.dart';
 
 class ShoppingOptions extends StatefulWidget {
   @override

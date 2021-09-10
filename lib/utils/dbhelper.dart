@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
+
 import 'package:flutter/services.dart';
-import 'package:lego_market_app/models/products.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+
+import '../models/products.dart';
 
 class DatabaseHelper {
   static DatabaseHelper _databaseHelper;

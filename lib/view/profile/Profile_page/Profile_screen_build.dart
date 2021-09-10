@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/Profile_page/profile_build_data.dart';
-import 'package:lego_market_app/core/constant/divider/profile_divder.dart';
-import 'package:lego_market_app/core/constant/row/profile_row.dart';
+import 'package:lego_market_app/core/components/divider/profile_divder.dart';
+import 'package:lego_market_app/core/components/row/profile_row.dart';
+import 'profile_build_data.dart';
 
 // ignore: non_constant_identifier_names
 BuildProfile() {
