@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/home_page/product_list.dart';
 import 'package:lego_market_app/core/constant/scaffold/products_scaffold.dart';
 import 'package:lego_market_app/models/products.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
+import 'package:lego_market_app/view/home/home_page/product_list.dart';
 
 class DairyAndBreakfastList extends StatefulWidget {
   @override
