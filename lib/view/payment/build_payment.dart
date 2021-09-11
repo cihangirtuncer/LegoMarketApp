@@ -12,7 +12,12 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
       title: Padding(
-        padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
+        padding: const EdgeInsets.fromLTRB(
+          70,
+          0,
+          0,
+          0,
+        ),
         child: Text("PAYMENT"),
       ),
       backgroundColor: Colors.green.shade900,
