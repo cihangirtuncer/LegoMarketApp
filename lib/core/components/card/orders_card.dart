@@ -25,7 +25,9 @@ Column BuildOrdersCard(
                   ),
                   Text(
                     'Price: $price €',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                   Text(
                     'Count: 1',
