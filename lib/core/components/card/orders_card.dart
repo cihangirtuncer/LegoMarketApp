@@ -19,7 +19,9 @@ Column BuildOrdersCard(
                 children: [
                   Text(
                     'Name: $name',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                   Text(
                     'Price: $price €',
