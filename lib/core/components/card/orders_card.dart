@@ -37,8 +37,12 @@ Column BuildOrdersCard(
                   ),
                 ],
               ),
-              content: Text('Explanation: $explanation',
-                  style: TextStyle(fontSize: 20)),
+              content: Text(
+                'Explanation: $explanation',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(context, 'Cancel'),
