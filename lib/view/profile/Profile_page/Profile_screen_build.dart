@@ -17,7 +17,12 @@ BuildProfile() {
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(3, 1, 20, 1),
+              padding: const EdgeInsets.fromLTRB(
+                3,
+                1,
+                20,
+                1,
+              ),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
