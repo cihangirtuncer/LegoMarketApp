@@ -58,7 +58,10 @@ Column BuildOrdersCard(
                   onPressed: () => Navigator.pop(context, 'OK'),
                   child: const Text(
                     'OK',
-                    style: TextStyle(color: Colors.green, fontSize: 17),
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 17,
+                    ),
                   ),
                 ),
               ],
