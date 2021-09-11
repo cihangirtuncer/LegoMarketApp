@@ -31,7 +31,9 @@ Column BuildOrdersCard(
                   ),
                   Text(
                     'Count: 1',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ],
               ),
