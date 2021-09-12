@@ -90,11 +90,8 @@ Column BuildOrdersCard(
                   color: Colors.amber.shade700,
                 ),
               ),
-              trailing: Icon(
-                Icons.run_circle_outlined,
-                color: Colors.amber.shade700,
-                size: 35,
-              )),
+              trailing: Icon(Icons.run_circle_outlined,
+                  color: Colors.amber.shade700, size: 35)),
         ),
       )
     ],
