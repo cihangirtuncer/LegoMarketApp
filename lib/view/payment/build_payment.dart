@@ -61,9 +61,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                   ),
                   Text(
                     price.toString() + " €",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
+                    style: TextStyle(fontSize: 18),
                   ),
                 ],
               ),
