@@ -50,7 +50,10 @@ BuildProfile() {
         80,
         50,
         Alignment.centerLeft,
-        BuildProfileRow("Email: cihangir******@gmail.com", Icons.mail),
+        BuildProfileRow(
+          "Email: cihangir******@gmail.com",
+          Icons.mail,
+        ),
       ),
       BuildProfileDivider(1.0),
       BuildProfileData(
