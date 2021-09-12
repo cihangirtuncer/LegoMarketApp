@@ -45,7 +45,10 @@ Column BuildOrdersCard(
               ),
               actions: [
                 TextButton(
-                  onPressed: () => Navigator.pop(context, 'Cancel'),
+                  onPressed: () => Navigator.pop(
+                    context,
+                    'Cancel',
+                  ),
                   child: const Text(
                     'Cancel',
                     style: TextStyle(
