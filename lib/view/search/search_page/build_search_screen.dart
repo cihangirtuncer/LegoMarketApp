@@ -38,7 +38,10 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                itemBuilder: (BuildContext context, int index) {
+                itemBuilder: (
+                  BuildContext context,
+                  int index,
+                ) {
                   return Container(
                     height: 50,
                     margin: EdgeInsets.all(8),
