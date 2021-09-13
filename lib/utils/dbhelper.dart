@@ -43,7 +43,10 @@ class DatabaseHelper {
         await Directory(dirname(path)).create(recursive: true);
       } catch (_) {}
 
-      ByteData data = await rootBundle.load(join("assets", "lego_market.db"));
+      ByteData data = await rootBundle.load(join(
+        "assets",
+        "lego_market.db",
+      ));
       List<int> bytes = data.buffer.asUint8List(
         data.offsetInBytes,
         data.lengthInBytes,
