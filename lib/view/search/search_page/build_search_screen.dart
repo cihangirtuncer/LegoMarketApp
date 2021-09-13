@@ -44,7 +44,8 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
                     margin: EdgeInsets.all(8),
                     child: Center(
                       child: Text(
-                          '[${ordersByName[index].id}] ${ordersByName[index].name} ${ordersByName[index].explanation} ${ordersByName[index].price}'),
+                        '[${ordersByName[index].id}] ${ordersByName[index].name} ${ordersByName[index].explanation} ${ordersByName[index].price}',
+                      ),
                     ),
                   );
                 },
