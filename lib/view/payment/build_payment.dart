@@ -38,7 +38,9 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
             width: 120,
             height: 110,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(
+                8.0,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
