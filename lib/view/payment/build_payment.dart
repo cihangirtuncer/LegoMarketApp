@@ -18,7 +18,9 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
           0,
           0,
         ),
-        child: Text("PAYMENT"),
+        child: Text(
+          "PAYMENT",
+        ),
       ),
       backgroundColor: Colors.green.shade900,
     ),
