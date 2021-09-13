@@ -13,7 +13,9 @@ class _ButtonPaymentState extends State<ButtonPayment> {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         IconButton(
-          icon: const Icon(Icons.remove_outlined),
+          icon: const Icon(
+            Icons.remove_outlined,
+          ),
           onPressed: () {
             if (_volume > 1) {
               setState(
