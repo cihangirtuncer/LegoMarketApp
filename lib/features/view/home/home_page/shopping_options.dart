@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/widget/categories/home_Screen_categories.dart';
-import '../../../products/baby_care.dart';
-import '../../../products/basic_food.dart';
-import '../../../products/cigarettes.dart';
-import '../../../products/dairy_and_breakfast.dart';
-import '../../../products/drinks.dart';
-import '../../../products/fit_form.dart';
-import '../../../products/food.dart';
-import '../../../products/fruits_veg.dart';
-import '../../../products/home_care.dart';
-import '../../../products/home_living.dart';
-import '../../../products/ice_cream.dart';
-import '../../../products/pastries.dart';
-import '../../../products/personal_care.dart';
-import '../../../products/pet_food.dart';
-import '../../../products/ready_to_eat.dart';
-import '../../../products/sexual_health.dart';
-import '../../../products/snacks.dart';
-import '../../../products/technology.dart';
-import '../../../products/water.dart';
+import '../../../product_page/products/baby_care.dart';
+import '../../../product_page/products/basic_food.dart';
+import '../../../product_page/products/cigarettes.dart';
+import '../../../product_page/products/dairy_and_breakfast.dart';
+import '../../../product_page/products/drinks.dart';
+import '../../../product_page/products/fit_form.dart';
+import '../../../product_page/products/food.dart';
+import '../../../product_page/products/fruits_veg.dart';
+import '../../../product_page/products/home_care.dart';
+import '../../../product_page/products/home_living.dart';
+import '../../../product_page/products/ice_cream.dart';
+import '../../../product_page/products/pastries.dart';
+import '../../../product_page/products/personal_care.dart';
+import '../../../product_page/products/pet_food.dart';
+import '../../../product_page/products/ready_to_eat.dart';
+import '../../../product_page/products/sexual_health.dart';
+import '../../../product_page/products/snacks.dart';
+import '../../../product_page/products/technology.dart';
+import '../../../product_page/products/water.dart';
 
 class ShoppingOptions extends StatefulWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../payment/build_payment.dart';
+import '../view/payment/build_payment.dart';
 
 // ignore: non_constant_identifier_names
 Column BuildProductList(
