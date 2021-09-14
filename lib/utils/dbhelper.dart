@@ -3,10 +3,9 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
+import '../features/model/products.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-
-import '../models/products.dart';
 
 class DatabaseHelper {
   static DatabaseHelper _databaseHelper;

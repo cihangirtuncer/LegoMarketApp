@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/features/view/home/home_screen.dart';
+import 'package:lego_market_app/features/view/orders/orders_screen.dart';
+import 'package:lego_market_app/features/view/profile/profile_screen.dart';
+import 'package:lego_market_app/features/view/search/search_screen.dart';
 import '../icon/bottom_icon.dart';
-import '../../../view/home/home_screen.dart';
-import '../../../view/orders/orders_screen.dart';
-import '../../../view/profile/profile_screen.dart';
-import '../../../view/search/search_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
