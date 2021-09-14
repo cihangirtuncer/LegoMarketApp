@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/card/orders_card.dart';
-import 'package:lego_market_app/features/model/products.dart';
-import 'package:lego_market_app/utils/dbhelper.dart';
+
+import '../../../../core/components/card/orders_card.dart';
+import '../../../../utils/dbhelper.dart';
+import '../../../model/products.dart';
 
 class BuildOrders extends StatefulWidget {
   BuildOrders({Key key}) : super(key: key);
