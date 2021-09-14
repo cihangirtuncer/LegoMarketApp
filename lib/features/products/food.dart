@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/features/model/products.dart';
+import '../model/products.dart';
 import 'package:lego_market_app/features/view/home/home_page/product_list.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 import '../../../../core/components/scaffold/products_scaffold.dart';
