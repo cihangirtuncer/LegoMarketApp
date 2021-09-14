@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../core/widget/list_map/product_list_map.dart';
+import '../../core/widget/list_map/product_map_list.dart';
 import '../model/products.dart';
-import '../view/home/home_page/product_list.dart';
 import '../../utils/dbhelper.dart';
 import '../../../../core/components/scaffold/products_scaffold.dart';
 

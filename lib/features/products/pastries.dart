@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/widget/list_map/product_list_map.dart';
+import 'package:lego_market_app/core/widget/list_map/product_map_list.dart';
 
 import '../../../../core/components/scaffold/products_scaffold.dart';
 import '../../utils/dbhelper.dart';
 import '../model/products.dart';
-import '../view/home/home_page/product_list.dart';
 
 class PastriesList extends StatefulWidget {
   PastriesList({Key key}) : super(key: key);
