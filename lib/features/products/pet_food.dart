@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/widget/list_map/product_list_map.dart';
 import 'package:lego_market_app/features/model/products.dart';
 import 'package:lego_market_app/features/view/home/home_page/product_list.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
@@ -33,22 +34,8 @@ class _PetFoodListState extends State<PetFoodList> {
     return BuildProductsScaffold(
       "PET FOOD",
       ListView(
-        children: foodItemCreat(),
+        children: foodItemCreat(context, allFoodList),
       ),
     );
-  }
-
-// ignore: missing_return
-  List<Column> foodItemCreat() {
-    return allFoodList
-        .map(
-          (product) => BuildProductList(
-            context,
-            product.name,
-            product.explanation,
-            product.price,
-          ),
-        )
-        .toList();
   }
 }

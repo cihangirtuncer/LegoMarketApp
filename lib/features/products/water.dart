@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/features/model/products.dart';
-import 'package:lego_market_app/features/view/home/home_page/product_list.dart';
-import 'package:lego_market_app/utils/dbhelper.dart';
+import '../../core/widget/list_map/product_list_map.dart';
+import '../model/products.dart';
+import '../view/home/home_page/product_list.dart';
+import '../../utils/dbhelper.dart';
 import '../../../../core/components/scaffold/products_scaffold.dart';
-
-import '../home_page/product_list.dart';
 
 class WaterList extends StatefulWidget {
   @override
@@ -34,21 +33,8 @@ class _WaterListState extends State<WaterList> {
     return BuildProductsScaffold(
       "WATER",
       ListView(
-        children: foodItemCreat(),
+        children: foodItemCreat(context, allWaterList),
       ),
     );
-  }
-
-  List<Column> foodItemCreat() {
-    return allWaterList
-        .map(
-          (product) => BuildProductList(
-            context,
-            product.name,
-            product.explanation,
-            product.price,
-          ),
-        )
-        .toList();
   }
 }

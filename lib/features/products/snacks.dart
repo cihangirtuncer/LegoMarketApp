@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/features/model/products.dart';
-import 'package:lego_market_app/features/view/home/home_page/product_list.dart';
-import 'package:lego_market_app/utils/dbhelper.dart';
-import '../../../../core/components/scaffold/products_scaffold.dart';
+import 'package:lego_market_app/core/widget/list_map/product_list_map.dart';
 
-import '../home_page/product_list.dart';
+import '../../../../core/components/scaffold/products_scaffold.dart';
+import '../../utils/dbhelper.dart';
+import '../model/products.dart';
+import '../view/home/home_page/product_list.dart';
 
 class SnacksList extends StatefulWidget {
   SnacksList({Key key}) : super(key: key);
@@ -35,22 +35,8 @@ class _SnacksListState extends State<SnacksList> {
     return BuildProductsScaffold(
       "SNACKS",
       ListView(
-        children: foodItemCreat(),
+        children: foodItemCreat(context, allFoodList),
       ),
     );
-  }
-
-// ignore: missing_return
-  List<Column> foodItemCreat() {
-    return allFoodList
-        .map(
-          (product) => BuildProductList(
-            context,
-            product.name,
-            product.explanation,
-            product.price,
-          ),
-        )
-        .toList();
   }
 }

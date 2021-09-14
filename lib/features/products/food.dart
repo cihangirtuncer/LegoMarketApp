@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/components/scaffold/products_scaffold.dart';
+import '../../core/widget/list_map/product_list_map.dart';
 import '../../utils/dbhelper.dart';
 import '../model/products.dart';
-import '../view/home/home_page/product_list.dart';
 
 class FoodList extends StatefulWidget {
   @override
@@ -32,22 +32,8 @@ class _FoodListState extends State<FoodList> {
     return BuildProductsScaffold(
       "FOODS",
       ListView(
-        children: foodItemCreat(),
+        children: foodItemCreat(context, allFoodList),
       ),
     );
-  }
-
-// ignore: missing_return
-  List<Column> foodItemCreat() {
-    return allFoodList
-        .map(
-          (product) => BuildProductList(
-            context,
-            product.name,
-            product.explanation,
-            product.price,
-          ),
-        )
-        .toList();
   }
 }
