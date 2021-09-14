@@ -35,8 +35,8 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
               borderRadius: BorderRadius.circular(12),
               color: Colors.white,
             ),
-            width: 120,
-            height: 110,
+            width: 110,
+            height: 100,
             child: Padding(
               padding: const EdgeInsets.all(
                 8.0,
