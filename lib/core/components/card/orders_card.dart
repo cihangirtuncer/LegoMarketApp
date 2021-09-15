@@ -18,21 +18,21 @@ Column BuildOrdersCard(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Name: $name',
+                    'Product name: $name',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 19,
                     ),
                   ),
                   Text(
                     'Price: $price €',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 19,
                     ),
                   ),
                   Text(
                     'Count: 1',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 19,
                     ),
                   ),
                 ],
@@ -50,7 +50,7 @@ Column BuildOrdersCard(
                     'Delete',
                   ),
                   child: const Text(
-                    'Cancel',
+                    'Delete',
                     style: TextStyle(
                       color: Colors.red,
                       fontSize: 17,
