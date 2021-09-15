@@ -11,6 +11,8 @@ import '../features/model/products.dart';
 class DatabaseHelper {
   static DatabaseHelper _databaseHelper;
   static Database _database;
+  // ignore: non_constant_identifier_names
+  String OrdersTable = "Orders";
 
   factory DatabaseHelper() {
     if (_databaseHelper == null) {
@@ -75,12 +77,6 @@ class DatabaseHelper {
     return sonuc;
   }
 
-  Future<int> addOrders(Products products) async {
-    var db = await getDatabase();
-    var sonuc = await db.insert("Orders", products.toMap());
-    return sonuc;
-  }
-
   Future<List<Products>> productTableList(String categoryName) async {
     categoryName = this.categoryName;
     var notlarMapListesi = await productTable(categoryName);
@@ -90,5 +86,17 @@ class DatabaseHelper {
       productList.add(Products.fromMap(map));
     }
     return productList;
+  }
+
+  Future<bool> addOrders(Products products) async {
+    var db = await getDatabase();
+    final sonuc = await db.insert(OrdersTable, products.toMap());
+    return sonuc != null;
+  }
+
+  Future<bool> delete(String table, int id) async {
+    var db = await getDatabase();
+    var sonuc = await db.delete(table, whereArgs: [id]);
+    return sonuc != null;
   }
 }
