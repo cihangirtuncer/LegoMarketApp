@@ -26,10 +26,10 @@ class Products {
   }
 
   Products.fromMap(Map<String, dynamic> map) {
-    this.id = map['id'];
-    this.name = map['name'];
-    this.explanation = map['explanation'];
-    this.price = map['price'];
+    id = map['id'];
+    name = map['name'];
+    explanation = map['explanation'];
+    price = map['price'];
   }
 
   String toString() {
