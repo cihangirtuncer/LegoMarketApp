@@ -13,7 +13,7 @@ class FoodList extends StatefulWidget {
 class _FoodListState extends State<FoodList> {
   DatabaseHelper databaseHelper;
   List<Products> allFoodList;
-  int id = 1;
+  int id = 1; // try
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
