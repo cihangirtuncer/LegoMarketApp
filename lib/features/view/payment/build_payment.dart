@@ -89,13 +89,11 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
           child: ElevatedButton(
             onPressed: () {
               //fail !!! problem
-              databaseHelper
-                  .addOrders(Products(
-                    name,
-                    explanation,
-                    price,
-                  ))
-                  .then((value) => Navigator.pop(context));
+              databaseHelper.addOrders(Products(
+                name,
+                explanation,
+                price,
+              ));
             },
             child: Text(
               'Add to Basket',

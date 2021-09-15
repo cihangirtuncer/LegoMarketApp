@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/utils/dbhelper.dart';
+import '../../../utils/dbhelper.dart';
 
 // ignore: non_constant_identifier_names
 Column BuildOrdersCard(
@@ -6,7 +8,11 @@ Column BuildOrdersCard(
   String name,
   String explanation,
   int price,
+  int id,
 ) {
+  // ignore: unused_local_variable
+  DatabaseHelper databaseHelper;
+
   return Column(
     children: [
       GestureDetector(
@@ -45,10 +51,9 @@ Column BuildOrdersCard(
               ),
               actions: [
                 TextButton(
-                  onPressed: () => Navigator.pop(
-                    context,
-                    'Delete',
-                  ),
+                  onPressed: () {
+                    databaseHelper.delete('Orders', id);
+                  },
                   child: const Text(
                     'Delete',
                     style: TextStyle(

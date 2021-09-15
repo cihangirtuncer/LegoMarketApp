@@ -46,12 +46,8 @@ class _BuildOrdersState extends State<BuildOrders> {
   List<Column> foodItemCreat() {
     return allFoodList
         .map(
-          (product) => BuildOrdersCard(
-            context,
-            product.name,
-            product.explanation,
-            product.price,
-          ),
+          (product) => BuildOrdersCard(context, product.name,
+              product.explanation, product.price, product.id),
         )
         .toList();
   }
