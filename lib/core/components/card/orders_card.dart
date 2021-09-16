@@ -51,8 +51,12 @@ Column BuildOrdersCard(
               ),
               actions: [
                 TextButton(
+                  //FirebaseFirestore Problem
                   onPressed: () {
-                    databaseHelper.delete('Orders', id,);
+                    databaseHelper.delete(
+                      'Orders',
+                      id,
+                    );
                   },
                   child: const Text(
                     'Delete',
