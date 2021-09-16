@@ -52,7 +52,7 @@ Column BuildOrdersCard(
               actions: [
                 TextButton(
                   onPressed: () {
-                    databaseHelper.delete('Orders', id);
+                    databaseHelper.delete('Orders', id,);
                   },
                   child: const Text(
                     'Delete',
