@@ -88,7 +88,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
         Align(
           child: ElevatedButton(
             onPressed: () {
-              //fail !!! problem
+              //FirebaseFirestore Problem
               databaseHelper.addOrders(Products(
                 name,
                 explanation,
