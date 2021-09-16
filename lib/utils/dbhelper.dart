@@ -64,7 +64,10 @@ class DatabaseHelper {
         flush: true,
       );
     } else {}
-    return await openDatabase(path, readOnly: false);
+    return await openDatabase(
+      path,
+      readOnly: false,
+    );
   }
 
   String categoryName;
