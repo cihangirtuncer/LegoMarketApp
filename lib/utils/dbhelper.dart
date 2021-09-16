@@ -45,7 +45,9 @@ class DatabaseHelper {
 
     if (!exists) {
       try {
-        await Directory(dirname(path)).create(recursive: true);
+        await Directory(dirname(path)).create(
+          recursive: true,
+        );
       } catch (_) {}
 
       ByteData data = await rootBundle.load(join(
