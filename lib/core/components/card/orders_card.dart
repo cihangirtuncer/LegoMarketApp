@@ -62,7 +62,7 @@ Column BuildOrdersCard(
                     'Delete',
                     style: TextStyle(
                       color: Colors.red,
-                      fontSize: 17,
+                      fontSize: 17
                     ),
                   ),
                 ),
