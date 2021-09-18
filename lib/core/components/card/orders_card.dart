@@ -87,10 +87,7 @@ Column BuildOrdersCard(
           child: ListTile(
               title: Text(
                 name,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               subtitle: Text(
                 "continues",
