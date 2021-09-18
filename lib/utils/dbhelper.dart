@@ -73,7 +73,9 @@ class DatabaseHelper {
   Future<List<Map<String, dynamic>>> productTable(String categoryName) async {
     this.categoryName = categoryName;
     var db = await getDatabase();
-    var sonuc = await db.rawQuery('SELECT * FROM $categoryName');
+    var sonuc = await db.rawQuery(
+      'SELECT * FROM $categoryName',
+    );
     return sonuc;
   }
 
