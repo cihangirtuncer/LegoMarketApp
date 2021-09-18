@@ -85,7 +85,9 @@ class DatabaseHelper {
     // ignore: deprecated_member_use
     var productList = List<Products>();
     for (Map map in notlarMapListesi) {
-      productList.add(Products.fromMap(map));
+      productList.add(
+        Products.fromMap(map),
+      );
     }
     return productList;
   }
