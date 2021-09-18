@@ -11,18 +11,19 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            70,
-            0,
-            0,
-            0,
-          ),
-          child: Text(
-            "PAYMENT",
-          ),
+      title: Padding(
+        padding: const EdgeInsets.fromLTRB(
+          70,
+          0,
+          0,
+          0,
         ),
-        backgroundColor: Colors.green.shade900),
+        child: Text(
+          "PAYMENT",
+        ),
+      ),
+      backgroundColor: Colors.green.shade900,
+    ),
     body: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
