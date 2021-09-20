@@ -103,10 +103,7 @@ class DatabaseHelper {
 
   Future<bool> delete(String table, int id) async {
     var db = await getDatabase();
-    var sonuc = await db.delete(
-      table,
-      whereArgs: [id],
-    );
+    var sonuc = await db.delete(table, whereArgs: [id]);
     return sonuc != null;
   }
 }
