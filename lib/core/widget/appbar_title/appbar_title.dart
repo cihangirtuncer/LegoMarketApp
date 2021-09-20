@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../text/appbar_text.dart';
+import '../../components/text/appbar_text.dart';
 
 // ignore: non_constant_identifier_names
 Widget BuildHomeAppBarText() {

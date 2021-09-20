@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/text/orders_card_text.dart';
 import 'package:lego_market_app/utils/dbhelper.dart';
 import '../../../utils/dbhelper.dart';
 
@@ -23,32 +24,13 @@ Column BuildOrdersCard(
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Product name: $name',
-                    style: TextStyle(
-                      fontSize: 19,
-                    ),
-                  ),
-                  Text(
-                    'Price: $price €',
-                    style: TextStyle(
-                      fontSize: 19,
-                    ),
-                  ),
-                  Text(
-                    'Count: 1',
-                    style: TextStyle(
-                      fontSize: 19,
-                    ),
-                  ),
+                  BuildOrdersCardTextWidget("Product Name: ", "$name"),
+                  BuildOrdersCardTextWidget("Price: ", "$price €"),
+                  BuildOrdersCardTextWidget("count: ", "1"),
                 ],
               ),
-              content: Text(
-                'Explanation: $explanation',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
+              content:
+                  BuildOrdersCardTextWidget("Explanation: ", "$explanation"),
               actions: [
                 TextButton(
                   //FirebaseFirestore Problem
