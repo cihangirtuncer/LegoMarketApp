@@ -94,7 +94,10 @@ class DatabaseHelper {
 
   Future<bool> addOrders(Products products) async {
     var db = await getDatabase();
-    final sonuc = await db.insert(OrdersTable, products.toMap());
+    final sonuc = await db.insert(
+      OrdersTable,
+      products.toMap(),
+    );
     return sonuc != null;
   }
 
