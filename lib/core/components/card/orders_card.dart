@@ -24,9 +24,18 @@ Column BuildOrdersCard(
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BuildOrdersCardTextWidget("Product Name: ", "$name"),
-                  BuildOrdersCardTextWidget("Price: ", "$price €"),
-                  BuildOrdersCardTextWidget("count: ", "1"),
+                  BuildOrdersCardTextWidget(
+                    "Product Name: ",
+                    "$name",
+                  ),
+                  BuildOrdersCardTextWidget(
+                    "Price: ",
+                    "$price €",
+                  ),
+                  BuildOrdersCardTextWidget(
+                    "count: ",
+                    "1",
+                  ),
                 ],
               ),
               content:
