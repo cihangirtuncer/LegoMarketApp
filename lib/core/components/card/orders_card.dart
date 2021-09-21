@@ -38,8 +38,10 @@ Column BuildOrdersCard(
                   ),
                 ],
               ),
-              content:
-                  BuildOrdersCardTextWidget("Explanation: ", "$explanation"),
+              content: BuildOrdersCardTextWidget(
+                "Explanation: ",
+                "$explanation",
+              ),
               actions: [
                 TextButton(
                   //FirebaseFirestore Problem
