@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/components/divider/profile_divder.dart';
 import '../../../../core/components/row/profile_row.dart';
 import 'profile_build_data.dart';
@@ -72,10 +73,7 @@ BuildProfile() {
         80,
         50,
         Alignment.centerLeft,
-        BuildProfileRow(
-          "address: Lego 1 site / A blok / no: 49",
-          Icons.home,
-        ),
+        BuildProfileRow("address: Lego 1 site / A blok / no: 49", Icons.home),
       ),
       BuildProfileDivider(1.0),
     ],
