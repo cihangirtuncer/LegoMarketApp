@@ -53,7 +53,10 @@ Column BuildOrdersCard(
                   },
                   child: const Text(
                     'Delete',
-                    style: TextStyle(color: Colors.red, fontSize: 17),
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 17,
+                    ),
                   ),
                 ),
                 TextButton(
