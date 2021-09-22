@@ -11,9 +11,7 @@ BuildProfileRow(String string, IconData icon) {
       Text(" "),
       Text(
         string,
-        style: TextStyle(
-          fontSize: 20,
-        ),
+        style: TextStyle(fontSize: 20),
       ),
     ],
   );
