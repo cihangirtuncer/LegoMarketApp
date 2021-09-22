@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/text/orders_card_text.dart';
-import 'package:lego_market_app/utils/dbhelper.dart';
+import '../text/orders_card_text.dart';
+import '../../../utils/dbhelper.dart';
 import '../../../utils/dbhelper.dart';
 
 // ignore: non_constant_identifier_names

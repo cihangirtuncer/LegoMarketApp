@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/components/app_bar/home_app_bar.dart';
 
+import '../../../core/components/app_bar/home_app_bar.dart';
 import 'home_page/shopping_options.dart';
 
 class HomePage extends StatefulWidget {
