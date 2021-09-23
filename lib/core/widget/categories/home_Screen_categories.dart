@@ -11,7 +11,7 @@ BuildShoppingContainer(
     onTap: () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => destination),
+        MaterialPageRoute(builder: (context) => destination,),
       );
     },
     child: Container(
