@@ -28,7 +28,9 @@ class _MyHomePageState extends State<MyHomePage> {
         unselectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
-            icon: BuildBottomIcon(Icons.home),
+            icon: BuildBottomIcon(
+              Icons.home,
+            ),
             label: "HOME",
             backgroundColor: Colors.white,
           ),
