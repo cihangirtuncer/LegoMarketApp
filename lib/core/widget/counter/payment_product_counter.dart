@@ -34,7 +34,9 @@ class _ButtonPaymentState extends State<ButtonPayment> {
           ),
         ),
         IconButton(
-          icon: const Icon(Icons.add_outlined),
+          icon: const Icon(
+            Icons.add_outlined,
+          ),
           onPressed: () {
             setState(() {
               _volume += 1;
