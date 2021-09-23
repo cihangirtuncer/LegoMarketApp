@@ -7,7 +7,9 @@ BuildAppBar(String name) {
     title: Center(
       child: Text(
         name,
-        style: TextStyle(fontSize: 23),
+        style: TextStyle(
+          fontSize: 23,
+        ),
       ),
     ),
   );
