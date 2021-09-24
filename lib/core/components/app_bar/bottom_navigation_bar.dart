@@ -24,7 +24,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.blue.shade900,
-        selectedIconTheme: IconThemeData(color: Colors.blue.shade900),
+        selectedIconTheme: IconThemeData(
+          color: Colors.blue.shade900,
+        ),
         unselectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
