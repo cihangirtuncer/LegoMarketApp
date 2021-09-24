@@ -17,6 +17,7 @@ class _BuildOrdersState extends State<BuildOrders> {
   int id = 1;
   void initState() {
     super.initState();
+    // ignore: deprecated_member_use
     allFoodList = List<Products>();
     databaseHelper = DatabaseHelper();
     databaseHelper.productTable("Orders").then((allFoodMapList) {
