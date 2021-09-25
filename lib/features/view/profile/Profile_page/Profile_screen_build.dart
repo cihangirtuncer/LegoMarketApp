@@ -27,7 +27,7 @@ BuildProfile() {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.blue.shade900,
+                  color: Colors.indigo.shade900,
                 ),
                 child: Icon(
                   Icons.account_circle_rounded,
