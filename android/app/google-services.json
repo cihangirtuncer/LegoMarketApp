@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "54056811701",
+    "project_id": "legomarket-afebb",
+    "storage_bucket": "legomarket-afebb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54056811701:android:3c0d7113b1dae4180992fc",
+        "android_client_info": {
+          "package_name": "com.example.lego_market_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54056811701-q5d25tba344s3vmo4ckb1g8ve3262vqp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lego_market_app",
+            "certificate_hash": "7a9f14df1032da8aee086ab3f51220d17cef2d97"
+          }
+        },
+        {
+          "client_id": "54056811701-qmb5khjb75o78dluurm19pmvtc7epfb7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7PA4HPcbu75ZdbCSpxHPzV5r_RWCDJro"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54056811701-qmb5khjb75o78dluurm19pmvtc7epfb7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
