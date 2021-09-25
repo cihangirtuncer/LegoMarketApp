@@ -76,27 +76,30 @@ Column BuildOrdersCard(
             ),
           );
         },
-        child: Card(
-          child: ListTile(
-              title: Text(
-                name,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+        child: Padding(
+          padding: const EdgeInsets.all(3.0),
+          child: Card(
+            child: ListTile(
+                title: Text(
+                  name,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              subtitle: Text(
-                "continues",
-                style: TextStyle(
-                  fontSize: 18,
+                subtitle: Text(
+                  "continues",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.amber.shade700,
+                  ),
+                ),
+                trailing: Icon(
+                  Icons.run_circle_outlined,
                   color: Colors.amber.shade700,
-                ),
-              ),
-              trailing: Icon(
-                Icons.run_circle_outlined,
-                color: Colors.amber.shade700,
-                size: 35,
-              )),
+                  size: 35,
+                )),
+          ),
         ),
       )
     ],
