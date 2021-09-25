@@ -37,6 +37,7 @@ class _BuildOrdersState extends State<BuildOrders> {
         ),
         backgroundColor: Colors.indigo.shade900,
       ),
+      backgroundColor: Colors.grey.shade300,
       body: ListView(
         children: foodItemCreat(),
       ),
