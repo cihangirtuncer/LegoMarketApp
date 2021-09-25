@@ -31,7 +31,7 @@ BuildProfile() {
                 ),
                 child: Icon(
                   Icons.account_circle_rounded,
-                  size: 110,
+                  size: 90,
                   color: Colors.white,
                 ),
               ),
@@ -39,7 +39,7 @@ BuildProfile() {
             Text(
               "Cihangir Tuncer",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 19,
               ),
             ),
           ],
