@@ -33,7 +33,7 @@ class _BuildOrdersState extends State<BuildOrders> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text("ORDERS"),
+          child: Text("Orders"),
         ),
         backgroundColor: Colors.indigo.shade900,
       ),
