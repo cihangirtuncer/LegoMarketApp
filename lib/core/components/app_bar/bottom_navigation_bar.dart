@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../features/view/home/home_screen.dart';
 import '../../../features/view/orders/orders_screen.dart';
 import '../../../features/view/profile/profile_screen.dart';
-import '../../../features/view/search/search_screen.dart';
+//import '../../../features/view/search/search_screen.dart';
 import '../icon/bottom_icon.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,7 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final tabs = [
     HomePage(),
-    Search(),
+    //Search(),
     OrdersScreen(),
     Profile(),
   ];
@@ -36,13 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
             label: "HOME",
             backgroundColor: Colors.white,
           ),
-          BottomNavigationBarItem(
-            icon: BuildBottomIcon(
-              Icons.search,
-            ),
-            label: "SEARCH",
-            backgroundColor: Colors.white,
-          ),
+          // BottomNavigationBarItem(
+          //  icon: BuildBottomIcon(
+          //    Icons.search,
+          //  ),
+          //  label: "SEARCH",
+          //  backgroundColor: Colors.white,
+          // ),
           BottomNavigationBarItem(
             icon: BuildBottomIcon(
               Icons.shopping_cart,
