@@ -23,9 +23,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blue.shade900,
+        selectedItemColor: Colors.indigo.shade900,
         selectedIconTheme: IconThemeData(
-          color: Colors.blue.shade900,
+          color: Colors.indigo.shade900,
         ),
         unselectedItemColor: Colors.black,
         items: [
