@@ -5,12 +5,12 @@ import '../../../features/view/profile/profile_screen.dart';
 //import '../../../features/view/search/search_screen.dart';
 import '../icon/bottom_icon.dart';
 
-class MyHomePage extends StatefulWidget {
+class BottomHomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _BottomHomePageState createState() => _BottomHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _BottomHomePageState extends State<BottomHomePage> {
   int _selectedIndex = 0;
   final tabs = [
     HomePage(),
