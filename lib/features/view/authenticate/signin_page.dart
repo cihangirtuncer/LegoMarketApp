@@ -61,8 +61,7 @@ class __SignInBodyState extends State<_SignInBody> {
   void _signInAnonymously() async {
     try {
       final User user = (await _auth.signInAnonymously()).user;
-      Utils.showSnackBar(context,
-          text: "Anonim olarak giriş yapıldı: ${user.uid}");
+      Utils.showSnackBar(context, text: "Signed in anonymously: ${user.uid}");
 
       Navigator.pushReplacement(
         context,
@@ -73,8 +72,8 @@ class __SignInBodyState extends State<_SignInBody> {
     } catch (e) {
       debugPrint(e.toString());
       // ignore: deprecated_member_use
-      Scaffold.of(context).showSnackBar(
-          SnackBar(content: Text("Anonim giriş yaparken bir hata oluştu")));
+      Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text("An error occurred while logging in anonymously")));
     }
   }
 
@@ -95,7 +94,7 @@ class __SignInBodyState extends State<_SignInBody> {
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(
         SnackBar(
-          content: Text("${user.displayName}, Google ile giriş yaptı."),
+          content: Text("${user.displayName}, Logged in with google."),
         ),
       );
 
@@ -120,7 +119,7 @@ class __SignInBodyState extends State<_SignInBody> {
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(
         SnackBar(
-          content: Text("Google ile giriş yaparken bir hata oluştu!"),
+          content: Text("An error occurred while logging in with Google!"),
         ),
       );
     }
