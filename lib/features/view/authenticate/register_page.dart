@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
-/// Email / Şifre ile kayıt sayfası
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -38,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     decoration: const InputDecoration(labelText: "E-Mail"),
                     validator: (String mail) {
                       if (mail.isEmpty) {
-                        return "Lütfen bir mail yazın";
+                        return "Please write an e-mail";
                       }
                       return null;
                     },
@@ -46,14 +45,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   //? Şifre
                   TextFormField(
                     controller: _passwordController,
-                    decoration: const InputDecoration(labelText: "Şifre"),
+                    decoration: const InputDecoration(labelText: "Password"),
                     validator: (String password) {
                       if (password.isEmpty) {
-                        return "Lütfen bir şifre yazın";
+                        return "please write an password";
                       }
                       return null;
                     },
-                    obscureText: true, //! Şifrenin görünmesini engeller.
+                    obscureText: true, //! prevents the password from appearing.
                   ),
                   //? Kayıt ol buttonu
                   Container(
@@ -67,7 +66,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           _register();
                         }
                       },
-                      text: "Kayıt ol",
+                      text: "Register",
                     ),
                   ),
                   //? Geri bildirim
@@ -103,19 +102,19 @@ class _RegisterPageState extends State<RegisterPage> {
       if (user != null) {
         setState(() {
           _success = true;
-          _message = "Kayıt başarılı ${user.email}";
+          _message = "Registration Successful ${user.email}";
         });
       } else {
         setState(() {
           _success = false;
-          _message = "Kayıt başarısız.";
+          _message = "Registration Failed.";
         });
       }
     } catch (e) {
       debugPrint(e.toString());
       setState(() {
         _success = false;
-        _message = "Kayıt başarısız.\n\n$e";
+        _message = "Registration Failed.\n\n$e";
       });
     }
   }
