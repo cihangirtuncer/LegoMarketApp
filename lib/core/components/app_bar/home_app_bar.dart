@@ -5,7 +5,7 @@ import '../../widget/appbar_title/appbar_title.dart';
 AppBar HomeAppBar(BuildContext context) {
   return AppBar(
     automaticallyImplyLeading: false,
-    backgroundColor: Colors.indigo.shade900,
+    backgroundColor: Color(0xF504094E),
     title: BuildHomeAppBarText(26, 10),
     actions: [],
   );
