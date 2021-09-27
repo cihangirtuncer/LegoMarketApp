@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 BuildAppBar(String name) {
   return AppBar(
     backgroundColor: Colors.indigo.shade900,
+    automaticallyImplyLeading: false,
     title: Center(
       child: Text(
         name,

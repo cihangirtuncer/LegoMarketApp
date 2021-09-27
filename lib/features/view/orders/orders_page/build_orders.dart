@@ -32,6 +32,8 @@ class _BuildOrdersState extends State<BuildOrders> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.indigo.shade900,
+        automaticallyImplyLeading: false,
         title: Center(
           child: Text(
             "Orders",
@@ -40,7 +42,6 @@ class _BuildOrdersState extends State<BuildOrders> {
             ),
           ),
         ),
-        backgroundColor: Colors.indigo.shade900,
       ),
       backgroundColor: Colors.grey.shade300,
       body: ListView(
