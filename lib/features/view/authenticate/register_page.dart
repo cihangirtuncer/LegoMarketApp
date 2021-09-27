@@ -23,58 +23,98 @@ class _RegisterPageState extends State<RegisterPage> {
         backgroundColor: Colors.indigo.shade900,
         title: Text("Register"),
       ),
-      body: Form(
-        key: _formKey,
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  //? E-Mail
-                  TextFormField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(labelText: "E-Mail"),
-                    validator: (String mail) {
-                      if (mail.isEmpty) {
-                        return "Please write an e-mail";
-                      }
-                      return null;
-                    },
+      body: Container(
+        height: 1000,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xF541012C),
+              Color(0xF504094E),
+              Color(0xFF040C7C),
+              Colors.teal,
+              Color(0xFFE49E07),
+              Color(0xFFE43307),
+              Color(0xFF8D0505),
+            ],
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 180, 10, 30),
+          child: Form(
+            key: _formKey,
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      //? E-Mail
+                      TextFormField(
+                        controller: _emailController,
+                        style: TextStyle(color: Colors.white),
+                        cursorColor: Colors.white,
+                        decoration: const InputDecoration(
+                          labelText: "E-Mail",
+                          labelStyle: TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                          fillColor: Colors.white,
+                          focusColor: Colors.white,
+                          hoverColor: Colors.white,
+                        ),
+                        validator: (String mail) {
+                          if (mail.isEmpty) {
+                            return "Please write an e-mail";
+                          }
+                          return null;
+                        },
+                      ),
+                      //? Şifre
+                      TextFormField(
+                        controller: _passwordController,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                        decoration: const InputDecoration(
+                          labelText: "Password",
+                          labelStyle: TextStyle(color: Colors.white),
+                        ),
+                        validator: (String password) {
+                          if (password.isEmpty) {
+                            return "please write an password";
+                          }
+                          return null;
+                        },
+                        obscureText:
+                            true, //! prevents the password from appearing.
+                      ),
+                      //? Kayıt ol buttonu
+                      Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        alignment: Alignment.center,
+                        child: SignInButtonBuilder(
+                          icon: Icons.person_add,
+                          backgroundColor: Colors.indigo.shade900,
+                          fontSize: 18,
+                          onPressed: () async {
+                            if (_formKey.currentState.validate()) {
+                              _register();
+                            }
+                          },
+                          text: "Register",
+                        ),
+                      ),
+                      //? Geri bildirim
+                      Container(
+                        alignment: Alignment.center,
+                        child: Text(_success == null ? '' : _message ?? ''),
+                      ),
+                    ],
                   ),
-                  //? Şifre
-                  TextFormField(
-                    controller: _passwordController,
-                    decoration: const InputDecoration(labelText: "Password"),
-                    validator: (String password) {
-                      if (password.isEmpty) {
-                        return "please write an password";
-                      }
-                      return null;
-                    },
-                    obscureText: true, //! prevents the password from appearing.
-                  ),
-                  //? Kayıt ol buttonu
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    alignment: Alignment.center,
-                    child: SignInButtonBuilder(
-                      icon: Icons.person_add,
-                      backgroundColor: Colors.indigo.shade900,
-                      onPressed: () async {
-                        if (_formKey.currentState.validate()) {
-                          _register();
-                        }
-                      },
-                      text: "Register",
-                    ),
-                  ),
-                  //? Geri bildirim
-                  Container(
-                    alignment: Alignment.center,
-                    child: Text(_success == null ? '' : _message ?? ''),
-                  ),
-                ],
+                ),
               ),
             ),
           ),

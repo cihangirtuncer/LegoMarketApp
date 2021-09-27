@@ -47,12 +47,13 @@ class __SignInBodyState extends State<_SignInBody> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color(0xF54E0435),
+            Color(0xF541012C),
             Color(0xF504094E),
-            Color(0xF50010EE),
-            Color(0xFFF7E708),
-            Color(0xFFEC811E),
-            Color(0xffee0000),
+            Color(0xFF040C7C),
+            Colors.teal,
+            Color(0xFFE49E07),
+            Color(0xFFE43307),
+            Color(0xFF8D0505),
           ],
         ),
       ),
@@ -163,31 +164,32 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
       child: Card(
         color: Colors.transparent,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(5, 80, 5, 25),
+          padding: const EdgeInsets.fromLTRB(16, 80, 16, 25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //? Bilgi
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                 child: Container(
                   child: Text(
                     "Login with Email and Password",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 16),
+                        fontSize: 17),
                   ),
                   alignment: Alignment.center,
                 ),
               ),
               //? E-Mail
               TextFormField(
-                cursorColor: Colors.white,
                 controller: _emailController,
+                style: TextStyle(color: Colors.white),
                 decoration: const InputDecoration(
                   labelStyle: TextStyle(color: Colors.white),
                   labelText: "E-Mail",
+                  hintStyle: TextStyle(color: Colors.white),
                   fillColor: Colors.white,
                   focusColor: Colors.white,
                   hoverColor: Colors.white,
@@ -200,6 +202,9 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
               //? Şifre
               TextFormField(
                 controller: _passwordController,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
                 decoration: const InputDecoration(
                     labelStyle: TextStyle(color: Colors.white),
                     labelText: "Password",
