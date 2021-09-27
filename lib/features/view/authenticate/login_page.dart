@@ -231,12 +231,6 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
       Scaffold.of(context).showSnackBar(SnackBar(
         content: Text("${user.email} logged in with."),
       ));
-    } on FirebaseAuthException catch (e) {
-      debugPrint(e.toString());
-      // ignore: deprecated_member_use
-      Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("${e.message}"),
-      ));
 
       Navigator.pushReplacement(
         context,
@@ -244,6 +238,12 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
           builder: (context) => BottomHomePage(),
         ),
       );
+    } on FirebaseAuthException catch (e) {
+      debugPrint(e.toString());
+      // ignore: deprecated_member_use
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text("${e.message}"),
+      ));
     } catch (e) {
       debugPrint(e.toString());
       // ignore: deprecated_member_use
