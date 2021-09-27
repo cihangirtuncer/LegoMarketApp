@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../components/text/appbar_text.dart';
 
 // ignore: non_constant_identifier_names
-Widget BuildHomeAppBarText(double fontsize) {
+Widget BuildHomeAppBarText(double fontsize, double width) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -12,7 +12,7 @@ Widget BuildHomeAppBarText(double fontsize) {
       BuildAppBarText("G", Colors.yellow, fontsize),
       BuildAppBarText("O", Colors.green, fontsize),
       SizedBox(
-        width: 10,
+        width: width,
       ),
       BuildAppBarText("M", Colors.red, fontsize),
       BuildAppBarText("A", Colors.orange, fontsize),
