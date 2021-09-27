@@ -4,12 +4,12 @@ import '../../model/products.dart';
 import '../../../utils/dbhelper.dart';
 import '../../../../core/components/scaffold/products_scaffold.dart';
 
-class IcreCreamList extends StatefulWidget {
+class IceCreamList extends StatefulWidget {
   @override
-  _IcreCreamListState createState() => _IcreCreamListState();
+  _IceCreamListState createState() => _IceCreamListState();
 }
 
-class _IcreCreamListState extends State<IcreCreamList> {
+class _IceCreamListState extends State<IceCreamList> {
   DatabaseHelper databaseHelper;
   List<Products> allFoodList;
   int id = 1;
