@@ -20,8 +20,14 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo.shade900,
-        title: Text("Register"),
+        backgroundColor: Color(0xF504094E),
+        title: Padding(
+          padding: const EdgeInsets.fromLTRB(80, 0, 0, 0),
+          child: Text(
+            "Register",
+            style: TextStyle(fontSize: 22),
+          ),
+        ),
       ),
       body: Container(
         height: 1000,
@@ -97,7 +103,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         alignment: Alignment.center,
                         child: SignInButtonBuilder(
                           icon: Icons.person_add,
-                          backgroundColor: Colors.indigo.shade900,
+                          backgroundColor: Color(0xF504094E),
                           fontSize: 18,
                           onPressed: () async {
                             if (_formKey.currentState.validate()) {
