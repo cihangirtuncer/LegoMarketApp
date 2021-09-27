@@ -32,7 +32,7 @@ class _BuildOrdersState extends State<BuildOrders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar("Orders"),
+      appBar: BuildAppBar("Orders", false),
       backgroundColor: Colors.grey.shade300,
       body: ListView(
         children: foodItemCreat(),

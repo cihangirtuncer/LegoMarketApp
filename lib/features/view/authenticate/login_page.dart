@@ -18,9 +18,9 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo.shade900,
+        backgroundColor: Color(0xF504094E),
         title: Padding(
-          padding: const EdgeInsets.fromLTRB(90, 0, 0, 0),
+          padding: const EdgeInsets.fromLTRB(80, 0, 0, 0),
           child: Text(
             "LOGIN",
             style: TextStyle(fontSize: 22),
@@ -175,9 +175,9 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                   child: Text(
                     "Login with Email and Password",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 17),
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
                   ),
                   alignment: Alignment.center,
                 ),

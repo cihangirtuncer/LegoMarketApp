@@ -13,7 +13,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: Colors.grey.shade200,
-      appBar: BuildAppBar("Profile"),
+      appBar: BuildAppBar("Profile", false),
       body: BuildProfile(),
     );
   }

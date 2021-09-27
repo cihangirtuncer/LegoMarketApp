@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-BuildAppBar(String name) {
+BuildAppBar(String name, bool whichTF) {
   return AppBar(
     backgroundColor: Colors.indigo.shade900,
-    automaticallyImplyLeading: false,
+    automaticallyImplyLeading: whichTF,
     title: Center(
       child: Text(
         name,
