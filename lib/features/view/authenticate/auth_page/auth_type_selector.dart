@@ -34,7 +34,7 @@ class AuthTypeSelector extends StatelessWidget {
           children: [
             Container(
               child: BuildHomeAppBarText(38),
-              padding: const EdgeInsets.fromLTRB(3, 17, 3, 190),
+              padding: const EdgeInsets.fromLTRB(3, 17, 3, 180),
             ),
             //? Login Button
             Container(
