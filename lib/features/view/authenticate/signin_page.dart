@@ -18,6 +18,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.indigo.shade900,
         title: Text("Login"),
       ),
       body: _SignInBody(),
@@ -39,15 +40,15 @@ class __SignInBodyState extends State<_SignInBody> {
         // Default hali zaten vertical olduğu için yazmaya gerek yok
         scrollDirection: Axis.vertical,
         children: [
-          //? Email / Şifre ile giriş
+          //? sign in with Email & password
           _EmailPasswordForm(),
-          //? Google ile giriş
+          //? sign in with google
           _SignInProvider(
             infoText: "Sign in with google",
             buttonType: Buttons.Google,
             signInMethod: () async => _signInWithGoogle(),
           ),
-          //? Anonim giriş
+          //? Anonimous login
           _SignInProvider(
             infoText: "Login anonymously",
             buttonType: Buttons.AppleDark,
@@ -171,7 +172,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                   if (password.isEmpty) return "Please type a password";
                   return null;
                 },
-                obscureText: true, //! Şifrenin görünmesini engeller.
+                obscureText: true, //! prevents passwords from appearing.
               ),
               Container(
                 padding: const EdgeInsets.only(top: 16.0),
