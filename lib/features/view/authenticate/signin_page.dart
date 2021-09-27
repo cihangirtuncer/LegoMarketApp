@@ -18,7 +18,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Giriş Yap"),
+        title: Text("Login"),
       ),
       body: _SignInBody(),
     );
@@ -43,13 +43,13 @@ class __SignInBodyState extends State<_SignInBody> {
           _EmailPasswordForm(),
           //? Google ile giriş
           _SignInProvider(
-            infoText: "Google ile giriş yap",
+            infoText: "Sign in with google",
             buttonType: Buttons.Google,
             signInMethod: () async => _signInWithGoogle(),
           ),
           //? Anonim giriş
           _SignInProvider(
-            infoText: "Anonim giriş yap",
+            infoText: "Login anonymously",
             buttonType: Buttons.AppleDark,
             signInMethod: () async => _signInAnonymously(),
           ),
@@ -149,7 +149,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
               //? Bilgi
               Container(
                 child: Text(
-                  "Email ve Şifre ile Giriş Yap",
+                  "Login with Email and Password",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 alignment: Alignment.center,
@@ -159,16 +159,16 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: "E-Mail"),
                 validator: (String mail) {
-                  if (mail.isEmpty) return "Lütfen bir mail yazın";
+                  if (mail.isEmpty) return "Please write an e-mail";
                   return null;
                 },
               ),
               //? Şifre
               TextFormField(
                 controller: _passwordController,
-                decoration: const InputDecoration(labelText: "Şifre"),
+                decoration: const InputDecoration(labelText: "Password"),
                 validator: (String password) {
-                  if (password.isEmpty) return "Lütfen bir şifre yazın";
+                  if (password.isEmpty) return "Please type a password";
                   return null;
                 },
                 obscureText: true, //! Şifrenin görünmesini engeller.
@@ -176,7 +176,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
               Container(
                 padding: const EdgeInsets.only(top: 16.0),
                 alignment: Alignment.center,
-                child: SignInButton(Buttons.Email, text: "Email ile giriş yap",
+                child: SignInButton(Buttons.Email, text: "Sign in with Email",
                     onPressed: () async {
                   if (_formKey.currentState.validate()) {
                     _signInWithEmailAndPassword();
@@ -201,7 +201,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
 
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("${user.email} ile giriş yapıldı."),
+        content: Text("${user.email} logged in with."),
       ));
     } on FirebaseAuthException catch (e) {
       debugPrint(e.toString());
@@ -220,7 +220,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
       debugPrint(e.toString());
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Email & Şifre ile giriş yaparken bir sorun oluştu"),
+        content: Text("There was a problem logging in with Email and Password"),
       ));
     }
   }
