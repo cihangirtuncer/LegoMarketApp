@@ -13,8 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.light),
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        hintColor: Colors.white,
+        focusColor: Colors.white,
+        shadowColor: Colors.transparent,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       themeMode: ThemeMode.system,
       home: AuthTypeSelector(),
     );

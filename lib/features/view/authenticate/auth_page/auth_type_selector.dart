@@ -4,7 +4,7 @@ import 'package:flutter_signin_button/button_builder.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/appbar_title/appbar_title.dart';
 import 'package:lego_market_app/features/view/authenticate/register_page.dart';
-import 'package:lego_market_app/features/view/authenticate/signin_page.dart';
+import 'package:lego_market_app/features/view/authenticate/login_page.dart';
 
 /// Bir kimlik doğrulama türü [Authentication Type] seçmek için
 /// bir UI [User Interface] sağlar.
