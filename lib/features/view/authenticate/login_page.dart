@@ -19,7 +19,13 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo.shade900,
-        title: Text("Login"),
+        title: Padding(
+          padding: const EdgeInsets.fromLTRB(90, 0, 0, 0),
+          child: Text(
+            "LOGIN",
+            style: TextStyle(fontSize: 22),
+          ),
+        ),
       ),
       backgroundColor: Colors.black,
       body: _SignInBody(),
@@ -112,7 +118,6 @@ class __SignInBodyState extends State<_SignInBody> {
           content: Text("${user.displayName}, Logged in with google."),
         ),
       );
-
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -163,25 +168,30 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //? Bilgi
-              Container(
-                child: Text(
-                  "Login with Email and Password",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 16),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: Text(
+                    "Login with Email and Password",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 16),
+                  ),
+                  alignment: Alignment.center,
                 ),
-                alignment: Alignment.center,
               ),
               //? E-Mail
               TextFormField(
                 cursorColor: Colors.white,
                 controller: _emailController,
                 decoration: const InputDecoration(
-                    labelText: "E-Mail",
-                    fillColor: Colors.white,
-                    focusColor: Colors.white,
-                    hoverColor: Colors.white),
+                  labelStyle: TextStyle(color: Colors.white),
+                  labelText: "E-Mail",
+                  fillColor: Colors.white,
+                  focusColor: Colors.white,
+                  hoverColor: Colors.white,
+                ),
                 validator: (String mail) {
                   if (mail.isEmpty) return "Please write an e-mail";
                   return null;
@@ -191,6 +201,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
               TextFormField(
                 controller: _passwordController,
                 decoration: const InputDecoration(
+                    labelStyle: TextStyle(color: Colors.white),
                     labelText: "Password",
                     fillColor: Colors.white,
                     focusColor: Colors.white,
