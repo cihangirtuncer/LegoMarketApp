@@ -4,6 +4,7 @@ import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
+import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/utils/utils_firebase.dart';
 
 class SignInPage extends StatefulWidget {
@@ -41,23 +42,8 @@ class _SignInBody extends StatefulWidget {
 class __SignInBodyState extends State<_SignInBody> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0xF541012C),
-            Color(0xF504094E),
-            Color(0xFF040C7C),
-            Colors.teal,
-            Color(0xFFE49E07),
-            Color(0xFFE43307),
-            Color(0xFF8D0505),
-          ],
-        ),
-      ),
-      child: ListView(
+    return BuildGradientContainer(
+      ListView(
         padding: const EdgeInsets.all(8.0),
         scrollDirection: Axis.vertical,
         children: [

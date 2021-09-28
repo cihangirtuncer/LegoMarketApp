@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../features/model/products.dart';
-import '../../../features/product_page/product_list.dart';
+import '../../features/model/products.dart';
+import '../../features/product_page/product_list.dart';
 
 List<Column> foodItemCreat(BuildContext context, List<Products> allFoodList) {
   return allFoodList

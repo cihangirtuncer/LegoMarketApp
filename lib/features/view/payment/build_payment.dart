@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widget/counter/payment_product_counter.dart';
+import '../../../core/widget/payment_product_counter.dart';
 import '../../../utils/dbhelper.dart';
 import '../../model/products.dart';
 

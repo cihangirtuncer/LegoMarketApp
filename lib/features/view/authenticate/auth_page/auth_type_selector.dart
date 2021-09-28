@@ -2,7 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_builder.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/core/widget/appbar_title/appbar_title.dart';
+import 'package:lego_market_app/core/widget/appbar_title.dart';
+import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/features/view/authenticate/register_page.dart';
 import 'package:lego_market_app/features/view/authenticate/login_page.dart';
 
@@ -13,67 +14,51 @@ class AuthTypeSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xF541012C),
-              Color(0xF504094E),
-              Color(0xFF040C7C),
-              Colors.teal,
-              Color(0xFFE49E07),
-              Color(0xFFE43307),
-              Color(0xFF8D0505),
-            ],
+        body: BuildGradientContainer(
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: BuildHomeAppBarText(38, 15),
+            padding: const EdgeInsets.fromLTRB(3, 17, 3, 180),
           ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              child: BuildHomeAppBarText(38, 15),
-              padding: const EdgeInsets.fromLTRB(3, 17, 3, 180),
-            ),
-            //? Login Button
-            Container(
-              child: SignInButtonBuilder(
-                fontSize: 21,
-                icon: Icons.verified_user,
-                backgroundColor: Color(0xF5790101),
-                text: "Login",
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => _auth.currentUser == null
-                        ? SignInPage()
-                        : BottomHomePage(),
-                  ),
+          //? Login Button
+          Container(
+            child: SignInButtonBuilder(
+              fontSize: 21,
+              icon: Icons.verified_user,
+              backgroundColor: Color(0xF5790101),
+              text: "Login",
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => _auth.currentUser == null
+                      ? SignInPage()
+                      : BottomHomePage(),
                 ),
               ),
-              padding: const EdgeInsets.fromLTRB(2, 0, 2, 35),
-              alignment: Alignment.center,
             ),
-            //? register Button
-            Container(
-              child: SignInButtonBuilder(
-                fontSize: 21,
-                icon: Icons.person_add,
-                backgroundColor: Color(0xF504094E),
-                text: "Register",
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => RegisterPage(),
-                  ),
+            padding: const EdgeInsets.fromLTRB(2, 0, 2, 35),
+            alignment: Alignment.center,
+          ),
+          //? register Button
+          Container(
+            child: SignInButtonBuilder(
+              fontSize: 21,
+              icon: Icons.person_add,
+              backgroundColor: Color(0xF504094E),
+              text: "Register",
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => RegisterPage(),
                 ),
               ),
-              padding: const EdgeInsets.fromLTRB(2, 0, 2, 60),
-              alignment: Alignment.center,
             ),
-          ],
-        ),
+            padding: const EdgeInsets.fromLTRB(2, 0, 2, 60),
+            alignment: Alignment.center,
+          ),
+        ],
       ),
-    );
+    ));
   }
 }

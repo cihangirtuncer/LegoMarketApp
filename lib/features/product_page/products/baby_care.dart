@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/components/scaffold/products_scaffold.dart';
 import '../../../../utils/dbhelper.dart';
-import '../../../core/widget/list_map/product_map_list.dart';
+import '../../../core/widget/product_map_list.dart';
 import '../../model/products.dart';
 
 class BabyCareList extends StatefulWidget {

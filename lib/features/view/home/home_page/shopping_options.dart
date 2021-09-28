@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/widget/gradient_container.dart';
 
-import '../../../../core/widget/categories/home_Screen_categories.dart';
+import '../../../../core/widget/home_Screen_categories.dart';
 import '../../../product_page/products/baby_care.dart';
 import '../../../product_page/products/basic_food.dart';
 import '../../../product_page/products/cigarettes.dart';
@@ -29,23 +30,8 @@ class ShoppingOptions extends StatefulWidget {
 class _ShoppingOptionsState extends State<ShoppingOptions> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color(0xF541012C),
-            Color(0xF504094E),
-            Color(0xFF040C7C),
-            Colors.teal,
-            Color(0xFFE49E07),
-            Color(0xFFE43307),
-            Color(0xFF8D0505),
-          ],
-        ),
-      ),
-      child: GridView.count(
+    return BuildGradientContainer(
+      GridView.count(
         primary: false,
         padding: const EdgeInsets.all(10),
         crossAxisSpacing: 11,
