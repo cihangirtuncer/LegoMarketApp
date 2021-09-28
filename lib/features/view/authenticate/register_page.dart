@@ -9,10 +9,12 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController nameSurnameController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
   bool _success = true;
   String _message;
 
@@ -47,79 +49,147 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 180, 10, 30),
+          padding: const EdgeInsets.fromLTRB(10, 90, 10, 30),
           child: Form(
-            key: _formKey,
-            child: Container(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      //? E-Mail
-                      TextFormField(
-                        controller: _emailController,
-                        style: TextStyle(color: Colors.white),
-                        cursorColor: Colors.white,
-                        decoration: const InputDecoration(
-                          labelText: "E-Mail",
-                          labelStyle: TextStyle(color: Colors.white),
-                          hintStyle: TextStyle(
-                            color: Colors.white,
-                          ),
-                          fillColor: Colors.white,
-                          focusColor: Colors.white,
-                          hoverColor: Colors.white,
-                        ),
-                        validator: (String mail) {
-                          if (mail.isEmpty) {
-                            return "Please write an e-mail";
-                          }
-                          return null;
-                        },
+            key: formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: nameSurnameController,
+                      style: TextStyle(
+                        color: Colors.white,
                       ),
-                      //? Şifre
-                      TextFormField(
-                        controller: _passwordController,
-                        style: TextStyle(
+                      cursorColor: Colors.white,
+                      decoration: const InputDecoration(
+                        labelText: "Name/Surname",
+                        labelStyle: TextStyle(
                           color: Colors.white,
                         ),
-                        decoration: const InputDecoration(
-                          labelText: "Password",
-                          labelStyle: TextStyle(color: Colors.white),
+                        hintStyle: TextStyle(
+                          color: Colors.white,
                         ),
-                        validator: (String password) {
-                          if (password.isEmpty) {
-                            return "please write an password";
+                      ),
+                      validator: (String nameSurname) {
+                        if (nameSurname.isEmpty) {
+                          return "Please write an name/surname ";
+                        }
+                        return null;
+                      },
+                    ),
+
+                    TextFormField(
+                      controller: phoneController,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      cursorColor: Colors.white,
+                      decoration: const InputDecoration(
+                        labelText: "Phone",
+                        labelStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      validator: (String phone) {
+                        if (phone.isEmpty) {
+                          return "Please write an phone";
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: addressController,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      cursorColor: Colors.white,
+                      decoration: const InputDecoration(
+                        labelText: "Address",
+                        labelStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      validator: (String address) {
+                        if (address.isEmpty) {
+                          return "Please write an address";
+                        }
+                        return null;
+                      },
+                    ),
+
+                    //? E-Mail
+                    TextFormField(
+                      controller: _emailController,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      cursorColor: Colors.white,
+                      decoration: const InputDecoration(
+                        labelText: "E-mail",
+                        labelStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      validator: (String mail) {
+                        if (mail.isEmpty) {
+                          return "Please write an e-mail";
+                        }
+                        return null;
+                      },
+                    ),
+                    //? Şifre
+                    TextFormField(
+                      controller: _passwordController,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      cursorColor: Colors.white,
+                      decoration: const InputDecoration(
+                        labelText: "Password",
+                        labelStyle: TextStyle(color: Colors.white),
+                      ),
+                      validator: (String password) {
+                        if (password.isEmpty) {
+                          return "please write an password";
+                        }
+                        return null;
+                      },
+                      obscureText:
+                          true, //! prevents the password from appearing.
+                    ),
+                    //? Kayıt ol buttonu
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      alignment: Alignment.center,
+                      child: SignInButtonBuilder(
+                        icon: Icons.person_add,
+                        backgroundColor: Color(0xF504094E),
+                        fontSize: 18,
+                        onPressed: () async {
+                          if (formKey.currentState.validate()) {
+                            _register();
                           }
-                          return null;
                         },
-                        obscureText:
-                            true, //! prevents the password from appearing.
+                        text: "Register",
                       ),
-                      //? Kayıt ol buttonu
-                      Container(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
-                        alignment: Alignment.center,
-                        child: SignInButtonBuilder(
-                          icon: Icons.person_add,
-                          backgroundColor: Color(0xF504094E),
-                          fontSize: 18,
-                          onPressed: () async {
-                            if (_formKey.currentState.validate()) {
-                              _register();
-                            }
-                          },
-                          text: "Register",
-                        ),
-                      ),
-                      //? Geri bildirim
-                      Container(
-                        alignment: Alignment.center,
-                        child: Text(_success == null ? '' : _message ?? ''),
-                      ),
-                    ],
-                  ),
+                    ),
+                    //? Geri bildirim
+                    Container(
+                      alignment: Alignment.center,
+                      child: Text(_success == null ? '' : _message ?? ''),
+                    ),
+                  ],
                 ),
               ),
             ),
