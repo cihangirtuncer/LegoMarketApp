@@ -61,15 +61,12 @@ class __SignInBodyState extends State<_SignInBody> {
         padding: const EdgeInsets.all(8.0),
         scrollDirection: Axis.vertical,
         children: [
-          //? sign in with Email & password
           _EmailPasswordForm(),
-          //? sign in with google
           _SignInProvider(
             infoText: "Login in with google",
             buttonType: Buttons.Google,
             signInMethod: () async => _signInWithGoogle(),
           ),
-          //? Anonimous login
           _SignInProvider(
             infoText: "Login anonymously",
             buttonType: Buttons.AppleDark,
