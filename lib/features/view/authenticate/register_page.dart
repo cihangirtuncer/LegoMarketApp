@@ -127,6 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                     //? E-Mail
                     TextFormField(
+                      keyboardType: TextInputType.emailAddress,
                       controller: _emailController,
                       style: TextStyle(
                         color: Colors.white,

@@ -168,9 +168,8 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //? Bilgi
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                padding: const EdgeInsets.fromLTRB(10, 5, 10, 8),
                 child: Container(
                   child: Text(
                     "Login with Email and Password",
@@ -182,7 +181,6 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                   alignment: Alignment.center,
                 ),
               ),
-              //? E-Mail
               TextFormField(
                 controller: _emailController,
                 style: TextStyle(color: Colors.white),
@@ -199,7 +197,6 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                   return null;
                 },
               ),
-              //? Şifre
               TextFormField(
                 controller: _passwordController,
                 style: TextStyle(
@@ -218,7 +215,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                 obscureText: true, //! prevents passwords from appearing.
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(5, 25, 5, 5),
+                padding: const EdgeInsets.fromLTRB(5, 25, 5, 0),
                 alignment: Alignment.center,
                 child: SignInButton(Buttons.Email, text: "Sign in with Email",
                     onPressed: () async {
@@ -291,22 +288,19 @@ class __SignInProviderState extends State<_SignInProvider> {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.transparent,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.fromLTRB(5, 3, 5, 5),
-              alignment: Alignment.center,
-              child: SignInButton(
-                widget.buttonType,
-                text: widget.infoText,
-                onPressed: () async => widget.signInMethod(),
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.fromLTRB(5, 0, 5, 22),
+            alignment: Alignment.center,
+            child: SignInButton(
+              widget.buttonType,
+              text: widget.infoText,
+              onPressed: () async => widget.signInMethod(),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
