@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -79,7 +80,6 @@ class _RegisterPageState extends State<RegisterPage> {
                         return null;
                       },
                     ),
-
                     TextFormField(
                       controller: phoneController,
                       style: TextStyle(
@@ -124,8 +124,6 @@ class _RegisterPageState extends State<RegisterPage> {
                         return null;
                       },
                     ),
-
-                    //? E-Mail
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       controller: _emailController,
@@ -149,7 +147,6 @@ class _RegisterPageState extends State<RegisterPage> {
                         return null;
                       },
                     ),
-                    //? Şifre
                     TextFormField(
                       controller: _passwordController,
                       style: TextStyle(
@@ -169,7 +166,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       obscureText:
                           true, //! prevents the password from appearing.
                     ),
-                    //? Kayıt ol buttonu
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                       alignment: Alignment.center,
@@ -185,7 +181,6 @@ class _RegisterPageState extends State<RegisterPage> {
                         text: "Register",
                       ),
                     ),
-                    //? Geri bildirim
                     Container(
                       alignment: Alignment.center,
                       child: Text(_success == null ? '' : _message ?? ''),
@@ -221,6 +216,8 @@ class _RegisterPageState extends State<RegisterPage> {
           _success = true;
           _message = "Registration Successful ${user.email}";
         });
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => BottomHomePage()));
       } else {
         setState(() {
           _success = false;
