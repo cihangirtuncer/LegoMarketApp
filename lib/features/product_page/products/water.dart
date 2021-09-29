@@ -11,14 +11,14 @@ class WaterList extends StatefulWidget {
 }
 
 class _WaterListState extends State<WaterList> {
-  DatabaseHelper databaseHelper;
-  List<Products> allWaterList;
+  late DatabaseHelper databaseHelper;
+  late List<Products> allWaterList;
   int id = 1;
 
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
-    allWaterList = List<Products>();
+    allWaterList = List<Products>.empty(growable: true);
     databaseHelper = DatabaseHelper();
     databaseHelper.productTable("Water").then((allWaterMapList) {
       for (Map readMap in allWaterMapList) {

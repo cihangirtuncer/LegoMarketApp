@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: non_constant_identifier_names
 Widget BuildGradientContainer(Widget widget) {
   return Container(
+    height: 1000,
     decoration: const BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topLeft,

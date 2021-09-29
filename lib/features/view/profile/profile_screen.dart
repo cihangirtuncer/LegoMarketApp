@@ -6,7 +6,7 @@ import '../../../core/components/app_bar/main_app_bar.dart';
 import 'Profile_page/profile_build_data.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key key}) : super(key: key);
+  const Profile({Key? key}) : super(key: key);
   @override
   _ProfileState createState() => _ProfileState();
 }

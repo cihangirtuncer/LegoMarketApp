@@ -12,7 +12,7 @@ Column BuildOrdersCard(
   int id,
 ) {
   // ignore: unused_local_variable
-  DatabaseHelper databaseHelper;
+  DatabaseHelper? databaseHelper;
 
   return Column(
     children: [
@@ -46,7 +46,7 @@ Column BuildOrdersCard(
                 TextButton(
                   //FirebaseFirestore Problem
                   onPressed: () {
-                    databaseHelper.delete(
+                    databaseHelper!.delete(
                       'Orders',
                       id,
                     );

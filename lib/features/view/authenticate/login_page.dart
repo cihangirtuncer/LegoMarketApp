@@ -1,7 +1,9 @@
+// ignore: unused_import
+import 'dart:ffi';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/button_list.dart';
-import 'package:flutter_signin_button/button_view.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
@@ -15,6 +17,7 @@ class SignInPage extends StatefulWidget {
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class _SignInPageState extends State<SignInPage> {
+  Key key1 = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,8 +68,8 @@ class __SignInBodyState extends State<_SignInBody> {
 
   void _signInAnonymously() async {
     try {
-      final User user = (await _auth.signInAnonymously()).user;
-      Utils.showSnackBar(context, text: "Signed in anonymously: ${user.uid}");
+      final User? user = (await _auth.signInAnonymously()).user;
+      Utils.showSnackBar(context, text: "Signed in anonymously: ${user!.uid}");
 
       Navigator.pushReplacement(
         context,
@@ -84,10 +87,10 @@ class __SignInBodyState extends State<_SignInBody> {
 
   void _signInWithGoogle() async {
     try {
-      final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
-      final GoogleAuthCredential googleAuthCredential =
+          await googleUser!.authentication;
+      final OAuthCredential googleAuthCredential =
           GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
@@ -99,7 +102,7 @@ class __SignInBodyState extends State<_SignInBody> {
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(
         SnackBar(
-          content: Text("${user.displayName}, Logged in with google."),
+          content: Text("${user!.displayName}, Logged in with google."),
         ),
       );
       Navigator.pushReplacement(
@@ -175,8 +178,8 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                   focusColor: Colors.white,
                   hoverColor: Colors.white,
                 ),
-                validator: (String mail) {
-                  if (mail.isEmpty) return "Please write an e-mail";
+                validator: (String? mail) {
+                  if (mail!.isEmpty) return "Please write an e-mail";
                   return null;
                 },
               ),
@@ -191,8 +194,8 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                     fillColor: Colors.white,
                     focusColor: Colors.white,
                     hoverColor: Colors.white),
-                validator: (String password) {
-                  if (password.isEmpty) return "Please type a password";
+                validator: (String? password) {
+                  if (password!.isEmpty) return "Please type a password";
                   return null;
                 },
                 obscureText: true, //! prevents passwords from appearing.
@@ -202,7 +205,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                 alignment: Alignment.center,
                 child: SignInButton(Buttons.Email, text: "Sign in with Email",
                     onPressed: () async {
-                  if (_formKey.currentState.validate()) {
+                  if (_formKey.currentState!.validate()) {
                     _signInWithEmailAndPassword();
                   }
                 }),
@@ -217,7 +220,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
   /// [Email] ve [Password] ile kullanıcı girişi yapar.
   void _signInWithEmailAndPassword() async {
     try {
-      final User user = (await _auth.signInWithEmailAndPassword(
+      final User? user = (await _auth.signInWithEmailAndPassword(
         email: _emailController.text,
         password: _passwordController.text,
       ))
@@ -225,7 +228,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
 
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("${user.email} logged in with."),
+        content: Text("${user!.email} logged in with."),
       ));
 
       Navigator.pushReplacement(
@@ -256,10 +259,10 @@ class _SignInProvider extends StatefulWidget {
   final Function signInMethod;
 
   const _SignInProvider({
-    Key key,
-    @required this.infoText,
-    @required this.buttonType,
-    @required this.signInMethod,
+    Key? key,
+    required this.infoText,
+    required this.buttonType,
+    required this.signInMethod,
   }) : super(key: key);
 
   @override

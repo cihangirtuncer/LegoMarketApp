@@ -5,20 +5,20 @@ import '../../../utils/dbhelper.dart';
 import '../../../../core/components/scaffold/products_scaffold.dart';
 
 class ReadyToEatList extends StatefulWidget {
-  ReadyToEatList({Key key}) : super(key: key);
+  ReadyToEatList({Key? key}) : super(key: key);
 
   @override
   _ReadyToEatListState createState() => _ReadyToEatListState();
 }
 
 class _ReadyToEatListState extends State<ReadyToEatList> {
-  DatabaseHelper databaseHelper;
-  List<Products> allFoodList;
+  late DatabaseHelper databaseHelper;
+  late List<Products> allFoodList;
   int id = 1;
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
-    allFoodList = List<Products>();
+    allFoodList = List<Products>.empty(growable: true);
     databaseHelper = DatabaseHelper();
     databaseHelper.productTable("Readytoeat").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {

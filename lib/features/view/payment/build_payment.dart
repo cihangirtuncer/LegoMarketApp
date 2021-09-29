@@ -7,7 +7,7 @@ import '../../model/products.dart';
 // ignore: non_constant_identifier_names
 BuildPayment(BuildContext context, int price, String name, String explanation) {
   // ignore: unused_local_variable
-  DatabaseHelper databaseHelper;
+  DatabaseHelper? databaseHelper;
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
@@ -88,8 +88,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
         Align(
           child: ElevatedButton(
             onPressed: () {
-              //FirebaseFirestore Problem
-              databaseHelper.addOrders(Products(
+              databaseHelper!.addOrders(Products(
                 name,
                 explanation,
                 price,

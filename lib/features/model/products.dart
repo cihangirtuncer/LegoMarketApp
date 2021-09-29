@@ -1,8 +1,8 @@
 class Products {
-  int id;
-  String name;
-  int price;
-  String explanation;
+  late int id;
+  late String name;
+  late int price;
+  late String explanation;
 
   Products(
     this.name,
@@ -25,7 +25,7 @@ class Products {
     return map;
   }
 
-  Products.fromMap(Map<String, dynamic> map) {
+  Products.fromMap(Map<dynamic, dynamic> map) {
     id = map['id'];
     name = map['name'];
     explanation = map['explanation'];

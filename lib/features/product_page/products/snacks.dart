@@ -6,20 +6,20 @@ import '../../../utils/dbhelper.dart';
 import '../../../../core/components/scaffold/products_scaffold.dart';
 
 class SnacksList extends StatefulWidget {
-  SnacksList({Key key}) : super(key: key);
+  SnacksList({Key? key}) : super(key: key);
 
   @override
   _SnacksListState createState() => _SnacksListState();
 }
 
 class _SnacksListState extends State<SnacksList> {
-  DatabaseHelper databaseHelper;
-  List<Products> allFoodList;
+  late DatabaseHelper databaseHelper;
+  late List<Products> allFoodList;
   int id = 1;
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
-    allFoodList = List<Products>();
+    allFoodList = List<Products>.empty(growable: true);
     databaseHelper = DatabaseHelper();
     databaseHelper.productTable("Snacks").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {

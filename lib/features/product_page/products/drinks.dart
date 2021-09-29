@@ -10,13 +10,13 @@ class DrinksList extends StatefulWidget {
 }
 
 class _DrinksListState extends State<DrinksList> {
-  DatabaseHelper databaseHelper;
-  List<Products> allFoodList;
+  late DatabaseHelper databaseHelper;
+  late List<Products> allFoodList;
   int id = 1;
   void initState() {
     super.initState();
     // ignore: deprecated_member_use
-    allFoodList = List<Products>();
+    allFoodList = List<Products>.empty(growable: true);
     databaseHelper = DatabaseHelper();
     databaseHelper.productTable("Drinks").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {

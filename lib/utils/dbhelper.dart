@@ -9,17 +9,18 @@ import 'package:sqflite/sqflite.dart';
 import '../features/model/products.dart';
 
 class DatabaseHelper {
-  static DatabaseHelper _databaseHelper;
-  static Database _database;
+  static DatabaseHelper? _databaseHelper;
+  static Database? _database;
   // ignore: non_constant_identifier_names
   String OrdersTable = "Orders";
 
   factory DatabaseHelper() {
+    // ignore: unnecessary_null_comparison
     if (_databaseHelper == null) {
       _databaseHelper = DatabaseHelper._internal();
-      return _databaseHelper;
+      return _databaseHelper!;
     } else {
-      return _databaseHelper;
+      return _databaseHelper!;
     }
   }
 
@@ -28,9 +29,9 @@ class DatabaseHelper {
   Future<Database> getDatabase() async {
     if (_database == null) {
       _database = await _initializeDatabase();
-      return _database;
+      return _database!;
     } else {
-      return _database;
+      return _database!;
     }
   }
 
@@ -68,7 +69,7 @@ class DatabaseHelper {
     );
   }
 
-  String categoryName;
+  late String categoryName;
 
   Future<List<Map<String, dynamic>>> productTable(String categoryName) async {
     this.categoryName = categoryName;
@@ -83,7 +84,7 @@ class DatabaseHelper {
     categoryName = this.categoryName;
     var notlarMapListesi = await productTable(categoryName);
     // ignore: deprecated_member_use
-    var productList = List<Products>();
+    var productList = List<Products>.empty(growable: true);
     for (Map map in notlarMapListesi) {
       productList.add(
         Products.fromMap(map),
@@ -98,6 +99,7 @@ class DatabaseHelper {
       OrdersTable,
       products.toMap(),
     );
+    // ignore: unnecessary_null_comparison
     return sonuc != null;
   }
 
@@ -107,6 +109,7 @@ class DatabaseHelper {
       table,
       whereArgs: [id],
     );
+    // ignore: unnecessary_null_comparison
     return sonuc != null;
   }
 }
