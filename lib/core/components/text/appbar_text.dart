@@ -5,6 +5,7 @@ BuildAppBarText(String letter, Color colors, double fontsize) {
   return Text(
     letter,
     style: TextStyle(
+      fontWeight: FontWeight.bold,
       color: colors,
       fontSize: fontsize,
     ),

@@ -2,7 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
+import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
+import 'package:lego_market_app/core/widget/main_appBar.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -23,13 +25,11 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xF504094E),
-        title: Padding(
-          padding: const EdgeInsets.fromLTRB(80, 0, 0, 0),
-          child: Text(
-            "Register",
-            style: TextStyle(fontSize: 22),
+      appBar: MainAppBar(
+        Text(
+          "Register",
+          style: TextStyle(
+            fontSize: 22,
           ),
         ),
       ),

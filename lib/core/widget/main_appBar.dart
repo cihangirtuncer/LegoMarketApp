@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/widget/color.dart';
 
 // ignore: non_constant_identifier_names
-BuildAppBar(String name, bool whichTF) {
+AppBar MainAppBar(Widget? child) {
   return AppBar(
-    automaticallyImplyLeading: whichTF,
+    centerTitle: true,
+    title: child,
     flexibleSpace: Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -13,15 +13,8 @@ BuildAppBar(String name, bool whichTF) {
           colors: <Color>[
             Color(0xFFB60707),
             Color(0xFFE49E07),
+            // Color(0xF504094E),
           ],
-        ),
-      ),
-    ),
-    title: Center(
-      child: Text(
-        name,
-        style: TextStyle(
-          fontSize: 23,
         ),
       ),
     ),
