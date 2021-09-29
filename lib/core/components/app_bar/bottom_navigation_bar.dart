@@ -34,7 +34,12 @@ class _BottomHomePageState extends State<BottomHomePage> {
               decoration: BoxDecoration(
                 color: Color(0xF504094E),
               ),
-              child: Text('Drawer Header'),
+              child: Text(
+                'Drawer Header',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
             ListTile(
               title: const Text('Item 1'),
