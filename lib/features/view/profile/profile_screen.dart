@@ -38,7 +38,7 @@ class _ProfileState extends State<Profile> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.indigo.shade900,
+                      color: Color(0xFF8D0505),
                     ),
                     child: Icon(
                       Icons.account_circle_rounded,
@@ -56,7 +56,7 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ),
-          BuildProfileDivider(1.0, Colors.indigo.shade900),
+          BuildProfileDivider(1.0, Color(0xFF8D0505)),
           BuildProfileData(
             Colors.white,
             80,
@@ -67,7 +67,7 @@ class _ProfileState extends State<Profile> {
               Icons.mail,
             ),
           ),
-          BuildProfileDivider(1.0, Colors.indigo.shade900),
+          BuildProfileDivider(1.0, Color(0xFF8D0505)),
           BuildProfileData(
             Colors.white,
             80,
@@ -78,7 +78,7 @@ class _ProfileState extends State<Profile> {
               Icons.phone,
             ),
           ),
-          BuildProfileDivider(1.0, Colors.indigo.shade900),
+          BuildProfileDivider(1.0, Color(0xFF8D0505)),
           BuildProfileData(
             Colors.white,
             80,
@@ -89,7 +89,7 @@ class _ProfileState extends State<Profile> {
               Icons.home,
             ),
           ),
-          BuildProfileDivider(1.0, Colors.indigo.shade900),
+          BuildProfileDivider(1.0, Color(0xFF8D0505)),
         ],
       ),
     );

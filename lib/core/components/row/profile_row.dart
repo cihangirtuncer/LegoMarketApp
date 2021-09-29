@@ -9,7 +9,7 @@ BuildProfileRow(String string, IconData icon) {
     children: [
       BuildStandartIcon(
         icon,
-        Colors.indigo.shade900,
+        Color(0xFF8D0505),
       ),
       Text(" "),
       Text(

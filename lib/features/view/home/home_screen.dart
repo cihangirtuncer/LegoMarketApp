@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Color(0xF504094E),
+        backgroundColor: Color(0xFF8D0505),
         title: Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 50, 0),
           child: BuildHomeAppBarText(26, 10),

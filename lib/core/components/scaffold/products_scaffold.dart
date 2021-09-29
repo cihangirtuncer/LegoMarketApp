@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 BuildProductsScaffold(String productName, ListView listView) {
   return Scaffold(
     appBar: AppBar(
-      backgroundColor: Color(0xF504094E),
+      backgroundColor: Color(0xFF8D0505),
       title: Text(
         productName,
       ),

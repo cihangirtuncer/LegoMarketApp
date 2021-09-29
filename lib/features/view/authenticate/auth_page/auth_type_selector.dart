@@ -29,7 +29,7 @@ class AuthTypeSelector extends StatelessWidget {
             child: SignInButtonBuilder(
               fontSize: 21,
               icon: Icons.verified_user,
-              backgroundColor: Color(0xF5790101),
+              backgroundColor: Color(0xFF8D0505),
               text: "Login",
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
