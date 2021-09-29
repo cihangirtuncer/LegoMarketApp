@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
+import 'package:lego_market_app/utils/utils_firebase.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -20,19 +20,19 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _success = true;
-  late String _message;
+  // late String _message;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainAppBar(
-        Text(
-          "Register",
-          style: TextStyle(
-            fontSize: 22,
+          Text(
+            "Register",
+            style: TextStyle(
+              fontSize: 22,
+            ),
           ),
-        ),
-      ),
+          true),
       body: BuildGradientContainer(
         Padding(
           padding: const EdgeInsets.fromLTRB(10, 90, 10, 30),
@@ -200,6 +200,7 @@ class _RegisterPageState extends State<RegisterPage> {
       if (user != null) {
         setState(() {
           _success = true;
+          Utils.showSnackBar(context, text: "Register in email: ${user.uid}");
           //  _message = "Registration Successful ${user.email}";
         });
         Navigator.pushReplacement(

@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
 import 'package:lego_market_app/utils/utils_firebase.dart';
@@ -24,13 +23,13 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainAppBar(
-        Text(
-          "Login",
-          style: TextStyle(
-            fontSize: 22,
+          Text(
+            "Login",
+            style: TextStyle(
+              fontSize: 22,
+            ),
           ),
-        ),
-      ),
+          true),
       backgroundColor: Colors.black,
       body: _SignInBody(),
     );
