@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/app_bar/main_app_bar.dart';
+import 'package:lego_market_app/core/widget/main_appBar.dart';
 
 import '../../../../core/components/card/orders_card.dart';
 import '../../../../utils/dbhelper.dart';
@@ -32,7 +32,14 @@ class _BuildOrdersState extends State<BuildOrders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BuildAppBar("Orders", false),
+      appBar: MainAppBar(
+          Text(
+            "Orders",
+            style: TextStyle(
+              fontSize: 22,
+            ),
+          ),
+          false),
       backgroundColor: Colors.grey.shade300,
       body: ListView(
         children: foodItemCreat(),

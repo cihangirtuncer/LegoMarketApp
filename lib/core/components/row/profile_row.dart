@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/widget/color.dart';
 
 import '../icon/standart_icon.dart';
 
@@ -9,7 +10,7 @@ BuildProfileRow(String string, IconData icon) {
     children: [
       BuildStandartIcon(
         icon,
-        Color(0xFF8D0505),
+        BuildColor(),
       ),
       Text(" "),
       Text(

@@ -5,10 +5,10 @@ import 'package:lego_market_app/core/widget/main_appBar.dart';
 BuildProductsScaffold(String productName, ListView listView) {
   return Scaffold(
     appBar: MainAppBar(
-      Text(
-        productName,
-      ),
-    ),
+        Text(
+          productName,
+        ),
+        true),
     body: listView,
   );
 }

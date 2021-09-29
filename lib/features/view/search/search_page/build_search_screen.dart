@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/widget/main_appBar.dart';
 import '../../../model/products.dart';
 import '../../../../utils/dbhelper.dart';
-import '../../../../core/components/app_bar/main_app_bar.dart';
 
 class BuildSearchScreen extends StatefulWidget {
   @override
@@ -16,7 +16,14 @@ class _BuildSearchScreenState extends State<BuildSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: BuildAppBar("Search", false),
+        appBar: MainAppBar(
+            Text(
+              "Search",
+              style: TextStyle(
+                fontSize: 22,
+              ),
+            ),
+            false),
         body: Column(
           children: [
             Container(

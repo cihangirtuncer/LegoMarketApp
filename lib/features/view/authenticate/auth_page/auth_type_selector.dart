@@ -4,6 +4,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/appbar_title.dart';
+import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/features/view/authenticate/register_page.dart';
 import 'package:lego_market_app/features/view/authenticate/login_page.dart';
@@ -22,14 +23,14 @@ class AuthTypeSelector extends StatelessWidget {
         children: [
           Container(
             child: BuildHomeAppBarText(38, 15),
-            padding: const EdgeInsets.fromLTRB(3, 17, 3, 180),
+            padding: const EdgeInsets.fromLTRB(3, 0, 3, 190),
           ),
           //? Login Button
           Container(
             child: SignInButtonBuilder(
               fontSize: 21,
               icon: Icons.verified_user,
-              backgroundColor: Color(0xFF8D0505),
+              backgroundColor: BuildColor(), //0xFF8D0505
               text: "Login",
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
@@ -39,7 +40,7 @@ class AuthTypeSelector extends StatelessWidget {
                 ),
               ),
             ),
-            padding: const EdgeInsets.fromLTRB(2, 0, 2, 35),
+            padding: const EdgeInsets.fromLTRB(2, 0, 2, 30),
             alignment: Alignment.center,
           ),
           //? register Button
@@ -47,7 +48,7 @@ class AuthTypeSelector extends StatelessWidget {
             child: SignInButtonBuilder(
               fontSize: 21,
               icon: Icons.person_add,
-              backgroundColor: Color(0xF504094E),
+              backgroundColor: Color(0xF541012C), //0xF504094E
               text: "Register",
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
@@ -55,7 +56,7 @@ class AuthTypeSelector extends StatelessWidget {
                 ),
               ),
             ),
-            padding: const EdgeInsets.fromLTRB(2, 0, 2, 60),
+            padding: const EdgeInsets.fromLTRB(2, 0, 2, 110),
             alignment: Alignment.center,
           ),
         ],
