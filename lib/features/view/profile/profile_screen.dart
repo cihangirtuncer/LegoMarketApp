@@ -56,7 +56,7 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ),
-          BuildProfileDivider(1.0),
+          BuildProfileDivider(1.0, Colors.indigo.shade900),
           BuildProfileData(
             Colors.white,
             80,
@@ -67,7 +67,7 @@ class _ProfileState extends State<Profile> {
               Icons.mail,
             ),
           ),
-          BuildProfileDivider(1.0),
+          BuildProfileDivider(1.0, Colors.indigo.shade900),
           BuildProfileData(
             Colors.white,
             80,
@@ -78,7 +78,7 @@ class _ProfileState extends State<Profile> {
               Icons.phone,
             ),
           ),
-          BuildProfileDivider(1.0),
+          BuildProfileDivider(1.0, Colors.indigo.shade900),
           BuildProfileData(
             Colors.white,
             80,
@@ -89,7 +89,7 @@ class _ProfileState extends State<Profile> {
               Icons.home,
             ),
           ),
-          BuildProfileDivider(1.0),
+          BuildProfileDivider(1.0, Colors.indigo.shade900),
         ],
       ),
     );
