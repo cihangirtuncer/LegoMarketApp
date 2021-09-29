@@ -23,22 +23,37 @@ class _BottomHomePageState extends State<BottomHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
         child: ListView(
-          children: <Widget>[
-            Container(
-              child: DrawerHeader(child: CircleAvatar()),
-              color: Colors.tealAccent,
-            ),
-            Container(
-              color: Colors.blueAccent,
-              child: Column(
-                children: List.generate(4, (int index) {
-                  return ListTile(
-                    leading: Icon(Icons.info),
-                  );
-                }),
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xF504094E),
               ),
-            )
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: const Text('Item 1'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Item 2'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
