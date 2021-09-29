@@ -11,19 +11,24 @@ BuildDrawer(BuildContext context) {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-              ),
-              child: Icon(
-                Icons.account_circle_rounded,
-                size: 120,
-                color: Colors.white,
-              )),
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+            ),
+            child: Icon(
+              Icons.account_circle_rounded,
+              size: 120,
+              color: Colors.white,
+            ),
+          ),
           InkWell(
             onTap: () async {
               await FirebaseAuth.instance.signOut();
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AuthTypeSelector()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AuthTypeSelector(),
+                ),
+              );
             },
             splashColor: Colors.white,
             child: ListTile(

@@ -19,9 +19,12 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xF504094E),
-        title: BuildHomeAppBarText(26, 10),
-        leading: new IconButton(
-          icon: new Icon(Icons.menu),
+        title: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 50, 0),
+          child: BuildHomeAppBarText(26, 10),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
           onPressed: () => scaffoldKey.currentState!.openDrawer(),
         ),
       ),
