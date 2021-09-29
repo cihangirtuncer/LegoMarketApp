@@ -22,12 +22,32 @@ class _BottomHomePageState extends State<BottomHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            Container(
+              child: DrawerHeader(child: CircleAvatar()),
+              color: Colors.tealAccent,
+            ),
+            Container(
+              color: Colors.blueAccent,
+              child: Column(
+                children: List.generate(4, (int index) {
+                  return ListTile(
+                    leading: Icon(Icons.info),
+                  );
+                }),
+              ),
+            )
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Color(0xF504094E),
         selectedIconTheme: IconThemeData(
           color: Color(0xF504094E),
         ),
-        unselectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey.shade800,
         items: [
           BottomNavigationBarItem(
             icon: BuildBottomIcon(
