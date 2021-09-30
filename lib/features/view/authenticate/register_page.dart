@@ -151,19 +151,39 @@ class _RegisterPageState extends State<RegisterPage> {
                       obscureText:
                           true, //! prevents the password from appearing.
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      alignment: Alignment.center,
-                      child: SignInButtonBuilder(
-                        icon: Icons.person_add,
-                        backgroundColor: Color(0xF504094E),
-                        fontSize: 18,
-                        onPressed: () async {
-                          if (formKey.currentState!.validate()) {
-                            _register();
-                          }
-                        },
-                        text: "Register",
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Container(
+                        padding: const EdgeInsets.all(8.0),
+                        width: 200,
+                        height: 40,
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              // Color(0xFFE43307),
+                              //  Color(0xFF8D0505),
+                              Color(0xFFE49E07),
+                              // Colors.teal,
+                              // Color(0xFF040C7C),
+                              // Color(0xF504094E),
+                              Color(0xF541012C),
+                            ],
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                        child: SignInButtonBuilder(
+                          icon: Icons.person_add,
+                          backgroundColor: Colors.transparent,
+                          fontSize: 18,
+                          onPressed: () async {
+                            if (formKey.currentState!.validate()) {
+                              _register();
+                            }
+                          },
+                          text: "Register",
+                        ),
                       ),
                     ),
                     Container(
