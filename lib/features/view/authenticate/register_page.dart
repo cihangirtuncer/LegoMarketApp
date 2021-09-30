@@ -189,7 +189,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Container(
                       alignment: Alignment.center,
                       // ignore: unnecessary_null_comparison
-                      child: Text(_success == null ? '' : " _message"),
+                      child: Text(_success == null ? '' : " "), //_message
                     ),
                   ],
                 ),
@@ -220,7 +220,6 @@ class _RegisterPageState extends State<RegisterPage> {
       if (user != null) {
         setState(() {
           _success = true;
-          Utils.showSnackBar(context, text: "Register in email: ${user.uid}");
           //  _message = "Registration Successful ${user.email}";
         });
         Navigator.pushReplacement(
