@@ -167,6 +167,7 @@ class __EmailPasswordFormState extends State<_EmailPasswordForm> {
                 ),
               ),
               TextFormField(
+                keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
                 style: TextStyle(color: Colors.white),
                 decoration: const InputDecoration(

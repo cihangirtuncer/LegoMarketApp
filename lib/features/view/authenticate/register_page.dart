@@ -4,7 +4,6 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
-import 'package:lego_market_app/utils/utils_firebase.dart';
 
 class RegisterPage extends StatefulWidget {
   @override

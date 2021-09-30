@@ -41,18 +41,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      /*AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: BuildColor(),
-        title: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 50, 0),
-          child: BuildHomeAppBarText(26, 10),
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () => scaffoldKey.currentState!.openDrawer(),
-        ),
-      ), */
       drawer: BuildDrawer(context),
       body: ShoppingOptions(),
     );
