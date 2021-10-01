@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/drawer/drawer.dart';
+import 'package:lego_market_app/core/widget/color.dart';
 import '../../../features/view/home/home_screen.dart';
 import '../../../features/view/orders/orders_screen.dart';
 import '../../../features/view/profile/profile_screen.dart';
@@ -25,9 +26,9 @@ class _BottomHomePageState extends State<BottomHomePage> {
     return Scaffold(
       drawer: BuildDrawer(context),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Color(0xF504094E),
+        selectedItemColor: BuildColor(),
         selectedIconTheme: IconThemeData(
-          color: Color(0xF504094E),
+          color: BuildColor(),
         ),
         unselectedItemColor: Colors.grey.shade800,
         items: [

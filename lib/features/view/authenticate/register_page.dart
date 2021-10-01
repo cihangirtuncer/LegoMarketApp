@@ -4,6 +4,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -12,14 +13,16 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  // final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  var formKey = GlobalKey<FormState>();
   final TextEditingController nameSurnameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _success = true;
   // late String _message;
+  late SharedPreferences mysharedPreferences;
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      controller: _emailController,
+                      controller: emailController,
                       style: TextStyle(
                         color: Colors.white,
                       ),
@@ -180,6 +183,17 @@ class _RegisterPageState extends State<RegisterPage> {
                             if (formKey.currentState!.validate()) {
                               _register();
                             }
+                            mysharedPreferences =
+                                await SharedPreferences.getInstance();
+                            String nameSurname = nameSurnameController.text;
+                            String phone = phoneController.text;
+                            String address = addressController.text;
+                            String email = emailController.text;
+                            mysharedPreferences.setString(
+                                "namesurname", nameSurname);
+                            mysharedPreferences.setString("phone", phone);
+                            mysharedPreferences.setString("address", address);
+                            mysharedPreferences.setString("email", email);
                           },
                           text: "Register",
                         ),
@@ -203,15 +217,19 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   void dispose() {
     //! Clear controllers when widget is closed
-    _emailController.dispose();
+    emailController.dispose();
     _passwordController.dispose();
+    nameSurnameController.dispose();
+    phoneController.dispose();
+    addressController.dispose();
+
     super.dispose();
   }
 
   void _register() async {
     try {
       final User? user = (await _auth.createUserWithEmailAndPassword(
-        email: _emailController.text,
+        email: emailController.text,
         password: _passwordController.text,
       ))
           .user;
