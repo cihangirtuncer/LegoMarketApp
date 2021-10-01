@@ -4,7 +4,6 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -22,7 +21,6 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _passwordController = TextEditingController();
   bool _success = true;
   // late String _message;
-  late SharedPreferences mysharedPreferences;
 
   @override
   Widget build(BuildContext context) {
@@ -183,17 +181,6 @@ class _RegisterPageState extends State<RegisterPage> {
                             if (formKey.currentState!.validate()) {
                               _register();
                             }
-                            mysharedPreferences =
-                                await SharedPreferences.getInstance();
-                            String nameSurname = nameSurnameController.text;
-                            String phone = phoneController.text;
-                            String address = addressController.text;
-                            String email = emailController.text;
-                            mysharedPreferences.setString(
-                                "namesurname", nameSurname);
-                            mysharedPreferences.setString("phone", phone);
-                            mysharedPreferences.setString("address", address);
-                            mysharedPreferences.setString("email", email);
                           },
                           text: "Register",
                         ),

@@ -7,8 +7,6 @@ import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.da
 import 'package:lego_market_app/core/widget/appbar_title.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 
-/// Bir kimlik doğrulama türü [Authentication Type] seçmek için
-/// bir UI [User Interface] sağlar.
 class AuthTypeSelector extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
