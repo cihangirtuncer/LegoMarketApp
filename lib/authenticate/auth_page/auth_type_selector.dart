@@ -5,7 +5,6 @@ import 'package:lego_market_app/authenticate/login/login_view.dart';
 import 'package:lego_market_app/authenticate/register/register_page.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/appbar_title.dart';
-import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 
 /// Bir kimlik doğrulama türü [Authentication Type] seçmek için
