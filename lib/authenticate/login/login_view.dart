@@ -22,7 +22,7 @@ class SignInPageState extends State<SignInPage> {
           Text(
             "Login",
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 24,
             ),
           ),
           true),

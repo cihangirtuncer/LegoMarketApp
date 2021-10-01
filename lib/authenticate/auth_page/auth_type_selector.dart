@@ -21,8 +21,8 @@ class AuthTypeSelector extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            child: BuildHomeAppBarText(38, 15),
-            padding: const EdgeInsets.fromLTRB(3, 0, 3, 190),
+            child: BuildHomeAppBarText(45, 15),
+            padding: const EdgeInsets.fromLTRB(3, 0, 3, 200),
           ),
 
           //? Login Button

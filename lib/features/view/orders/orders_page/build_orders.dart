@@ -36,7 +36,7 @@ class _BuildOrdersState extends State<BuildOrders> {
           Text(
             "Orders",
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 24,
             ),
           ),
           false),

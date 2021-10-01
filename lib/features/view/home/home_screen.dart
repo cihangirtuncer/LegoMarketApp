@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         ),
         title: Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 50, 0),
-          child: BuildHomeAppBarText(26, 10),
+          child: BuildHomeAppBarText(30, 10),
         ),
         flexibleSpace: Container(
           decoration: BoxDecoration(

@@ -13,7 +13,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
     appBar: AppBar(
       title: Padding(
         padding: const EdgeInsets.fromLTRB(
-          70,
+          75,
           0,
           0,
           0,

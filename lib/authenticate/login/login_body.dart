@@ -5,7 +5,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lego_market_app/authenticate/login/login_view.dart';
 import 'package:lego_market_app/authenticate/login/login_provider.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/core/widget/email_password_form.dart';
+import 'package:lego_market_app/authenticate/login/email_password_form.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/utils/utils_firebase.dart';
 
@@ -24,12 +24,12 @@ class SignInBodyState extends State<SignInBody> {
         children: [
           EmailPasswordForm(),
           SignInProvider(
-            infoText: "Login in with google",
+            infoText: "Login with Google",
             buttonType: Buttons.Google,
             signInMethod: () async => _signInWithGoogle(),
           ),
           SignInProvider(
-            infoText: "Login anonymously",
+            infoText: "Login Anonymously",
             buttonType: Buttons.AppleDark,
             signInMethod: () async => _signInAnonymously(),
           ),
@@ -41,7 +41,7 @@ class SignInBodyState extends State<SignInBody> {
   void _signInAnonymously() async {
     try {
       final User? user = (await auth.signInAnonymously()).user;
-      Utils.showSnackBar(context, text: "Signed in anonymously: ${user!.uid}");
+      Utils.showSnackBar(context, text: "Logined in anonymously: ${user!.uid}");
 
       Navigator.pushReplacement(
         context,

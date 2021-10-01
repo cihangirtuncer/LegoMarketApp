@@ -7,19 +7,19 @@ Widget BuildHomeAppBarText(double fontsize, double width) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      BuildAppBarText("L", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("E", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("G", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("O", Colors.yellow.shade600, fontsize),
+      BuildAppBarText("L", Colors.white, fontsize),
+      BuildAppBarText("E", Colors.white, fontsize),
+      BuildAppBarText("G", Colors.white, fontsize),
+      BuildAppBarText("O", Colors.white, fontsize),
       SizedBox(
         width: width,
       ),
-      BuildAppBarText("M", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("A", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("R", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("K", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("E", Colors.yellow.shade600, fontsize),
-      BuildAppBarText("T", Colors.yellow.shade600, fontsize),
+      BuildAppBarText("M", Colors.white, fontsize),
+      BuildAppBarText("A", Colors.white, fontsize),
+      BuildAppBarText("R", Colors.white, fontsize),
+      BuildAppBarText("K", Colors.white, fontsize),
+      BuildAppBarText("E", Colors.white, fontsize),
+      BuildAppBarText("T", Colors.white, fontsize),
     ],
   );
 }

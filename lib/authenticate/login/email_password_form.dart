@@ -75,7 +75,7 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
               Container(
                 padding: const EdgeInsets.fromLTRB(5, 25, 5, 0),
                 alignment: Alignment.center,
-                child: SignInButton(Buttons.Email, text: "Sign in with Email",
+                child: SignInButton(Buttons.Email, text: "Login with Email",
                     onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     _signInWithEmailAndPassword();
