@@ -1,13 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-
+import 'package:lego_market_app/authenticate/login_page.dart';
+import 'package:lego_market_app/authenticate/register_page.dart';
 import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/widget/appbar_title.dart';
 import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
-import 'package:lego_market_app/features/view/authenticate/register_page.dart';
-import 'package:lego_market_app/features/view/authenticate/login_page.dart';
 
 /// Bir kimlik doğrulama türü [Authentication Type] seçmek için
 /// bir UI [User Interface] sağlar.

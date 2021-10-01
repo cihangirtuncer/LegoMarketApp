@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/authenticate/auth_page/auth_type_selector.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
-import 'package:lego_market_app/features/view/authenticate/auth_page/auth_type_selector.dart';
 
 // ignore: non_constant_identifier_names
 BuildDrawer(BuildContext context) {
