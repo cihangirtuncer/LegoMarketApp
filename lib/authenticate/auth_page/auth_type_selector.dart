@@ -24,13 +24,11 @@ class AuthTypeSelector extends StatelessWidget {
             child: BuildHomeAppBarText(45, 15),
             padding: const EdgeInsets.fromLTRB(3, 0, 3, 200),
           ),
-
-          //? Login Button
           Container(
             child: SignInButtonBuilder(
               fontSize: 21,
               icon: Icons.verified_user,
-              backgroundColor: BuildColor(), //0xFF8D0505
+              backgroundColor: Color(0xF5031E96), //0xFF8D0505  0xF500198A
               text: "Login",
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
@@ -43,13 +41,12 @@ class AuthTypeSelector extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(2, 0, 2, 30),
             alignment: Alignment.center,
           ),
-          //? register Button
           Container(
             child: SignInButtonBuilder(
               fontSize: 21,
               icon: Icons.person_add,
-              backgroundColor: Color(0xF541012C),
-              text: "Register",
+              backgroundColor: Color(0xFFB60707), //0xF541012C 0xF50876DD
+              text: "Register", // 0xF51239E6
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => RegisterPage(),
