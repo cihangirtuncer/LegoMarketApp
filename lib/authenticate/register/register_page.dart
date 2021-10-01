@@ -164,12 +164,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [
-                              // Color(0xFFE43307),
-                              //  Color(0xFF8D0505),
                               Color(0xFFE49E07),
-                              // Colors.teal,
-                              // Color(0xFF040C7C),
-                              // Color(0xF504094E),
                               Color(0xF541012C),
                             ],
                           ),
