@@ -12,8 +12,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  // final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  var formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController nameSurnameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController addressController = TextEditingController();
