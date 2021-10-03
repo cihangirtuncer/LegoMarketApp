@@ -194,7 +194,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             };
                             await usersRef
                                 .doc(nameSurnameController.text)
-                                .set(usersData,);
+                                .set(usersData);
                           },
                           text: "Register",
                         ),
