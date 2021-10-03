@@ -28,6 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final firestore = FirebaseFirestore.instance;
 
     CollectionReference usersRef = firestore.collection('users');
+
     return Scaffold(
       appBar: MainAppBar(
           Text(
@@ -191,7 +192,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               'phone': phoneController.text,
                               'address': addressController.text,
                             };
-                            await usersRef.add(usersData);
+                            await usersRef
+                                .doc(nameSurnameController.text)
+                                .set(usersData,);
                           },
                           text: "Register",
                         ),
