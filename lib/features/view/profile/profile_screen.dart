@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/divider/profile_divder.dart';
 import 'package:lego_market_app/core/components/row/profile_row.dart';
 import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
+import 'package:path/path.dart';
 
 import 'Profile_page/profile_build_data.dart';
 
@@ -20,17 +22,42 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    final firestore = FirebaseFirestore.instance;
+    CollectionReference usersRef = firestore.collection('users');
+  
+    var userDocRef = usersRef.doc( );
+
     return Scaffold(
-      //backgroundColor: Colors.grey.shade200,
-      appBar: MainAppBar(
-          Text(
-            "Profile",
-            style: TextStyle(
-              fontSize: 22,
+        //backgroundColor: Colors.grey.shade200,
+        appBar: MainAppBar(
+            Text(
+              "Profile",
+              style: TextStyle(
+                fontSize: 22,
+              ),
+            ),
+            false),
+        body: Flexible(
+          child: Center(
+            child: Container(
+              child: Column(
+                children: [
+                  StreamBuilder<DocumentSnapshot>(
+                    stream: userDocRef.snapshots(),
+                    builder:
+                        (BuildContext context, AsyncSnapshot asyncSnapshot) {
+                      return Text('${usersRef.id}');
+                    },
+                  )
+                ],
+              ),
             ),
           ),
-          false),
-      body: FutureBuilder<String>(
+        ));
+  }
+}
+/*
+FutureBuilder<String>(
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -120,6 +147,5 @@ class _ProfileState extends State<Profile> {
           ],
         );
       }),
-    );
-  }
-}
+
+*/
