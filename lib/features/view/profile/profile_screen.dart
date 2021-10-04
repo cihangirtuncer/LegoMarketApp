@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import '../../../core/components/divider/profile_divder.dart';
 import '../../../core/components/row/profile_row.dart';
 import '../../../core/widget/color.dart';
 import '../../../core/widget/main_appBar.dart';
-
 import 'Profile_page/profile_build_data.dart';
 
 class Profile extends StatefulWidget {
@@ -38,9 +38,7 @@ class _ProfileState extends State<Profile> {
 
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
-              child: CircularProgressIndicator(
-                backgroundColor: BuildColor(),
-              ),
+              child: CircularProgressIndicator(),
             );
           }
 
