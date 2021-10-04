@@ -1,11 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/divider/profile_divder.dart';
+import 'package:lego_market_app/core/components/row/profile_row.dart';
+import 'package:lego_market_app/core/widget/color.dart';
+import 'package:lego_market_app/core/widget/main_appBar.dart';
 
-import '../../../core/components/divider/profile_divder.dart';
-import '../../../core/components/row/profile_row.dart';
-import '../../../core/widget/color.dart';
-import '../../../core/widget/main_appBar.dart';
 import 'Profile_page/profile_build_data.dart';
 
 class Profile extends StatefulWidget {
@@ -16,7 +15,6 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   final Stream<QuerySnapshot> _usersStream =
       FirebaseFirestore.instance.collection('users').snapshots();
-  String docId = FirebaseAuth.instance.currentUser!.uid;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,9 @@ class _ProfileState extends State<Profile> {
 
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                backgroundColor: BuildColor(),
+              ),
             );
           }
 
@@ -46,7 +46,6 @@ class _ProfileState extends State<Profile> {
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
-
               return Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
