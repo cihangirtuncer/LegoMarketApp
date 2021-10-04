@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/widget/main_appBar.dart';
+import '../../../../core/widget/main_appBar.dart';
 import '../../../model/products.dart';
 import '../../../../utils/dbhelper.dart';
 

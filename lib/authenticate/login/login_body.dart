@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:lego_market_app/authenticate/login/login_view.dart';
-import 'package:lego_market_app/authenticate/login/login_provider.dart';
-import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/authenticate/login/email_password_form.dart';
-import 'package:lego_market_app/core/widget/gradient_container.dart';
-import 'package:lego_market_app/utils/utils_firebase.dart';
+import 'login_view.dart';
+import 'login_provider.dart';
+import '../../core/components/app_bar/bottom_navigation_bar.dart';
+import 'email_password_form.dart';
+import '../../core/widget/gradient_container.dart';
+import '../../utils/utils_firebase.dart';
 
 class SignInBody extends StatefulWidget {
   @override

@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:lego_market_app/authenticate/login/login_view.dart';
-import 'package:lego_market_app/authenticate/register/register_page.dart';
-import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/core/widget/appbar_title.dart';
-import 'package:lego_market_app/core/widget/gradient_container.dart';
+import '../login/login_view.dart';
+import '../register/register_page.dart';
+import '../../core/components/app_bar/bottom_navigation_bar.dart';
+import '../../core/widget/appbar_title.dart';
+import '../../core/widget/gradient_container.dart';
 
 class AuthTypeSelector extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;

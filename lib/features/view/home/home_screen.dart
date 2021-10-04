@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/drawer/drawer.dart';
-import 'package:lego_market_app/core/widget/appbar_title.dart';
+import '../../../core/components/drawer/drawer.dart';
+import '../../../core/widget/appbar_title.dart';
 import 'home_page/shopping_options.dart';
 
 class HomePage extends StatefulWidget {

@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/core/widget/gradient_container.dart';
-import 'package:lego_market_app/core/widget/main_appBar.dart';
+import '../../core/components/app_bar/bottom_navigation_bar.dart';
+import '../../core/widget/gradient_container.dart';
+import '../../core/widget/main_appBar.dart';
 
 class RegisterPage extends StatefulWidget {
   final firestore = FirebaseFirestore.instance;

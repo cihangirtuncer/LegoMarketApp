@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/drawer/drawer.dart';
-import 'package:lego_market_app/core/widget/color.dart';
+import '../drawer/drawer.dart';
+import '../../widget/color.dart';
 import '../../../features/view/home/home_screen.dart';
 import '../../../features/view/orders/orders_screen.dart';
 import '../../../features/view/profile/profile_screen.dart';

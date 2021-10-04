@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/widget/gradient_container.dart';
+import '../../../../core/widget/gradient_container.dart';
 
 import '../../../../core/widget/home_Screen_categories.dart';
 import '../../../product_page/products/baby_care.dart';

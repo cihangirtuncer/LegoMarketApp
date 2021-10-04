@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/widget/color.dart';
+import '../../widget/color.dart';
 
 import '../icon/standart_icon.dart';
 
