@@ -52,8 +52,11 @@ class SignInBodyState extends State<SignInBody> {
     } catch (e) {
       debugPrint(e.toString());
       // ignore: deprecated_member_use
-      Scaffold.of(context).showSnackBar(SnackBar(
-          content: Text("An error occurred while logging in anonymously")));
+      Scaffold.of(context).showSnackBar(
+        SnackBar(
+          content: Text("An error occurred while logging in anonymously"),
+        ),
+      );
     }
   }
 
