@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/widget/payment_product_counter.dart';
@@ -7,6 +9,11 @@ import '../../model/products.dart';
 // ignore: non_constant_identifier_names
 BuildPayment(BuildContext context, int price, String name, String explanation) {
   // ignore: unused_local_variable
+  final firestore = FirebaseFirestore.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  CollectionReference usersRef = firestore.collection('orders');
+
   DatabaseHelper? databaseHelper;
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
@@ -88,11 +95,42 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
         Align(
           child: ElevatedButton(
             onPressed: () {
-              databaseHelper!.addOrders(Products(
-                name,
-                explanation,
-                price,
-              ));
+              if (_auth.currentUser != null) {
+                databaseHelper!.addOrders(Products(
+                  name,
+                  explanation,
+                  price,
+                ));
+              } else {
+                AlertDialog(
+                  title: Text('Please login'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Delete',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(
+                        context,
+                        'OK',
+                      ),
+                      child: const Text(
+                        'OK',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              }
             },
             child: Text(
               'Add to Basket',

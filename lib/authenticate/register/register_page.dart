@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:lego_market_app/features/view/profile/profile_screen.dart';
 import '../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../core/widget/gradient_container.dart';
 import '../../core/widget/main_appBar.dart';
@@ -21,14 +22,11 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _success = true;
-  // late String _message;
+  final firestore = FirebaseFirestore.instance;
 
+  // late String _message;
   @override
   Widget build(BuildContext context) {
-    final firestore = FirebaseFirestore.instance;
-
-    CollectionReference usersRef = firestore.collection('users');
-
     return Scaffold(
       appBar: MainAppBar(
           Text(
@@ -186,15 +184,6 @@ class _RegisterPageState extends State<RegisterPage> {
                             if (formKey.currentState!.validate()) {
                               _register();
                             }
-                            Map<String, dynamic> usersData = {
-                              'name surname': nameSurnameController.text,
-                              'email': emailController.text,
-                              'phone': phoneController.text,
-                              'address': addressController.text,
-                            };
-                            await usersRef
-                                .doc(nameSurnameController.text)
-                                .set(usersData);
                           },
                           text: "Register",
                         ),
@@ -240,6 +229,15 @@ class _RegisterPageState extends State<RegisterPage> {
           _success = true;
           //  _message = "Registration Successful ${user.email}";
         });
+        Map<String, dynamic> usersData = {
+          'name surname': nameSurnameController.text,
+          'email': emailController.text,
+          'phone': phoneController.text,
+          'address': addressController.text,
+        };
+        User? name = _auth.currentUser;
+        CollectionReference usersRef = firestore.collection('users');
+        await usersRef.doc(name!.uid.toString()).set(usersData);
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
