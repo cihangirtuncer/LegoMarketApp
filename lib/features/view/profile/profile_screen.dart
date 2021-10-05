@@ -36,10 +36,9 @@ class _ProfileState extends State<Profile> {
 
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
-              child: CircularProgressIndicator(
-                backgroundColor: BuildColor(),
-              ),
-            );
+                child: CircularProgressIndicator(
+              backgroundColor: BuildColor(),
+            ));
           }
 
           return ListView(
