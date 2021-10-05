@@ -241,7 +241,11 @@ class _RegisterPageState extends State<RegisterPage> {
           //  _message = "Registration Successful ${user.email}";
         });
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => BottomHomePage()));
+          context,
+          MaterialPageRoute(
+            builder: (context) => BottomHomePage(),
+          ),
+        );
       } else {
         setState(() {
           _success = false;
