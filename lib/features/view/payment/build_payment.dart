@@ -12,7 +12,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
   final firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  CollectionReference usersRef = firestore.collection('orders');
+  // CollectionReference usersRef = firestore.collection('orders');
 
   DatabaseHelper? databaseHelper;
   return Scaffold(

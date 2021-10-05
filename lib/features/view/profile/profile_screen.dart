@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/authenticate/auth_page/auth_type_selector.dart';
 import 'package:lego_market_app/core/components/divider/profile_divder.dart';
 import 'package:lego_market_app/core/components/row/profile_row.dart';
 import 'package:lego_market_app/core/widget/color.dart';
@@ -128,6 +129,32 @@ class _ProfileState extends State<Profile> {
                     data['address'],
                     Icons.home,
                   ),
+                ),
+                BuildProfileDivider(
+                  1.0,
+                  BuildColor(),
+                ),
+                InkWell(
+                  onTap: () async {
+                    await FirebaseAuth.instance.signOut();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AuthTypeSelector(),
+                      ),
+                    );
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.logout,
+                      color: BuildColor(),
+                    ),
+                    title: Text(
+                      "Log out",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                  highlightColor: Colors.red,
                 ),
                 BuildProfileDivider(
                   1.0,
