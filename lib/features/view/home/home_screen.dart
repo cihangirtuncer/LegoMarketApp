@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/components/drawer/drawer.dart';
 import '../../../core/widget/appbar_title.dart';
 import 'home_page/shopping_options.dart';
 
@@ -19,14 +18,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () => scaffoldKey.currentState!.openDrawer(),
-        ),
-        title: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 50, 0),
-          child: BuildHomeAppBarText(30, 10),
-        ),
+        title: BuildHomeAppBarText(30, 10),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -41,7 +33,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      drawer: BuildDrawer(context),
       body: ShoppingOptions(),
     );
   }
