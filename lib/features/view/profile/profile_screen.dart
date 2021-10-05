@@ -152,7 +152,9 @@ class _ProfileState extends State<Profile> {
                     ),
                     title: Text(
                       "Log out",
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                   highlightColor: Colors.red,
