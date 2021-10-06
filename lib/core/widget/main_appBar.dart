@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-AppBar MainAppBar(Widget? child, bool tF) {
+AppBar MainAppBar(Widget? child, bool tF, {List<Widget>? actions}) {
   return AppBar(
     centerTitle: true,
     automaticallyImplyLeading: tF,
@@ -14,10 +14,10 @@ AppBar MainAppBar(Widget? child, bool tF) {
           colors: <Color>[
             Color(0xFFB60707),
             Color(0xFFE49E07),
-            // Color(0xF504094E),
           ],
         ),
       ),
     ),
+    actions: actions,
   );
 }
