@@ -1,10 +1,10 @@
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/widget/payment_product_counter.dart';
-import '../../../utils/dbhelper.dart';
-import '../../model/products.dart';
 
 // ignore: non_constant_identifier_names
 BuildPayment(BuildContext context, int price, String name, String explanation) {
@@ -14,7 +14,6 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
 
   // CollectionReference usersRef = firestore.collection('orders');
 
-  DatabaseHelper? databaseHelper;
   return Scaffold(
     backgroundColor: Colors.grey.shade200,
     appBar: AppBar(
@@ -94,36 +93,52 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
         ),
         Align(
           child: ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
+              String nameNoSql = name;
               if (_auth.currentUser != null) {
-                databaseHelper!.addOrders(Products(
-                  name,
-                  explanation,
-                  price,
-                ));
+                Map<String, dynamic> usersData = {
+                  'price': price,
+                  'explanation': explanation,
+                  'name': nameNoSql,
+                };
+                User? name = _auth.currentUser;
+                CollectionReference usersRef = firestore.collection('users');
+                await usersRef
+                    .doc(name!.uid.toString())
+                    .collection('orders')
+                    .doc('personalorders')
+                    .set(usersData);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const Text(
+                      'Product added to basket',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                  ),
+                );
               } else {
                 AlertDialog(
                   title: Text('Please login'),
                   actions: [
                     TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Delete',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontSize: 17,
-                        ),
-                      ),
-                    ),
-                    TextButton(
                       onPressed: () => Navigator.pop(
                         context,
-                        'OK',
+                        'Login',
                       ),
                       child: const Text(
                         'OK',
                         style: TextStyle(
                           color: Colors.green,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Cancel',
+                        style: TextStyle(
+                          color: Colors.red,
                           fontSize: 17,
                         ),
                       ),
