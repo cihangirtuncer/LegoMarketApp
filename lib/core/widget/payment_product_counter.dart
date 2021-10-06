@@ -5,8 +5,9 @@ class ButtonPayment extends StatefulWidget {
   _ButtonPaymentState createState() => _ButtonPaymentState();
 }
 
+int volume = 1;
+
 class _ButtonPaymentState extends State<ButtonPayment> {
-  int _volume = 1;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,17 +18,17 @@ class _ButtonPaymentState extends State<ButtonPayment> {
             Icons.remove_outlined,
           ),
           onPressed: () {
-            if (_volume > 1) {
+            if (volume > 1) {
               setState(
                 () {
-                  _volume -= 1;
+                  volume -= 1;
                 },
               );
             }
           },
         ),
         Text(
-          "total: $_volume",
+          "total: $volume",
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -39,7 +40,7 @@ class _ButtonPaymentState extends State<ButtonPayment> {
           ),
           onPressed: () {
             setState(() {
-              _volume += 1;
+              volume += 1;
             });
           },
         ),

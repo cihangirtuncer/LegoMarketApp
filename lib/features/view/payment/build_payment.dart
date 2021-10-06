@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -107,7 +108,8 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                     .doc(name!.uid.toString())
                     .collection('orders')
                     .doc('personalorders')
-                    .set(usersData);
+                    .set(usersData, SetOptions(merge: true));
+
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: const Text(
