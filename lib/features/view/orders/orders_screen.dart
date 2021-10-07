@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/text/orders_card_text.dart';
+import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
 import 'package:lego_market_app/core/widget/payment_product_counter.dart';
 
@@ -11,6 +12,7 @@ class OrdersScreen extends StatefulWidget {
 }
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
+bool? dataBool;
 
 class _OrdersScreenState extends State<OrdersScreen> {
   final _usersStream = FirebaseFirestore.instance
@@ -60,10 +62,35 @@ class _OrdersScreenState extends State<OrdersScreen> {
               }
 
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
-                  child: CircularProgressIndicator(),
+                return Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 270, 0, 0),
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
                 );
               }
+              if (!snapshot.data!.exists || !snapshot.hasData)
+                return Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 210, 0, 0),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.feedback,
+                        size: 60,
+                        color: BuildColor(),
+                      ),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
+                          child: Text(
+                            'There are no items to display in your basket.',
+                            style: TextStyle(fontSize: 30),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
 
               DocumentSnapshot<Object?> data = snapshot.data!;
 
@@ -77,6 +104,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                           title: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              dataBool = data['name'],
                               BuildOrdersCardTextWidget(
                                 "Product Name: ",
                                 data['name'],
