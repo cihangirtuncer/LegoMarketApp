@@ -1,11 +1,57 @@
-import 'dart:developer';
 import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/widget/payment_product_counter.dart';
+int volume = 1;
+
+class ButtonPayment extends StatefulWidget {
+  @override
+  _ButtonPaymentState createState() => _ButtonPaymentState();
+}
+
+class _ButtonPaymentState extends State<ButtonPayment> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        IconButton(
+          icon: const Icon(
+            Icons.remove_outlined,
+          ),
+          onPressed: () {
+            if (volume > 1) {
+              setState(
+                () {
+                  volume -= 1;
+                },
+              );
+            }
+          },
+        ),
+        Text(
+          "total: $volume",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        IconButton(
+          icon: const Icon(
+            Icons.add_outlined,
+          ),
+          onPressed: () {
+            setState(() {
+              volume += 1;
+            });
+          },
+        ),
+      ],
+    );
+  }
+}
 
 // ignore: non_constant_identifier_names
 BuildPayment(BuildContext context, int price, String name, String explanation) {
@@ -101,6 +147,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                   'price': price,
                   'explanation': explanation,
                   'name': nameNoSql,
+                  'volume': volume
                 };
                 User? name = _auth.currentUser;
                 CollectionReference usersRef = firestore.collection('users');

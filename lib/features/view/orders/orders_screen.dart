@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/text/orders_card_text.dart';
 import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
-import 'package:lego_market_app/core/widget/payment_product_counter.dart';
 
 class OrdersScreen extends StatefulWidget {
   @override
@@ -104,7 +103,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                           title: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              dataBool = data['name'],
                               BuildOrdersCardTextWidget(
                                 "Product Name: ",
                                 data['name'],
@@ -115,7 +113,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                               ),
                               BuildOrdersCardTextWidget(
                                 "count: ",
-                                "1",
+                                data['volume'].toString(),
                               ),
                             ],
                           ),
