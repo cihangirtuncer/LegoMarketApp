@@ -149,12 +149,13 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                   'name': nameNoSql,
                   'volume': volume
                 };
+
                 User? name = _auth.currentUser;
                 CollectionReference usersRef = firestore.collection('users');
                 await usersRef
                     .doc(name!.uid.toString())
                     .collection('orders')
-                    .doc('personalorders')
+                    .doc(nameNoSql)
                     .set(usersData, SetOptions(merge: true));
 
                 ScaffoldMessenger.of(context).showSnackBar(
