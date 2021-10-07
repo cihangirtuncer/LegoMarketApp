@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/text/orders_card_text.dart';
-import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
 
