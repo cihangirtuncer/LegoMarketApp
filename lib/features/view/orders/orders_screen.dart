@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
+import 'package:lego_market_app/features/view/orders/orders_page/build_orders.dart';
 
 class OrdersScreen extends StatefulWidget {
   @override
@@ -97,10 +98,43 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   itemCount: listofDocumentSnap.length,
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
-                      child: Card(
-                        child: ListTile(
-                            title: Text('${listofDocumentSnap[index]['name']}'),
-                            onTap: () {}),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          width: 120,
+                          height: 120,
+                          color: Color(0xFFECC488),
+                          child: ListTile(
+                            title: Text(
+                              '${listofDocumentSnap[index]['name']}',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            subtitle: Text(
+                              '${listofDocumentSnap[index]['explanation']}',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: BuildColor(),
+                              ),
+                            ),
+                            trailing: Text(
+                              "${listofDocumentSnap[index]['price']} €",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: BuildColor(),
+                              ),
+                            ),
+                            leading: Text(
+                              "Count: ${listofDocumentSnap[index]['volume']}",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: BuildColor(),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     );
                   },
@@ -297,7 +331,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
             },
           ),
         ],
-      ),
+      ),////
     );
   }
 }
