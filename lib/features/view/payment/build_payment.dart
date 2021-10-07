@@ -58,7 +58,6 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
   // ignore: unused_local_variable
   final firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
   // CollectionReference usersRef = firestore.collection('orders');
 
   return Scaffold(
@@ -141,6 +140,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
         Align(
           child: ElevatedButton(
             onPressed: () async {
+              price = price * volume;
               String nameNoSql = name;
               if (_auth.currentUser != null) {
                 Map<String, dynamic> usersData = {
