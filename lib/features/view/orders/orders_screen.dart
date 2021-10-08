@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/divider/profile_divder.dart';
 import 'package:lego_market_app/core/components/text/orders_card_text.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
@@ -47,7 +48,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   return Padding(
                     padding: const EdgeInsets.fromLTRB(0, 270, 0, 0),
                     child: Center(
-                      child: CircularProgressIndicator(),
+                      child: CircularProgressIndicator(
+                        color: Colors.red,
+                      ),
                     ),
                   );
                 }
@@ -98,14 +101,17 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                         "Product Name: ",
                                         '${listofDocumentSnap[index]['name']}',
                                       ),
+                                      BuildProfileDivider(8),
                                       BuildOrdersCardTextWidget(
                                         "Price: ",
                                         "${listofDocumentSnap[index]['price']} €",
                                       ),
+                                      BuildProfileDivider(8),
                                       BuildOrdersCardTextWidget(
-                                        "count: ",
-                                        "Count: ${listofDocumentSnap[index]['volume']}",
+                                        "Count: ",
+                                        "${listofDocumentSnap[index]['volume']}",
                                       ),
+                                      BuildProfileDivider(8),
                                     ],
                                   ),
                                   content: BuildOrdersCardTextWidget(

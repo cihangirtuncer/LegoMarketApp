@@ -45,7 +45,9 @@ class _ProfileState extends State<Profile> {
 
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  color: Colors.red,
+                ),
               );
             }
             DocumentSnapshot<Object?> data = snapshot.data!;

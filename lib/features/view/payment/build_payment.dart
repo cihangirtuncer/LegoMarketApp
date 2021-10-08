@@ -117,7 +117,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 5, 205, 0),
+                    padding: const EdgeInsets.fromLTRB(70, 5, 205, 0),
                     child: Text(
                       "Price: " + price.toString() + " €",
                       style: TextStyle(
