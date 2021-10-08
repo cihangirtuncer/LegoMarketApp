@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/text/orders_card_text.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
-import 'package:lego_market_app/features/view/payment/build_payment.dart';
 
 class OrdersScreen extends StatefulWidget {
   @override
