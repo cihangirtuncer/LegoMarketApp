@@ -83,7 +83,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
               color: Colors.grey.shade100,
             ),
             width: 90,
-            height: 220,
+            height: 240,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(7, 35, 7, 0),
               child: Column(
@@ -113,16 +113,16 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                             ),
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Text(
+                            "Price: " + price.toString() + " €",
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
                       ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(70, 5, 205, 0),
-                    child: Text(
-                      "Price: " + price.toString() + " €",
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
                     ),
                   ),
                   Padding(
@@ -137,7 +137,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
         Container(
           width: 100,
           child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 350, 10, 10),
+            padding: EdgeInsets.fromLTRB(10, 340, 10, 10),
             child: ElevatedButton(
               onPressed: () async {
                 price = price * volume;
