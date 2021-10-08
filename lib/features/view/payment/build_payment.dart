@@ -4,9 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/authenticate/login/login_view.dart';
-import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 
 int volume = 1;
+int totalPrice = 0;
 
 class ButtonPayment extends StatefulWidget {
   @override
@@ -141,13 +141,15 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
             child: ElevatedButton(
               onPressed: () async {
                 price = price * volume;
+                totalPrice = totalPrice + price;
+
                 String nameNoSql = name;
                 if (_auth.currentUser != null) {
                   Map<String, dynamic> usersData = {
                     'price': price,
                     'explanation': explanation,
                     'name': nameNoSql,
-                    'volume': volume
+                    'volume': volume,
                   };
 
                   User? name = _auth.currentUser;
@@ -201,12 +203,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                     ],
                   );
                 }
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => BottomHomePage(),
-                  ),
-                );
+                Navigator.pop(context);
               },
               child: Text(
                 'Add to Basket',
@@ -226,4 +223,8 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
       ],
     ),
   );
+}
+
+totalPrices() async {
+  return totalPrice;
 }

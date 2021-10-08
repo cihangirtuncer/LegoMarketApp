@@ -123,11 +123,44 @@ class _ProfileState extends State<Profile> {
                   ),
                   InkWell(
                     onTap: () async {
-                      await FirebaseAuth.instance.signOut();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AuthTypeSelector(),
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          backgroundColor: Colors.grey.shade200,
+                          title: Text("Are you sure you want to log out?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () async {
+                                await FirebaseAuth.instance.signOut();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AuthTypeSelector(),
+                                  ),
+                                );
+                              },
+                              child: const Text(
+                                'Log out',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(
+                                context,
+                                'NO',
+                              ),
+                              child: const Text(
+                                'OK',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     },
