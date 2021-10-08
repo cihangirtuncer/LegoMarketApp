@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/authenticate/login/login_view.dart';
 
-int volume = 1;
 int totalPrice = 0;
 
 class ButtonPayment extends StatefulWidget {
@@ -14,6 +13,8 @@ class ButtonPayment extends StatefulWidget {
 }
 
 class _ButtonPaymentState extends State<ButtonPayment> {
+  int volume = 1;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -60,6 +61,7 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
   // ignore: unused_local_variable
   final firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  int volume = 1;
 
   return Scaffold(
     backgroundColor: Colors.green.shade100,
@@ -149,7 +151,6 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
                     'explanation': explanation,
                     'name': nameNoSql,
                     'volume': volume,
-                    'total price': totalPrice
                   };
 
                   User? name = _auth.currentUser;
@@ -206,7 +207,7 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
                 Navigator.pop(context);
               },
               child: Text(
-                'Add to Basket',
+                'Add to Basket ',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

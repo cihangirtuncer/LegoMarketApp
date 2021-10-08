@@ -14,7 +14,6 @@ class OrdersScreen extends StatefulWidget {
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class _OrdersScreenState extends State<OrdersScreen> {
-  String totalPrice = 0.toString();
   final _usersStream = FirebaseFirestore.instance
       .collection('users')
       .doc(_auth.currentUser!.uid.toString())
@@ -132,6 +131,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                             .doc(
                                                 '${listofDocumentSnap[index]['name']}')
                                             .delete();
+
                                         Navigator.pop(
                                           context,
                                           'DELETE',
@@ -162,31 +162,35 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                 ),
                               );
                             },
-                            child: Padding(
-                              padding: const EdgeInsets.all(3.0),
-                              child: Card(
-                                child: ListTile(
-                                  title: Text(
-                                    '${listofDocumentSnap[index]['name']}',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: Card(
+                                    child: ListTile(
+                                      title: Text(
+                                        '${listofDocumentSnap[index]['name']}',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      subtitle: Text(
+                                        "continues",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Colors.amber.shade700,
+                                        ),
+                                      ),
+                                      trailing: Icon(
+                                        Icons.run_circle_outlined,
+                                        color: Colors.amber.shade700,
+                                        size: 35,
+                                      ),
                                     ),
-                                  ),
-                                  subtitle: Text(
-                                    "continues",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.amber.shade700,
-                                    ),
-                                  ),
-                                  trailing: Icon(
-                                    Icons.run_circle_outlined,
-                                    color: Colors.amber.shade700,
-                                    size: 35,
                                   ),
                                 ),
-                              ),
+                              ],
                             ),
                           ),
                         ],
