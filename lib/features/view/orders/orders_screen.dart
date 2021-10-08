@@ -84,8 +84,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   child: ListView.builder(
                     itemCount: listofDocumentSnap.length,
                     itemBuilder: (BuildContext context, int index) {
-                      totalPrice =
-                          totalPrice + "${listofDocumentSnap[index]['price']}";
                       return Column(
                         children: [
                           GestureDetector(
@@ -184,43 +182,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 460, 00, 0),
-                            child: Stack(
-                              children: <Widget>[
-                                Container(
-                                  height: 60,
-                                  width: 400,
-                                  color: Colors.green.shade800,
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(60, 17, 0, 2),
-                                    child: Text(
-                                      'Total Price:',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  right: 0,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(25),
-                                        bottomLeft: Radius.circular(25),
-                                      ),
-                                      color: Colors.green.shade500,
-                                    ),
-                                    width: 170,
-                                    height: 60,
-                                  ),
-                                ),
-                              ],
                             ),
                           ),
                         ],

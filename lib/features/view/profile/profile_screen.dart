@@ -126,8 +126,13 @@ class _ProfileState extends State<Profile> {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          backgroundColor: Colors.grey.shade200,
-                          title: Text("Are you sure you want to log out?"),
+                          title: Text(
+                            "Are you sure you want to log out?",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            ),
+                          ),
                           actions: [
                             TextButton(
                               onPressed: () async {
@@ -142,7 +147,8 @@ class _ProfileState extends State<Profile> {
                               child: const Text(
                                 'Log out',
                                 style: TextStyle(
-                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFDB2108),
                                   fontSize: 17,
                                 ),
                               ),
@@ -155,7 +161,8 @@ class _ProfileState extends State<Profile> {
                               child: const Text(
                                 'OK',
                                 style: TextStyle(
-                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF1A9B0E),
                                   fontSize: 17,
                                 ),
                               ),

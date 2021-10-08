@@ -7,7 +7,6 @@ import 'login_provider.dart';
 import '../../core/components/app_bar/bottom_navigation_bar.dart';
 import 'email_password_form.dart';
 import '../../core/widget/gradient_container.dart';
-import '../../utils/utils_firebase.dart';
 
 class SignInBody extends StatefulWidget {
   @override
