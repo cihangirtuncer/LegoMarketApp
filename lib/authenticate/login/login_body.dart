@@ -28,36 +28,9 @@ class SignInBodyState extends State<SignInBody> {
             buttonType: Buttons.Google,
             signInMethod: () async => _signInWithGoogle(),
           ),
-          SignInProvider(
-            infoText: "Login Anonymously",
-            buttonType: Buttons.AppleDark,
-            signInMethod: () async => _signInAnonymously(),
-          ),
         ],
       ),
     );
-  }
-
-  void _signInAnonymously() async {
-    try {
-      final User? user = (await auth.signInAnonymously()).user;
-      Utils.showSnackBar(context, text: "Logined in anonymously: ${user!.uid}");
-
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => BottomHomePage(),
-        ),
-      );
-    } catch (e) {
-      debugPrint(e.toString());
-      // ignore: deprecated_member_use
-      Scaffold.of(context).showSnackBar(
-        SnackBar(
-          content: Text("An error occurred while logging in anonymously"),
-        ),
-      );
-    }
   }
 
   void _signInWithGoogle() async {
