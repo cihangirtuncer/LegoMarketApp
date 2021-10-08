@@ -15,7 +15,7 @@ Column BuildProductList(
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => BuildPayment(
+              builder: (context) => buildPayment(
                 context,
                 price,
                 name,

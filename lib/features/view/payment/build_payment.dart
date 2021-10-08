@@ -56,11 +56,10 @@ class _ButtonPaymentState extends State<ButtonPayment> {
 }
 
 // ignore: non_constant_identifier_names
-BuildPayment(BuildContext context, int price, String name, String explanation) {
+buildPayment(BuildContext context, int price, String name, String explanation) {
   // ignore: unused_local_variable
   final firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  // CollectionReference usersRef = firestore.collection('orders');
 
   return Scaffold(
     backgroundColor: Colors.green.shade100,
@@ -150,6 +149,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                     'explanation': explanation,
                     'name': nameNoSql,
                     'volume': volume,
+                    'total price': totalPrice
                   };
 
                   User? name = _auth.currentUser;
@@ -181,7 +181,7 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
                           ),
                         ),
                         child: const Text(
-                          'LOGIN',
+                          'Login',
                           style: TextStyle(
                             color: Colors.green,
                             fontSize: 17,
@@ -223,8 +223,4 @@ BuildPayment(BuildContext context, int price, String name, String explanation) {
       ],
     ),
   );
-}
-
-totalPrices() async {
-  return totalPrice;
 }
