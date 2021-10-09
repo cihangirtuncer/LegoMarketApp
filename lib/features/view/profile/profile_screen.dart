@@ -161,7 +161,7 @@ class _ProfileState extends State<Profile> {
                                 'NO',
                               ),
                               child: const Text(
-                                'OK',
+                                'Cancel',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFF1A9B0E),
