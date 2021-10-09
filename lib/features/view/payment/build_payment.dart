@@ -12,9 +12,9 @@ class ButtonPayment extends StatefulWidget {
   _ButtonPaymentState createState() => _ButtonPaymentState();
 }
 
-class _ButtonPaymentState extends State<ButtonPayment> {
-  int volume = 1;
+int volume = 1;
 
+class _ButtonPaymentState extends State<ButtonPayment> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -61,7 +61,6 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
   // ignore: unused_local_variable
   final firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  int volume = 1;
 
   return Scaffold(
     backgroundColor: Colors.green.shade100,
@@ -205,6 +204,7 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
                   );
                 }
                 Navigator.pop(context);
+                volume = 1;
               },
               child: Text(
                 'Add to Basket ',

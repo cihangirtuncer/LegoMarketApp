@@ -24,32 +24,28 @@ Column BuildProductList(
             ),
           );
         },
-        child: Column(
-          children: [
-            Card(
-              child: ListTile(
-                title: Text(
-                  name,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                subtitle: Text(
-                  explanation,
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                trailing: Text(
-                  price.toString() + " €",
-                  style: TextStyle(
-                    fontSize: 19,
-                  ),
-                ),
+        child: Card(
+          child: ListTile(
+            title: Text(
+              name,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ],
+            subtitle: Text(
+              explanation,
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            trailing: Text(
+              price.toString() + " €",
+              style: TextStyle(
+                fontSize: 19,
+              ),
+            ),
+          ),
         ),
       )
     ],
