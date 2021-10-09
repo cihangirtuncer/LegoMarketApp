@@ -25,14 +25,73 @@ class _OrdersScreenState extends State<OrdersScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: MainAppBar(
-        Text(
-          "Orders",
-          style: TextStyle(
-            fontSize: 24,
+          Text(
+            "Orders",
+            style: TextStyle(
+              fontSize: 24,
+            ),
           ),
-        ),
-        false,
-      ),
+          false,
+          actions: [
+            IconButton(
+                onPressed: (() async {
+                  showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: Text(
+                        "Are you sure you want to empty your basket?",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () async {
+                            final firestore = FirebaseFirestore.instance;
+                            CollectionReference usersRef =
+                                firestore.collection('users');
+                            var snapshot = await usersRef
+                                .doc(_auth.currentUser!.uid.toString())
+                                .collection('orders')
+                                .get();
+                            if (snapshot.docs.isNotEmpty) {
+                              for (var doc in snapshot.docs) {
+                                await doc.reference.delete();
+                              }
+                              Navigator.pop(context);
+                            } else
+                              Navigator.pop(context);
+                          },
+                          child: const Text(
+                            'Yes',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFFDB2108),
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(
+                            context,
+                            'NO',
+                          ),
+                          child: const Text(
+                            'No',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF1A9B0E),
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+                icon: Icon(Icons.delete_sharp))
+          ]),
       body: BuildGradientContainer(
         Column(
           children: [
@@ -85,115 +144,105 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   child: ListView.builder(
                     itemCount: listofDocumentSnap.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Column(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              showDialog<String>(
-                                context: context,
-                                builder: (BuildContext context) => AlertDialog(
-                                  title: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      BuildOrdersCardTextWidget(
-                                        "Product Name: ",
-                                        '${listofDocumentSnap[index]['name']}',
-                                      ),
-                                      BuildProfileDivider(8),
-                                      BuildOrdersCardTextWidget(
-                                        "Price: ",
-                                        "${listofDocumentSnap[index]['price']} €",
-                                      ),
-                                      BuildProfileDivider(8),
-                                      BuildOrdersCardTextWidget(
-                                        "Count: ",
-                                        "${listofDocumentSnap[index]['volume']}",
-                                      ),
-                                      BuildProfileDivider(8),
-                                    ],
+                      return GestureDetector(
+                        onTap: () {
+                          showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              title: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  BuildOrdersCardTextWidget(
+                                    "Product Name: ",
+                                    '${listofDocumentSnap[index]['name']}',
                                   ),
-                                  content: BuildOrdersCardTextWidget(
-                                    "Explanation: ",
-                                    '${listofDocumentSnap[index]['explanation']}',
+                                  BuildProfileDivider(8),
+                                  BuildOrdersCardTextWidget(
+                                    "Price: ",
+                                    "${listofDocumentSnap[index]['price']} €",
                                   ),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () async {
-                                        final firestore =
-                                            FirebaseFirestore.instance;
-                                        CollectionReference usersRef =
-                                            firestore.collection('users');
-                                        await usersRef
-                                            .doc(_auth.currentUser!.uid
-                                                .toString())
-                                            .collection('orders')
-                                            .doc(
-                                                '${listofDocumentSnap[index]['name']}')
-                                            .delete();
+                                  BuildProfileDivider(8),
+                                  BuildOrdersCardTextWidget(
+                                    "Count: ",
+                                    "${listofDocumentSnap[index]['volume']}",
+                                  ),
+                                  BuildProfileDivider(8),
+                                ],
+                              ),
+                              content: BuildOrdersCardTextWidget(
+                                "Explanation: ",
+                                '${listofDocumentSnap[index]['explanation']}',
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () async {
+                                    final firestore =
+                                        FirebaseFirestore.instance;
+                                    CollectionReference usersRef =
+                                        firestore.collection('users');
+                                    await usersRef
+                                        .doc(_auth.currentUser!.uid.toString())
+                                        .collection('orders')
+                                        .doc(
+                                            '${listofDocumentSnap[index]['name']}')
+                                        .delete();
 
-                                        Navigator.pop(
-                                          context,
-                                          'DELETE',
-                                        );
-                                      },
-                                      child: const Text(
-                                        'Delete',
-                                        style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: 17,
-                                        ),
-                                      ),
+                                    Navigator.pop(
+                                      context,
+                                      'DELETE',
+                                    );
+                                  },
+                                  child: const Text(
+                                    'Delete',
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                      fontSize: 17,
                                     ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                        context,
-                                        'OK',
-                                      ),
-                                      child: const Text(
-                                        'OK',
-                                        style: TextStyle(
-                                          color: Colors.green,
-                                          fontSize: 17,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              );
-                            },
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(3.0),
-                                  child: Card(
-                                    child: ListTile(
-                                      title: Text(
-                                        '${listofDocumentSnap[index]['name']}',
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      subtitle: Text(
-                                        "continues",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.amber.shade700,
-                                        ),
-                                      ),
-                                      trailing: Icon(
-                                        Icons.run_circle_outlined,
-                                        color: Colors.amber.shade700,
-                                        size: 35,
-                                      ),
+                                TextButton(
+                                  onPressed: () => Navigator.pop(
+                                    context,
+                                    'OK',
+                                  ),
+                                  child: const Text(
+                                    'OK',
+                                    style: TextStyle(
+                                      color: Colors.green,
+                                      fontSize: 17,
                                     ),
                                   ),
                                 ),
                               ],
                             ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Card(
+                            child: ListTile(
+                              title: Text(
+                                '${listofDocumentSnap[index]['name']}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              subtitle: Text(
+                                "continues",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.amber.shade700,
+                                ),
+                              ),
+                              trailing: Icon(
+                                Icons.run_circle_outlined,
+                                color: Colors.amber.shade700,
+                                size: 35,
+                              ),
+                            ),
                           ),
-                        ],
+                        ),
                       );
                     },
                   ),
