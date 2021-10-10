@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/divider/profile_divder.dart';
 import 'package:lego_market_app/core/components/text/orders_card_text.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
+import 'package:lego_market_app/core/widget/info_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
 
 class OrdersScreen extends StatefulWidget {
@@ -115,25 +116,27 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 if (!asyncSnapshot.data!.docs.isNotEmpty ||
                     !asyncSnapshot.hasData)
                   return Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 210, 0, 0),
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.feedback,
-                          size: 60,
-                          color: Colors.white,
-                        ),
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(5, 130, 5, 160),
+                    child: buildInfoContainer(
+                      context,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.feedback,
+                            size: 80,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
                             child: Text(
                               'There are no items to display in your basket.',
                               style:
                                   TextStyle(fontSize: 30, color: Colors.white),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
 
