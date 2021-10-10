@@ -36,7 +36,10 @@ class NullUserOrders extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(8, 10, 8, 25),
                   child: Text(
                     "Your basket is not visible because you are not a registered user, please log in or sign up.",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
                   ),
                 ),
               ],
