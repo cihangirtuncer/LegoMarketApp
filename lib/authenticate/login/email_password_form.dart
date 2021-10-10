@@ -20,7 +20,7 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
       child: Card(
         color: Colors.transparent,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 30, 16, 25),
+          padding: const EdgeInsets.fromLTRB(16, 30, 16, 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,7 +31,7 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
                     "Login with Email and Password",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 21,
                     ),
                   ),
                   alignment: Alignment.center,
@@ -72,7 +72,7 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
                 obscureText: true, //! prevents passwords from appearing.
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(5, 30, 5, 5),
+                padding: const EdgeInsets.fromLTRB(5, 30, 5, 0),
                 alignment: Alignment.center,
                 child: SignInButton(Buttons.Email, text: "Login with Email",
                     onPressed: () async {
