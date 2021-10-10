@@ -1,14 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import '../login/login_view.dart';
+import 'package:lego_market_app/authenticate/login/email_password_form.dart';
 import '../register/register_page.dart';
-import '../../core/components/app_bar/bottom_navigation_bar.dart';
-import '../../core/widget/appbar_title.dart';
 import '../../core/widget/gradient_container.dart';
 
 class AuthTypeSelector extends StatelessWidget {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,27 +13,7 @@ class AuthTypeSelector extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            child: BuildHomeAppBarText(45, 15),
-            padding: const EdgeInsets.fromLTRB(3, 0, 3, 200),
-          ),
-          Container(
-            child: SignInButtonBuilder(
-              fontSize: 21,
-              icon: Icons.verified_user,
-              backgroundColor: Color(0xF5031E96), //0xFF8D0505  0xF500198A
-              text: "Login",
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => _auth.currentUser == null
-                      ? SignInPage()
-                      : BottomHomePage(),
-                ),
-              ),
-            ),
-            padding: const EdgeInsets.fromLTRB(2, 0, 2, 30),
-            alignment: Alignment.center,
-          ),
+          EmailPasswordForm(),
           Container(
             child: SignInButtonBuilder(
               fontSize: 21,
@@ -50,7 +26,7 @@ class AuthTypeSelector extends StatelessWidget {
                 ),
               ),
             ),
-            padding: const EdgeInsets.fromLTRB(2, 0, 2, 110),
+            padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
             alignment: Alignment.center,
           ),
         ],

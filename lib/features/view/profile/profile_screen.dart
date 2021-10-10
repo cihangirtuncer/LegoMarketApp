@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/authenticate/auth_page/auth_type_selector.dart';
+import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 import 'package:lego_market_app/core/components/row/profile_row.dart';
 import 'package:lego_market_app/core/widget/color.dart';
 import 'package:lego_market_app/core/widget/gradient_container.dart';
@@ -142,7 +142,7 @@ class _ProfileState extends State<Profile> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => AuthTypeSelector(),
+                                    builder: (context) => BottomHomePage(),
                                   ),
                                 );
                               },
@@ -182,7 +182,7 @@ class _ProfileState extends State<Profile> {
                         "Log out",
                         style: TextStyle(
                           fontSize: 20,
-                          color: Colors.white,
+                          color: BuildColor(),
                         ),
                       ),
                     ),

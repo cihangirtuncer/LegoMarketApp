@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'login_view.dart';
 import '../../core/components/app_bar/bottom_navigation_bar.dart';
 
 class EmailPasswordForm extends StatefulWidget {
@@ -21,12 +20,12 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
       child: Card(
         color: Colors.transparent,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 80, 16, 25),
+          padding: const EdgeInsets.fromLTRB(16, 30, 16, 25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 5, 10, 8),
+                padding: const EdgeInsets.fromLTRB(15, 5, 15, 8),
                 child: Container(
                   child: Text(
                     "Login with Email and Password",
@@ -73,7 +72,7 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
                 obscureText: true, //! prevents passwords from appearing.
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(5, 25, 5, 0),
+                padding: const EdgeInsets.fromLTRB(5, 30, 5, 5),
                 alignment: Alignment.center,
                 child: SignInButton(Buttons.Email, text: "Login with Email",
                     onPressed: () async {
@@ -88,6 +87,8 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
       ),
     );
   }
+
+  final FirebaseAuth auth = FirebaseAuth.instance;
 
   void _signInWithEmailAndPassword() async {
     try {

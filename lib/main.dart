@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import 'authenticate/auth_page/auth_type_selector.dart';
+import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       themeMode: ThemeMode.system,
-      home: AuthTypeSelector(),
+      home: BottomHomePage(),
     );
   }
 }

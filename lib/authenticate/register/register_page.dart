@@ -52,7 +52,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       cursorColor: Colors.white,
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
                         labelText: "Name/Surname",
                         labelStyle: TextStyle(
                           color: Colors.white,
@@ -75,7 +74,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       cursorColor: Colors.white,
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
                         labelText: "Phone",
                         labelStyle: TextStyle(
                           color: Colors.white,
@@ -98,7 +96,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       cursorColor: Colors.white,
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
                         labelText: "Address",
                         labelStyle: TextStyle(
                           color: Colors.white,
@@ -122,7 +119,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       cursorColor: Colors.white,
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
                         labelText: "E-mail",
                         labelStyle: TextStyle(
                           color: Colors.white,
@@ -145,7 +141,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       cursorColor: Colors.white,
                       decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
                         labelText: "Password",
                         labelStyle: TextStyle(color: Colors.white),
                       ),

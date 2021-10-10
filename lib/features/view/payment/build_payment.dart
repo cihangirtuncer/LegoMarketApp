@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/authenticate/login/login_view.dart';
 
 int totalPrice = 0;
 
@@ -162,48 +161,33 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
+                      backgroundColor: Colors.grey.shade900,
                       content: const Text(
                         'Product added to basket',
                         style: TextStyle(color: Colors.green),
                       ),
                     ),
                   );
-                } else {
-                  AlertDialog(
-                    title: Text(
-                        'You must register to add the product to the basket.'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignInPage(),
-                          ),
+                }
+                if (_auth.currentUser == null) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    backgroundColor: Colors.grey.shade900,
+                    content: Row(
+                      children: [
+                        Icon(
+                          Icons.warning,
+                          color: Colors.red,
                         ),
-                        child: const Text(
-                          'Login',
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 17,
-                          ),
+                        const Text(
+                          ' You must register to add the product to the basket.',
+                          style: TextStyle(color: Colors.red),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text(
-                          'Cancel',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 17,
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
+                      ],
+                    ),
+                  ));
                 }
                 Navigator.pop(context);
+
                 volume = 1;
               },
               child: Text(
