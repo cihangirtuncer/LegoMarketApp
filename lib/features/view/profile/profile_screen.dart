@@ -147,7 +147,7 @@ class _ProfileState extends State<Profile> {
                                 );
                               },
                               child: const Text(
-                                'Log out',
+                                'Done',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFFDB2108),
