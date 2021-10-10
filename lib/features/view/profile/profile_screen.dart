@@ -78,7 +78,7 @@ class _ProfileState extends State<Profile> {
                             ),
                             child: Icon(
                               Icons.account_circle_rounded,
-                              size: 90,
+                              size: 110,
                               color: Colors.white,
                             ),
                           ),

@@ -91,7 +91,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                     ),
                   );
                 }),
-                icon: Icon(Icons.delete_sharp))
+                icon: Icon(
+                  Icons.delete_sharp,
+                  size: 34,
+                ))
           ]),
       body: BuildGradientContainer(
         Column(
