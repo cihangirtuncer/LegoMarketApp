@@ -8,29 +8,30 @@ class AuthTypeSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: BuildGradientContainer(
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          EmailPasswordForm(),
-          Container(
-            child: SignInButtonBuilder(
-              fontSize: 21,
-              icon: Icons.person_add,
-              backgroundColor: Color(0xFFB60707), //0xF541012C 0xF50876DD
-              text: "Register", // 0xF51239E6
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => RegisterPage(),
+      body: BuildGradientContainer(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            EmailPasswordForm(),
+            Container(
+              child: SignInButtonBuilder(
+                fontSize: 21,
+                icon: Icons.person_add,
+                backgroundColor: Color(0xFFB60707), //0xF541012C 0xF50876DD
+                text: "Register", // 0xF51239E6
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => RegisterPage(),
+                  ),
                 ),
               ),
+              padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
+              alignment: Alignment.center,
             ),
-            padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
-            alignment: Alignment.center,
-          ),
-        ],
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
