@@ -26,76 +26,78 @@ class _OrdersScreenState extends State<OrdersScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: MainAppBar(
-          Text(
-            "Orders",
-            style: TextStyle(
-              fontSize: 24,
-            ),
+        Text(
+          "Orders",
+          style: TextStyle(
+            fontSize: 24,
           ),
-          false,
-          actions: [
-            IconButton(
-                onPressed: (() async {
-                  showDialog<String>(
-                    context: context,
-                    builder: (BuildContext context) => AlertDialog(
-                      title: Text(
-                        "Are you sure you want to empty your basket?",
+        ),
+        false,
+        actions: [
+          IconButton(
+            onPressed: (() async {
+              showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: Text(
+                    "Are you sure you want to empty your basket?",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () async {
+                        final firestore = FirebaseFirestore.instance;
+                        CollectionReference usersRef =
+                            firestore.collection('users');
+                        var snapshot = await usersRef
+                            .doc(_auth.currentUser!.uid.toString())
+                            .collection('orders')
+                            .get();
+                        if (snapshot.docs.isNotEmpty) {
+                          for (var doc in snapshot.docs) {
+                            await doc.reference.delete();
+                          }
+                          Navigator.pop(context);
+                        } else
+                          Navigator.pop(context);
+                      },
+                      child: const Text(
+                        'Yes',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          color: Color(0xFFDB2108),
                           fontSize: 17,
                         ),
                       ),
-                      actions: [
-                        TextButton(
-                          onPressed: () async {
-                            final firestore = FirebaseFirestore.instance;
-                            CollectionReference usersRef =
-                                firestore.collection('users');
-                            var snapshot = await usersRef
-                                .doc(_auth.currentUser!.uid.toString())
-                                .collection('orders')
-                                .get();
-                            if (snapshot.docs.isNotEmpty) {
-                              for (var doc in snapshot.docs) {
-                                await doc.reference.delete();
-                              }
-                              Navigator.pop(context);
-                            } else
-                              Navigator.pop(context);
-                          },
-                          child: const Text(
-                            'Yes',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFFDB2108),
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () => Navigator.pop(
-                            context,
-                            'NO',
-                          ),
-                          child: const Text(
-                            'No',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF1A9B0E),
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
-                  );
-                }),
-                icon: Icon(
-                  Icons.delete_sharp,
-                  size: 34,
-                ))
-          ]),
+                    TextButton(
+                      onPressed: () => Navigator.pop(
+                        context,
+                        'NO',
+                      ),
+                      child: const Text(
+                        'No',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF1A9B0E),
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }),
+            icon: Icon(
+              Icons.delete_sharp,
+              size: 34,
+            ),
+          )
+        ],
+      ),
       body: BuildGradientContainer(
         Column(
           children: [
