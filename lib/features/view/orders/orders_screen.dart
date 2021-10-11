@@ -136,8 +136,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                             padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
                             child: Text(
                               'There are no items to display in your basket.',
-                              style:
-                                  TextStyle(fontSize: 30, color: Colors.white),
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ],
