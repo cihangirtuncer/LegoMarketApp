@@ -164,27 +164,31 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
                       backgroundColor: Colors.grey.shade900,
                       content: const Text(
                         'Product added to basket',
-                        style: TextStyle(color: Colors.green),
+                        style: TextStyle(
+                          color: Colors.green,
+                        ),
                       ),
                     ),
                   );
                 }
                 if (_auth.currentUser == null) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    backgroundColor: Colors.grey.shade900,
-                    content: Row(
-                      children: [
-                        Icon(
-                          Icons.warning,
-                          color: Colors.red,
-                        ),
-                        const Text(
-                          ' You must register to add the product to the basket.',
-                          style: TextStyle(color: Colors.red),
-                        ),
-                      ],
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      backgroundColor: Colors.grey.shade900,
+                      content: Row(
+                        children: [
+                          Icon(
+                            Icons.warning,
+                            color: Colors.red,
+                          ),
+                          const Text(
+                            ' You must register to add the product to the basket.',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ],
+                      ),
                     ),
-                  ));
+                  );
                 }
                 Navigator.pop(context);
 
