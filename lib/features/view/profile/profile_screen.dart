@@ -86,9 +86,10 @@ class _ProfileState extends State<Profile> {
                         Text(
                           data['name surname'],
                           style: TextStyle(
-                              fontSize: 23,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
+                            fontSize: 23,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
