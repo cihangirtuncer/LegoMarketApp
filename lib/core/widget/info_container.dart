@@ -9,7 +9,11 @@ buildInfoContainer(BuildContext context, Widget child) {
       color: Colors.white10,
       border:
           Border.all(width: 2.0, color: Colors.white, style: BorderStyle.solid),
-      borderRadius: BorderRadius.all(Radius.circular(20)),
+      borderRadius: BorderRadius.all(
+        Radius.circular(
+          20,
+        ),
+      ),
     ),
     child: Padding(
       padding: const EdgeInsets.all(8.0),
