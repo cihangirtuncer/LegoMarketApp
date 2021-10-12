@@ -3,9 +3,14 @@ import 'package:lego_market_app/core/widget/gradient_container.dart';
 import 'package:lego_market_app/core/widget/info_container.dart';
 import 'package:lego_market_app/core/widget/main_appBar.dart';
 
-class NullUserOrders extends StatelessWidget {
+class NullUserOrders extends StatefulWidget {
   const NullUserOrders({Key? key}) : super(key: key);
 
+  @override
+  State<NullUserOrders> createState() => _NullUserOrdersState();
+}
+
+class _NullUserOrdersState extends State<NullUserOrders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
