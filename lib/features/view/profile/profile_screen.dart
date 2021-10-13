@@ -177,7 +177,10 @@ class _ProfileState extends State<Profile> {
                       );
                     },
                     child: ListTile(
-                      leading: Icon(Icons.logout, color: BuildColor()),
+                      leading: Icon(
+                        Icons.logout,
+                        color: BuildColor(),
+                      ),
                       title: Text(
                         "Log out",
                         style: TextStyle(
