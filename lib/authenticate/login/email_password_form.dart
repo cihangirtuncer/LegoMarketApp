@@ -20,70 +20,69 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
       child: Card(
         color: Colors.transparent,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 30, 16, 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(15, 5, 15, 8),
-                child: Container(
-                  child: Text(
-                    "Login with Email and Password",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 21,
+            padding: const EdgeInsets.fromLTRB(16, 30, 16, 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(15, 5, 15, 8),
+                  child: Container(
+                    child: Text(
+                      "Login with Email and Password",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 21,
+                      ),
                     ),
+                    alignment: Alignment.center,
                   ),
-                  alignment: Alignment.center,
                 ),
-              ),
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                controller: _emailController,
-                style: TextStyle(color: Colors.white),
-                decoration: const InputDecoration(
-                  labelStyle: TextStyle(color: Colors.white),
-                  labelText: "E-mail",
-                  hintStyle: TextStyle(color: Colors.white),
-                  fillColor: Colors.white,
-                  focusColor: Colors.white,
-                  hoverColor: Colors.white,
-                ),
-                validator: (String? mail) {
-                  if (mail!.isEmpty) return "Please write an e-mail";
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _passwordController,
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-                decoration: const InputDecoration(
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: _emailController,
+                  style: TextStyle(color: Colors.white),
+                  decoration: const InputDecoration(
                     labelStyle: TextStyle(color: Colors.white),
-                    labelText: "Password",
+                    labelText: "E-mail",
+                    hintStyle: TextStyle(color: Colors.white),
                     fillColor: Colors.white,
                     focusColor: Colors.white,
-                    hoverColor: Colors.white),
-                validator: (String? password) {
-                  if (password!.isEmpty) return "Please type a password";
-                  return null;
-                },
-                obscureText: true, //! prevents passwords from appearing.
-              ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(5, 30, 5, 0),
-                alignment: Alignment.center,
-                child: SignInButton(Buttons.Email, text: "Login with Email",
-                    onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    _signInWithEmailAndPassword();
-                  }
-                }),
-              ),
-            ],
-          ),
-        ),
+                    hoverColor: Colors.white,
+                  ),
+                  validator: (String? mail) {
+                    if (mail!.isEmpty) return "Please write an e-mail";
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  controller: _passwordController,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  decoration: const InputDecoration(
+                      labelStyle: TextStyle(color: Colors.white),
+                      labelText: "Password",
+                      fillColor: Colors.white,
+                      focusColor: Colors.white,
+                      hoverColor: Colors.white),
+                  validator: (String? password) {
+                    if (password!.isEmpty) return "Please type a password";
+                    return null;
+                  },
+                  obscureText: true, //! prevents passwords from appearing.
+                ),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(5, 30, 5, 0),
+                  alignment: Alignment.center,
+                  child: SignInButton(Buttons.Email, text: "Login with Email",
+                      onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      _signInWithEmailAndPassword();
+                    }
+                  }),
+                ),
+              ],
+            )),
       ),
     );
   }
