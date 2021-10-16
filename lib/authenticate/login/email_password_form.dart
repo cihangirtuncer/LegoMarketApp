@@ -72,14 +72,18 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
                 obscureText: true, //! prevents passwords from appearing.
               ),
               Container(
-                  padding: const EdgeInsets.fromLTRB(5, 30, 5, 0),
-                  alignment: Alignment.center,
-                  child: SignInButton(Buttons.Email, text: "Login with Email",
-                      onPressed: () async {
+                padding: const EdgeInsets.fromLTRB(5, 30, 5, 0),
+                alignment: Alignment.center,
+                child: SignInButton(
+                  Buttons.Email,
+                  text: "Login with Email",
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       _signInWithEmailAndPassword();
                     }
-                  })),
+                  },
+                ),
+              ),
             ],
           ),
         ),
