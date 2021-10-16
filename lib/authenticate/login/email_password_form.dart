@@ -117,9 +117,11 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
     } on FirebaseAuthException catch (e) {
       debugPrint(e.toString());
       // ignore: deprecated_member_use
-      Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("${e.message}"),
-      ));
+      Scaffold.of(context).showSnackBar(
+        SnackBar(
+          content: Text("${e.message}"),
+        ),
+      );
     } catch (e) {
       debugPrint(e.toString());
       // ignore: deprecated_member_use
