@@ -15,7 +15,9 @@ BuildProfileData(
       width: width,
       height: height,
       child: widget,
-      decoration: BoxDecoration(color: color),
+      decoration: BoxDecoration(
+        color: color,
+      ),
     ),
   );
 }
