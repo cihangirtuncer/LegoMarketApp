@@ -102,9 +102,11 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
           .user;
 
       // ignore: deprecated_member_use
-      Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("${user!.email} logged in with."),
-      ));
+      Scaffold.of(context).showSnackBar(
+        SnackBar(
+          content: Text("${user!.email} logged in with."),
+        ),
+      );
 
       Navigator.pushReplacement(
         context,
