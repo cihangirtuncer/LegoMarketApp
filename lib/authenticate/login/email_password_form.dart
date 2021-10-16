@@ -125,9 +125,12 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
     } catch (e) {
       debugPrint(e.toString());
       // ignore: deprecated_member_use
-      Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("There was a problem logging in with Email and Password"),
-      ));
+      Scaffold.of(context).showSnackBar(
+        SnackBar(
+          content:
+              Text("There was a problem logging in with Email and Password"),
+        ),
+      );
     }
   }
 }
