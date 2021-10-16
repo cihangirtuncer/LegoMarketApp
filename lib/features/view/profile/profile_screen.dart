@@ -101,7 +101,7 @@ class _ProfileState extends State<Profile> {
                     80,
                     50,
                     Alignment.centerLeft,
-                    BuildProfileRow(
+                    buildProfileRow(
                       data['email'],
                       Icons.mail,
                     ),
@@ -111,7 +111,7 @@ class _ProfileState extends State<Profile> {
                     80,
                     50,
                     Alignment.centerLeft,
-                    BuildProfileRow(
+                    buildProfileRow(
                       data['phone'],
                       Icons.phone,
                     ),
@@ -121,7 +121,7 @@ class _ProfileState extends State<Profile> {
                     80,
                     50,
                     Alignment.centerLeft,
-                    BuildProfileRow(
+                    buildProfileRow(
                       data['address'],
                       Icons.home,
                     ),
