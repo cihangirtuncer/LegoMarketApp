@@ -38,7 +38,10 @@ BuildDrawer(BuildContext context) {
               ),
               title: Text(
                 "Log out",
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
               ),
             ),
           ),
