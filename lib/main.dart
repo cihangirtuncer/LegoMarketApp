@@ -12,17 +12,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          brightness: Brightness.light,
-          hintColor: Colors.white,
-          focusColor: Colors.white,
-          shadowColor: Colors.transparent,
-        ),
-        darkTheme: ThemeData(
-          brightness: Brightness.dark,
-        ),
-        themeMode: ThemeMode.system,
-        home: BottomHomePage());
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.light,
+        hintColor: Colors.white,
+        focusColor: Colors.white,
+        shadowColor: Colors.transparent,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      themeMode: ThemeMode.system,
+      home: BottomHomePage(),
+    );
   }
 }
