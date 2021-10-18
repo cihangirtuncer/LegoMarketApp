@@ -10,12 +10,5 @@ BuildAppBarText(String letter, Color colors, double fontsize) {
           color: colors,
           fontSize: fontsize,
         ),
-      )
-
-      /*TextStyle(
-      fontWeight: FontWeight.bold,
-      color: colors,
-      fontSize: fontsize,
-    ),*/
-      );
+      ));
 }
