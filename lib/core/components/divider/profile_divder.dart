@@ -4,7 +4,5 @@ import 'package:flutter/material.dart';
 BuildProfileDivider(
   double height,
 ) {
-  return Divider(
-    height: height,
-  );
+  return Divider(height: height);
 }
