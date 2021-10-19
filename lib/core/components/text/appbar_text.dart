@@ -6,11 +6,10 @@ BuildAppBarText(String letter, Color colors, double fontsize) {
   return Text(
     letter,
     style: GoogleFonts.rajdhani(
-      textStyle: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: colors,
-        fontSize: fontsize,
-      ),
-    ),
+        textStyle: TextStyle(
+      fontWeight: FontWeight.bold,
+      color: colors,
+      fontSize: fontsize,
+    )),
   );
 }
