@@ -50,7 +50,7 @@ flutter_native_splash:
   
   android: true
   web: true 
-  color: "#141369 " 
+  color: "#141369" 
   image: assets/splash.png
 
 # For information on the generic Dart part of this file, see the

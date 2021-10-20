@@ -10,6 +10,8 @@ BuildProductsScaffold(String productName, ListView listView) {
           productName,
         ),
         true),
-    body: BuildGradientContainer(listView),
+    body: BuildGradientContainer(
+      listView,
+    ),
   );
 }
