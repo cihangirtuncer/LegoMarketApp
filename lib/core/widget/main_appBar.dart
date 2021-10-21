@@ -11,10 +11,7 @@ AppBar MainAppBar(Widget? child, bool tF, {List<Widget>? actions}) {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: <Color>[
-            Color(0xFFB60707),
-            Color(0xFFE49E07),
-          ],
+          colors: <Color>[Color(0xFFB60707), Color(0xFFE49E07)],
         ),
       ),
     ),
