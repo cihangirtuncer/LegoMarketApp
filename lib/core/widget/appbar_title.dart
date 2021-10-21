@@ -8,20 +8,7 @@ Widget BuildHomeAppBarText(double fontsize, double width) {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       BuildAppBarText(
-        "LEG",
-        Colors.white,
-        fontsize,
-      ),
-      BuildAppBarText(
-        "O",
-        Colors.white,
-        fontsize,
-      ),
-      SizedBox(
-        width: width,
-      ),
-      BuildAppBarText(
-        "M",
+        "LEGO M",
         Colors.white,
         fontsize,
       ),
