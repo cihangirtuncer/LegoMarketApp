@@ -26,9 +26,7 @@ BuildShoppingContainer(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            assetsPath,
-          ),
+          Image.asset(assetsPath),
           Text(
             productName,
             style: TextStyle(
