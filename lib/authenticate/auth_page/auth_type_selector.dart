@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:lego_market_app/authenticate/login/email_password_form.dart';
+import '../login/email_password_form.dart';
 import '../register/register_page.dart';
 import '../../core/widget/gradient_container.dart';
 

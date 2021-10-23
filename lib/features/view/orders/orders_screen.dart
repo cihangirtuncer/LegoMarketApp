@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/components/divider/profile_divder.dart';
-import 'package:lego_market_app/core/components/text/orders_card_text.dart';
-import 'package:lego_market_app/core/widget/gradient_container.dart';
-import 'package:lego_market_app/core/widget/info_container.dart';
-import 'package:lego_market_app/core/widget/main_appBar.dart';
+import '../../../core/components/divider/profile_divder.dart';
+import '../../../core/components/text/orders_card_text.dart';
+import '../../../core/widget/gradient_container.dart';
+import '../../../core/widget/info_container.dart';
+import '../../../core/widget/main_appBar.dart';
 
 class OrdersScreen extends StatefulWidget {
   @override

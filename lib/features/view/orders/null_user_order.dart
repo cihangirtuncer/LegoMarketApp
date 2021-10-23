@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/core/widget/gradient_container.dart';
-import 'package:lego_market_app/core/widget/info_container.dart';
-import 'package:lego_market_app/core/widget/main_appBar.dart';
+import '../../../core/widget/gradient_container.dart';
+import '../../../core/widget/info_container.dart';
+import '../../../core/widget/main_appBar.dart';
 
 class NullUserOrders extends StatefulWidget {
   const NullUserOrders({Key? key}) : super(key: key);

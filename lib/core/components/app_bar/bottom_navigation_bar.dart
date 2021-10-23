@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lego_market_app/authenticate/auth_page/auth_type_selector.dart';
-import 'package:lego_market_app/features/view/orders/null_user_order.dart';
 
+import '../../../authenticate/auth_page/auth_type_selector.dart';
 import '../../../features/view/home/home_screen.dart';
+import '../../../features/view/orders/null_user_order.dart';
 import '../../../features/view/orders/orders_screen.dart';
 import '../../../features/view/profile/profile_screen.dart';
-//import '../../../features/view/search/search_screen.dart';
 import '../icon/bottom_icon.dart';
 
 class BottomHomePage extends StatefulWidget {
@@ -20,7 +19,6 @@ class _BottomHomePageState extends State<BottomHomePage> {
   int _selectedIndex = 0;
   final tabs = [
     HomePage(),
-    //Search(),
     _auth.currentUser == null ? NullUserOrders() : OrdersScreen(),
     _auth.currentUser == null ? AuthTypeSelector() : Profile(),
   ];
@@ -42,13 +40,6 @@ class _BottomHomePageState extends State<BottomHomePage> {
             label: "HOME",
             backgroundColor: Colors.white,
           ),
-          // BottomNavigationBarItem(
-          //  icon: BuildBottomIcon(
-          //    Icons.search,
-          //  ),
-          //  label: "SEARCH",
-          //  backgroundColor: Colors.white,
-          // ),
           BottomNavigationBarItem(
             icon: BuildBottomIcon(
               Icons.shopping_cart,
