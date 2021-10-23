@@ -40,6 +40,13 @@ class _BottomHomePageState extends State<BottomHomePage> {
             label: "HOME",
             backgroundColor: Colors.white,
           ),
+          // BottomNavigationBarItem(
+          //  icon: BuildBottomIcon(
+          //    Icons.search,
+          //  ),
+          //  label: "SEARCH",
+          //  backgroundColor: Colors.white,
+          // ),
           BottomNavigationBarItem(
             icon: BuildBottomIcon(
               Icons.shopping_cart,
