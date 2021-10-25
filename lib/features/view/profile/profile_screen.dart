@@ -132,11 +132,8 @@ class _ProfileState extends State<Profile> {
                       onTap: () async {
                         Get.defaultDialog(
                           title: "Are you sure you want to log out?",
-                          content: Icon(
-                            Icons.warning,
-                            size: 40,
-                            color: Colors.red,
-                          ),
+                          content:
+                              Icon(Icons.warning, size: 40, color: Colors.red),
                           textCancel: 'LOG OUT',
                           cancelTextColor: Colors.red,
                           onCancel: () async {
