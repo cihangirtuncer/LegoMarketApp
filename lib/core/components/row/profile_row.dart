@@ -14,11 +14,13 @@ buildProfileRow(String string, IconData icon) {
           BuildColor(),
         ),
         Text("         "),
-        Text(
-          string,
-          style: TextStyle(
-            fontSize: 21,
-            color: Colors.white,
+        Expanded(
+          child: Text(
+            string,
+            style: TextStyle(
+              fontSize: 21,
+              color: Colors.white,
+            ),
           ),
         ),
       ],

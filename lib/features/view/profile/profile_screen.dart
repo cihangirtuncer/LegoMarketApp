@@ -100,7 +100,7 @@ class _ProfileState extends State<Profile> {
                     BuildProfileData(
                       Colors.transparent,
                       80,
-                      50,
+                      60,
                       Alignment.centerLeft,
                       buildProfileRow(
                         data['email'],
@@ -110,7 +110,7 @@ class _ProfileState extends State<Profile> {
                     BuildProfileData(
                       Colors.transparent,
                       80,
-                      50,
+                      60,
                       Alignment.centerLeft,
                       buildProfileRow(
                         data['phone'],
@@ -120,7 +120,7 @@ class _ProfileState extends State<Profile> {
                     BuildProfileData(
                       Colors.transparent,
                       80,
-                      50,
+                      60,
                       Alignment.centerLeft,
                       buildProfileRow(
                         data['address'],
@@ -180,6 +180,7 @@ class _ProfileState extends State<Profile> {
                       child: ListTile(
                         leading: Icon(
                           Icons.logout,
+                          size: 27,
                           color: BuildColor(),
                         ),
                         title: Text(
