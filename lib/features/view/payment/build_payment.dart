@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 int totalPrice = 0;
 
@@ -161,6 +162,7 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
 
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
+                      duration: Duration(milliseconds: 1200),
                       backgroundColor: Colors.grey.shade900,
                       content: const Text(
                         'Product added to basket',
@@ -174,6 +176,7 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
                 if (_auth.currentUser == null) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
+                      duration: Duration(milliseconds: 1200),
                       backgroundColor: Colors.grey.shade900,
                       content: Row(
                         children: [
@@ -190,8 +193,7 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
                     ),
                   );
                 }
-                Navigator.pop(context);
-
+                Get.back();
                 volume = 1;
               },
               child: Text(
@@ -213,3 +215,17 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
     ),
   );
 }
+
+/*
+ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      backgroundColor: Colors.grey.shade900,
+                      content: const Text(
+                        'Product added to basket',
+                        style: TextStyle(
+                          color: Colors.green,
+                        ),
+                      ),
+                    ),
+                  );
+*/

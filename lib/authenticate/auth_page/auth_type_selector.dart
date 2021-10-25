@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:get/get.dart';
 import '../login/email_password_form.dart';
 import '../register/register_page.dart';
 import '../../core/widget/gradient_container.dart';
@@ -20,11 +21,7 @@ class AuthTypeSelector extends StatelessWidget {
                 icon: Icons.person_add,
                 backgroundColor: Color(0xF56E014E), //0xF541012C 0xFFB60707
                 text: "Register", // 0xF51239E6
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => RegisterPage(),
-                  ),
-                ),
+                onPressed: () => Get.to(RegisterPage()),
               ),
               padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
               alignment: Alignment.center,

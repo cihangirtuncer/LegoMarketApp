@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../view/payment/build_payment.dart';
 
 // ignore: non_constant_identifier_names
@@ -12,15 +13,12 @@ Column BuildProductList(
     children: [
       GestureDetector(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => buildPayment(
-                context,
-                price,
-                name,
-                explanation,
-              ),
+          Get.to(
+            buildPayment(
+              context,
+              price,
+              name,
+              explanation,
             ),
           );
         },

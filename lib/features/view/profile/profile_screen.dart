@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../../core/components/row/profile_row.dart';
 import '../../../core/widget/color.dart';
@@ -129,52 +130,25 @@ class _ProfileState extends State<Profile> {
                     ),
                     InkWell(
                       onTap: () async {
-                        showDialog<String>(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                            title: Text(
-                              "Are you sure you want to log out?",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17,
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () async {
-                                  await FirebaseAuth.instance.signOut();
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => BottomHomePage(),
-                                    ),
-                                  );
-                                },
-                                child: const Text(
-                                  'Done',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFFDB2108),
-                                    fontSize: 17,
-                                  ),
-                                ),
-                              ),
-                              TextButton(
-                                onPressed: () => Navigator.pop(
-                                  context,
-                                  'NO',
-                                ),
-                                child: const Text(
-                                  'Cancel',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFF1A9B0E),
-                                    fontSize: 17,
-                                  ),
-                                ),
-                              ),
-                            ],
+                        Get.defaultDialog(
+                          title: "Are you sure you want to log out?",
+                          content: Icon(
+                            Icons.warning,
+                            size: 40,
+                            color: Colors.red,
                           ),
+                          textCancel: 'LOG OUT',
+                          cancelTextColor: Colors.red,
+                          onCancel: () async {
+                            await FirebaseAuth.instance.signOut();
+                            Get.to(
+                              BottomHomePage(),
+                            );
+                          },
+                          textConfirm: 'CANCEL',
+                          buttonColor: Colors.green,
+                          confirmTextColor: Colors.white,
+                          onConfirm: () => Get.back(),
                         );
                       },
                       child: ListTile(

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:get/get.dart';
 import '../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../core/widget/gradient_container.dart';
 import '../../core/widget/main_appBar.dart';
@@ -186,7 +187,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Container(
                       alignment: Alignment.center,
                       // ignore: unnecessary_null_comparison
-                      child: Text(_success == null ? '' : " "), //_message
+                      child: Text(_success == null ? '' : " "),
                     ),
                   ],
                 ),
@@ -221,7 +222,6 @@ class _RegisterPageState extends State<RegisterPage> {
       if (user != null) {
         setState(() {
           _success = true;
-          //  _message = "Registration Successful ${user.email}";
         });
         Map<String, dynamic> usersData = {
           'name surname': nameSurnameController.text,
@@ -232,24 +232,18 @@ class _RegisterPageState extends State<RegisterPage> {
         User? name = _auth.currentUser;
         CollectionReference usersRef = firestore.collection('users');
         await usersRef.doc(name!.uid.toString()).set(usersData);
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => BottomHomePage(),
-          ),
+        Get.to(
+          BottomHomePage(),
         );
       } else {
         setState(() {
           _success = false;
-
-          //  _message = "Registration Failed.";
         });
       }
     } catch (e) {
       debugPrint(e.toString());
       setState(() {
         _success = false;
-        // _message = "Registration Failed.\n\n$e";
       });
     }
   }
