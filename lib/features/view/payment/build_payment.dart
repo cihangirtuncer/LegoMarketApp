@@ -215,17 +215,3 @@ buildPayment(BuildContext context, int price, String name, String explanation) {
     ),
   );
 }
-
-/*
-ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      backgroundColor: Colors.grey.shade900,
-                      content: const Text(
-                        'Product added to basket',
-                        style: TextStyle(
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                  );
-*/
