@@ -158,9 +158,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                 ),
                               ],
                             ),
-                            textCancel: 'DELETE',
-                            cancelTextColor: Colors.red,
-                            onCancel: () async {
+                            textCancel: 'CANCEL',
+                            cancelTextColor: Colors.green,
+                            onCancel: () => Get.back(),
+                            textConfirm: 'DELETE',
+                            buttonColor: Colors.red,
+                            confirmTextColor: Colors.white,
+                            onConfirm: () async {
                               final firestore = FirebaseFirestore.instance;
                               CollectionReference usersRef =
                                   firestore.collection('users');
@@ -172,10 +176,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
                               Get.back();
                             },
-                            textConfirm: 'CANCEL',
-                            buttonColor: Colors.green,
-                            confirmTextColor: Colors.white,
-                            onConfirm: () => Get.back(),
                           );
                         },
                         child: Padding(
