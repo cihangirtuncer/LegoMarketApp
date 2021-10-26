@@ -32,6 +32,7 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
   Widget build(BuildContext context) {
     return BuildGradientContainer(
       GridView.count(
+        physics: BouncingScrollPhysics(),
         primary: false,
         padding: const EdgeInsets.all(10),
         crossAxisSpacing: 11,

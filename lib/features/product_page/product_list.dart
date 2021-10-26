@@ -13,12 +13,15 @@ Column BuildProductList(
     children: [
       GestureDetector(
         onTap: () {
-          Get.to(
-            buildPayment(
-              context,
-              price,
-              name,
-              explanation,
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => buildPayment(
+                context,
+                price,
+                name,
+                explanation,
+              ),
             ),
           );
         },

@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../features/view/payment/build_payment.dart';
 
 // ignore: non_constant_identifier_names
-BuildProductCard(
+BuildProgductCard(
     String name, String explanation, int price, BuildContext context) {
   return GestureDetector(
     onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => buildPayment(
-            context,
-            price,
-            name,
-            explanation,
-          ),
+      Get.to(
+        () => buildPayment(
+          context,
+          price,
+          name,
+          explanation,
         ),
       );
     },

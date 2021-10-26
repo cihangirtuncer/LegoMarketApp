@@ -127,6 +127,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
                 return Flexible(
                   child: ListView.builder(
+                    physics: BouncingScrollPhysics(),
                     itemCount: listofDocumentSnap.length,
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
