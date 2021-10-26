@@ -171,7 +171,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
                               Get.back();
                             },
-                            textConfirm: 'OK',
+                            textConfirm: 'CANCEL',
                             buttonColor: Colors.green,
                             confirmTextColor: Colors.white,
                             onConfirm: () => Get.back(),
