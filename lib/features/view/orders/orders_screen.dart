@@ -38,33 +38,33 @@ class _OrdersScreenState extends State<OrdersScreen> {
           IconButton(
             onPressed: (() async {
               Get.defaultDialog(
-                content: Icon(
-                  Icons.warning,
-                  size: 40,
-                  color: Colors.red,
-                ),
-                title: "Are you sure you want to empty your basket?",
-                textCancel: 'DELETE',
-                cancelTextColor: Colors.red,
-                onCancel: () async {
-                  final firestore = FirebaseFirestore.instance;
-                  CollectionReference usersRef = firestore.collection('users');
-                  var snapshot = await usersRef
-                      .doc(_auth.currentUser!.uid.toString())
-                      .collection('orders')
-                      .get();
-                  if (snapshot.docs.isNotEmpty) {
-                    for (var doc in snapshot.docs) {
-                      await doc.reference.delete();
+                  content: Icon(
+                    Icons.warning,
+                    size: 40,
+                    color: Colors.red,
+                  ),
+                  title: "Are you sure you want to empty your basket?",
+                  textCancel: 'DELETE',
+                  cancelTextColor: Colors.red,
+                  onCancel: () async {
+                    final firestore = FirebaseFirestore.instance;
+                    CollectionReference usersRef =
+                        firestore.collection('users');
+                    var snapshot = await usersRef
+                        .doc(_auth.currentUser!.uid.toString())
+                        .collection('orders')
+                        .get();
+                    if (snapshot.docs.isNotEmpty) {
+                      for (var doc in snapshot.docs) {
+                        await doc.reference.delete();
+                      }
                     }
-                  }
-                  Get.back();
-                },
-                textConfirm: 'OK',
-                buttonColor: Colors.green,
-                confirmTextColor: Colors.white,
-                onConfirm: () => Get.back(),
-              );
+                    Get.back();
+                  },
+                  textConfirm: 'OK',
+                  buttonColor: Colors.green,
+                  confirmTextColor: Colors.white,
+                  onConfirm: () => Get.back());
             }),
             icon: Icon(
               Icons.delete_sharp,
