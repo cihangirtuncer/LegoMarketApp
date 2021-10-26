@@ -31,6 +31,7 @@ class _DrinksListState extends State<DrinksList> {
     return BuildProductsScaffold(
       "DRINKS",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

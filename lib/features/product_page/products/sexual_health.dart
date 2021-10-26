@@ -31,6 +31,7 @@ class _SexualHealthListState extends State<SexualHealthList> {
     return BuildProductsScaffold(
       "SEXUAL HEALTH",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

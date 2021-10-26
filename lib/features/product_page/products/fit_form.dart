@@ -33,6 +33,7 @@ class _FitFormListState extends State<FitFormList> {
     return BuildProductsScaffold(
       "FIT FORM",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

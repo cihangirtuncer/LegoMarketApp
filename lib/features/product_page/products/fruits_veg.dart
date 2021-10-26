@@ -33,6 +33,7 @@ class _FruitsVegListState extends State<FruitsVegList> {
     return BuildProductsScaffold(
       "FRUIT & VEG",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

@@ -33,6 +33,7 @@ class _ReadyToEatListState extends State<ReadyToEatList> {
     return BuildProductsScaffold(
       "READ to EAT ",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

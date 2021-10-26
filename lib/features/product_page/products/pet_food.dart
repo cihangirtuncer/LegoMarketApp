@@ -33,6 +33,7 @@ class _PetFoodListState extends State<PetFoodList> {
     return BuildProductsScaffold(
       "PET FOOD",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

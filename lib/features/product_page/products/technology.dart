@@ -31,6 +31,7 @@ class _TechnologyListState extends State<TechnologyList> {
     return BuildProductsScaffold(
       "TECHNOLOGY",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

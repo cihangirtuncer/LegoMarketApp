@@ -31,6 +31,7 @@ class _CleaningProductListState extends State<CleaningProductList> {
     return BuildProductsScaffold(
       "HOME CARE",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

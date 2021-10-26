@@ -33,6 +33,7 @@ class _WaterListState extends State<WaterList> {
     return BuildProductsScaffold(
       "WATER",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allWaterList),
       ),
     );

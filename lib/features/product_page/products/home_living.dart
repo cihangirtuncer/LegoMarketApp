@@ -33,6 +33,7 @@ class _HomeLivingListState extends State<HomeLivingList> {
     return BuildProductsScaffold(
       "HOME LIVING",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

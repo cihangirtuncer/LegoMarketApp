@@ -32,6 +32,7 @@ class _BasicFoodState extends State<BasicFood> {
     return BuildProductsScaffold(
       "BASIC FOOD",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );

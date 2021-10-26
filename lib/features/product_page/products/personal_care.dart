@@ -32,6 +32,7 @@ class _PersonalCareListState extends State<PersonalCareList> {
     return BuildProductsScaffold(
       "PERSONAL CARE",
       ListView(
+        physics: BouncingScrollPhysics(),
         children: foodItemCreat(context, allFoodList),
       ),
     );
