@@ -10,7 +10,7 @@ BuildShoppingContainer(
 ) {
   return GestureDetector(
     onTap: () {
-      Get.to(destination);
+      Get.to(() => destination);
     },
     child: Container(
       decoration: BoxDecoration(
