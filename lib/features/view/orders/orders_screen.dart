@@ -44,9 +44,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   color: Colors.red,
                 ),
                 title: "Are you sure you want to empty your basket?",
-                textCancel: 'DELETE',
-                cancelTextColor: Colors.red,
-                onCancel: () async {
+                textCancel: 'CANCEL',
+                cancelTextColor: Colors.green,
+                onCancel: () => Get.back(),
+                textConfirm: 'DELETE',
+                buttonColor: Colors.red,
+                confirmTextColor: Colors.white,
+                onConfirm: () async {
                   final firestore = FirebaseFirestore.instance;
                   CollectionReference usersRef = firestore.collection('users');
                   var snapshot = await usersRef
@@ -60,10 +64,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   }
                   Get.back();
                 },
-                textConfirm: 'OK',
-                buttonColor: Colors.green,
-                confirmTextColor: Colors.white,
-                onConfirm: () => Get.back(),
               );
             }),
             icon: Icon(
@@ -158,9 +158,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                 ),
                               ],
                             ),
-                            textCancel: 'CANCEL',
-                            cancelTextColor: Colors.green,
-                            onCancel: () => Get.back(),
                             textConfirm: 'DELETE',
                             buttonColor: Colors.red,
                             confirmTextColor: Colors.white,
@@ -176,6 +173,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
                               Get.back();
                             },
+                            textCancel: 'CANCEL',
+                            cancelTextColor: Colors.green,
+                            onCancel: () => Get.back(),
                           );
                         },
                         child: Padding(

@@ -137,18 +137,18 @@ class _ProfileState extends State<Profile> {
                             size: 40,
                             color: Colors.red,
                           ),
-                          textCancel: 'LOG OUT',
-                          cancelTextColor: Colors.red,
-                          onCancel: () async {
+                          textCancel: 'CANCEL',
+                          cancelTextColor: Colors.green,
+                          onCancel: () => Get.back(),
+                          textConfirm: 'LOG OUT',
+                          buttonColor: Colors.red,
+                          confirmTextColor: Colors.white,
+                          onConfirm: () async {
                             await FirebaseAuth.instance.signOut();
                             Get.to(
                               BottomHomePage(),
                             );
                           },
-                          textConfirm: 'CANCEL',
-                          buttonColor: Colors.green,
-                          confirmTextColor: Colors.white,
-                          onConfirm: () => Get.back(),
                         );
                       },
                       child: ListTile(
