@@ -232,8 +232,11 @@ class _RegisterPageState extends State<RegisterPage> {
         User? name = _auth.currentUser;
         CollectionReference usersRef = firestore.collection('users');
         await usersRef.doc(name!.uid.toString()).set(usersData);
-        Get.to(
-          BottomHomePage(),
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => BottomHomePage(),
+          ),
         );
       } else {
         setState(() {

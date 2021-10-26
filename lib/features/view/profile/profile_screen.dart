@@ -139,7 +139,7 @@ class _ProfileState extends State<Profile> {
                           ),
                           textCancel: 'CANCEL',
                           cancelTextColor: Colors.green,
-                          onCancel: () => Get.back(),
+                          onCancel: () => Navigator.pop(context),
                           textConfirm: 'LOG OUT',
                           buttonColor: Colors.red,
                           confirmTextColor: Colors.white,
