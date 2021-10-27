@@ -151,22 +151,22 @@ class _OrdersScreenState extends State<OrdersScreen> {
                             content: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                BuildOrdersCardTextWidget(
+                                buildOrdersCardTextWidget(
                                   "Product Name: ",
                                   '${listofDocumentSnap[index]['name']}',
                                 ),
                                 BuildProfileDivider(8),
-                                BuildOrdersCardTextWidget(
+                                buildOrdersCardTextWidget(
                                   "Price: ",
                                   "${listofDocumentSnap[index]['price']} €",
                                 ),
                                 BuildProfileDivider(8),
-                                BuildOrdersCardTextWidget(
+                                buildOrdersCardTextWidget(
                                   "Count: ",
                                   "${listofDocumentSnap[index]['volume']}",
                                 ),
                                 BuildProfileDivider(8),
-                                BuildOrdersCardTextWidget(
+                                buildOrdersCardTextWidget(
                                   "Explanation: ",
                                   '${listofDocumentSnap[index]['explanation']}',
                                 ),
