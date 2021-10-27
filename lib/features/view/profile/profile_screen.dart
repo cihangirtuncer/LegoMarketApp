@@ -137,18 +137,33 @@ class _ProfileState extends State<Profile> {
                             size: 40,
                             color: Colors.red,
                           ),
-                          textCancel: 'CANCEL',
-                          cancelTextColor: Colors.green,
-                          onCancel: () => Navigator.pop(context),
-                          textConfirm: 'LOG OUT',
-                          buttonColor: Colors.red,
-                          confirmTextColor: Colors.white,
-                          onConfirm: () async {
-                            await FirebaseAuth.instance.signOut();
-                            Get.to(
-                              BottomHomePage(),
-                            );
-                          },
+                          actions: [
+                            ElevatedButton(
+                              onPressed: () async {
+                                await FirebaseAuth.instance.signOut();
+                                Get.to(
+                                  () => BottomHomePage(),
+                                );
+                              },
+                              child: Text('LOG OUT'),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  Colors.red.shade700,
+                                ),
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () => Get.back(),
+                              child: Text('CANCEL'),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  Colors.green.shade700,
+                                ),
+                              ),
+                            ),
+                          ],
                         );
                       },
                       child: ListTile(

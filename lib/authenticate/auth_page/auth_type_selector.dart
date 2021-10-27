@@ -21,7 +21,7 @@ class AuthTypeSelector extends StatelessWidget {
                 icon: Icons.person_add,
                 backgroundColor: Color(0xF56E014E), //0xF541012C 0xFFB60707
                 text: "Register", // 0xF51239E6
-                onPressed: () => Get.to(RegisterPage()),
+                onPressed: () => Get.to(() => RegisterPage()),
               ),
               padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
               alignment: Alignment.center,

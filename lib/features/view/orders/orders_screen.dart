@@ -44,26 +44,40 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   color: Colors.red,
                 ),
                 title: "Are you sure you want to empty your basket?",
-                textCancel: 'CANCEL',
-                cancelTextColor: Colors.green,
-                onCancel: () => Get.back(),
-                textConfirm: 'DELETE',
-                buttonColor: Colors.red,
-                confirmTextColor: Colors.white,
-                onConfirm: () async {
-                  final firestore = FirebaseFirestore.instance;
-                  CollectionReference usersRef = firestore.collection('users');
-                  var snapshot = await usersRef
-                      .doc(_auth.currentUser!.uid.toString())
-                      .collection('orders')
-                      .get();
-                  if (snapshot.docs.isNotEmpty) {
-                    for (var doc in snapshot.docs) {
-                      await doc.reference.delete();
-                    }
-                  }
-                  Get.back();
-                },
+                actions: [
+                  ElevatedButton(
+                    onPressed: () async {
+                      final firestore = FirebaseFirestore.instance;
+                      CollectionReference usersRef =
+                          firestore.collection('users');
+                      var snapshot = await usersRef
+                          .doc(_auth.currentUser!.uid.toString())
+                          .collection('orders')
+                          .get();
+                      if (snapshot.docs.isNotEmpty) {
+                        for (var doc in snapshot.docs) {
+                          await doc.reference.delete();
+                        }
+                      }
+                      Get.back();
+                    },
+                    child: Text('DELETE'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.red.shade700,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => Get.back(),
+                    child: Text('CANCEL'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.green.shade700,
+                      ),
+                    ),
+                  ),
+                ],
               );
             }),
             icon: Icon(
@@ -158,24 +172,40 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                 ),
                               ],
                             ),
-                            textConfirm: 'DELETE',
-                            buttonColor: Colors.red,
-                            confirmTextColor: Colors.white,
-                            onConfirm: () async {
-                              final firestore = FirebaseFirestore.instance;
-                              CollectionReference usersRef =
-                                  firestore.collection('users');
-                              await usersRef
-                                  .doc(_auth.currentUser!.uid.toString())
-                                  .collection('orders')
-                                  .doc('${listofDocumentSnap[index]['name']}')
-                                  .delete();
+                            actions: [
+                              ElevatedButton(
+                                onPressed: () async {
+                                  final firestore = FirebaseFirestore.instance;
+                                  CollectionReference usersRef =
+                                      firestore.collection('users');
+                                  await usersRef
+                                      .doc(_auth.currentUser!.uid.toString())
+                                      .collection('orders')
+                                      .doc(
+                                          '${listofDocumentSnap[index]['name']}')
+                                      .delete();
 
-                              Get.back();
-                            },
-                            textCancel: 'CANCEL',
-                            cancelTextColor: Colors.green,
-                            onCancel: () => Get.back(),
+                                  Get.back();
+                                },
+                                child: Text('DELETE'),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Colors.red.shade700,
+                                  ),
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () => Get.back(),
+                                child: Text('CANCEL'),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Colors.green.shade700,
+                                  ),
+                                ),
+                              ),
+                            ],
                           );
                         },
                         child: Padding(
