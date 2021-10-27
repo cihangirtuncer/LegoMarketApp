@@ -29,7 +29,7 @@ class _PersonalCareListState extends State<PersonalCareList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "PERSONAL CARE",
       ListView(
         physics: BouncingScrollPhysics(),

@@ -31,7 +31,7 @@ class _SnacksListState extends State<SnacksList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "SNACKS",
       ListView(
         physics: BouncingScrollPhysics(),

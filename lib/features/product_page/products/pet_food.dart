@@ -30,7 +30,7 @@ class _PetFoodListState extends State<PetFoodList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "PET FOOD",
       ListView(
         physics: BouncingScrollPhysics(),

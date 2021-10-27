@@ -30,7 +30,7 @@ class _FruitsVegListState extends State<FruitsVegList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "FRUIT & VEG",
       ListView(
         physics: BouncingScrollPhysics(),

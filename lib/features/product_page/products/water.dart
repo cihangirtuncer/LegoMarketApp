@@ -30,7 +30,7 @@ class _WaterListState extends State<WaterList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "WATER",
       ListView(
         physics: BouncingScrollPhysics(),

@@ -28,7 +28,7 @@ class _DairyAndBreakfastListState extends State<DairyAndBreakfastList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "DAIRY & BREAKFAST",
       ListView(
         physics: BouncingScrollPhysics(),

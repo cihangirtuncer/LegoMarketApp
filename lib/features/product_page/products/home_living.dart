@@ -30,7 +30,7 @@ class _HomeLivingListState extends State<HomeLivingList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "HOME LIVING",
       ListView(
         physics: BouncingScrollPhysics(),

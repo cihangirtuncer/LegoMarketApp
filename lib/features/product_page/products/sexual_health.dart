@@ -28,7 +28,7 @@ class _SexualHealthListState extends State<SexualHealthList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "SEXUAL HEALTH",
       ListView(
         physics: BouncingScrollPhysics(),

@@ -29,7 +29,7 @@ class _CigarettesListState extends State<CigarettesList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "CIGARETTES",
       ListView(
         physics: BouncingScrollPhysics(),

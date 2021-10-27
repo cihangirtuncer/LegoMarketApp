@@ -30,7 +30,7 @@ class _ReadyToEatListState extends State<ReadyToEatList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "READ to EAT ",
       ListView(
         physics: BouncingScrollPhysics(),

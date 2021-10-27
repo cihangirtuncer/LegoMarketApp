@@ -31,7 +31,7 @@ class _PastriesListState extends State<PastriesList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "PASTRIES",
       ListView(
         physics: BouncingScrollPhysics(),

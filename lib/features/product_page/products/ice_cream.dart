@@ -28,7 +28,7 @@ class _IceCreamListState extends State<IceCreamList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "ICE CREAM",
       ListView(
         physics: BouncingScrollPhysics(),

@@ -28,7 +28,7 @@ class _CleaningProductListState extends State<CleaningProductList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "HOME CARE",
       ListView(
         physics: BouncingScrollPhysics(),

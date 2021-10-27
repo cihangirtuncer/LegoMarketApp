@@ -30,7 +30,7 @@ class _FitFormListState extends State<FitFormList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "FIT FORM",
       ListView(
         physics: BouncingScrollPhysics(),

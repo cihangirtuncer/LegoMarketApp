@@ -28,7 +28,7 @@ class _TechnologyListState extends State<TechnologyList> {
 
   @override
   Widget build(BuildContext context) {
-    return BuildProductsScaffold(
+    return buildProductsScaffold(
       "TECHNOLOGY",
       ListView(
         physics: BouncingScrollPhysics(),
