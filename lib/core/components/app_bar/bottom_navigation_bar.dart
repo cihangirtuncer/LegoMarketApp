@@ -34,21 +34,21 @@ class _BottomHomePageState extends State<BottomHomePage> {
         unselectedItemColor: Colors.grey.shade800,
         items: [
           BottomNavigationBarItem(
-            icon: BuildBottomIcon(
+            icon: buildBottomIcon(
               Icons.home,
             ),
             label: "HOME",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: BuildBottomIcon(
+            icon: buildBottomIcon(
               Icons.shopping_cart,
             ),
             label: "ORDERS",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: BuildBottomIcon(
+            icon: buildBottomIcon(
               Icons.account_circle_rounded,
             ),
             label: "PROFILE",
