@@ -170,13 +170,13 @@ class _ProfileState extends State<Profile> {
                         leading: Icon(
                           Icons.logout,
                           size: 27,
-                          color: BuildColor(),
+                          color: buildColor(),
                         ),
                         title: Text(
                           "Log out",
                           style: TextStyle(
                             fontSize: 20,
-                            color: BuildColor(),
+                            color: buildColor(),
                           ),
                         ),
                       ),

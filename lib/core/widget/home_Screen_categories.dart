@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-// ignore: non_constant_identifier_names
-BuildShoppingContainer(
+buildShoppingContainer(
   String productName,
   BuildContext context,
   Widget destination,

@@ -11,7 +11,7 @@ buildProfileRow(String string, IconData icon) {
       children: [
         BuildStandartIcon(
           icon,
-          BuildColor(),
+          buildColor(),
         ),
         Text("         "),
         Expanded(

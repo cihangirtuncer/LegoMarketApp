@@ -39,115 +39,115 @@ class _ShoppingOptionsState extends State<ShoppingOptions> {
         mainAxisSpacing: 11,
         crossAxisCount: 3,
         children: <Widget>[
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "FOODS",
             context,
             FoodList(),
             "assets/images/food.png",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "DRINKS",
             context,
             DrinksList(),
             "assets/images/drinks.png",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "ICE CREAM",
             context,
             IceCreamList(),
             "assets/images/icecream.png",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "PASTRIES",
             context,
             PastriesList(),
             "assets/images/baked.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "BREAKFAST",
             context,
             DairyAndBreakfastList(),
             "assets/images/breakfast.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "SNACKS",
             context,
             SnacksList(),
             "assets/images/snacks.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "BASIC FOOD",
             context,
             BasicFood(),
             "assets/images/basicfood.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "READY to EAT",
             context,
             ReadyToEatList(),
             "assets/images/readyfood.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "FIT FORM",
             context,
             FitFormList(),
             "assets/images/fitform.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "FRUİTS & VEG",
             context,
             FruitsVegList(),
             "assets/images/fruitsveg.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "BABY CARE",
             context,
             BabyCareList(),
             "assets/images/baby.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "PET FOODS",
             context,
             PetFoodList(),
             "assets/images/pet.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "HOME CARE",
             context,
             CleaningProductList(),
             "assets/images/cleaningproducts.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "PERSONAL CARE",
             context,
             PersonalCareList(),
             "assets/images/personalcare.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "SEX HEALTH",
             context,
             SexualHealthList(),
             "assets/images/sexualhealth.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "TECH",
             context,
             TechnologyList(),
             "assets/images/technology.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "CIGARETTES",
             context,
             CigarettesList(),
             "assets/images/cigarettes.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "HOME LIVING",
             context,
             HomeLivingList(),
             "assets/images/lamp.jpg",
           ),
-          BuildShoppingContainer(
+          buildShoppingContainer(
             "WATER",
             context,
             WaterList(),

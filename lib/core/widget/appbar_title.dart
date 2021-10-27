@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../components/text/appbar_text.dart';
 
-// ignore: non_constant_identifier_names
-Widget BuildHomeAppBarText(
+Widget buildHomeAppBarText(
   double fontsize,
   double width,
 ) {

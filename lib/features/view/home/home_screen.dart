@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
-        title: BuildHomeAppBarText(30, 10),
+        title: buildHomeAppBarText(30, 10),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
