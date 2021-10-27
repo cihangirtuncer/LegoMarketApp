@@ -59,7 +59,7 @@ class _ProfileState extends State<Profile> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    BuildProfileData(
+                    buildProfileData(
                       Colors.transparent,
                       80,
                       120,
@@ -98,7 +98,7 @@ class _ProfileState extends State<Profile> {
                         ],
                       ),
                     ),
-                    BuildProfileData(
+                    buildProfileData(
                       Colors.transparent,
                       80,
                       60,
@@ -108,7 +108,7 @@ class _ProfileState extends State<Profile> {
                         Icons.mail,
                       ),
                     ),
-                    BuildProfileData(
+                    buildProfileData(
                       Colors.transparent,
                       80,
                       60,
@@ -118,7 +118,7 @@ class _ProfileState extends State<Profile> {
                         Icons.phone,
                       ),
                     ),
-                    BuildProfileData(
+                    buildProfileData(
                       Colors.transparent,
                       80,
                       60,
