@@ -7,7 +7,7 @@ Widget BuildHomeAppBarText(
   double fontsize,
   double width,
 ) {
-  return BuildAppBarText(
+  return buildAppBarText(
     "LEGO MARKET",
     Colors.white,
     fontsize,
