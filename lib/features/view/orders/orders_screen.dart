@@ -155,17 +155,17 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                   "Product Name: ",
                                   '${listofDocumentSnap[index]['name']}',
                                 ),
-                                BuildProfileDivider(8),
+                                buildProfileDivider(8),
                                 buildOrdersCardTextWidget(
                                   "Price: ",
                                   "${listofDocumentSnap[index]['price']} €",
                                 ),
-                                BuildProfileDivider(8),
+                                buildProfileDivider(8),
                                 buildOrdersCardTextWidget(
                                   "Count: ",
                                   "${listofDocumentSnap[index]['volume']}",
                                 ),
-                                BuildProfileDivider(8),
+                                buildProfileDivider(8),
                                 buildOrdersCardTextWidget(
                                   "Explanation: ",
                                   '${listofDocumentSnap[index]['explanation']}',
