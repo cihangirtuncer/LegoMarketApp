@@ -9,7 +9,7 @@ class AuthTypeSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BuildGradientContainer(
+      body: buildGradientContainer(
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,

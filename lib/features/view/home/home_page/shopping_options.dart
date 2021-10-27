@@ -30,7 +30,7 @@ class ShoppingOptions extends StatefulWidget {
 class _ShoppingOptionsState extends State<ShoppingOptions> {
   @override
   Widget build(BuildContext context) {
-    return BuildGradientContainer(
+    return buildGradientContainer(
       GridView.count(
         physics: BouncingScrollPhysics(),
         primary: false,

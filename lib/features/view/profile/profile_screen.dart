@@ -35,7 +35,7 @@ class _ProfileState extends State<Profile> {
             ),
           ),
           false),
-      body: BuildGradientContainer(
+      body: buildGradientContainer(
         StreamBuilder<DocumentSnapshot>(
           stream: _usersStream,
           builder:

@@ -87,7 +87,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
           )
         ],
       ),
-      body: BuildGradientContainer(
+      body: buildGradientContainer(
         Column(
           children: [
             StreamBuilder<QuerySnapshot>(

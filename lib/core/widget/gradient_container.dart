@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-Widget BuildGradientContainer(Widget widget) {
+Widget buildGradientContainer(Widget widget) {
   return Container(
     width: 1000,
     height: 1000,

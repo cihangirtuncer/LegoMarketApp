@@ -24,7 +24,7 @@ class _NullUserOrdersState extends State<NullUserOrders> {
         ),
         false,
       ),
-      body: BuildGradientContainer(Padding(
+      body: buildGradientContainer(Padding(
         padding: const EdgeInsets.fromLTRB(10, 10, 10, 70),
         child: Center(
           child: buildInfoContainer(

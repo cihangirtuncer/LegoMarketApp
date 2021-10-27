@@ -35,7 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
           ),
           true),
-      body: BuildGradientContainer(
+      body: buildGradientContainer(
         Padding(
           padding: const EdgeInsets.fromLTRB(10, 90, 10, 30),
           child: Form(
