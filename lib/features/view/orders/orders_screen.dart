@@ -26,7 +26,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: MainAppBar(
+      appBar: mainAppBar(
         Text(
           "Orders",
           style: TextStyle(

@@ -15,7 +15,7 @@ class _NullUserOrdersState extends State<NullUserOrders> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: MainAppBar(
+      appBar: mainAppBar(
         Text(
           "Orders",
           style: TextStyle(

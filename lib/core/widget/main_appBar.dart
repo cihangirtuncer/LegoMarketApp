@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-// ignore: non_constant_identifier_names
-AppBar MainAppBar(Widget? child, bool tF, {List<Widget>? actions}) {
+AppBar mainAppBar(Widget? child, bool tF, {List<Widget>? actions}) {
   return AppBar(
     centerTitle: true,
     automaticallyImplyLeading: tF,

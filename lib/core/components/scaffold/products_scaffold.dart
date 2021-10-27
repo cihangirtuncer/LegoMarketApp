@@ -4,7 +4,7 @@ import '../../widget/main_appBar.dart';
 
 buildProductsScaffold(String productName, ListView listView) {
   return Scaffold(
-    appBar: MainAppBar(
+    appBar: mainAppBar(
         Text(
           productName,
         ),

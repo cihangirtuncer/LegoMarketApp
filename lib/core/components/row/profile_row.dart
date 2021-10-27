@@ -9,7 +9,7 @@ buildProfileRow(String string, IconData icon) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        BuildStandartIcon(
+        buildStandartIcon(
           icon,
           buildColor(),
         ),
