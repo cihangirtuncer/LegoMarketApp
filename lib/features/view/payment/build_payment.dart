@@ -56,7 +56,6 @@ class _ButtonPaymentState extends State<ButtonPayment> {
   }
 }
 
-// ignore: non_constant_identifier_names
 buildPayment(
   BuildContext context,
   int price,
