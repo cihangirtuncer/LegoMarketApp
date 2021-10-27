@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-// ignore: non_constant_identifier_names
-BuildOrdersCardTextWidget(String statickWord, String word) {
+buildOrdersCardTextWidget(String statickWord, String word) {
   return Row(
     children: [
       Expanded(
