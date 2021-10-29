@@ -14,6 +14,7 @@ class OrdersScreen extends StatefulWidget {
 }
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
+int totalPrice = 0;
 
 class _OrdersScreenState extends State<OrdersScreen> {
   final _usersStream = FirebaseFirestore.instance
@@ -24,6 +25,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: mainAppBar(
@@ -139,104 +142,163 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 List<DocumentSnapshot> listofDocumentSnap =
                     asyncSnapshot.data!.docs;
 
-                return Flexible(
-                  child: ListView.builder(
-                    physics: BouncingScrollPhysics(),
-                    itemCount: listofDocumentSnap.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return GestureDetector(
-                        onTap: () {
-                          Get.defaultDialog(
-                            title: 'ORDER',
-                            content: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                buildOrdersCardTextWidget(
-                                  "Product Name: ",
-                                  '${listofDocumentSnap[index]['name']}',
+                return Column(
+                  children: [
+                    Container(
+                      height: screenHeight * 0.70,
+                      child: ListView.builder(
+                        physics: BouncingScrollPhysics(),
+                        itemCount: listofDocumentSnap.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          totalPrice = totalPrice +
+                              int.parse(
+                                  "${listofDocumentSnap[index]['price']}");
+                          return GestureDetector(
+                            onTap: () {
+                              Get.defaultDialog(
+                                title: 'ORDER',
+                                content: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    buildOrdersCardTextWidget(
+                                      "Product Name: ",
+                                      '${listofDocumentSnap[index]['name']}',
+                                    ),
+                                    buildProfileDivider(8),
+                                    buildOrdersCardTextWidget(
+                                      "Price: ",
+                                      "${listofDocumentSnap[index]['price']} €",
+                                    ),
+                                    buildProfileDivider(8),
+                                    buildOrdersCardTextWidget(
+                                      "Count: ",
+                                      "${listofDocumentSnap[index]['volume']}",
+                                    ),
+                                    buildProfileDivider(8),
+                                    buildOrdersCardTextWidget(
+                                      "Explanation: ",
+                                      '${listofDocumentSnap[index]['explanation']}',
+                                    ),
+                                  ],
                                 ),
-                                buildProfileDivider(8),
-                                buildOrdersCardTextWidget(
-                                  "Price: ",
-                                  "${listofDocumentSnap[index]['price']} €",
-                                ),
-                                buildProfileDivider(8),
-                                buildOrdersCardTextWidget(
-                                  "Count: ",
-                                  "${listofDocumentSnap[index]['volume']}",
-                                ),
-                                buildProfileDivider(8),
-                                buildOrdersCardTextWidget(
-                                  "Explanation: ",
-                                  '${listofDocumentSnap[index]['explanation']}',
-                                ),
-                              ],
-                            ),
-                            actions: [
-                              ElevatedButton(
-                                onPressed: () async {
-                                  final firestore = FirebaseFirestore.instance;
-                                  CollectionReference usersRef =
-                                      firestore.collection('users');
-                                  await usersRef
-                                      .doc(_auth.currentUser!.uid.toString())
-                                      .collection('orders')
-                                      .doc(
-                                          '${listofDocumentSnap[index]['name']}')
-                                      .delete();
+                                actions: [
+                                  ElevatedButton(
+                                    onPressed: () async {
+                                      final firestore =
+                                          FirebaseFirestore.instance;
+                                      CollectionReference usersRef =
+                                          firestore.collection('users');
+                                      await usersRef
+                                          .doc(
+                                              _auth.currentUser!.uid.toString())
+                                          .collection('orders')
+                                          .doc(
+                                              '${listofDocumentSnap[index]['name']}')
+                                          .delete();
 
-                                  Get.back();
-                                },
-                                child: Text('DELETE'),
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                    Colors.red.shade700,
+                                      Get.back();
+                                    },
+                                    child: Text('DELETE'),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                        Colors.red.shade700,
+                                      ),
+                                    ),
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () => Get.back(),
+                                    child: Text('CANCEL'),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                        Colors.green.shade700,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: Card(
+                                child: ListTile(
+                                  title: Text(
+                                    '${listofDocumentSnap[index]['name']}',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    "continues",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.amber.shade700,
+                                    ),
+                                  ),
+                                  trailing: Icon(
+                                    Icons.run_circle_outlined,
+                                    color: Colors.amber.shade700,
+                                    size: 35,
                                   ),
                                 ),
                               ),
-                              ElevatedButton(
-                                onPressed: () => Get.back(),
-                                child: Text('CANCEL'),
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                    Colors.green.shade700,
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           );
                         },
-                        child: Padding(
-                          padding: const EdgeInsets.all(3.0),
-                          child: Card(
-                            child: ListTile(
-                              title: Text(
-                                '${listofDocumentSnap[index]['name']}',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            child: Container(
+                              height: screenHeight * 0.077,
+                              color: Colors.green.shade700,
+                              child: Align(
+                                alignment: Alignment(-0.75, 0.0),
+                                child: Text(
+                                  "Toal Price: $totalPrice",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                              subtitle: Text(
-                                "continues",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.amber.shade700,
-                                ),
-                              ),
-                              trailing: Icon(
-                                Icons.run_circle_outlined,
-                                color: Colors.amber.shade700,
-                                size: 35,
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  ),
+                          Positioned(
+                            right: 0,
+                            child: GestureDetector(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.green.shade900,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(30),
+                                    bottomLeft: Radius.circular(30),
+                                  ),
+                                ),
+                                height: screenHeight * 0.077,
+                                width: screenWidth * 0.45,
+                                child: Align(
+                                    alignment: Alignment(0.1, 0.0),
+                                    child: Text(
+                                      "Confrim Basket",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),
+                                    )),
+                              ),
+                              onTap: () {},
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
                 );
               },
             ),
@@ -246,3 +308,81 @@ class _OrdersScreenState extends State<OrdersScreen> {
     );
   }
 }
+
+/*
+
+
+  StreamBuilder<QuerySnapshot>(
+    stream: totalPriceColl,
+    builder: (BuildContext context, AsyncSnapshot asyncSnapshot) {
+      if (asyncSnapshot.hasError) {
+        return Text('Something went wrong');
+      }
+
+      if (asyncSnapshot.connectionState == ConnectionState.waiting) {
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(0, 270, 0, 0),
+          child: Center(
+            child: CircularProgressIndicator(
+              color: Colors.red,
+            ),
+          ),
+        );
+      }
+      if (!asyncSnapshot.data!.docs.isNotEmpty || !asyncSnapshot.hasData)
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(5, 130, 5, 160),
+        );
+
+      List<DocumentSnapshot> listofDocumentSnap = asyncSnapshot.data!.docs;
+
+      return Column(
+        children: [
+          Container(
+            child: ListView.builder(
+              physics: BouncingScrollPhysics(),
+              itemCount: listofDocumentSnap.length,
+              itemBuilder: (BuildContext context, int index) {
+                totalPrice =
+                    totalPrice + int.parse(listofDocumentSnap[index]['price']);
+                return Text(
+                  "$totalPrice",
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.white,
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      );
+    },
+  );
+}
+StreamBuilder(
+                builder: (BuildContext context, AsyncSnapshot asyncSnapshot) {
+              if (asyncSnapshot.hasError) {
+                return Text('Something went wrong');
+              }
+              List<DocumentSnapshot> listofDocumentSnapPrice =
+                  asyncSnapshot.data.docs;
+              return Card(
+                child: ListTile(
+                  title: Text(
+                    "$listofDocumentSnapPrice['Total Price']",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  trailing: Icon(
+                    Icons.price_change,
+                    color: Colors.amber.shade700,
+                    size: 35,
+                  ),
+                ),
+              );
+            })
+
+*/

@@ -5,8 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-int totalPrice = 0;
-
 class ButtonPayment extends StatefulWidget {
   @override
   _ButtonPaymentState createState() => _ButtonPaymentState();
@@ -145,7 +143,6 @@ buildPayment(
             child: ElevatedButton(
               onPressed: () async {
                 price = price * volume;
-                totalPrice = totalPrice + price;
 
                 String nameNoSql = name;
                 if (_auth.currentUser != null) {
@@ -155,7 +152,6 @@ buildPayment(
                     'name': nameNoSql,
                     'volume': volume,
                   };
-
                   User? name = _auth.currentUser;
                   CollectionReference usersRef = firestore.collection('users');
                   await usersRef
@@ -219,3 +215,19 @@ buildPayment(
     ),
   );
 }
+/*
+  int newprice = 0;
+                newprice = newprice + price;
+                int totalPrice = newprice;
+
+
+   Map<String, dynamic> priceData = {
+                    'price': totalPrice,
+                  };
+                  await usersRef
+                      .doc(name.uid.toString())
+                      .collection('Price')
+                      .doc('Total Price')
+                      .set(priceData, SetOptions(merge: true));
+
+*/
