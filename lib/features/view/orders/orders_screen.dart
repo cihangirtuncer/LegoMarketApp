@@ -14,7 +14,6 @@ class OrdersScreen extends StatefulWidget {
 }
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
-int totalPrice = 0;
 
 class _OrdersScreenState extends State<OrdersScreen> {
   final _usersStream = FirebaseFirestore.instance
@@ -22,6 +21,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
       .doc(_auth.currentUser!.uid.toString())
       .collection('orders')
       .snapshots();
+
+  int totalPrice = 0;
 
   @override
   Widget build(BuildContext context) {
