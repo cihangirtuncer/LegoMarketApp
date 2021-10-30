@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/widget/price_counter.dart';
 import '../../../core/components/divider/profile_divder.dart';
 import '../../../core/components/text/orders_card_text.dart';
 import '../../../core/widget/gradient_container.dart';
@@ -260,13 +261,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                               color: Colors.green.shade700,
                               child: Align(
                                 alignment: Alignment(-0.75, 0.0),
-                                child: Text(
-                                  "Toal Price: $totalPrice",
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                child: PriceCounter(),
                               ),
                             ),
                           ),
