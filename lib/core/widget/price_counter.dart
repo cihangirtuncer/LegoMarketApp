@@ -17,10 +17,11 @@ class _PriceCounterState extends State<PriceCounter> {
       .doc(_auth.currentUser!.uid.toString())
       .collection('orders')
       .snapshots();
-  int totalPrice = 0;
 
   @override
   Widget build(BuildContext context) {
+    int totalPrice = 0;
+
     return StreamBuilder<QuerySnapshot>(
       stream: _usersStream,
       builder: (BuildContext context, AsyncSnapshot asyncSnapshot) {
@@ -39,22 +40,16 @@ class _PriceCounterState extends State<PriceCounter> {
           );
         }
         List<DocumentSnapshot> listofDocumentSnap = asyncSnapshot.data!.docs;
-
-        return ListView.builder(
-          physics: BouncingScrollPhysics(),
-          itemCount: listofDocumentSnap.length,
-          itemBuilder: (BuildContext context, int index) {
-            totalPrice =
-                totalPrice + int.parse("${listofDocumentSnap[index]['price']}");
-            // ekranı yeniden çizdirirsem başarılı olucak setstate gibi
-            return Text(
-              'Total Price: $totalPrice',
-              style: TextStyle(
-                fontSize: 22,
-                color: Colors.white,
-              ),
-            );
-          },
+        for (int i = 0; i < listofDocumentSnap.length; i++) {
+          totalPrice =
+              totalPrice + int.parse("${listofDocumentSnap[i]['price']}");
+        }
+        return Text(
+          'Total Price: $totalPrice €',
+          style: TextStyle(
+            fontSize: 22,
+            color: Colors.white,
+          ),
         );
       },
     );
