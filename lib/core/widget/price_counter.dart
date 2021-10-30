@@ -45,7 +45,7 @@ class _PriceCounterState extends State<PriceCounter> {
               totalPrice + int.parse("${listofDocumentSnap[i]['price']}");
         }
         return Text(
-          'Total Price: $totalPrice €',
+          'Total: $totalPrice €',
           style: TextStyle(
             fontSize: 22,
             color: Colors.white,

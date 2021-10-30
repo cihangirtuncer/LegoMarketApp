@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/widget/price_counter.dart';
+import 'package:lego_market_app/features/view/orders/checkout_screen.dart';
 import '../../../core/components/divider/profile_divder.dart';
 import '../../../core/components/text/orders_card_text.dart';
 import '../../../core/widget/gradient_container.dart';
@@ -260,7 +261,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                               height: screenHeight * 0.077,
                               color: Colors.green.shade700,
                               child: Align(
-                                alignment: Alignment(-0.75, 0.0),
+                                alignment: Alignment(-0.55, 0.0),
                                 child: PriceCounter(),
                               ),
                             ),
@@ -288,7 +289,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                       ),
                                     )),
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(() => CheckoutScreen());
+                              },
                             ),
                           )
                         ],
