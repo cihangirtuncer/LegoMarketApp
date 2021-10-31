@@ -128,7 +128,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   Text(
                       'Do not send cutlery(plastic ford, spoon, knife, napkins).'),
                 ],
-              )
+              ),
             ],
           ),
           Align(
