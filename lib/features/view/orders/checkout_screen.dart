@@ -148,61 +148,62 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 Positioned(
                   right: 0,
                   child: GestureDetector(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.green.shade900,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            bottomLeft: Radius.circular(30),
-                          ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green.shade900,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          bottomLeft: Radius.circular(30),
                         ),
-                        height: screenHeight * 0.077,
-                        width: screenWidth * 0.45,
-                        child: Align(
-                          alignment: Alignment(0.1, 0.0),
-                          child: Text(
-                            "Order Now",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                      ),
+                      height: screenHeight * 0.077,
+                      width: screenWidth * 0.45,
+                      child: Align(
+                        alignment: Alignment(0.1, 0.0),
+                        child: Text(
+                          "Order Now",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
                           ),
                         ),
                       ),
-                      onTap: () async {
-                        if (auth.currentUser != null) {
-                          Map<String, dynamic> usersData = {
-                            'note': addNoteController.text,
-                            'payment method': _character.toString(),
-                            'save the planet': isChecked.toString(),
-                          };
-                          User? name = auth.currentUser;
-                          CollectionReference usersRef =
-                              firestore.collection('users');
-                          await usersRef
-                              .doc(name!.uid.toString())
-                              .collection('order information')
-                              .doc('inforamtion')
-                              .set(usersData, SetOptions(merge: true));
+                    ),
+                    onTap: () async {
+                      if (auth.currentUser != null) {
+                        Map<String, dynamic> usersData = {
+                          'note': addNoteController.text,
+                          'payment method': _character.toString(),
+                          'save the planet': isChecked.toString(),
+                        };
+                        User? name = auth.currentUser;
+                        CollectionReference usersRef =
+                            firestore.collection('users');
+                        await usersRef
+                            .doc(name!.uid.toString())
+                            .collection('order information')
+                            .doc('inforamtion')
+                            .set(usersData, SetOptions(merge: true));
 
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              duration: Duration(milliseconds: 1200),
-                              backgroundColor: Colors.grey.shade900,
-                              content: const Text(
-                                'The product has been ordered',
-                                style: TextStyle(
-                                  color: Colors.green,
-                                ),
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: Duration(milliseconds: 1200),
+                            backgroundColor: Colors.grey.shade900,
+                            content: const Text(
+                              'The product has been ordered',
+                              style: TextStyle(
+                                color: Colors.green,
                               ),
                             ),
-                          );
+                          ),
+                        );
 
-                          Get.to(
-                            () => BottomHomePage(),
-                          );
-                        }
-                      }),
+                        Get.to(
+                          () => BottomHomePage(),
+                        );
+                      }
+                    },
+                  ),
                 ),
               ],
             ),
