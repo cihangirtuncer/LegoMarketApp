@@ -159,14 +159,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         height: screenHeight * 0.077,
                         width: screenWidth * 0.45,
                         child: Align(
-                            alignment: Alignment(0.1, 0.0),
-                            child: Text(
-                              "Order Now",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                              ),
-                            )),
+                          alignment: Alignment(0.1, 0.0),
+                          child: Text(
+                            "Order Now",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
                       onTap: () async {
                         if (auth.currentUser != null) {
