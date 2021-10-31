@@ -193,7 +193,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ),
                           );
 
-                          Get.to(() => BottomHomePage());
+                          Get.to(
+                            () => BottomHomePage(),
+                          );
                         }
                       }),
                 ),
