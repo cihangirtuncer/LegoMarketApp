@@ -291,7 +291,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                 ),
                               ),
                               onTap: () {
-                                Get.to(() => CheckoutScreen());
+                                Get.to(
+                                  () => CheckoutScreen(),
+                                );
                               },
                             ),
                           )
