@@ -108,25 +108,29 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ),
             ],
           ),
-          buildCheckoutContainer(screenWidth, screenHeight * 0.12, [
-            buildCheckoutTitle(screenWidth, "Save the Planet"),
-            Row(
-              children: [
-                Checkbox(
-                  checkColor: Colors.white,
-                  fillColor: MaterialStateProperty.resolveWith(getColor),
-                  value: isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value!;
-                    });
-                  },
-                ),
-                Text(
-                    'Do not send cutlery(plastic ford, spoon, knife, napkins).'),
-              ],
-            )
-          ]),
+          buildCheckoutContainer(
+            screenWidth,
+            screenHeight * 0.12,
+            [
+              buildCheckoutTitle(screenWidth, "Save the Planet"),
+              Row(
+                children: [
+                  Checkbox(
+                    checkColor: Colors.white,
+                    fillColor: MaterialStateProperty.resolveWith(getColor),
+                    value: isChecked,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        isChecked = value!;
+                      });
+                    },
+                  ),
+                  Text(
+                      'Do not send cutlery(plastic ford, spoon, knife, napkins).'),
+                ],
+              )
+            ],
+          ),
           Align(
             alignment: Alignment.bottomRight,
             child: Stack(
@@ -176,8 +180,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               firestore.collection('users');
                           await usersRef
                               .doc(name!.uid.toString())
-                              .collection('checkout')
-                              .doc('checkoutOrders')
+                              .collection('order information')
+                              .doc('inforamtion')
                               .set(usersData, SetOptions(merge: true));
 
                           ScaffoldMessenger.of(context).showSnackBar(
