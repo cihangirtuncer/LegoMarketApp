@@ -194,6 +194,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                     .doc('inforamtion')
                                     .set(usersData, SetOptions(merge: true));
 
+                                Get.to(
+                                  () => BottomHomePage(),
+                                );
                                 var snapshot = await usersRef
                                     .doc(auth.currentUser!.uid.toString())
                                     .collection('basket')
@@ -215,9 +218,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       ),
                                     ),
                                   ),
-                                );
-                                Get.to(
-                                  () => BottomHomePage(),
                                 );
                               }
                             },

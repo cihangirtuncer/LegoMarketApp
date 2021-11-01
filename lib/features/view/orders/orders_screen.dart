@@ -92,38 +92,52 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 return Column(
                   children: [
                     Container(
-                      height: screenHeight * 0.70,
+                      height: screenHeight * 0.84,
                       child: ListView.builder(
                         physics: BouncingScrollPhysics(),
                         itemCount: listofDocumentSnap.length,
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
-                            padding: const EdgeInsets.all(3.0),
-                            child: Card(
-                              child: ListTile(
-                                title: Text(
-                                  '${listofDocumentSnap[index]['name']}',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                subtitle: Text(
-                                  '${listofDocumentSnap[index]['price']} €',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.indigo.shade900,
-                                  ),
-                                ),
-                                trailing: CircleAvatar(
-                                  backgroundColor: Colors.red.shade100,
-                                  child: Text(
-                                    '${listofDocumentSnap[index]['volume']}',
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: screenHeight * 0.15,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: Colors.grey.shade100,
+                              ),
+                              child: Center(
+                                child: ListTile(
+                                  title: Text(
+                                    '${listofDocumentSnap[index]['name']}',
                                     style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.indigo.shade900),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    'date:  ${listofDocumentSnap[index]['date']}',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  trailing: Text(
+                                    '${listofDocumentSnap[index]['price']} €',
+                                    style: TextStyle(
+                                      fontSize: 21,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.indigo.shade900,
+                                    ),
+                                  ),
+                                  leading: CircleAvatar(
+                                    backgroundColor: Colors.red.shade100,
+                                    child: Text(
+                                      '${listofDocumentSnap[index]['volume']}',
+                                      style: TextStyle(
+                                          fontSize: 23,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.indigo.shade900),
+                                    ),
                                   ),
                                 ),
                               ),
