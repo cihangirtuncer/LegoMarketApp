@@ -128,23 +128,106 @@ class _ProfileState extends State<Profile> {
                         Icons.home,
                       ),
                     ),
-                    InkWell(
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.shopping_basket,
-                          size: 27,
-                          color: buildColor(),
-                        ),
-                        title: Text(
-                          "Orders",
-                          style: TextStyle(
-                            fontSize: 20,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.shopping_basket,
+                            size: 27,
                             color: buildColor(),
+                          ),
+                          title: Text(
+                            "Orders",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: buildColor(),
+                            ),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.white12,
                           ),
                         ),
                       ),
                     ),
-                    InkWell(
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Get.defaultDialog(
+                            title: "Are you sure you want to log out?",
+                            content: Icon(
+                              Icons.warning,
+                              size: 40,
+                              color: Colors.red,
+                            ),
+                            actions: [
+                              ElevatedButton(
+                                onPressed: () async {
+                                  await FirebaseAuth.instance.signOut();
+                                  Get.to(
+                                    () => BottomHomePage(),
+                                  );
+                                },
+                                child: Text('LOG OUT'),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Colors.red.shade700,
+                                  ),
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () => Get.back(),
+                                child: Text('CANCEL'),
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Colors.green.shade700,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.logout,
+                            size: 27,
+                            color: buildColor(),
+                          ),
+                          title: Text(
+                            "Log out",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: buildColor(),
+                            ),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.white12,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+/*
+ InkWell(
+                      splashColor: Colors.white,
                       onTap: () async {
                         Get.defaultDialog(
                           title: "Are you sure you want to log out?",
@@ -197,13 +280,4 @@ class _ProfileState extends State<Profile> {
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ],
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
+*/
