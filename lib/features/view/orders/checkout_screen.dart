@@ -10,7 +10,7 @@ import 'package:lego_market_app/core/widget/price_counter.dart';
 enum SingingCharacter { cash, creditCard }
 
 class CheckoutScreen extends StatefulWidget {
-  const CheckoutScreen({Key? key}) : super(key: key);
+  const CheckoutScreen({Key? key, List? names}) : super(key: key);
 
   @override
   State<CheckoutScreen> createState() => _CheckoutScreenState();
@@ -56,159 +56,181 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          buildCheckoutContainer(
-            screenWidth,
-            screenHeight * 0.13,
-            [
-              buildCheckoutTitle(screenWidth, 'Add Note'),
-              TextFormField(
-                controller: addNoteController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelStyle: TextStyle(color: Colors.black),
-                  labelText: "You can write your order note here",
-                  fillColor: Colors.black,
-                  focusColor: Colors.black,
-                  hoverColor: Colors.black,
-                ),
-              ),
-            ],
-          ),
-          buildCheckoutContainer(
-            screenWidth,
-            screenHeight * 0.2,
-            [
-              buildCheckoutTitle(screenWidth, "Payment Method"),
-              ListTile(
-                title: const Text('Cash'),
-                leading: Radio<SingingCharacter>(
-                  value: SingingCharacter.cash,
-                  groupValue: _character,
-                  onChanged: (SingingCharacter? value) {
-                    setState(() {
-                      _character = value;
-                    });
-                  },
-                ),
-              ),
-              ListTile(
-                title: const Text('Credit Card'),
-                leading: Radio<SingingCharacter>(
-                  value: SingingCharacter.creditCard,
-                  groupValue: _character,
-                  onChanged: (SingingCharacter? value) {
-                    setState(() {
-                      _character = value;
-                    });
-                  },
-                ),
-              ),
-            ],
-          ),
-          buildCheckoutContainer(
-            screenWidth,
-            screenHeight * 0.12,
-            [
-              buildCheckoutTitle(screenWidth, "Save the Planet"),
-              Row(
-                children: [
-                  Checkbox(
-                    checkColor: Colors.white,
-                    fillColor: MaterialStateProperty.resolveWith(getColor),
-                    value: isChecked,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        isChecked = value!;
-                      });
-                    },
-                  ),
-                  Text(
-                      'Do not send cutlery(plastic ford, spoon, knife, napkins).'),
-                ],
-              ),
-            ],
-          ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Stack(
+      body: Form(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Positioned(
-                  child: Container(
-                    height: screenHeight * 0.077,
-                    color: Colors.green.shade700,
-                    child: Align(
-                      alignment: Alignment(-0.55, 0.0),
-                      child: PriceCounter(),
+                buildCheckoutContainer(
+                  screenWidth,
+                  screenHeight * 0.25,
+                  [
+                    buildCheckoutTitle(screenWidth, 'Add Note'),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 7, 8, 0),
+                      child: TextFormField(
+                        controller: addNoteController,
+                        decoration: const InputDecoration(
+                          labelStyle: TextStyle(color: Colors.black),
+                          labelText: "You can write your order note here",
+                          fillColor: Colors.black,
+                          focusColor: Colors.black,
+                          hoverColor: Colors.black,
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                Positioned(
-                  right: 0,
-                  child: GestureDetector(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.green.shade900,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          bottomLeft: Radius.circular(30),
-                        ),
-                      ),
-                      height: screenHeight * 0.077,
-                      width: screenWidth * 0.45,
-                      child: Align(
-                        alignment: Alignment(0.1, 0.0),
-                        child: Text(
-                          "Order Now",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
+                buildCheckoutContainer(
+                  screenWidth,
+                  screenHeight * 0.2714,
+                  [
+                    buildCheckoutTitle(screenWidth, "Payment Method"),
+                    ListTile(
+                      title: const Text('Cash'),
+                      leading: Radio<SingingCharacter>(
+                        value: SingingCharacter.cash,
+                        groupValue: _character,
+                        onChanged: (SingingCharacter? value) {
+                          setState(() {
+                            _character = value;
+                          });
+                        },
                       ),
                     ),
-                    onTap: () async {
-                      if (auth.currentUser != null) {
-                        Map<String, dynamic> usersData = {
-                          'note': addNoteController.text,
-                          'payment method': _character.toString(),
-                          'save the planet': isChecked.toString(),
-                        };
-                        User? name = auth.currentUser;
-                        CollectionReference usersRef =
-                            firestore.collection('users');
-                        await usersRef
-                            .doc(name!.uid.toString())
-                            .collection('order information')
-                            .doc('inforamtion')
-                            .set(usersData, SetOptions(merge: true));
-
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            duration: Duration(milliseconds: 1200),
-                            backgroundColor: Colors.grey.shade900,
-                            content: const Text(
-                              'The product has been ordered',
-                              style: TextStyle(
-                                color: Colors.green,
-                              ),
+                    ListTile(
+                      title: const Text('Credit Card'),
+                      leading: Radio<SingingCharacter>(
+                        value: SingingCharacter.creditCard,
+                        groupValue: _character,
+                        onChanged: (SingingCharacter? value) {
+                          setState(() {
+                            _character = value;
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                buildCheckoutContainer(
+                  screenWidth,
+                  screenHeight * 0.25,
+                  [
+                    buildCheckoutTitle(screenWidth, "Save the Planet"),
+                    Row(
+                      children: [
+                        Checkbox(
+                          checkColor: Colors.white,
+                          fillColor:
+                              MaterialStateProperty.resolveWith(getColor),
+                          value: isChecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked = value!;
+                            });
+                          },
+                        ),
+                        Text(
+                            'Do not send cutlery(plastic ford, spoon, knife, napkins).'),
+                      ],
+                    ),
+                  ],
+                ),
+                buildCheckoutContainer(screenWidth, screenHeight * 0.1, [
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          child: Container(
+                            height: screenHeight * 0.077,
+                            color: Colors.green.shade700,
+                            child: Align(
+                              alignment: Alignment(-0.55, 0.0),
+                              child: PriceCounter(),
                             ),
                           ),
-                        );
+                        ),
+                        Positioned(
+                          right: 0,
+                          child: GestureDetector(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.green.shade900,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  bottomLeft: Radius.circular(30),
+                                ),
+                              ),
+                              height: screenHeight * 0.077,
+                              width: screenWidth * 0.45,
+                              child: Align(
+                                alignment: Alignment(0.1, 0.0),
+                                child: Text(
+                                  "Order Now",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            onTap: () async {
+                              if (auth.currentUser != null) {
+                                Map<String, dynamic> usersData = {
+                                  'note': addNoteController.text,
+                                  'payment method': _character.toString(),
+                                  'save the planet': isChecked.toString(),
+                                };
+                                User? name = auth.currentUser;
+                                CollectionReference usersRef =
+                                    firestore.collection('users');
 
-                        Get.to(
-                          () => BottomHomePage(),
-                        );
-                      }
-                    },
+                                await usersRef
+                                    .doc(name!.uid.toString())
+                                    .collection('order information')
+                                    .doc('inforamtion')
+                                    .set(usersData, SetOptions(merge: true));
+
+                                var snapshot = await usersRef
+                                    .doc(auth.currentUser!.uid.toString())
+                                    .collection('basket')
+                                    .get();
+                                if (snapshot.docs.isNotEmpty) {
+                                  for (var doc in snapshot.docs) {
+                                    await doc.reference.delete();
+                                  }
+                                }
+
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    duration: Duration(milliseconds: 1200),
+                                    backgroundColor: Colors.grey.shade900,
+                                    content: const Text(
+                                      'The product has been ordered',
+                                      style: TextStyle(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                                Get.to(
+                                  () => BottomHomePage(),
+                                );
+                              }
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                ])
               ],
             ),
-          )
-        ],
+          ),
+        ),
       ),
     );
   }

@@ -129,6 +129,22 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     InkWell(
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.shopping_basket,
+                          size: 27,
+                          color: buildColor(),
+                        ),
+                        title: Text(
+                          "Orders",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: buildColor(),
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
                       onTap: () async {
                         Get.defaultDialog(
                           title: "Are you sure you want to log out?",

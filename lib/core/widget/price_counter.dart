@@ -15,7 +15,7 @@ class _PriceCounterState extends State<PriceCounter> {
   final _usersStream = FirebaseFirestore.instance
       .collection('users')
       .doc(_auth.currentUser!.uid.toString())
-      .collection('orders')
+      .collection('basket')
       .snapshots();
 
   @override

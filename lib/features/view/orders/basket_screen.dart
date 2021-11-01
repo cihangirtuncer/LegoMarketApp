@@ -10,18 +10,18 @@ import '../../../core/widget/info_container.dart';
 import '../../../core/widget/main_appBar.dart';
 import 'package:get/get.dart';
 
-class OrdersScreen extends StatefulWidget {
+class BasketScreen extends StatefulWidget {
   @override
-  _OrdersScreenState createState() => _OrdersScreenState();
+  _BasketScreenState createState() => _BasketScreenState();
 }
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class _OrdersScreenState extends State<OrdersScreen> {
+class _BasketScreenState extends State<BasketScreen> {
   final _usersStream = FirebaseFirestore.instance
       .collection('users')
       .doc(_auth.currentUser!.uid.toString())
-      .collection('orders')
+      .collection('basket')
       .snapshots();
 
   int totalPrice = 0;
@@ -34,7 +34,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
       backgroundColor: Colors.white,
       appBar: mainAppBar(
         Text(
-          "Orders",
+          "Basket",
           style: TextStyle(
             fontSize: 24,
           ),
@@ -58,13 +58,23 @@ class _OrdersScreenState extends State<OrdersScreen> {
                           firestore.collection('users');
                       var snapshot = await usersRef
                           .doc(_auth.currentUser!.uid.toString())
+                          .collection('basket')
+                          .get();
+                      var snapshots = await usersRef
+                          .doc(_auth.currentUser!.uid.toString())
                           .collection('orders')
                           .get();
+                      if (snapshots.docs.isNotEmpty) {
+                        for (var doc in snapshots.docs) {
+                          await doc.reference.delete();
+                        }
+                      }
                       if (snapshot.docs.isNotEmpty) {
                         for (var doc in snapshot.docs) {
                           await doc.reference.delete();
                         }
                       }
+
                       Get.back();
                     },
                     child: Text('DELETE'),
@@ -191,6 +201,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                           FirebaseFirestore.instance;
                                       CollectionReference usersRef =
                                           firestore.collection('users');
+                                      await usersRef
+                                          .doc(
+                                              _auth.currentUser!.uid.toString())
+                                          .collection('basket')
+                                          .doc(
+                                              '${listofDocumentSnap[index]['name']}')
+                                          .delete();
                                       await usersRef
                                           .doc(
                                               _auth.currentUser!.uid.toString())

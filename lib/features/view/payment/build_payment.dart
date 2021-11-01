@@ -156,6 +156,12 @@ buildPayment(
                   CollectionReference usersRef = firestore.collection('users');
                   await usersRef
                       .doc(name!.uid.toString())
+                      .collection('basket')
+                      .doc(nameNoSql)
+                      .set(usersData, SetOptions(merge: true));
+
+                  await usersRef
+                      .doc(name.uid.toString())
                       .collection('orders')
                       .doc(nameNoSql)
                       .set(usersData, SetOptions(merge: true));

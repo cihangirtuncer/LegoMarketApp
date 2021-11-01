@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../authenticate/auth_page/auth_type_selector.dart';
 import '../../../features/view/home/home_screen.dart';
 import '../../../features/view/orders/null_user_order.dart';
-import '../../../features/view/orders/orders_screen.dart';
+import '../../../features/view/orders/basket_screen.dart';
 import '../../../features/view/profile/profile_screen.dart';
 import '../icon/bottom_icon.dart';
 
@@ -19,7 +19,7 @@ class _BottomHomePageState extends State<BottomHomePage> {
   int _selectedIndex = 0;
   final tabs = [
     HomePage(),
-    _auth.currentUser == null ? NullUserOrders() : OrdersScreen(),
+    _auth.currentUser == null ? NullUserOrders() : BasketScreen(),
     _auth.currentUser == null ? AuthTypeSelector() : Profile(),
   ];
 

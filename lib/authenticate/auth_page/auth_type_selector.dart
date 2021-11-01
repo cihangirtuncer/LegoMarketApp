@@ -10,23 +10,31 @@ class AuthTypeSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: buildGradientContainer(
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            EmailPasswordForm(),
-            Container(
-              child: SignInButtonBuilder(
-                fontSize: 21,
-                icon: Icons.person_add,
-                backgroundColor: Color(0xF56E014E), //0xF541012C 0xFFB60707
-                text: "Register", // 0xF51239E6
-                onPressed: () => Get.to(() => RegisterPage()),
+        Form(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 160, 10, 30),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  EmailPasswordForm(),
+                  Container(
+                    child: SignInButtonBuilder(
+                      fontSize: 21,
+                      icon: Icons.person_add,
+                      backgroundColor:
+                          Color(0xF56E014E), //0xF541012C 0xFFB60707
+                      text: "Register", // 0xF51239E6
+                      onPressed: () => Get.to(() => RegisterPage()),
+                    ),
+                    padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
+                    alignment: Alignment.center,
+                  ),
+                ],
               ),
-              padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
-              alignment: Alignment.center,
             ),
-          ],
+          ),
         ),
       ),
     );
