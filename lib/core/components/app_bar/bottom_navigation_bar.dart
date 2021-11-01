@@ -44,7 +44,7 @@ class _BottomHomePageState extends State<BottomHomePage> {
             icon: buildBottomIcon(
               Icons.shopping_cart,
             ),
-            label: "ORDERS",
+            label: "BASKET",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
