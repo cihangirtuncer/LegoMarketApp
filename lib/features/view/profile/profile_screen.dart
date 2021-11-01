@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lego_market_app/features/view/orders/orders_screen.dart';
 import '../../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../../core/components/row/profile_row.dart';
 import '../../../core/widget/color.dart';
@@ -131,7 +132,9 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => OrdersScreen());
+                        },
                         child: ListTile(
                           leading: Icon(
                             Icons.shopping_basket,
@@ -224,60 +227,3 @@ class _ProfileState extends State<Profile> {
     );
   }
 }
-
-/*
- InkWell(
-                      splashColor: Colors.white,
-                      onTap: () async {
-                        Get.defaultDialog(
-                          title: "Are you sure you want to log out?",
-                          content: Icon(
-                            Icons.warning,
-                            size: 40,
-                            color: Colors.red,
-                          ),
-                          actions: [
-                            ElevatedButton(
-                              onPressed: () async {
-                                await FirebaseAuth.instance.signOut();
-                                Get.to(
-                                  () => BottomHomePage(),
-                                );
-                              },
-                              child: Text('LOG OUT'),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                  Colors.red.shade700,
-                                ),
-                              ),
-                            ),
-                            ElevatedButton(
-                              onPressed: () => Get.back(),
-                              child: Text('CANCEL'),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                  Colors.green.shade700,
-                                ),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.logout,
-                          size: 27,
-                          color: buildColor(),
-                        ),
-                        title: Text(
-                          "Log out",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: buildColor(),
-                          ),
-                        ),
-                      ),
-                    ),
-*/

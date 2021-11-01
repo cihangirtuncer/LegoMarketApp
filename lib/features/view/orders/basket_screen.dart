@@ -40,68 +40,6 @@ class _BasketScreenState extends State<BasketScreen> {
           ),
         ),
         false,
-        actions: [
-          IconButton(
-            onPressed: (() async {
-              Get.defaultDialog(
-                content: Icon(
-                  Icons.warning,
-                  size: 40,
-                  color: Colors.red,
-                ),
-                title: "Are you sure you want to empty your basket?",
-                actions: [
-                  ElevatedButton(
-                    onPressed: () async {
-                      final firestore = FirebaseFirestore.instance;
-                      CollectionReference usersRef =
-                          firestore.collection('users');
-                      var snapshot = await usersRef
-                          .doc(_auth.currentUser!.uid.toString())
-                          .collection('basket')
-                          .get();
-                      var snapshots = await usersRef
-                          .doc(_auth.currentUser!.uid.toString())
-                          .collection('orders')
-                          .get();
-                      if (snapshots.docs.isNotEmpty) {
-                        for (var doc in snapshots.docs) {
-                          await doc.reference.delete();
-                        }
-                      }
-                      if (snapshot.docs.isNotEmpty) {
-                        for (var doc in snapshot.docs) {
-                          await doc.reference.delete();
-                        }
-                      }
-
-                      Get.back();
-                    },
-                    child: Text('DELETE'),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.red.shade700,
-                      ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => Get.back(),
-                    child: Text('CANCEL'),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.green.shade700,
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            }),
-            icon: Icon(
-              Icons.delete_sharp,
-              size: 34,
-            ),
-          )
-        ],
       ),
       body: buildGradientContainer(
         Column(
@@ -327,3 +265,68 @@ class _BasketScreenState extends State<BasketScreen> {
     );
   }
 }
+/*
+ actions: [
+          IconButton(
+            onPressed: (() async {
+              Get.defaultDialog(
+                content: Icon(
+                  Icons.warning,
+                  size: 40,
+                  color: Colors.red,
+                ),
+                title: "Are you sure you want to empty your basket?",
+                actions: [
+                  ElevatedButton(
+                    onPressed: () async {
+                      final firestore = FirebaseFirestore.instance;
+                      CollectionReference usersRef =
+                          firestore.collection('users');
+                      var snapshot = await usersRef
+                          .doc(_auth.currentUser!.uid.toString())
+                          .collection('basket')
+                          .get();
+                      var snapshots = await usersRef
+                          .doc(_auth.currentUser!.uid.toString())
+                          .collection('orders')
+                          .get();
+                      if (snapshots.docs.isNotEmpty) {
+                        for (var doc in snapshots.docs) {
+                          await doc.reference.delete();
+                        }
+                      }
+                      if (snapshot.docs.isNotEmpty) {
+                        for (var doc in snapshot.docs) {
+                          await doc.reference.delete();
+                        }
+                      }
+
+                      Get.back();
+                    },
+                    child: Text('DELETE'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.red.shade700,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => Get.back(),
+                    child: Text('CANCEL'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.green.shade700,
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            }),
+            icon: Icon(
+              Icons.delete_sharp,
+              size: 34,
+            ),
+          )
+        ],
+
+*/
