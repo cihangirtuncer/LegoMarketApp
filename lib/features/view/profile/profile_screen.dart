@@ -133,7 +133,9 @@ class _ProfileState extends State<Profile> {
                       padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
                       child: ElevatedButton(
                         onPressed: () {
-                          Get.to(() => OrdersScreen());
+                          Get.to(
+                            () => OrdersScreen(),
+                          );
                         },
                         child: ListTile(
                           leading: Icon(
