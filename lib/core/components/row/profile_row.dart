@@ -5,7 +5,7 @@ import '../icon/standart_icon.dart';
 
 buildProfileRow(String string, IconData icon) {
   return Padding(
-    padding: const EdgeInsets.fromLTRB(32, 8, 0, 0),
+    padding: const EdgeInsets.fromLTRB(31, 8, 0, 0),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
