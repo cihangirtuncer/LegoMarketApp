@@ -130,7 +130,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
                       child: ElevatedButton(
                         onPressed: () {
                           Get.to(() => OrdersScreen());
@@ -157,7 +157,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
                       child: ElevatedButton(
                         onPressed: () {
                           Get.defaultDialog(
