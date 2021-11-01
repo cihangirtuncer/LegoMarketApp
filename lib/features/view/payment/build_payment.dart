@@ -63,6 +63,7 @@ buildPayment(
   // ignore: unused_local_variable
   final firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  DateTime now = DateTime.now();
 
   return Scaffold(
     backgroundColor: Colors.green.shade100,
@@ -151,19 +152,20 @@ buildPayment(
                     'explanation': explanation,
                     'name': nameNoSql,
                     'volume': volume,
+                    'date': now.toString(),
                   };
                   User? name = _auth.currentUser;
                   CollectionReference usersRef = firestore.collection('users');
                   await usersRef
                       .doc(name!.uid.toString())
                       .collection('basket')
-                      .doc(nameNoSql)
+                      .doc('$nameNoSql $now')
                       .set(usersData, SetOptions(merge: true));
 
                   await usersRef
                       .doc(name.uid.toString())
                       .collection('orders')
-                      .doc(nameNoSql)
+                      .doc('$nameNoSql $now')
                       .set(usersData, SetOptions(merge: true));
 
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -221,19 +223,3 @@ buildPayment(
     ),
   );
 }
-/*
-  int newprice = 0;
-                newprice = newprice + price;
-                int totalPrice = newprice;
-
-
-   Map<String, dynamic> priceData = {
-                    'price': totalPrice,
-                  };
-                  await usersRef
-                      .doc(name.uid.toString())
-                      .collection('Price')
-                      .doc('Total Price')
-                      .set(priceData, SetOptions(merge: true));
-
-*/
