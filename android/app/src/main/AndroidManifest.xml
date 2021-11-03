@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lego_market_app">
    <application
-        android:label="lego_market_app"
+        android:label="Lego Market"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
