@@ -16,6 +16,7 @@ class BottomHomePage extends StatefulWidget {
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class _BottomHomePageState extends State<BottomHomePage> {
+  final Color myBackgroundColor = Color(0xF509044E);
   int _selectedIndex = 0;
   final tabs = [
     HomePage(),
@@ -27,32 +28,28 @@ class _BottomHomePageState extends State<BottomHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.red.shade800,
-        selectedIconTheme: IconThemeData(
-          color: Colors.red.shade800,
-        ),
-        unselectedItemColor: Colors.grey.shade800,
+        unselectedItemColor: Colors.grey.shade400,
         items: [
           BottomNavigationBarItem(
             icon: buildBottomIcon(
               Icons.home,
             ),
             label: "HOME",
-            backgroundColor: Colors.white,
+            backgroundColor: myBackgroundColor,
           ),
           BottomNavigationBarItem(
             icon: buildBottomIcon(
               Icons.shopping_cart,
             ),
             label: "BASKET",
-            backgroundColor: Colors.white,
+            backgroundColor: myBackgroundColor,
           ),
           BottomNavigationBarItem(
             icon: buildBottomIcon(
               Icons.account_circle_rounded,
             ),
             label: "PROFILE",
-            backgroundColor: Colors.white,
+            backgroundColor: myBackgroundColor,
           ),
         ],
         currentIndex: _selectedIndex,
