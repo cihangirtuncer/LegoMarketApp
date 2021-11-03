@@ -197,6 +197,8 @@ class _BasketScreenState extends State<BasketScreen> {
                                 actions: [
                                   ElevatedButton(
                                     onPressed: () async {
+                                      String docName =
+                                          "${listofDocumentSnap[index]['name']} ${listofDocumentSnap[index]['date']}";
                                       final firestore =
                                           FirebaseFirestore.instance;
                                       CollectionReference usersRef =
@@ -205,15 +207,13 @@ class _BasketScreenState extends State<BasketScreen> {
                                           .doc(
                                               _auth.currentUser!.uid.toString())
                                           .collection('basket')
-                                          .doc(
-                                              '${listofDocumentSnap[index]['name']}')
+                                          .doc(docName)
                                           .delete();
                                       await usersRef
                                           .doc(
                                               _auth.currentUser!.uid.toString())
                                           .collection('orders')
-                                          .doc(
-                                              '${listofDocumentSnap[index]['name']}')
+                                          .doc(docName)
                                           .delete();
 
                                       Get.back();
@@ -257,10 +257,19 @@ class _BasketScreenState extends State<BasketScreen> {
                                       color: Colors.amber.shade700,
                                     ),
                                   ),
-                                  trailing: Icon(
-                                    Icons.run_circle_outlined,
-                                    color: Colors.amber.shade700,
-                                    size: 35,
+                                  leading: Text(
+                                    '${listofDocumentSnap[index]['volume']}',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  trailing: Text(
+                                    '${listofDocumentSnap[index]['price']}',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
