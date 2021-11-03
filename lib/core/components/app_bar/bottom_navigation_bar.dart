@@ -16,7 +16,7 @@ class BottomHomePage extends StatefulWidget {
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class _BottomHomePageState extends State<BottomHomePage> {
-  final Color myBackgroundColor = Color(0xF509044E);
+  final Color myBackgroundColor = Color(0xF5380025);
   int _selectedIndex = 0;
   final tabs = [
     HomePage(),
