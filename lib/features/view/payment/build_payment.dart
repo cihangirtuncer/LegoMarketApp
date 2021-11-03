@@ -119,7 +119,7 @@ buildPayment(
                         Padding(
                           padding: const EdgeInsets.all(5.0),
                           child: Text(
-                            "Price: €$price ",
+                            "Price: €$price",
                             style: TextStyle(
                               fontSize: 20,
                             ),
