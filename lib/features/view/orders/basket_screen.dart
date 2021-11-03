@@ -180,7 +180,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                     buildProfileDivider(8),
                                     buildOrdersCardTextWidget(
                                       "Price: ",
-                                      "${listofDocumentSnap[index]['price']} €",
+                                      "€${listofDocumentSnap[index]['price']}",
                                     ),
                                     buildProfileDivider(8),
                                     buildOrdersCardTextWidget(
@@ -254,22 +254,25 @@ class _BasketScreenState extends State<BasketScreen> {
                                     "continues",
                                     style: TextStyle(
                                       fontSize: 18,
-                                      color: Colors.amber.shade700,
+                                      color: Colors.indigo.shade900,
                                     ),
                                   ),
-                                  leading: Text(
-                                    '${listofDocumentSnap[index]['volume']}',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                                  leading: CircleAvatar(
+                                    backgroundColor: Colors.red.shade100,
+                                    child: Text(
+                                      '${listofDocumentSnap[index]['volume']}',
+                                      style: TextStyle(
+                                          fontSize: 23,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.indigo.shade900),
                                     ),
                                   ),
                                   trailing: Text(
-                                    '${listofDocumentSnap[index]['price']}',
+                                    '€${listofDocumentSnap[index]['price']}',
                                     style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                        fontSize: 23,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.indigo.shade900),
                                   ),
                                 ),
                               ),

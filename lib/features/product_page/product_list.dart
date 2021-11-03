@@ -40,9 +40,10 @@ Column BuildProductList(
               ),
             ),
             trailing: Text(
-              price.toString() + " €",
+              "€$price",
               style: TextStyle(
-                fontSize: 19,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
