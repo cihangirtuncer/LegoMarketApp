@@ -7,6 +7,10 @@ as used
 
 <img src="https://user-images.githubusercontent.com/85954684/140325097-6ee5dce1-1567-46c8-b08e-d52715fc61d8.gif" width="400" height="790">
 
+:large_orange_diamond: WHILE USER IS NOT LOGGED IN 
+
+<img src="https://user-images.githubusercontent.com/85954684/140326401-c42ad2af-66e1-45eb-babe-db9de3c4c7d6.gif" width="400" height="790">
+
 
 :large_orange_diamond: REGİSTER 
 
