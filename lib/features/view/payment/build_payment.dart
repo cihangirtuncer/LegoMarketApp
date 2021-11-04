@@ -11,6 +11,7 @@ class ButtonPayment extends StatefulWidget {
 }
 
 int volume = 1;
+final Color redColor = Colors.red;
 
 class _ButtonPaymentState extends State<ButtonPayment> {
   @override
@@ -190,11 +191,13 @@ buildPayment(
                         children: [
                           Icon(
                             Icons.warning,
-                            color: Colors.red,
+                            color: redColor,
                           ),
-                          const Text(
+                          Text(
                             ' You must register to add the product to the basket.',
-                            style: TextStyle(color: Colors.red),
+                            style: TextStyle(
+                              color: redColor,
+                            ),
                           ),
                         ],
                       ),

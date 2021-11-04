@@ -23,6 +23,10 @@ class _ProfileState extends State<Profile> {
       .collection('users')
       .doc(_auth.currentUser!.uid.toString())
       .snapshots();
+  final Color transparentColor = Colors.transparent;
+  final Color white12Color = Colors.white12;
+  final Color redColor = Colors.red;
+  final Color whiteColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +52,7 @@ class _ProfileState extends State<Profile> {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                 child: CircularProgressIndicator(
-                  color: Colors.red,
+                  color: redColor,
                 ),
               );
             }
@@ -61,7 +65,7 @@ class _ProfileState extends State<Profile> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     buildProfileData(
-                      Colors.transparent,
+                      transparentColor,
                       80,
                       120,
                       Alignment.center,
@@ -79,12 +83,12 @@ class _ProfileState extends State<Profile> {
                                 borderRadius: BorderRadius.circular(
                                   10,
                                 ),
-                                color: Colors.transparent,
+                                color: transparentColor,
                               ),
                               child: Icon(
                                 Icons.account_circle_rounded,
                                 size: 110,
-                                color: Colors.white,
+                                color: whiteColor,
                               ),
                             ),
                           ),
@@ -92,7 +96,7 @@ class _ProfileState extends State<Profile> {
                             data['name surname'],
                             style: TextStyle(
                               fontSize: 23,
-                              color: Colors.white,
+                              color: whiteColor,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -100,7 +104,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     buildProfileData(
-                      Colors.transparent,
+                      transparentColor,
                       80,
                       60,
                       Alignment.centerLeft,
@@ -110,7 +114,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     buildProfileData(
-                      Colors.transparent,
+                      transparentColor,
                       80,
                       60,
                       Alignment.centerLeft,
@@ -120,7 +124,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     buildProfileData(
-                      Colors.transparent,
+                      transparentColor,
                       80,
                       60,
                       Alignment.centerLeft,
@@ -153,7 +157,7 @@ class _ProfileState extends State<Profile> {
                         ),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.white12,
+                            white12Color,
                           ),
                         ),
                       ),
@@ -167,7 +171,7 @@ class _ProfileState extends State<Profile> {
                             content: Icon(
                               Icons.warning,
                               size: 40,
-                              color: Colors.red,
+                              color: redColor,
                             ),
                             actions: [
                               ElevatedButton(
@@ -214,7 +218,7 @@ class _ProfileState extends State<Profile> {
                         ),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.white12,
+                            white12Color,
                           ),
                         ),
                       ),
