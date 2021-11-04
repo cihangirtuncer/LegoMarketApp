@@ -31,10 +31,7 @@ class _BasicFoodState extends State<BasicFood> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "BASIC FOOD",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

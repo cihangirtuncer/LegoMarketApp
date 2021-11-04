@@ -31,10 +31,7 @@ class _CigarettesListState extends State<CigarettesList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "CIGARETTES",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

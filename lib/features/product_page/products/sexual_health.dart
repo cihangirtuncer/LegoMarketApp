@@ -30,10 +30,7 @@ class _SexualHealthListState extends State<SexualHealthList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "SEXUAL HEALTH",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

@@ -31,10 +31,7 @@ class _PersonalCareListState extends State<PersonalCareList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "PERSONAL CARE",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

@@ -33,10 +33,7 @@ class _BabyCareListState extends State<BabyCareList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "BABY CARE",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

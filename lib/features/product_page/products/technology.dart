@@ -30,10 +30,7 @@ class _TechnologyListState extends State<TechnologyList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "TECHNOLOGY",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

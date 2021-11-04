@@ -32,10 +32,7 @@ class _FitFormListState extends State<FitFormList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "FIT FORM",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

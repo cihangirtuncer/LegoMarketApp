@@ -30,10 +30,7 @@ class _IceCreamListState extends State<IceCreamList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "ICE CREAM",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

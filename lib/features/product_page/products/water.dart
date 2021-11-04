@@ -32,10 +32,7 @@ class _WaterListState extends State<WaterList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "WATER",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allWaterList),
-      ),
+      foodItemCreat(context, allWaterList),
     );
   }
 }

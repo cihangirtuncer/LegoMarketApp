@@ -30,10 +30,7 @@ class _CleaningProductListState extends State<CleaningProductList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "HOME CARE",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

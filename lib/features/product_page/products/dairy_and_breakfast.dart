@@ -30,10 +30,7 @@ class _DairyAndBreakfastListState extends State<DairyAndBreakfastList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "DAIRY & BREAKFAST",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }

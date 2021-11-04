@@ -32,10 +32,7 @@ class _HomeLivingListState extends State<HomeLivingList> {
   Widget build(BuildContext context) {
     return buildProductsScaffold(
       "HOME LIVING",
-      ListView(
-        physics: BouncingScrollPhysics(),
-        children: foodItemCreat(context, allFoodList),
-      ),
+      foodItemCreat(context, allFoodList),
     );
   }
 }
