@@ -177,8 +177,11 @@ class _ProfileState extends State<Profile> {
                               ElevatedButton(
                                 onPressed: () async {
                                   await FirebaseAuth.instance.signOut();
-                                  Get.to(
-                                    () => BottomHomePage(),
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => BottomHomePage(),
+                                    ),
                                   );
                                 },
                                 child: Text('LOG OUT'),
