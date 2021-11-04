@@ -25,13 +25,18 @@ class _BasketScreenState extends State<BasketScreen> {
       .snapshots();
 
   int totalPrice = 0;
+  final Color whiteColor = Colors.white;
+  final Color indigoColor = Colors.indigo.shade900;
+  final Color green700Color = Colors.green.shade700;
+  final Color red700Color = Colors.red.shade700;
+  final Color redColor = Colors.red;
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: whiteColor,
       appBar: mainAppBar(
         Text(
           "Basket",
@@ -47,7 +52,7 @@ class _BasketScreenState extends State<BasketScreen> {
                 content: Icon(
                   Icons.warning,
                   size: 40,
-                  color: Colors.red,
+                  color: redColor,
                 ),
                 title: "Are you sure you want to empty your basket?",
                 actions: [
@@ -80,7 +85,7 @@ class _BasketScreenState extends State<BasketScreen> {
                     child: Text('DELETE'),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.red.shade700,
+                        red700Color,
                       ),
                     ),
                   ),
@@ -89,7 +94,7 @@ class _BasketScreenState extends State<BasketScreen> {
                     child: Text('CANCEL'),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.green.shade700,
+                        green700Color,
                       ),
                     ),
                   ),
@@ -118,7 +123,7 @@ class _BasketScreenState extends State<BasketScreen> {
                     padding: const EdgeInsets.fromLTRB(0, 270, 0, 0),
                     child: Center(
                       child: CircularProgressIndicator(
-                        color: Colors.red,
+                        color: redColor,
                       ),
                     ),
                   );
@@ -135,7 +140,7 @@ class _BasketScreenState extends State<BasketScreen> {
                           Icon(
                             Icons.feedback,
                             size: 80,
-                            color: Colors.white,
+                            color: whiteColor,
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
@@ -143,7 +148,7 @@ class _BasketScreenState extends State<BasketScreen> {
                               'There are no items to display in your basket.',
                               style: TextStyle(
                                 fontSize: 30,
-                                color: Colors.white,
+                                color: whiteColor,
                               ),
                             ),
                           ),
@@ -222,7 +227,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all<Color>(
-                                        Colors.red.shade700,
+                                        red700Color,
                                       ),
                                     ),
                                   ),
@@ -232,7 +237,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all<Color>(
-                                        Colors.green.shade700,
+                                        green700Color,
                                       ),
                                     ),
                                   ),
@@ -254,7 +259,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                     "continues",
                                     style: TextStyle(
                                       fontSize: 18,
-                                      color: Colors.indigo.shade900,
+                                      color: indigoColor,
                                     ),
                                   ),
                                   leading: CircleAvatar(
@@ -262,17 +267,19 @@ class _BasketScreenState extends State<BasketScreen> {
                                     child: Text(
                                       '${listofDocumentSnap[index]['volume']}',
                                       style: TextStyle(
-                                          fontSize: 23,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.indigo.shade900),
+                                        fontSize: 23,
+                                        fontWeight: FontWeight.bold,
+                                        color: indigoColor,
+                                      ),
                                     ),
                                   ),
                                   trailing: Text(
                                     '€${listofDocumentSnap[index]['price']}',
                                     style: TextStyle(
-                                        fontSize: 23,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.indigo.shade900),
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.bold,
+                                      color: indigoColor,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -288,7 +295,7 @@ class _BasketScreenState extends State<BasketScreen> {
                           Positioned(
                             child: Container(
                               height: screenHeight * 0.077,
-                              color: Colors.green.shade700,
+                              color: green700Color,
                               child: Align(
                                 alignment: Alignment(-0.55, 0.0),
                                 child: PriceCounter(),
@@ -314,7 +321,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                     "Confrim Basket",
                                     style: TextStyle(
                                       fontSize: 20,
-                                      color: Colors.white,
+                                      color: whiteColor,
                                     ),
                                   ),
                                 ),
