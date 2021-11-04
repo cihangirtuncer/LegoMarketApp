@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lego_market_app/core/components/app_bar/bottom_navigation_bar.dart';
-import 'package:lego_market_app/core/widget/checkout_container.dart';
-import 'package:lego_market_app/core/widget/checkout_title.dart';
-import 'package:lego_market_app/core/widget/price_counter.dart';
+import '../../../core/components/app_bar/bottom_navigation_bar.dart';
+import '../../../core/widget/checkout_container.dart';
+import '../../../core/widget/checkout_title.dart';
+import '../../../core/widget/price_counter.dart';
 
 enum SingingCharacter { cash, creditCard }
 
