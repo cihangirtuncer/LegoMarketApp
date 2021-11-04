@@ -134,9 +134,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                                     child: Text(
                                       '${listofDocumentSnap[index]['volume']}',
                                       style: TextStyle(
-                                          fontSize: 23,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.indigo.shade900),
+                                        fontSize: 23,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.indigo.shade900,
+                                      ),
                                     ),
                                   ),
                                 ),
