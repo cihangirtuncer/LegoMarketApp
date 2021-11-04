@@ -14,7 +14,7 @@ as used
 
 :large_orange_diamond: REGİSTER 
 
-<img src="https://user-images.githubusercontent.com/85954684/138184789-0a7504d2-2dab-46ac-a064-a6c7a151d547.gif" width="400" height="790">
+<img src="https://user-images.githubusercontent.com/85954684/140327853-22dd536c-d735-4c06-a08c-eb31668c324e.gif" width="400" height="790">
 
 
 :large_orange_diamond: ADD
