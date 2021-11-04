@@ -1,10 +1,11 @@
 # lego_market_app
 
-This project is an online market for residential complexes, which are the living spaces of many people, and for living areas with collective flats. Flutter was used
+This project is an online market for residential complexes, which are the living spaces of many people, and for living areas with collective flats. Flutter 
+as used
 
 :large_orange_diamond:  SPLASH SCREEN
 
-<img src="https://user-images.githubusercontent.com/85954684/138184074-77abe7c1-10d0-46f6-9c4d-8c938901b879.gif" width="400" height="790">
+<img src="https://user-images.githubusercontent.com/85954684/140325097-6ee5dce1-1567-46c8-b08e-d52715fc61d8.gif" width="400" height="790">
 
 
 :large_orange_diamond: REGİSTER 
