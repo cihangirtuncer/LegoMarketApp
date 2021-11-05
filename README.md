@@ -24,8 +24,9 @@ as used
 
 :large_orange_diamond: ADD
 
-<img src="https://user-images.githubusercontent.com/85954684/138186507-96c86d2f-d634-4c9a-a3cc-5844e9ccd2b2.gif" width="400" height="790">
+<img src="https://user-images.githubusercontent.com/85954684/140468443-42639758-1029-4b70-8a20-56903c0b72d7.gif" width="400" height="790">
 
+:large_orange_diamond: CHECKOUT
 
 :large_orange_diamond: DELETE
 
