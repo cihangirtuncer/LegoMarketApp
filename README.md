@@ -28,6 +28,11 @@ as used
 
 :large_orange_diamond: CHECKOUT
 
+<img src="https://user-images.githubusercontent.com/85954684/140468829-c80a2268-b626-45d7-9a00-738260c76141.gif" width="400" height="790">
+
+:large_orange_diamond: ORDERS
+
+
 :large_orange_diamond: DELETE
 
 <img src="https://user-images.githubusercontent.com/85954684/138186783-a98a6b8c-c914-4abb-87ab-eebe00f4fd72.gif" width="400" height="790">
