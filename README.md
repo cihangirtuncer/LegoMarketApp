@@ -36,8 +36,7 @@ as used
 
 :large_orange_diamond: DELETE
 
-<img src="https://user-images.githubusercontent.com/85954684/138186783-a98a6b8c-c914-4abb-87ab-eebe00f4fd72.gif" width="400" height="790">
-
+<img src="https://user-images.githubusercontent.com/85954684/140469546-77b58788-eceb-4682-920c-7722390b8c0c.gif" width="400" height="790">
 
 :large_orange_diamond: LOG OUT
 
