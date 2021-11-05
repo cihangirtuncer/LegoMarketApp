@@ -28,7 +28,6 @@ class _HomePageState extends State<HomePage> {
               colors: <Color>[
                 Color(0xFFB60707),
                 Color(0xFFE49E07),
-                // Color(0xF504094E),
               ],
             ),
           ),
