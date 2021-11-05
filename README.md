@@ -19,7 +19,7 @@ as used
 
 :large_orange_diamond: ADD
 
-<img src="https://user-images.githubusercontent.com/85954684/138185884-c77d51d5-fc1c-41fa-a649-d2b549ad704f.gif" width="400" height="790">
+<img src="https://user-images.githubusercontent.com/85954684/140467939-6c990cd6-cadc-44af-8190-bb5a7347c4e8.gif" width="400" height="790">
 
 
 :large_orange_diamond: ADD
