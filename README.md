@@ -40,12 +40,12 @@ as used
 
 :large_orange_diamond: LOG OUT
 
-<img src="https://user-images.githubusercontent.com/85954684/138187411-804ae1cf-c8e6-4abd-a5e1-d43f3a45e5ff.gif" width="400" height="790">
+<img src="https://user-images.githubusercontent.com/85954684/140469916-aeb7ea8c-61bf-4e78-a5e2-3c66b14b7f1c.gif" width="400" height="790">
 
 
 :large_orange_diamond: SIGN IN
 
-<img src="https://user-images.githubusercontent.com/85954684/138187706-40f2d544-40c1-47d4-b7c7-da703ac6d29e.gif" width="400" height="790">
+<img src="https://user-images.githubusercontent.com/85954684/140470376-3f2b4665-5f8e-4515-80ff-b196c982a2e1.gif" width="400" height="790">
 
 
 :large_orange_diamond: SIGN IN ADD
