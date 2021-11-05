@@ -1,14 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../../core/widget/price_counter.dart';
-import 'checkout_screen.dart';
+import 'package:get/get.dart';
+
 import '../../../core/components/divider/profile_divder.dart';
 import '../../../core/components/text/orders_card_text.dart';
 import '../../../core/widget/gradient_container.dart';
 import '../../../core/widget/info_container.dart';
 import '../../../core/widget/main_appBar.dart';
-import 'package:get/get.dart';
+import '../../../core/widget/price_counter.dart';
+import 'checkout_screen.dart';
 
 class BasketScreen extends StatefulWidget {
   @override
