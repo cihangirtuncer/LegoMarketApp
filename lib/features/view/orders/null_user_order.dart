@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../core/widget/gradient_container.dart';
 import '../../../core/widget/info_container.dart';
 import '../../../core/widget/main_appBar.dart';
