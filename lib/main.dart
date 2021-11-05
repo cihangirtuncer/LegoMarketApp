@@ -7,10 +7,15 @@ import 'core/components/app_bar/bottom_navigation_bar.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ),
+  );
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
