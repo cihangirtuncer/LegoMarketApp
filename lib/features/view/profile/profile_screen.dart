@@ -2,13 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../orders/orders_screen.dart';
+
 import '../../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../../core/components/row/profile_row.dart';
 import '../../../core/widget/color.dart';
 import '../../../core/widget/gradient_container.dart';
 import '../../../core/widget/main_appBar.dart';
-
+import '../orders/orders_screen.dart';
 import 'Profile_page/profile_build_data.dart';
 
 class Profile extends StatefulWidget {
