@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:get/get.dart';
+
+import '../../core/widget/gradient_container.dart';
 import '../login/email_password_form.dart';
 import '../register/register_page.dart';
-import '../../core/widget/gradient_container.dart';
 
 class AuthTypeSelector extends StatelessWidget {
   @override
