@@ -34,13 +34,14 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: mainAppBar(
-          Text(
-            "Profile",
-            style: TextStyle(
-              fontSize: 24,
-            ),
+        Text(
+          "Profile",
+          style: TextStyle(
+            fontSize: 24,
           ),
-          false),
+        ),
+        false,
+      ),
       body: buildGradientContainer(
         StreamBuilder<DocumentSnapshot>(
           stream: _usersStream,
