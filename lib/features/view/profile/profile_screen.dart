@@ -23,6 +23,7 @@ class _ProfileState extends State<Profile> {
       .collection('users')
       .doc(_auth.currentUser!.uid.toString())
       .snapshots();
+
   final Color transparentColor = Colors.transparent;
   final Color white12Color = Colors.white12;
   final Color redColor = Colors.red;
