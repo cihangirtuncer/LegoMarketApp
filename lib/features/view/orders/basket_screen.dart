@@ -333,10 +333,10 @@ class _BasketScreenState extends State<BasketScreen> {
                                 );
                               },
                             ),
-                          )
+                          ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 );
               },
