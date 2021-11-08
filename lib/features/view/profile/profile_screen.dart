@@ -33,15 +33,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      appBar: mainAppBar(
-        Text(
-          "Profile",
-          style: TextStyle(
-            fontSize: 24,
-          ),
-        ),
-        false,
-      ),
+      appBar: mainAppBarExt(),
       body: buildGradientContainer(
         StreamBuilder<DocumentSnapshot>(
           stream: _usersStream,
@@ -52,11 +44,7 @@ class _ProfileState extends State<Profile> {
             }
 
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
-                child: CircularProgressIndicator(
-                  color: redColor,
-                ),
-              );
+              return circularProgressExtMeth();
             }
             DocumentSnapshot<Object?> data = snapshot.data!;
 
@@ -73,27 +61,7 @@ class _ProfileState extends State<Profile> {
                       Alignment.center,
                       Row(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(
-                              3,
-                              1,
-                              20,
-                              1,
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  10,
-                                ),
-                                color: transparentColor,
-                              ),
-                              child: Icon(
-                                Icons.account_circle_rounded,
-                                size: 110,
-                                color: whiteColor,
-                              ),
-                            ),
-                          ),
+                          accountIconExtMeth(),
                           Text(
                             data['name surname'],
                             style: TextStyle(
@@ -135,35 +103,7 @@ class _ProfileState extends State<Profile> {
                         Icons.home,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(
-                            () => OrdersScreen(),
-                          );
-                        },
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.shopping_basket,
-                            size: 27,
-                            color: buildColor(),
-                          ),
-                          title: Text(
-                            "Orders",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: buildColor(),
-                            ),
-                          ),
-                        ),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            white12Color,
-                          ),
-                        ),
-                      ),
-                    ),
+                    ordersButton(),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
                       child: ElevatedButton(
@@ -235,6 +175,82 @@ class _ProfileState extends State<Profile> {
           },
         ),
       ),
+    );
+  }
+
+  Padding ordersButton() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+      child: ElevatedButton(
+        onPressed: () {
+          Get.to(
+            () => OrdersScreen(),
+          );
+        },
+        child: ListTile(
+          leading: Icon(
+            Icons.shopping_basket,
+            size: 27,
+            color: buildColor(),
+          ),
+          title: Text(
+            "Orders",
+            style: TextStyle(
+              fontSize: 20,
+              color: buildColor(),
+            ),
+          ),
+        ),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(
+            white12Color,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding accountIconExtMeth() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(
+        3,
+        1,
+        20,
+        1,
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            10,
+          ),
+          color: transparentColor,
+        ),
+        child: Icon(
+          Icons.account_circle_rounded,
+          size: 110,
+          color: whiteColor,
+        ),
+      ),
+    );
+  }
+
+  Center circularProgressExtMeth() {
+    return Center(
+      child: CircularProgressIndicator(
+        color: redColor,
+      ),
+    );
+  }
+
+  AppBar mainAppBarExt() {
+    return mainAppBar(
+      Text(
+        "Profile",
+        style: TextStyle(
+          fontSize: 24,
+        ),
+      ),
+      false,
     );
   }
 }
