@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lego_market_app/core/components/navigator/pop.dart';
+import 'package:lego_market_app/core/components/navigator/push.dart';
 
 import '../../../core/components/divider/profile_divder.dart';
 import '../../../core/components/text/orders_card_text.dart';
@@ -144,55 +146,58 @@ class _BasketScreenState extends State<BasketScreen> {
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
                             onTap: () {
-                              Get.defaultDialog(
-                                title: 'ORDER',
-                                content: defaultDialogContentColumn(
-                                  listofDocumentSnap,
-                                  index,
-                                ),
-                                actions: [
-                                  ElevatedButton(
-                                    onPressed: () async {
-                                      String docName =
-                                          "${listofDocumentSnap[index]['name']} ${listofDocumentSnap[index]['date']}";
-                                      final firestore =
-                                          FirebaseFirestore.instance;
-                                      CollectionReference usersRef =
-                                          firestore.collection('users');
-                                      await usersRef
-                                          .doc(
-                                              _auth.currentUser!.uid.toString())
-                                          .collection('basket')
-                                          .doc(docName)
-                                          .delete();
-                                      await usersRef
-                                          .doc(
-                                              _auth.currentUser!.uid.toString())
-                                          .collection('orders')
-                                          .doc(docName)
-                                          .delete();
+                              showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: const Text('ORDER'),
+                                  content: defaultDialogContentColumn(
+                                    listofDocumentSnap,
+                                    index,
+                                  ),
+                                  actions: <Widget>[
+                                    ElevatedButton(
+                                      onPressed: () async {
+                                        String docName =
+                                            "${listofDocumentSnap[index]['name']} ${listofDocumentSnap[index]['date']}";
+                                        final firestore =
+                                            FirebaseFirestore.instance;
+                                        CollectionReference usersRef =
+                                            firestore.collection('users');
+                                        await usersRef
+                                            .doc(_auth.currentUser!.uid
+                                                .toString())
+                                            .collection('basket')
+                                            .doc(docName)
+                                            .delete();
+                                        await usersRef
+                                            .doc(_auth.currentUser!.uid
+                                                .toString())
+                                            .collection('orders')
+                                            .doc(docName)
+                                            .delete();
 
-                                      Get.back();
-                                    },
-                                    child: Text('DELETE'),
-                                    style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all<Color>(
-                                        red700Color,
+                                        navigatorPop(context);
+                                      },
+                                      child: Text('DELETE'),
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                          red700Color,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () => Get.back(),
-                                    child: Text('CANCEL'),
-                                    style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all<Color>(
-                                        green700Color,
+                                    ElevatedButton(
+                                      onPressed: () => navigatorPop(context),
+                                      child: Text('CANCEL'),
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                          green700Color,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               );
                             },
                             child: basketCard(listofDocumentSnap, index),
@@ -241,7 +246,9 @@ class _BasketScreenState extends State<BasketScreen> {
   }
 
   Column defaultDialogContentColumn(
-      List<DocumentSnapshot<Object?>> listofDocumentSnap, int index) {
+    List<DocumentSnapshot<Object?>> listofDocumentSnap,
+    int index,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -308,8 +315,9 @@ class _BasketScreenState extends State<BasketScreen> {
                 ),
               ),
               onTap: () {
-                Get.to(
-                  () => CheckoutScreen(),
+                navigatorPush(
+                  context,
+                  CheckoutScreen(),
                 );
               },
             ),
