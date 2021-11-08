@@ -68,76 +68,12 @@ buildPayment(
 
   return Scaffold(
     backgroundColor: Colors.green.shade100,
-    appBar: AppBar(
-      centerTitle: true,
-      title: Text(
-        "PAYMENT",
-      ),
-      backgroundColor: Colors.green.shade900,
-    ),
+    appBar: appBarExtMeth(),
     body: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(45),
-              color: Colors.grey.shade100,
-            ),
-            width: 90,
-            height: 240,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(7, 35, 7, 0),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Text(
-                            "Name: " + name,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Text(
-                            "Explanation: " + explanation,
-                            style: TextStyle(
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Text(
-                            "Price: €$price",
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                    child: ButtonPayment(),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        paymentContainerExtMeth(name, explanation, price),
         Container(
           width: 100,
           child: Padding(
@@ -224,5 +160,77 @@ buildPayment(
         ),
       ],
     ),
+  );
+}
+
+Padding paymentContainerExtMeth(String name, String explanation, int price) {
+  return Padding(
+    padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(45),
+        color: Colors.grey.shade100,
+      ),
+      width: 90,
+      height: 240,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(7, 35, 7, 0),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      "Name: " + name,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      "Explanation: " + explanation,
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      "Price: €$price",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: ButtonPayment(),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+AppBar appBarExtMeth() {
+  return AppBar(
+    centerTitle: true,
+    title: Text(
+      "PAYMENT",
+    ),
+    backgroundColor: Colors.green.shade900,
   );
 }
