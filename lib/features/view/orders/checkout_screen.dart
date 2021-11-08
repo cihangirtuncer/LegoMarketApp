@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:lego_market_app/core/components/navigator/push.dart';
 
 import '../../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../../core/widget/checkout_container.dart';
@@ -146,8 +146,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       .doc('inforamtion')
                                       .set(usersData, SetOptions(merge: true));
 
-                                  Get.to(
-                                    () => BottomHomePage(),
+                                  navigatorPush(
+                                    context,
+                                    BottomHomePage(),
                                   );
                                   var snapshot = await usersRef
                                       .doc(auth.currentUser!.uid.toString())
