@@ -25,7 +25,6 @@ class _BasketScreenState extends State<BasketScreen> {
       .collection('basket')
       .snapshots();
 
-  int totalPrice = 0;
   final Color whiteColor = Colors.white;
   final Color indigoColor = Colors.indigo.shade900;
   final Color green700Color = Colors.green.shade700;
@@ -130,33 +129,7 @@ class _BasketScreenState extends State<BasketScreen> {
                   );
                 }
                 if (!asyncSnapshot.data!.docs.isNotEmpty ||
-                    !asyncSnapshot.hasData)
-                  return Padding(
-                    padding: const EdgeInsets.fromLTRB(5, 130, 5, 160),
-                    child: buildInfoContainer(
-                      context,
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.feedback,
-                            size: 80,
-                            color: whiteColor,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
-                            child: Text(
-                              'There are no items to display in your basket.',
-                              style: TextStyle(
-                                fontSize: 30,
-                                color: whiteColor,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
+                    !asyncSnapshot.hasData) return emptyBasket(context);
 
                 List<DocumentSnapshot> listofDocumentSnap =
                     asyncSnapshot.data!.docs;
@@ -169,36 +142,13 @@ class _BasketScreenState extends State<BasketScreen> {
                         physics: BouncingScrollPhysics(),
                         itemCount: listofDocumentSnap.length,
                         itemBuilder: (BuildContext context, int index) {
-                          totalPrice = totalPrice +
-                              int.parse(
-                                  "${listofDocumentSnap[index]['price']}");
                           return GestureDetector(
                             onTap: () {
                               Get.defaultDialog(
                                 title: 'ORDER',
-                                content: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    buildOrdersCardTextWidget(
-                                      "Product Name: ",
-                                      '${listofDocumentSnap[index]['name']}',
-                                    ),
-                                    buildProfileDivider(8),
-                                    buildOrdersCardTextWidget(
-                                      "Price: ",
-                                      "€${listofDocumentSnap[index]['price']}",
-                                    ),
-                                    buildProfileDivider(8),
-                                    buildOrdersCardTextWidget(
-                                      "Count: ",
-                                      "${listofDocumentSnap[index]['volume']}",
-                                    ),
-                                    buildProfileDivider(8),
-                                    buildOrdersCardTextWidget(
-                                      "Explanation: ",
-                                      '${listofDocumentSnap[index]['explanation']}',
-                                    ),
-                                  ],
+                                content: defaultDialogContentColumn(
+                                  listofDocumentSnap,
+                                  index,
                                 ),
                                 actions: [
                                   ElevatedButton(
@@ -245,103 +195,169 @@ class _BasketScreenState extends State<BasketScreen> {
                                 ],
                               );
                             },
-                            child: Padding(
-                              padding: const EdgeInsets.all(3.0),
-                              child: Card(
-                                child: ListTile(
-                                  title: Text(
-                                    '${listofDocumentSnap[index]['name']}',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  subtitle: Text(
-                                    "continues",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: indigoColor,
-                                    ),
-                                  ),
-                                  leading: CircleAvatar(
-                                    backgroundColor: Colors.red.shade100,
-                                    child: Text(
-                                      '${listofDocumentSnap[index]['volume']}',
-                                      style: TextStyle(
-                                        fontSize: 23,
-                                        fontWeight: FontWeight.bold,
-                                        color: indigoColor,
-                                      ),
-                                    ),
-                                  ),
-                                  trailing: Text(
-                                    '€${listofDocumentSnap[index]['price']}',
-                                    style: TextStyle(
-                                      fontSize: 23,
-                                      fontWeight: FontWeight.bold,
-                                      color: indigoColor,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                            child: basketCard(listofDocumentSnap, index),
                           );
                         },
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            child: Container(
-                              height: screenHeight * 0.077,
-                              color: green700Color,
-                              child: Align(
-                                alignment: Alignment(-0.55, 0.0),
-                                child: PriceCounter(),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            right: 0,
-                            child: GestureDetector(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.green.shade900,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    bottomLeft: Radius.circular(30),
-                                  ),
-                                ),
-                                height: screenHeight * 0.077,
-                                width: screenWidth * 0.45,
-                                child: Align(
-                                  alignment: Alignment(0.1, 0.0),
-                                  child: Text(
-                                    "Confrim Basket",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: whiteColor,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              onTap: () {
-                                Get.to(
-                                  () => CheckoutScreen(),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    basketPrice(screenHeight, screenWidth),
                   ],
                 );
               },
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Padding emptyBasket(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(5, 130, 5, 160),
+      child: buildInfoContainer(
+        context,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.feedback,
+              size: 80,
+              color: whiteColor,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+              child: Text(
+                'There are no items to display in your basket.',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: whiteColor,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Column defaultDialogContentColumn(
+      List<DocumentSnapshot<Object?>> listofDocumentSnap, int index) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        buildOrdersCardTextWidget(
+          "Product Name: ",
+          '${listofDocumentSnap[index]['name']}',
+        ),
+        buildProfileDivider(8),
+        buildOrdersCardTextWidget(
+          "Price: ",
+          "€${listofDocumentSnap[index]['price']}",
+        ),
+        buildProfileDivider(8),
+        buildOrdersCardTextWidget(
+          "Count: ",
+          "${listofDocumentSnap[index]['volume']}",
+        ),
+        buildProfileDivider(8),
+        buildOrdersCardTextWidget(
+          "Explanation: ",
+          '${listofDocumentSnap[index]['explanation']}',
+        ),
+      ],
+    );
+  }
+
+  Align basketPrice(double screenHeight, double screenWidth) {
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: Stack(
+        children: [
+          Positioned(
+            child: Container(
+              height: screenHeight * 0.077,
+              color: green700Color,
+              child: Align(
+                alignment: Alignment(-0.55, 0.0),
+                child: PriceCounter(),
+              ),
+            ),
+          ),
+          Positioned(
+            right: 0,
+            child: GestureDetector(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.green.shade900,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    bottomLeft: Radius.circular(30),
+                  ),
+                ),
+                height: screenHeight * 0.077,
+                width: screenWidth * 0.45,
+                child: Align(
+                  alignment: Alignment(0.1, 0.0),
+                  child: Text(
+                    "Confrim Basket",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: whiteColor,
+                    ),
+                  ),
+                ),
+              ),
+              onTap: () {
+                Get.to(
+                  () => CheckoutScreen(),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Padding basketCard(
+      List<DocumentSnapshot<Object?>> listofDocumentSnap, int index) {
+    return Padding(
+      padding: const EdgeInsets.all(3.0),
+      child: Card(
+        child: ListTile(
+          title: Text(
+            '${listofDocumentSnap[index]['name']}',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          subtitle: Text(
+            "continues",
+            style: TextStyle(
+              fontSize: 18,
+              color: indigoColor,
+            ),
+          ),
+          leading: CircleAvatar(
+            backgroundColor: Colors.red.shade100,
+            child: Text(
+              '${listofDocumentSnap[index]['volume']}',
+              style: TextStyle(
+                fontSize: 23,
+                fontWeight: FontWeight.bold,
+                color: indigoColor,
+              ),
+            ),
+          ),
+          trailing: Text(
+            '€${listofDocumentSnap[index]['price']}',
+            style: TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
+              color: indigoColor,
+            ),
+          ),
         ),
       ),
     );
