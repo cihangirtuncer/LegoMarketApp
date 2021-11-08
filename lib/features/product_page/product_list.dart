@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/navigator/push.dart';
 
 import '../view/payment/build_payment.dart';
 
@@ -13,15 +14,13 @@ Column BuildProductList(
     children: [
       GestureDetector(
         onTap: () {
-          Navigator.push(
+          navigatorPush(
             context,
-            MaterialPageRoute(
-              builder: (context) => buildPayment(
-                context,
-                price,
-                name,
-                explanation,
-              ),
+            buildPayment(
+              context,
+              price,
+              name,
+              explanation,
             ),
           );
         },

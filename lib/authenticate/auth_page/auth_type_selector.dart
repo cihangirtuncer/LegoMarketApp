@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:get/get.dart';
+import 'package:lego_market_app/core/components/navigator/push.dart';
 
 import '../../core/widget/gradient_container.dart';
 import '../login/email_password_form.dart';
@@ -27,7 +28,10 @@ class AuthTypeSelector extends StatelessWidget {
                       backgroundColor:
                           Color(0xF56E014E), //0xF541012C 0xFFB60707
                       text: "Register", // 0xF51239E6
-                      onPressed: () => Get.to(() => RegisterPage()),
+                      onPressed: () => navigatorPush(
+                        context,
+                        RegisterPage(),
+                      ),
                     ),
                     padding: const EdgeInsets.fromLTRB(2, 0, 2, 0),
                     alignment: Alignment.center,

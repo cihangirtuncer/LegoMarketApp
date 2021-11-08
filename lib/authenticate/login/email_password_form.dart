@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:lego_market_app/core/components/navigator/push_replacement.dart';
 
 import '../../core/components/app_bar/bottom_navigation_bar.dart';
 
@@ -109,11 +110,9 @@ class EmailPasswordFormState extends State<EmailPasswordForm> {
         ),
       );
 
-      Navigator.pushReplacement(
+      pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => BottomHomePage(),
-        ),
+        BottomHomePage(),
       );
     } on FirebaseAuthException catch (e) {
       debugPrint(e.toString());

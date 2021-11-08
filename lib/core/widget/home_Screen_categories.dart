@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:lego_market_app/core/components/navigator/push.dart';
 
 buildShoppingContainer(
   String productName,
@@ -9,7 +9,7 @@ buildShoppingContainer(
 ) {
   return GestureDetector(
     onTap: () {
-      Get.to(() => destination);
+      navigatorPush(context, destination);
     },
     child: Container(
       decoration: BoxDecoration(
