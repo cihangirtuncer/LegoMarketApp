@@ -44,18 +44,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Checkout"),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[
-                Colors.green.shade700,
-                Colors.green.shade900,
-              ],
-            ),
-          ),
-        ),
+        flexibleSpace: flexiableSpaceExtMeth(),
       ),
       body: Form(
         child: Padding(
@@ -69,19 +58,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   screenHeight * 0.25,
                   [
                     buildCheckoutTitle(screenWidth, 'Add Note'),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(8, 7, 8, 0),
-                      child: TextFormField(
-                        controller: addNoteController,
-                        decoration: const InputDecoration(
-                          labelStyle: TextStyle(color: Colors.black),
-                          labelText: "You can write your order note here",
-                          fillColor: Colors.black,
-                          focusColor: Colors.black,
-                          hoverColor: Colors.black,
-                        ),
-                      ),
-                    ),
+                    textFormFieldExtMeth(),
                   ],
                 ),
                 buildCheckoutContainer(
@@ -147,40 +124,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       alignment: Alignment.bottomRight,
                       child: Stack(
                         children: [
-                          Positioned(
-                            child: Container(
-                              height: screenHeight * 0.077,
-                              color: Colors.green.shade700,
-                              child: Align(
-                                alignment: Alignment(-0.55, 0.0),
-                                child: PriceCounter(),
-                              ),
-                            ),
-                          ),
+                          priceCounterExtMeth(screenHeight),
                           Positioned(
                             right: 0,
                             child: GestureDetector(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.green.shade900,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    bottomLeft: Radius.circular(30),
-                                  ),
-                                ),
-                                height: screenHeight * 0.077,
-                                width: screenWidth * 0.45,
-                                child: Align(
-                                  alignment: Alignment(0.1, 0.0),
-                                  child: Text(
-                                    "Order Now",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              child: containerChild(screenHeight, screenWidth),
                               onTap: () async {
                                 if (auth.currentUser != null) {
                                   Map<String, dynamic> usersData = {
@@ -235,6 +183,74 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Padding textFormFieldExtMeth() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 7, 8, 0),
+      child: TextFormField(
+        controller: addNoteController,
+        decoration: const InputDecoration(
+          labelStyle: TextStyle(color: Colors.black),
+          labelText: "You can write your order note here",
+          fillColor: Colors.black,
+          focusColor: Colors.black,
+          hoverColor: Colors.black,
+        ),
+      ),
+    );
+  }
+
+  Positioned priceCounterExtMeth(double screenHeight) {
+    return Positioned(
+      child: Container(
+        height: screenHeight * 0.077,
+        color: Colors.green.shade700,
+        child: Align(
+          alignment: Alignment(-0.55, 0.0),
+          child: PriceCounter(),
+        ),
+      ),
+    );
+  }
+
+  Container containerChild(double screenHeight, double screenWidth) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.green.shade900,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          bottomLeft: Radius.circular(30),
+        ),
+      ),
+      height: screenHeight * 0.077,
+      width: screenWidth * 0.45,
+      child: Align(
+        alignment: Alignment(0.1, 0.0),
+        child: Text(
+          "Order Now",
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container flexiableSpaceExtMeth() {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: <Color>[
+            Colors.green.shade700,
+            Colors.green.shade900,
+          ],
         ),
       ),
     );
