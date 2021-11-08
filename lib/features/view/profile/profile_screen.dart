@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:lego_market_app/core/components/navigator/pop.dart';
+import 'package:lego_market_app/core/components/navigator/push.dart';
 
 import '../../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../../core/components/row/profile_row.dart';
@@ -108,43 +109,47 @@ class _ProfileState extends State<Profile> {
                       padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
                       child: ElevatedButton(
                         onPressed: () {
-                          Get.defaultDialog(
-                            title: "Are you sure you want to log out?",
-                            content: Icon(
-                              Icons.warning,
-                              size: 40,
-                              color: redColor,
-                            ),
-                            actions: [
-                              ElevatedButton(
-                                onPressed: () async {
-                                  await FirebaseAuth.instance.signOut();
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => BottomHomePage(),
+                          showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              title: const Text(
+                                  "Are you sure you want to log out?"),
+                              content: Icon(
+                                Icons.warning,
+                                size: 40,
+                                color: redColor,
+                              ),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    await FirebaseAuth.instance.signOut();
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => BottomHomePage(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text('LOG OUT'),
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                      Colors.red.shade700,
                                     ),
-                                  );
-                                },
-                                child: Text('LOG OUT'),
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                    Colors.red.shade700,
                                   ),
                                 ),
-                              ),
-                              ElevatedButton(
-                                onPressed: () => Get.back(),
-                                child: Text('CANCEL'),
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                    Colors.green.shade700,
+                                ElevatedButton(
+                                  onPressed: () => navigatorPop(context),
+                                  child: Text('CANCEL'),
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                      Colors.green.shade700,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           );
                         },
                         child: ListTile(
@@ -183,8 +188,9 @@ class _ProfileState extends State<Profile> {
       padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
       child: ElevatedButton(
         onPressed: () {
-          Get.to(
-            () => OrdersScreen(),
+          navigatorPush(
+            context,
+            OrdersScreen(),
           );
         },
         child: ListTile(

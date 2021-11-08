@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:get/get.dart';
 import 'package:lego_market_app/core/components/navigator/push.dart';
 
 import '../../core/widget/gradient_container.dart';
