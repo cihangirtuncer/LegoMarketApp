@@ -29,15 +29,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: mainAppBar(
-        Text(
-          "Orders",
-          style: TextStyle(
-            fontSize: 24,
-          ),
-        ),
-        true,
-      ),
+      appBar: appBarExtMeth(),
       body: buildGradientContainer(
         Column(
           children: [
@@ -49,43 +41,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 }
 
                 if (asyncSnapshot.connectionState == ConnectionState.waiting) {
-                  return Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 270, 0, 0),
-                    child: Center(
-                      child: CircularProgressIndicator(
-                        color: Colors.red,
-                      ),
-                    ),
-                  );
+                  return circularProgressExtMeth();
                 }
                 if (!asyncSnapshot.data!.docs.isNotEmpty ||
-                    !asyncSnapshot.hasData)
-                  return Padding(
-                    padding: const EdgeInsets.fromLTRB(5, 130, 5, 160),
-                    child: buildInfoContainer(
-                      context,
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.feedback,
-                            size: 80,
-                            color: Colors.white,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
-                            child: Text(
-                              'There are no items to display in your orders.',
-                              style: TextStyle(
-                                fontSize: 30,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
+                    !asyncSnapshot.hasData) return emptyOrdersExtMeth(context);
 
                 List<DocumentSnapshot> listofDocumentSnap =
                     asyncSnapshot.data!.docs;
@@ -98,52 +57,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                         physics: BouncingScrollPhysics(),
                         itemCount: listofDocumentSnap.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: screenHeight * 0.15,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                color: Colors.grey.shade100,
-                              ),
-                              child: Center(
-                                child: ListTile(
-                                  title: Text(
-                                    '${listofDocumentSnap[index]['name']}',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  subtitle: Text(
-                                    'date:  ${listofDocumentSnap[index]['date']}',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  trailing: Text(
-                                    '${listofDocumentSnap[index]['price']} €',
-                                    style: TextStyle(
-                                      fontSize: 21,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.indigo.shade900,
-                                    ),
-                                  ),
-                                  leading: CircleAvatar(
-                                    backgroundColor: Colors.red.shade100,
-                                    child: Text(
-                                      '${listofDocumentSnap[index]['volume']}',
-                                      style: TextStyle(
-                                        fontSize: 23,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.indigo.shade900,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                          return ordersProductContainerExtMeth(
+                            screenHeight,
+                            listofDocumentSnap,
+                            index,
                           );
                         },
                       ),
@@ -155,6 +72,109 @@ class _OrdersScreenState extends State<OrdersScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Padding ordersProductContainerExtMeth(double screenHeight,
+      List<DocumentSnapshot<Object?>> listofDocumentSnap, int index) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        height: screenHeight * 0.15,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          color: Colors.grey.shade100,
+        ),
+        child: Center(
+          child: ListTile(
+            title: Text(
+              '${listofDocumentSnap[index]['name']}',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            subtitle: Text(
+              'date:  ${listofDocumentSnap[index]['date']}',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            trailing: Text(
+              '${listofDocumentSnap[index]['price']} €',
+              style: TextStyle(
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+                color: Colors.indigo.shade900,
+              ),
+            ),
+            leading: CircleAvatar(
+              backgroundColor: Colors.red.shade100,
+              child: Text(
+                '${listofDocumentSnap[index]['volume']}',
+                style: TextStyle(
+                  fontSize: 23,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.indigo.shade900,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding emptyOrdersExtMeth(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(5, 130, 5, 160),
+      child: buildInfoContainer(
+        context,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.feedback,
+              size: 80,
+              color: Colors.white,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+              child: Text(
+                'There are no items to display in your orders.',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Padding circularProgressExtMeth() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 270, 0, 0),
+      child: Center(
+        child: CircularProgressIndicator(
+          color: Colors.red,
+        ),
+      ),
+    );
+  }
+
+  AppBar appBarExtMeth() {
+    return mainAppBar(
+      Text(
+        "Orders",
+        style: TextStyle(
+          fontSize: 24,
+        ),
+      ),
+      true,
     );
   }
 }
