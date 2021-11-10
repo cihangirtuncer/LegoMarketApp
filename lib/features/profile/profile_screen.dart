@@ -50,6 +50,7 @@ class _ProfileState extends State<Profile> {
             DocumentSnapshot<Object?> data = snapshot.data!;
 
             return ListView(
+              physics: BouncingScrollPhysics(),
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
