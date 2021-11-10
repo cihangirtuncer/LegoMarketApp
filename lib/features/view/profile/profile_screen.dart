@@ -10,7 +10,7 @@ import '../../../core/widget/color.dart';
 import '../../../core/widget/gradient_container.dart';
 import '../../../core/widget/main_appBar.dart';
 import '../orders/orders_screen.dart';
-import 'Profile_page/profile_build_data.dart';
+import 'profile_build_data.dart';
 
 class Profile extends StatefulWidget {
   @override
