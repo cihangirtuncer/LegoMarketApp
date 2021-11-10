@@ -27,36 +27,40 @@ class _BottomHomePageState extends State<BottomHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.grey.shade400,
-        items: [
-          BottomNavigationBarItem(
-            icon: buildBottomIcon(
-              Icons.home,
-            ),
-            label: "HOME",
-            backgroundColor: myBackgroundColor,
-          ),
-          BottomNavigationBarItem(
-            icon: buildBottomIcon(
-              Icons.shopping_cart,
-            ),
-            label: "BASKET",
-            backgroundColor: myBackgroundColor,
-          ),
-          BottomNavigationBarItem(
-            icon: buildBottomIcon(
-              Icons.account_circle_rounded,
-            ),
-            label: "PROFILE",
-            backgroundColor: myBackgroundColor,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: onItemTapped,
-        type: BottomNavigationBarType.shifting,
-      ),
+      bottomNavigationBar: bottomNavigationBar(),
       body: tabs[_selectedIndex],
+    );
+  }
+
+  BottomNavigationBar bottomNavigationBar() {
+    return BottomNavigationBar(
+      unselectedItemColor: Colors.grey.shade400,
+      items: [
+        BottomNavigationBarItem(
+          icon: buildBottomIcon(
+            Icons.home,
+          ),
+          label: "HOME",
+          backgroundColor: myBackgroundColor,
+        ),
+        BottomNavigationBarItem(
+          icon: buildBottomIcon(
+            Icons.shopping_cart,
+          ),
+          label: "BASKET",
+          backgroundColor: myBackgroundColor,
+        ),
+        BottomNavigationBarItem(
+          icon: buildBottomIcon(
+            Icons.account_circle_rounded,
+          ),
+          label: "PROFILE",
+          backgroundColor: myBackgroundColor,
+        ),
+      ],
+      currentIndex: _selectedIndex,
+      onTap: onItemTapped,
+      type: BottomNavigationBarType.shifting,
     );
   }
 
