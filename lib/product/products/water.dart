@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/product/model/products.dart';
 import '../../../core/widget/product_map_list.dart';
-import '../../model/products.dart';
 import '../../../utils/dbhelper.dart';
 
 import '../../../../core/components/scaffold/products_scaffold.dart';

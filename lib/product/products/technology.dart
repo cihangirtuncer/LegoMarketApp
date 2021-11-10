@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/components/scaffold/products_scaffold.dart';
+import 'package:lego_market_app/product/model/products.dart';
 import '../../../core/widget/product_map_list.dart';
 import '../../../utils/dbhelper.dart';
-import '../../model/products.dart';
+import '../../../../core/components/scaffold/products_scaffold.dart';
 
-class BasicFood extends StatefulWidget {
+class TechnologyList extends StatefulWidget {
   @override
-  _BasicFoodState createState() => _BasicFoodState();
+  _TechnologyListState createState() => _TechnologyListState();
 }
 
-class _BasicFoodState extends State<BasicFood> {
+class _TechnologyListState extends State<TechnologyList> {
   late DatabaseHelper databaseHelper;
   late List<Products> allFoodList;
   int id = 1;
@@ -19,7 +18,7 @@ class _BasicFoodState extends State<BasicFood> {
     // ignore: deprecated_member_use
     allFoodList = List<Products>.empty(growable: true);
     databaseHelper = DatabaseHelper();
-    databaseHelper.productTable("BasicFood").then((allFoodMapList) {
+    databaseHelper.productTable("Technology").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {
         allFoodList.add(Products.fromMap(readMap));
       }
@@ -30,7 +29,7 @@ class _BasicFoodState extends State<BasicFood> {
   @override
   Widget build(BuildContext context) {
     return buildProductsScaffold(
-      "BASIC FOOD",
+      "TECHNOLOGY",
       foodItemCreat(context, allFoodList),
     );
   }

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import '../../../core/widget/product_map_list.dart';
-import '../../model/products.dart';
-import '../../../utils/dbhelper.dart';
-import '../../../../core/components/scaffold/products_scaffold.dart';
+import 'package:lego_market_app/product/model/products.dart';
 
-class DairyAndBreakfastList extends StatefulWidget {
+import '../../../../core/components/scaffold/products_scaffold.dart';
+import '../../../core/widget/product_map_list.dart';
+import '../../../utils/dbhelper.dart';
+
+class BasicFood extends StatefulWidget {
   @override
-  _DairyAndBreakfastListState createState() => _DairyAndBreakfastListState();
+  _BasicFoodState createState() => _BasicFoodState();
 }
 
-class _DairyAndBreakfastListState extends State<DairyAndBreakfastList> {
+class _BasicFoodState extends State<BasicFood> {
   late DatabaseHelper databaseHelper;
   late List<Products> allFoodList;
   int id = 1;
@@ -18,7 +19,7 @@ class _DairyAndBreakfastListState extends State<DairyAndBreakfastList> {
     // ignore: deprecated_member_use
     allFoodList = List<Products>.empty(growable: true);
     databaseHelper = DatabaseHelper();
-    databaseHelper.productTable("DairyBreakfast").then((allFoodMapList) {
+    databaseHelper.productTable("BasicFood").then((allFoodMapList) {
       for (Map readMap in allFoodMapList) {
         allFoodList.add(Products.fromMap(readMap));
       }
@@ -29,7 +30,7 @@ class _DairyAndBreakfastListState extends State<DairyAndBreakfastList> {
   @override
   Widget build(BuildContext context) {
     return buildProductsScaffold(
-      "DAIRY & BREAKFAST",
+      "BASIC FOOD",
       foodItemCreat(context, allFoodList),
     );
   }
