@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lego_market_app/core/components/icon/bottom_icon.dart';
+import 'package:lego_market_app/features/home/home_screen.dart';
+import 'package:lego_market_app/features/orders/basket_screen.dart';
+import 'package:lego_market_app/features/orders/null_user_order.dart';
+import 'package:lego_market_app/features/profile/profile_screen.dart';
 
 import '../../../authenticate/auth_page/auth_type_selector.dart';
-import '../../../features/view/home/home_screen.dart';
-import '../../../features/view/orders/null_user_order.dart';
-import '../../../features/view/orders/basket_screen.dart';
-import '../../../features/view/profile/profile_screen.dart';
-import '../icon/bottom_icon.dart';
 
 class BottomHomePage extends StatefulWidget {
   @override

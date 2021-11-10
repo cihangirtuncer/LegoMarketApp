@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'core/components/app_bar/bottom_navigation_bar.dart';
+import 'package:lego_market_app/features/app_bar/bottom_navigation_bar.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(

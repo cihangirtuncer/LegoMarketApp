@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lego_market_app/core/components/navigator/pop.dart';
 import 'package:lego_market_app/core/components/navigator/push.dart';
+import 'package:lego_market_app/features/app_bar/bottom_navigation_bar.dart';
 
-import '../../../core/components/app_bar/bottom_navigation_bar.dart';
 import '../../../core/components/row/profile_row.dart';
 import '../../../core/widget/color.dart';
 import '../../../core/widget/gradient_container.dart';
