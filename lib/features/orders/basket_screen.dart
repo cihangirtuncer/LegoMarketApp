@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:lego_market_app/core/components/navigator/pop.dart';
 import 'package:lego_market_app/core/components/navigator/push.dart';
 
@@ -50,57 +49,61 @@ class _BasketScreenState extends State<BasketScreen> {
         actions: [
           IconButton(
             onPressed: (() async {
-              Get.defaultDialog(
-                content: Icon(
-                  Icons.warning,
-                  size: 40,
-                  color: redColor,
-                ),
-                title: "Are you sure you want to empty your basket?",
-                actions: [
-                  ElevatedButton(
-                    onPressed: () async {
-                      final firestore = FirebaseFirestore.instance;
-                      CollectionReference usersRef =
-                          firestore.collection('users');
-                      var snapshot = await usersRef
-                          .doc(_auth.currentUser!.uid.toString())
-                          .collection('basket')
-                          .get();
-                      var snapshots = await usersRef
-                          .doc(_auth.currentUser!.uid.toString())
-                          .collection('orders')
-                          .get();
-                      if (snapshots.docs.isNotEmpty) {
-                        for (var doc in snapshots.docs) {
-                          await doc.reference.delete();
+              showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title:
+                      const Text("Are you sure you want to empty your basket?"),
+                  content: Icon(
+                    Icons.warning,
+                    size: 40,
+                    color: redColor,
+                  ),
+                  actions: <Widget>[
+                    ElevatedButton(
+                      onPressed: () async {
+                        final firestore = FirebaseFirestore.instance;
+                        CollectionReference usersRef =
+                            firestore.collection('users');
+                        var snapshot = await usersRef
+                            .doc(_auth.currentUser!.uid.toString())
+                            .collection('basket')
+                            .get();
+                        var snapshots = await usersRef
+                            .doc(_auth.currentUser!.uid.toString())
+                            .collection('orders')
+                            .get();
+                        if (snapshots.docs.isNotEmpty) {
+                          for (var doc in snapshots.docs) {
+                            await doc.reference.delete();
+                          }
                         }
-                      }
-                      if (snapshot.docs.isNotEmpty) {
-                        for (var doc in snapshot.docs) {
-                          await doc.reference.delete();
+                        if (snapshot.docs.isNotEmpty) {
+                          for (var doc in snapshot.docs) {
+                            await doc.reference.delete();
+                          }
                         }
-                      }
 
-                      Get.back();
-                    },
-                    child: Text('DELETE'),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        red700Color,
+                        navigatorPop(context);
+                      },
+                      child: Text('DELETE'),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          red700Color,
+                        ),
                       ),
                     ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => Get.back(),
-                    child: Text('CANCEL'),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        green700Color,
+                    ElevatedButton(
+                      onPressed: () => navigatorPop(context),
+                      child: Text('CANCEL'),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          green700Color,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             }),
             icon: Icon(
@@ -153,6 +156,8 @@ class _BasketScreenState extends State<BasketScreen> {
                                   content: defaultDialogContentColumn(
                                     listofDocumentSnap,
                                     index,
+                                    screenHeight,
+                                    screenWidth,
                                   ),
                                   actions: <Widget>[
                                     ElevatedButton(
@@ -245,33 +250,38 @@ class _BasketScreenState extends State<BasketScreen> {
     );
   }
 
-  Column defaultDialogContentColumn(
-    List<DocumentSnapshot<Object?>> listofDocumentSnap,
-    int index,
-  ) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        buildOrdersCardTextWidget(
-          "Product Name: ",
-          '${listofDocumentSnap[index]['name']}',
-        ),
-        buildProfileDivider(8),
-        buildOrdersCardTextWidget(
-          "Price: ",
-          "€${listofDocumentSnap[index]['price']}",
-        ),
-        buildProfileDivider(8),
-        buildOrdersCardTextWidget(
-          "Count: ",
-          "${listofDocumentSnap[index]['volume']}",
-        ),
-        buildProfileDivider(8),
-        buildOrdersCardTextWidget(
-          "Explanation: ",
-          '${listofDocumentSnap[index]['explanation']}',
-        ),
-      ],
+  Container defaultDialogContentColumn(
+      List<DocumentSnapshot<Object?>> listofDocumentSnap,
+      int index,
+      double screenHeight,
+      double screenWidth) {
+    return Container(
+      width: screenWidth * 0.3,
+      height: screenHeight * 0.20,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          buildOrdersCardTextWidget(
+            "Product Name: ",
+            '${listofDocumentSnap[index]['name']}',
+          ),
+          buildProfileDivider(8),
+          buildOrdersCardTextWidget(
+            "Price: ",
+            "€${listofDocumentSnap[index]['price']}",
+          ),
+          buildProfileDivider(8),
+          buildOrdersCardTextWidget(
+            "Count: ",
+            "${listofDocumentSnap[index]['volume']}",
+          ),
+          buildProfileDivider(8),
+          buildOrdersCardTextWidget(
+            "Explanation: ",
+            '${listofDocumentSnap[index]['explanation']}',
+          ),
+        ],
+      ),
     );
   }
 
