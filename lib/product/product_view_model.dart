@@ -15,12 +15,7 @@ Column BuildProductList(
         onTap: () {
           navigatorPush(
             context,
-            buildPayment(
-              context,
-              price,
-              name,
-              explanation,
-            ),
+            buildPayment(context, price, name, explanation),
           );
         },
         child: Card(
