@@ -235,7 +235,12 @@ class _BasketScreenState extends State<BasketScreen> {
               color: whiteColor,
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+              padding: const EdgeInsets.fromLTRB(
+                20,
+                10,
+                10,
+                10,
+              ),
               child: Text(
                 'There are no items to display in your basket.',
                 style: TextStyle(
